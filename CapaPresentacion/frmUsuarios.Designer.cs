@@ -55,8 +55,6 @@
             this.btnEliminar = new FontAwesome.Sharp.IconButton();
             this.labelTitulo = new System.Windows.Forms.Label();
             this.UsuariosDGV = new System.Windows.Forms.DataGridView();
-            this.labelListaUsuarios = new System.Windows.Forms.Label();
-            this.textBoxID = new System.Windows.Forms.TextBox();
             this.DatagridviewcellStyle = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.id_usuario = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.id_rol = new System.Windows.Forms.DataGridViewTextBoxColumn();
@@ -69,6 +67,8 @@
             this.Correo = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.Sexo = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.activo = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.labelListaUsuarios = new System.Windows.Forms.Label();
+            this.textBoxID = new System.Windows.Forms.TextBox();
             ((System.ComponentModel.ISupportInitialize)(this.UsuariosDGV)).BeginInit();
             this.SuspendLayout();
             // 
@@ -118,6 +118,7 @@
             this.textBoxDNI.Name = "textBoxDNI";
             this.textBoxDNI.Size = new System.Drawing.Size(100, 20);
             this.textBoxDNI.TabIndex = 4;
+            this.textBoxDNI.TextChanged += new System.EventHandler(this.textBoxDNI_TextChanged);
             this.textBoxDNI.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.textBoxDNI_KeyPress);
             // 
             // textBoxNombre
@@ -378,25 +379,6 @@
             this.UsuariosDGV.Size = new System.Drawing.Size(949, 154);
             this.UsuariosDGV.TabIndex = 24;
             // 
-            // labelListaUsuarios
-            // 
-            this.labelListaUsuarios.BackColor = System.Drawing.Color.White;
-            this.labelListaUsuarios.Font = new System.Drawing.Font("Microsoft Sans Serif", 16F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.labelListaUsuarios.Location = new System.Drawing.Point(294, 44);
-            this.labelListaUsuarios.Name = "labelListaUsuarios";
-            this.labelListaUsuarios.Size = new System.Drawing.Size(559, 39);
-            this.labelListaUsuarios.TabIndex = 25;
-            this.labelListaUsuarios.Text = "Lista de Usuarios:";
-            this.labelListaUsuarios.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            // 
-            // textBoxID
-            // 
-            this.textBoxID.Location = new System.Drawing.Point(214, 58);
-            this.textBoxID.Name = "textBoxID";
-            this.textBoxID.Size = new System.Drawing.Size(32, 20);
-            this.textBoxID.TabIndex = 15;
-            this.textBoxID.Visible = false;
-            // 
             // DatagridviewcellStyle
             // 
             this.DatagridviewcellStyle.HeaderText = "";
@@ -475,6 +457,25 @@
             this.activo.Name = "activo";
             this.activo.ReadOnly = true;
             this.activo.Width = 50;
+            // 
+            // labelListaUsuarios
+            // 
+            this.labelListaUsuarios.BackColor = System.Drawing.Color.White;
+            this.labelListaUsuarios.Font = new System.Drawing.Font("Microsoft Sans Serif", 16F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.labelListaUsuarios.Location = new System.Drawing.Point(294, 44);
+            this.labelListaUsuarios.Name = "labelListaUsuarios";
+            this.labelListaUsuarios.Size = new System.Drawing.Size(559, 39);
+            this.labelListaUsuarios.TabIndex = 25;
+            this.labelListaUsuarios.Text = "Lista de Usuarios:";
+            this.labelListaUsuarios.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            // 
+            // textBoxID
+            // 
+            this.textBoxID.Location = new System.Drawing.Point(214, 58);
+            this.textBoxID.Name = "textBoxID";
+            this.textBoxID.Size = new System.Drawing.Size(32, 20);
+            this.textBoxID.TabIndex = 15;
+            this.textBoxID.Visible = false;
             // 
             // frmUsuarios
             // 
