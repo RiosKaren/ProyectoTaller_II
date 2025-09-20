@@ -28,15 +28,15 @@
         /// </summary>
         private void InitializeComponent()
         {
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle3 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle4 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle1 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle2 = new System.Windows.Forms.DataGridViewCellStyle();
             this.label1 = new System.Windows.Forms.Label();
             this.label2 = new System.Windows.Forms.Label();
             this.labelNombre = new System.Windows.Forms.Label();
             this.labelApellido = new System.Windows.Forms.Label();
             this.textBoxDNI = new System.Windows.Forms.TextBox();
             this.textBoxNombre = new System.Windows.Forms.TextBox();
-            this.textBox1 = new System.Windows.Forms.TextBox();
+            this.textBoxApellido = new System.Windows.Forms.TextBox();
             this.textBoxUser = new System.Windows.Forms.TextBox();
             this.labelUser = new System.Windows.Forms.Label();
             this.labelPassword = new System.Windows.Forms.Label();
@@ -49,14 +49,15 @@
             this.labelEmail = new System.Windows.Forms.Label();
             this.textBoxEmail = new System.Windows.Forms.TextBox();
             this.labelRol = new System.Windows.Forms.Label();
-            this.comboBox1 = new System.Windows.Forms.ComboBox();
+            this.RolCBOX = new System.Windows.Forms.ComboBox();
             this.btnGuardar = new FontAwesome.Sharp.IconButton();
             this.btnEditar = new FontAwesome.Sharp.IconButton();
             this.btnEliminar = new FontAwesome.Sharp.IconButton();
             this.labelTitulo = new System.Windows.Forms.Label();
-            this.dataGridView1 = new System.Windows.Forms.DataGridView();
+            this.UsuariosDGV = new System.Windows.Forms.DataGridView();
             this.labelListaUsuarios = new System.Windows.Forms.Label();
-            this.btnSeleccionar = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.textBoxID = new System.Windows.Forms.TextBox();
+            this.DatagridviewcellStyle = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.id_usuario = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.id_rol = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.dni = new System.Windows.Forms.DataGridViewTextBoxColumn();
@@ -64,12 +65,11 @@
             this.nombre = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.usuario = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.hash_password = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.email = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.fecha_nacimiento = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Correo = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.Sexo = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.activo = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.textBoxID = new System.Windows.Forms.TextBox();
-            ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.UsuariosDGV)).BeginInit();
             this.SuspendLayout();
             // 
             // label1
@@ -80,8 +80,7 @@
             this.label1.Location = new System.Drawing.Point(0, 0);
             this.label1.Name = "label1";
             this.label1.Size = new System.Drawing.Size(277, 523);
-            this.label1.TabIndex = 0;
-            this.label1.Click += new System.EventHandler(this.label1_Click_1);
+            this.label1.TabIndex = 2;
             // 
             // label2
             // 
@@ -90,7 +89,7 @@
             this.label2.Location = new System.Drawing.Point(28, 61);
             this.label2.Name = "label2";
             this.label2.Size = new System.Drawing.Size(88, 13);
-            this.label2.TabIndex = 1;
+            this.label2.TabIndex = 3;
             this.label2.Text = "Nro Documento: ";
             // 
             // labelNombre
@@ -102,7 +101,6 @@
             this.labelNombre.Size = new System.Drawing.Size(47, 13);
             this.labelNombre.TabIndex = 2;
             this.labelNombre.Text = "Nombre:";
-            this.labelNombre.Click += new System.EventHandler(this.labelNombre_Click);
             // 
             // labelApellido
             // 
@@ -113,7 +111,6 @@
             this.labelApellido.Size = new System.Drawing.Size(47, 13);
             this.labelApellido.TabIndex = 3;
             this.labelApellido.Text = "Apellido:";
-            this.labelApellido.Click += new System.EventHandler(this.label4_Click);
             // 
             // textBoxDNI
             // 
@@ -121,6 +118,7 @@
             this.textBoxDNI.Name = "textBoxDNI";
             this.textBoxDNI.Size = new System.Drawing.Size(100, 20);
             this.textBoxDNI.TabIndex = 4;
+            this.textBoxDNI.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.textBoxDNI_KeyPress);
             // 
             // textBoxNombre
             // 
@@ -130,12 +128,13 @@
             this.textBoxNombre.TabIndex = 5;
             this.textBoxNombre.TextChanged += new System.EventHandler(this.textBoxNombre_TextChanged);
             // 
-            // textBox1
+            // textBoxApellido
             // 
-            this.textBox1.Location = new System.Drawing.Point(146, 127);
-            this.textBox1.Name = "textBox1";
-            this.textBox1.Size = new System.Drawing.Size(100, 20);
-            this.textBox1.TabIndex = 6;
+            this.textBoxApellido.Location = new System.Drawing.Point(146, 127);
+            this.textBoxApellido.Name = "textBoxApellido";
+            this.textBoxApellido.Size = new System.Drawing.Size(100, 20);
+            this.textBoxApellido.TabIndex = 6;
+            this.textBoxApellido.TextChanged += new System.EventHandler(this.textBoxApellido_TextChanged);
             // 
             // textBoxUser
             // 
@@ -163,14 +162,13 @@
             this.labelPassword.Size = new System.Drawing.Size(64, 13);
             this.labelPassword.TabIndex = 9;
             this.labelPassword.Text = "Contraseña:";
-            this.labelPassword.Click += new System.EventHandler(this.label4_Click_1);
             // 
             // textBoxPassword
             // 
             this.textBoxPassword.Location = new System.Drawing.Point(31, 228);
             this.textBoxPassword.Name = "textBoxPassword";
             this.textBoxPassword.Size = new System.Drawing.Size(100, 20);
-            this.textBoxPassword.TabIndex = 10;
+            this.textBoxPassword.TabIndex = 9;
             // 
             // labelSexo
             // 
@@ -186,15 +184,15 @@
             // 
             this.radioButtonFemenino.AutoSize = true;
             this.radioButtonFemenino.BackColor = System.Drawing.Color.White;
+            this.radioButtonFemenino.Checked = true;
             this.radioButtonFemenino.Cursor = System.Windows.Forms.Cursors.Hand;
             this.radioButtonFemenino.Location = new System.Drawing.Point(31, 330);
             this.radioButtonFemenino.Name = "radioButtonFemenino";
             this.radioButtonFemenino.Size = new System.Drawing.Size(71, 17);
-            this.radioButtonFemenino.TabIndex = 12;
+            this.radioButtonFemenino.TabIndex = 11;
             this.radioButtonFemenino.TabStop = true;
             this.radioButtonFemenino.Text = "Femenino";
             this.radioButtonFemenino.UseVisualStyleBackColor = false;
-            this.radioButtonFemenino.CheckedChanged += new System.EventHandler(this.radioButton1_CheckedChanged);
             // 
             // radioButtonMasculino
             // 
@@ -204,8 +202,7 @@
             this.radioButtonMasculino.Location = new System.Drawing.Point(146, 330);
             this.radioButtonMasculino.Name = "radioButtonMasculino";
             this.radioButtonMasculino.Size = new System.Drawing.Size(73, 17);
-            this.radioButtonMasculino.TabIndex = 13;
-            this.radioButtonMasculino.TabStop = true;
+            this.radioButtonMasculino.TabIndex = 12;
             this.radioButtonMasculino.Text = "Masculino";
             this.radioButtonMasculino.UseVisualStyleBackColor = false;
             // 
@@ -224,7 +221,7 @@
             this.textBoxCPassword.Location = new System.Drawing.Point(31, 280);
             this.textBoxCPassword.Name = "textBoxCPassword";
             this.textBoxCPassword.Size = new System.Drawing.Size(100, 20);
-            this.textBoxCPassword.TabIndex = 15;
+            this.textBoxCPassword.TabIndex = 10;
             // 
             // labelEmail
             // 
@@ -233,7 +230,7 @@
             this.labelEmail.Location = new System.Drawing.Point(143, 161);
             this.labelEmail.Name = "labelEmail";
             this.labelEmail.Size = new System.Drawing.Size(35, 13);
-            this.labelEmail.TabIndex = 16;
+            this.labelEmail.TabIndex = 22;
             this.labelEmail.Text = "Email:";
             // 
             // textBoxEmail
@@ -241,7 +238,8 @@
             this.textBoxEmail.Location = new System.Drawing.Point(146, 177);
             this.textBoxEmail.Name = "textBoxEmail";
             this.textBoxEmail.Size = new System.Drawing.Size(100, 20);
-            this.textBoxEmail.TabIndex = 17;
+            this.textBoxEmail.TabIndex = 8;
+            this.textBoxEmail.Leave += new System.EventHandler(this.textBoxEmail_Leave);
             // 
             // labelRol
             // 
@@ -253,15 +251,19 @@
             this.labelRol.TabIndex = 18;
             this.labelRol.Text = "Rol: ";
             // 
-            // comboBox1
+            // RolCBOX
             // 
-            this.comboBox1.BackColor = System.Drawing.Color.White;
-            this.comboBox1.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
-            this.comboBox1.FormattingEnabled = true;
-            this.comboBox1.Location = new System.Drawing.Point(31, 378);
-            this.comboBox1.Name = "comboBox1";
-            this.comboBox1.Size = new System.Drawing.Size(100, 21);
-            this.comboBox1.TabIndex = 19;
+            this.RolCBOX.BackColor = System.Drawing.Color.White;
+            this.RolCBOX.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
+            this.RolCBOX.FormattingEnabled = true;
+            this.RolCBOX.Items.AddRange(new object[] {
+            "Administrador",
+            "Vendedor",
+            "Supervisor"});
+            this.RolCBOX.Location = new System.Drawing.Point(31, 378);
+            this.RolCBOX.Name = "RolCBOX";
+            this.RolCBOX.Size = new System.Drawing.Size(100, 21);
+            this.RolCBOX.TabIndex = 13;
             // 
             // btnGuardar
             // 
@@ -277,12 +279,11 @@
             this.btnGuardar.Location = new System.Drawing.Point(31, 415);
             this.btnGuardar.Name = "btnGuardar";
             this.btnGuardar.Size = new System.Drawing.Size(215, 23);
-            this.btnGuardar.TabIndex = 20;
+            this.btnGuardar.TabIndex = 17;
             this.btnGuardar.Text = "Guardar";
             this.btnGuardar.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
             this.btnGuardar.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
             this.btnGuardar.UseVisualStyleBackColor = false;
-            this.btnGuardar.Click += new System.EventHandler(this.btnGuardar_Click);
             // 
             // btnEditar
             // 
@@ -298,12 +299,11 @@
             this.btnEditar.Location = new System.Drawing.Point(31, 445);
             this.btnEditar.Name = "btnEditar";
             this.btnEditar.Size = new System.Drawing.Size(215, 23);
-            this.btnEditar.TabIndex = 21;
+            this.btnEditar.TabIndex = 15;
             this.btnEditar.Text = "Editar";
             this.btnEditar.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
             this.btnEditar.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
             this.btnEditar.UseVisualStyleBackColor = false;
-            this.btnEditar.Click += new System.EventHandler(this.btnEditar_Click);
             // 
             // btnEliminar
             // 
@@ -319,7 +319,7 @@
             this.btnEliminar.Location = new System.Drawing.Point(31, 474);
             this.btnEliminar.Name = "btnEliminar";
             this.btnEliminar.Size = new System.Drawing.Size(215, 23);
-            this.btnEliminar.TabIndex = 22;
+            this.btnEliminar.TabIndex = 16;
             this.btnEliminar.Text = "Eliminar";
             this.btnEliminar.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
             this.btnEliminar.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
@@ -333,24 +333,24 @@
             this.labelTitulo.Location = new System.Drawing.Point(25, 20);
             this.labelTitulo.Name = "labelTitulo";
             this.labelTitulo.Size = new System.Drawing.Size(214, 31);
-            this.labelTitulo.TabIndex = 23;
+            this.labelTitulo.TabIndex = 20;
             this.labelTitulo.Text = "Detalles Usuario";
             // 
-            // dataGridView1
+            // UsuariosDGV
             // 
-            this.dataGridView1.AllowUserToAddRows = false;
-            dataGridViewCellStyle3.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
-            dataGridViewCellStyle3.BackColor = System.Drawing.SystemColors.Control;
-            dataGridViewCellStyle3.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            dataGridViewCellStyle3.ForeColor = System.Drawing.SystemColors.WindowText;
-            dataGridViewCellStyle3.Padding = new System.Windows.Forms.Padding(2);
-            dataGridViewCellStyle3.SelectionBackColor = System.Drawing.SystemColors.Highlight;
-            dataGridViewCellStyle3.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
-            dataGridViewCellStyle3.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
-            this.dataGridView1.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle3;
-            this.dataGridView1.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dataGridView1.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
-            this.btnSeleccionar,
+            this.UsuariosDGV.AllowUserToAddRows = false;
+            dataGridViewCellStyle1.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle1.BackColor = System.Drawing.SystemColors.Control;
+            dataGridViewCellStyle1.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle1.ForeColor = System.Drawing.SystemColors.WindowText;
+            dataGridViewCellStyle1.Padding = new System.Windows.Forms.Padding(2);
+            dataGridViewCellStyle1.SelectionBackColor = System.Drawing.SystemColors.Highlight;
+            dataGridViewCellStyle1.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
+            dataGridViewCellStyle1.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
+            this.UsuariosDGV.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle1;
+            this.UsuariosDGV.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.UsuariosDGV.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
+            this.DatagridviewcellStyle,
             this.id_usuario,
             this.id_rol,
             this.dni,
@@ -358,26 +358,25 @@
             this.nombre,
             this.usuario,
             this.hash_password,
-            this.email,
             this.fecha_nacimiento,
+            this.Correo,
             this.Sexo,
             this.activo});
-            this.dataGridView1.Location = new System.Drawing.Point(299, 123);
-            this.dataGridView1.MultiSelect = false;
-            this.dataGridView1.Name = "dataGridView1";
-            this.dataGridView1.ReadOnly = true;
-            dataGridViewCellStyle4.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
-            dataGridViewCellStyle4.BackColor = System.Drawing.SystemColors.Control;
-            dataGridViewCellStyle4.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            dataGridViewCellStyle4.ForeColor = System.Drawing.SystemColors.WindowText;
-            dataGridViewCellStyle4.SelectionBackColor = System.Drawing.Color.White;
-            dataGridViewCellStyle4.SelectionForeColor = System.Drawing.Color.Black;
-            dataGridViewCellStyle4.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
-            this.dataGridView1.RowHeadersDefaultCellStyle = dataGridViewCellStyle4;
-            this.dataGridView1.RowTemplate.Height = 28;
-            this.dataGridView1.Size = new System.Drawing.Size(949, 154);
-            this.dataGridView1.TabIndex = 24;
-            this.dataGridView1.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dataGridView1_CellContentClick);
+            this.UsuariosDGV.Location = new System.Drawing.Point(299, 123);
+            this.UsuariosDGV.MultiSelect = false;
+            this.UsuariosDGV.Name = "UsuariosDGV";
+            this.UsuariosDGV.ReadOnly = true;
+            dataGridViewCellStyle2.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle2.BackColor = System.Drawing.SystemColors.Control;
+            dataGridViewCellStyle2.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle2.ForeColor = System.Drawing.SystemColors.WindowText;
+            dataGridViewCellStyle2.SelectionBackColor = System.Drawing.Color.White;
+            dataGridViewCellStyle2.SelectionForeColor = System.Drawing.Color.Black;
+            dataGridViewCellStyle2.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
+            this.UsuariosDGV.RowHeadersDefaultCellStyle = dataGridViewCellStyle2;
+            this.UsuariosDGV.RowTemplate.Height = 28;
+            this.UsuariosDGV.Size = new System.Drawing.Size(949, 154);
+            this.UsuariosDGV.TabIndex = 24;
             // 
             // labelListaUsuarios
             // 
@@ -390,12 +389,19 @@
             this.labelListaUsuarios.Text = "Lista de Usuarios:";
             this.labelListaUsuarios.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
             // 
-            // btnSeleccionar
+            // textBoxID
             // 
-            this.btnSeleccionar.HeaderText = "";
-            this.btnSeleccionar.Name = "btnSeleccionar";
-            this.btnSeleccionar.ReadOnly = true;
-            this.btnSeleccionar.Width = 30;
+            this.textBoxID.Location = new System.Drawing.Point(214, 58);
+            this.textBoxID.Name = "textBoxID";
+            this.textBoxID.Size = new System.Drawing.Size(32, 20);
+            this.textBoxID.TabIndex = 15;
+            this.textBoxID.Visible = false;
+            // 
+            // DatagridviewcellStyle
+            // 
+            this.DatagridviewcellStyle.HeaderText = "";
+            this.DatagridviewcellStyle.Name = "DatagridviewcellStyle";
+            this.DatagridviewcellStyle.ReadOnly = true;
             // 
             // id_usuario
             // 
@@ -443,19 +449,18 @@
             this.hash_password.ReadOnly = true;
             this.hash_password.Visible = false;
             // 
-            // email
-            // 
-            this.email.HeaderText = "Correo";
-            this.email.Name = "email";
-            this.email.ReadOnly = true;
-            this.email.Width = 150;
-            // 
             // fecha_nacimiento
             // 
             this.fecha_nacimiento.HeaderText = "Fecha de Nacimiento";
             this.fecha_nacimiento.Name = "fecha_nacimiento";
             this.fecha_nacimiento.ReadOnly = true;
             this.fecha_nacimiento.Visible = false;
+            // 
+            // Correo
+            // 
+            this.Correo.HeaderText = "Correo";
+            this.Correo.Name = "Correo";
+            this.Correo.ReadOnly = true;
             // 
             // Sexo
             // 
@@ -471,14 +476,6 @@
             this.activo.ReadOnly = true;
             this.activo.Width = 50;
             // 
-            // textBoxID
-            // 
-            this.textBoxID.Location = new System.Drawing.Point(214, 58);
-            this.textBoxID.Name = "textBoxID";
-            this.textBoxID.Size = new System.Drawing.Size(32, 20);
-            this.textBoxID.TabIndex = 26;
-            this.textBoxID.Visible = false;
-            // 
             // frmUsuarios
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -487,12 +484,12 @@
             this.ClientSize = new System.Drawing.Size(1270, 523);
             this.Controls.Add(this.textBoxID);
             this.Controls.Add(this.labelListaUsuarios);
-            this.Controls.Add(this.dataGridView1);
+            this.Controls.Add(this.UsuariosDGV);
             this.Controls.Add(this.labelTitulo);
             this.Controls.Add(this.btnEliminar);
             this.Controls.Add(this.btnEditar);
             this.Controls.Add(this.btnGuardar);
-            this.Controls.Add(this.comboBox1);
+            this.Controls.Add(this.RolCBOX);
             this.Controls.Add(this.labelRol);
             this.Controls.Add(this.textBoxEmail);
             this.Controls.Add(this.labelEmail);
@@ -505,7 +502,7 @@
             this.Controls.Add(this.labelPassword);
             this.Controls.Add(this.labelUser);
             this.Controls.Add(this.textBoxUser);
-            this.Controls.Add(this.textBox1);
+            this.Controls.Add(this.textBoxApellido);
             this.Controls.Add(this.textBoxNombre);
             this.Controls.Add(this.textBoxDNI);
             this.Controls.Add(this.labelApellido);
@@ -513,9 +510,9 @@
             this.Controls.Add(this.label2);
             this.Controls.Add(this.label1);
             this.Name = "frmUsuarios";
-            this.Text = "frmUsuarios";
+            this.Text = "1";
             this.Load += new System.EventHandler(this.frmUsuarios_Load);
-            ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.UsuariosDGV)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -529,7 +526,7 @@
         private System.Windows.Forms.Label labelApellido;
         private System.Windows.Forms.TextBox textBoxDNI;
         private System.Windows.Forms.TextBox textBoxNombre;
-        private System.Windows.Forms.TextBox textBox1;
+        private System.Windows.Forms.TextBox textBoxApellido;
         private System.Windows.Forms.TextBox textBoxUser;
         private System.Windows.Forms.Label labelUser;
         private System.Windows.Forms.Label labelPassword;
@@ -542,14 +539,15 @@
         private System.Windows.Forms.Label labelEmail;
         private System.Windows.Forms.TextBox textBoxEmail;
         private System.Windows.Forms.Label labelRol;
-        private System.Windows.Forms.ComboBox comboBox1;
+        private System.Windows.Forms.ComboBox RolCBOX;
         private FontAwesome.Sharp.IconButton btnGuardar;
         private FontAwesome.Sharp.IconButton btnEditar;
         private FontAwesome.Sharp.IconButton btnEliminar;
         private System.Windows.Forms.Label labelTitulo;
-        private System.Windows.Forms.DataGridView dataGridView1;
+        private System.Windows.Forms.DataGridView UsuariosDGV;
         private System.Windows.Forms.Label labelListaUsuarios;
-        private System.Windows.Forms.DataGridViewTextBoxColumn btnSeleccionar;
+        private System.Windows.Forms.TextBox textBoxID;
+        private System.Windows.Forms.DataGridViewTextBoxColumn DatagridviewcellStyle;
         private System.Windows.Forms.DataGridViewTextBoxColumn id_usuario;
         private System.Windows.Forms.DataGridViewTextBoxColumn id_rol;
         private System.Windows.Forms.DataGridViewTextBoxColumn dni;
@@ -557,10 +555,9 @@
         private System.Windows.Forms.DataGridViewTextBoxColumn nombre;
         private System.Windows.Forms.DataGridViewTextBoxColumn usuario;
         private System.Windows.Forms.DataGridViewTextBoxColumn hash_password;
-        private System.Windows.Forms.DataGridViewTextBoxColumn email;
         private System.Windows.Forms.DataGridViewTextBoxColumn fecha_nacimiento;
+        private System.Windows.Forms.DataGridViewTextBoxColumn Correo;
         private System.Windows.Forms.DataGridViewTextBoxColumn Sexo;
         private System.Windows.Forms.DataGridViewTextBoxColumn activo;
-        private System.Windows.Forms.TextBox textBoxID;
     }
 }
