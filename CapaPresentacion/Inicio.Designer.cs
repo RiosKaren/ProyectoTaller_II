@@ -56,7 +56,7 @@
             this.menuSalir});
             this.menuStrip1.Location = new System.Drawing.Point(0, 48);
             this.menuStrip1.Name = "menuStrip1";
-            this.menuStrip1.Size = new System.Drawing.Size(810, 73);
+            this.menuStrip1.Size = new System.Drawing.Size(1280, 73);
             this.menuStrip1.TabIndex = 0;
             this.menuStrip1.Text = "menuStrip1";
             // 
@@ -69,7 +69,7 @@
             this.menuUsuarios.IconSize = 50;
             this.menuUsuarios.ImageScaling = System.Windows.Forms.ToolStripItemImageScaling.None;
             this.menuUsuarios.Name = "menuUsuarios";
-            this.menuUsuarios.Size = new System.Drawing.Size(80, 69);
+            this.menuUsuarios.Size = new System.Drawing.Size(64, 69);
             this.menuUsuarios.Text = "Usuarios";
             this.menuUsuarios.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageAboveText;
             this.menuUsuarios.Click += new System.EventHandler(this.menuUsuarios_Click);
@@ -165,7 +165,7 @@
             this.menu.Location = new System.Drawing.Point(0, 0);
             this.menu.Name = "menu";
             this.menu.RightToLeft = System.Windows.Forms.RightToLeft.Yes;
-            this.menu.Size = new System.Drawing.Size(810, 48);
+            this.menu.Size = new System.Drawing.Size(1280, 48);
             this.menu.TabIndex = 1;
             this.menu.Text = "menuStrip2";
             // 
@@ -186,7 +186,7 @@
             this.contenedor.Dock = System.Windows.Forms.DockStyle.Fill;
             this.contenedor.Location = new System.Drawing.Point(0, 121);
             this.contenedor.Name = "contenedor";
-            this.contenedor.Size = new System.Drawing.Size(810, 381);
+            this.contenedor.Size = new System.Drawing.Size(1280, 543);
             this.contenedor.TabIndex = 4;
             this.contenedor.Paint += new System.Windows.Forms.PaintEventHandler(this.contenedor_Paint);
             // 
@@ -220,7 +220,7 @@
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(810, 502);
+            this.ClientSize = new System.Drawing.Size(1280, 664);
             this.Controls.Add(this.lbusuario);
             this.Controls.Add(this.label1);
             this.Controls.Add(this.contenedor);
