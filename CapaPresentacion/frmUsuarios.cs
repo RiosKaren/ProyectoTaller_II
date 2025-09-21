@@ -10,6 +10,10 @@ using System.Text;
 using System.Text.RegularExpressions;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using CapaPresentacion.Utilidades;
+
+using CapaEntidad;
+using CapaNegocio;
 
 namespace CapaPresentacion
 {
@@ -19,6 +23,87 @@ namespace CapaPresentacion
         {
             InitializeComponent();
         }
+        private void frmUsuarios_Load(object sender, EventArgs e)
+        {
+            comboBoxEstado.Items.Add(new OpcionCombo() { Valor = 1 , Texto = "ACTIVO" });
+            comboBoxEstado.Items.Add(new OpcionCombo() { Valor = 0 , Texto = "NO ACTIVO" });
+            comboBoxEstado.DisplayMember = "Texto";
+            comboBoxEstado.ValueMember = "Valor";
+            comboBoxEstado.SelectedIndex = 0;
+
+
+            List<Roles> listaRoles = new CN_Rol().Listar();
+
+            foreach (Roles item in listaRoles)
+            {
+                comboBoxRoles.Items.Add(new OpcionCombo() { Valor = item.id_rol, Texto = item.nombre });
+            }
+            comboBoxRoles.DisplayMember = "Texto";
+            comboBoxRoles.ValueMember = "Valor";
+
+            foreach (DataGridViewColumn columna in UsuariosDGV.Columns)
+            {
+                if(columna.Visible == true && columna.Name != "botonSeleccionar")
+                {
+                    comboBoxBusqueda.Items.Add(new OpcionCombo() { Valor = columna.Name, Texto = columna.HeaderText });
+                }
+            }
+
+            comboBoxBusqueda.DisplayMember = "Texto";
+            comboBoxBusqueda.ValueMember = "Valor";
+
+        }
+
+        private void btnGuardar_Click_1(object sender, EventArgs e)
+        {
+            string sexo = radioButtonFemenino.Checked ? "Femenino" : "Masculino";
+
+            UsuariosDGV.Rows.Add(new object[] { "", textBoxID.Text, textBoxDNI.Text, textBoxNombre.Text + " " + textBoxApellido.Text, 
+                                textBoxEmail.Text, dateTimeNacimiento.Value.ToString("dd/MM/yyyy"),
+                                sexo, textBoxUser.Text, textBoxPassword.Text,
+                                ((OpcionCombo)comboBoxRoles.SelectedItem).Valor.ToString(),
+                                ((OpcionCombo)comboBoxRoles.SelectedItem).Texto.ToString(),
+                                ((OpcionCombo)comboBoxEstado.SelectedItem).Valor.ToString(),
+                                ((OpcionCombo)comboBoxEstado.SelectedItem).Texto.ToString(),
+                                });
+
+            Limpiar();
+        }
+
+        private void Limpiar()
+        {
+            textBoxID.Text = "0";
+            textBoxDNI.Text = "";
+            textBoxNombre.Text = "";
+            textBoxApellido.Text = "";
+            textBoxEmail.Text = "";
+            textBoxUser.Text = "";
+            textBoxPassword.Text = "";
+            textBoxCPassword.Text = "";
+
+            // 🔹 Fecha: asegurarse de que esté en rango
+            if (DateTime.Today < dateTimeNacimiento.MinDate)
+            {
+                dateTimeNacimiento.Value = dateTimeNacimiento.MinDate;
+            }
+            else if (DateTime.Today > dateTimeNacimiento.MaxDate)
+            {
+                dateTimeNacimiento.Value = dateTimeNacimiento.MaxDate;
+            }
+            else
+            {
+                dateTimeNacimiento.Value = DateTime.Today;
+            }
+
+            radioButtonFemenino.Checked = true;
+            radioButtonMasculino.Checked = false;
+
+            comboBoxEstado.SelectedIndex = 0;
+
+            comboBoxRoles.SelectedIndex = -1;
+        }
+
+        
         private void textBoxNombre_TextChanged(object sender, EventArgs e)
         {
             TextBox tb = sender as TextBox;
@@ -131,26 +216,57 @@ namespace CapaPresentacion
                 }
             }
         }
-        private void CargarUsuariosEnGrid()
-        {
-            string connectionString = ConfigurationManager.ConnectionStrings["cadena_conexion"].ConnectionString;
-            using (SqlConnection conn = new SqlConnection(connectionString))
-            {
-                string query = "SELECT Nombre, Apellido, DNI, Email FROM Usuarios";
-                using (SqlDataAdapter adapter = new SqlDataAdapter(query, conn))
-                {
-                    DataTable dt = new DataTable();
-                    adapter.Fill(dt);
-                    UsuariosDGV.DataSource = dt;
-                }
-            }
-        }
-        private void frmUsuarios_Load(object sender, EventArgs e)
-        {
-            CargarUsuariosEnGrid();
-        }
+        
+
 
         private void textBoxDNI_TextChanged(object sender, EventArgs e)
+        {
+
+        }
+
+        private void UsuariosDGV_CellContentClick(object sender, DataGridViewCellEventArgs e)
+        {
+
+        }
+
+        private void textBoxCPassword_TextChanged(object sender, EventArgs e)
+        {
+
+        }
+
+        private void comboBoxEstado_SelectedIndexChanged(object sender, EventArgs e)
+        {
+
+        }
+
+   
+
+        private void textBoxPassword_TextChanged(object sender, EventArgs e)
+        {
+
+        }
+
+        private void comboBoxRoles_SelectedIndexChanged(object sender, EventArgs e)
+        {
+
+        }
+
+        private void dateTimeNacimiento_ValueChanged(object sender, EventArgs e)
+        {
+
+        }
+
+        private void label3_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void comboBoxBusqueda_SelectedIndexChanged(object sender, EventArgs e)
+        {
+
+        }
+
+        private void iconButtonLimpiar_Click(object sender, EventArgs e)
         {
 
         }
