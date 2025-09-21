@@ -149,5 +149,10 @@ namespace CapaPresentacion
         {
             CargarUsuariosEnGrid();
         }
+
+        private void textBoxDNI_TextChanged(object sender, EventArgs e)
+        {
+
+        }
     }
 }
