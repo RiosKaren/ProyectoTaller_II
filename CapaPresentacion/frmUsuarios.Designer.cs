@@ -90,11 +90,7 @@
             this.label1.ForeColor = System.Drawing.Color.White;
             this.label1.Location = new System.Drawing.Point(0, 0);
             this.label1.Name = "label1";
-<<<<<<< HEAD
-            this.label1.Size = new System.Drawing.Size(369, 660);
-=======
-            this.label1.Size = new System.Drawing.Size(277, 561);
->>>>>>> 0fc6665ef4df78b8c4ed1336da49f25f9019690a
+            this.label1.Size = new System.Drawing.Size(369, 644);
             this.label1.TabIndex = 2;
             // 
             // label2
@@ -371,12 +367,8 @@
             this.rol,
             this.activo,
             this.Estado});
-<<<<<<< HEAD
-            this.UsuariosDGV.Location = new System.Drawing.Point(399, 135);
+            this.UsuariosDGV.Location = new System.Drawing.Point(399, 151);
             this.UsuariosDGV.Margin = new System.Windows.Forms.Padding(4);
-=======
-            this.UsuariosDGV.Location = new System.Drawing.Point(299, 123);
->>>>>>> 0fc6665ef4df78b8c4ed1336da49f25f9019690a
             this.UsuariosDGV.MultiSelect = false;
             this.UsuariosDGV.Name = "UsuariosDGV";
             this.UsuariosDGV.ReadOnly = true;
@@ -390,11 +382,7 @@
             this.UsuariosDGV.RowHeadersDefaultCellStyle = dataGridViewCellStyle2;
             this.UsuariosDGV.RowHeadersWidth = 51;
             this.UsuariosDGV.RowTemplate.Height = 28;
-<<<<<<< HEAD
-            this.UsuariosDGV.Size = new System.Drawing.Size(1239, 480);
-=======
-            this.UsuariosDGV.Size = new System.Drawing.Size(773, 265);
->>>>>>> 0fc6665ef4df78b8c4ed1336da49f25f9019690a
+            this.UsuariosDGV.Size = new System.Drawing.Size(991, 480);
             this.UsuariosDGV.TabIndex = 24;
             this.UsuariosDGV.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.UsuariosDGV_CellContentClick);
             this.UsuariosDGV.CellPainting += new System.Windows.Forms.DataGridViewCellPaintingEventHandler(this.UsuariosDGV_CellPainting);
@@ -465,56 +453,6 @@
             this.sexo.Width = 125;
             // 
             // usuario
-            // 
-            this.usuario.HeaderText = "Usuario";
-            this.usuario.MinimumWidth = 6;
-            this.usuario.Name = "usuario";
-            this.usuario.ReadOnly = true;
-            this.usuario.Visible = false;
-            this.usuario.Width = 125;
-            // 
-            // hash_password
-            // 
-            this.hash_password.HeaderText = "Contraseña";
-            this.hash_password.MinimumWidth = 6;
-            this.hash_password.Name = "hash_password";
-            this.hash_password.ReadOnly = true;
-            this.hash_password.Visible = false;
-            this.hash_password.Width = 125;
-            // 
-            // id_rol
-            // 
-            this.id_rol.HeaderText = "id_rol";
-            this.id_rol.MinimumWidth = 6;
-            this.id_rol.Name = "id_rol";
-            this.id_rol.ReadOnly = true;
-            this.id_rol.Visible = false;
-            this.id_rol.Width = 125;
-            // 
-            // rol
-            // 
-            this.rol.HeaderText = "Rol";
-            this.rol.MinimumWidth = 6;
-            this.rol.Name = "rol";
-            this.rol.ReadOnly = true;
-            this.rol.Width = 125;
-            // 
-            // activo
-            // 
-            this.activo.HeaderText = "activo";
-            this.activo.MinimumWidth = 6;
-            this.activo.Name = "activo";
-            this.activo.ReadOnly = true;
-            this.activo.Visible = false;
-            this.activo.Width = 125;
-            // 
-            // Estado
-            // 
-            this.Estado.HeaderText = "Estado";
-            this.Estado.MinimumWidth = 6;
-            this.Estado.Name = "Estado";
-            this.Estado.ReadOnly = true;
-            this.Estado.Width = 125;
             // 
             // labelListaUsuarios
             // 
@@ -665,11 +603,7 @@
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.DarkRed;
-<<<<<<< HEAD
-            this.ClientSize = new System.Drawing.Size(1696, 660);
-=======
-            this.ClientSize = new System.Drawing.Size(1084, 561);
->>>>>>> 0fc6665ef4df78b8c4ed1336da49f25f9019690a
+            this.ClientSize = new System.Drawing.Size(1693, 644);
             this.Controls.Add(this.iconButtonLimpiar);
             this.Controls.Add(this.iconButtonBuscar);
             this.Controls.Add(this.textBoxBusqueda);
