@@ -28,8 +28,8 @@
         /// </summary>
         private void InitializeComponent()
         {
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle5 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle6 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle1 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle2 = new System.Windows.Forms.DataGridViewCellStyle();
             this.label1 = new System.Windows.Forms.Label();
             this.label2 = new System.Windows.Forms.Label();
             this.labelNombre = new System.Windows.Forms.Label();
@@ -45,7 +45,6 @@
             this.radioButtonFemenino = new System.Windows.Forms.RadioButton();
             this.radioButtonMasculino = new System.Windows.Forms.RadioButton();
             this.labelCPasword = new System.Windows.Forms.Label();
-            this.textBoxCPassword = new System.Windows.Forms.TextBox();
             this.labelEmail = new System.Windows.Forms.Label();
             this.textBoxEmail = new System.Windows.Forms.TextBox();
             this.labelRol = new System.Windows.Forms.Label();
@@ -54,20 +53,6 @@
             this.btnEliminar = new FontAwesome.Sharp.IconButton();
             this.labelTitulo = new System.Windows.Forms.Label();
             this.UsuariosDGV = new System.Windows.Forms.DataGridView();
-            this.botonSeleccionar = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.id_usuario = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.dni = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.apellido = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.nombre = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.email = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.fecha_nacimiento = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.sexo = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.usuario = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.hash_password = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.id_rol = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.rol = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.activo = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.Estado = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.labelListaUsuarios = new System.Windows.Forms.Label();
             this.textBoxID = new System.Windows.Forms.TextBox();
             this.dateTimeNacimiento = new System.Windows.Forms.DateTimePicker();
@@ -81,6 +66,22 @@
             this.iconButtonLimpiar = new FontAwesome.Sharp.IconButton();
             this.iconButtonBuscar = new FontAwesome.Sharp.IconButton();
             this.textBoxIndice = new System.Windows.Forms.TextBox();
+            this.iconButtonHabilitar = new FontAwesome.Sharp.IconButton();
+            this.textBoxCPassword = new System.Windows.Forms.TextBox();
+            this.estado = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.activo = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.rol = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.id_rol = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.hash_password = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.usuario = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.sexo = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.fecha_nacimiento = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.email = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.nombre = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.apellido = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.dni = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.id_usuario = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.botonSeleccionar = new System.Windows.Forms.DataGridViewTextBoxColumn();
             ((System.ComponentModel.ISupportInitialize)(this.UsuariosDGV)).BeginInit();
             this.SuspendLayout();
             // 
@@ -92,14 +93,14 @@
             this.label1.Location = new System.Drawing.Point(0, 0);
             this.label1.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(492, 793);
+            this.label1.Size = new System.Drawing.Size(330, 669);
             this.label1.TabIndex = 2;
             // 
             // label2
             // 
             this.label2.AutoSize = true;
             this.label2.BackColor = System.Drawing.Color.White;
-            this.label2.Location = new System.Drawing.Point(40, 52);
+            this.label2.Location = new System.Drawing.Point(18, 52);
             this.label2.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.label2.Name = "label2";
             this.label2.Size = new System.Drawing.Size(107, 16);
@@ -110,7 +111,7 @@
             // 
             this.labelNombre.AutoSize = true;
             this.labelNombre.BackColor = System.Drawing.Color.White;
-            this.labelNombre.Location = new System.Drawing.Point(40, 113);
+            this.labelNombre.Location = new System.Drawing.Point(18, 113);
             this.labelNombre.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.labelNombre.Name = "labelNombre";
             this.labelNombre.Size = new System.Drawing.Size(59, 16);
@@ -121,7 +122,7 @@
             // 
             this.labelApellido.AutoSize = true;
             this.labelApellido.BackColor = System.Drawing.Color.White;
-            this.labelApellido.Location = new System.Drawing.Point(192, 113);
+            this.labelApellido.Location = new System.Drawing.Point(170, 113);
             this.labelApellido.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.labelApellido.Name = "labelApellido";
             this.labelApellido.Size = new System.Drawing.Size(60, 16);
@@ -130,7 +131,7 @@
             // 
             // textBoxDNI
             // 
-            this.textBoxDNI.Location = new System.Drawing.Point(43, 74);
+            this.textBoxDNI.Location = new System.Drawing.Point(21, 74);
             this.textBoxDNI.Margin = new System.Windows.Forms.Padding(4);
             this.textBoxDNI.Name = "textBoxDNI";
             this.textBoxDNI.Size = new System.Drawing.Size(132, 22);
@@ -140,7 +141,7 @@
             // 
             // textBoxNombre
             // 
-            this.textBoxNombre.Location = new System.Drawing.Point(43, 135);
+            this.textBoxNombre.Location = new System.Drawing.Point(21, 135);
             this.textBoxNombre.Margin = new System.Windows.Forms.Padding(4);
             this.textBoxNombre.Name = "textBoxNombre";
             this.textBoxNombre.Size = new System.Drawing.Size(132, 22);
@@ -149,7 +150,7 @@
             // 
             // textBoxApellido
             // 
-            this.textBoxApellido.Location = new System.Drawing.Point(195, 135);
+            this.textBoxApellido.Location = new System.Drawing.Point(173, 135);
             this.textBoxApellido.Margin = new System.Windows.Forms.Padding(4);
             this.textBoxApellido.Name = "textBoxApellido";
             this.textBoxApellido.Size = new System.Drawing.Size(132, 22);
@@ -158,7 +159,7 @@
             // 
             // textBoxUser
             // 
-            this.textBoxUser.Location = new System.Drawing.Point(43, 190);
+            this.textBoxUser.Location = new System.Drawing.Point(21, 190);
             this.textBoxUser.Margin = new System.Windows.Forms.Padding(4);
             this.textBoxUser.Name = "textBoxUser";
             this.textBoxUser.Size = new System.Drawing.Size(132, 22);
@@ -168,7 +169,7 @@
             // 
             this.labelUser.AutoSize = true;
             this.labelUser.BackColor = System.Drawing.Color.White;
-            this.labelUser.Location = new System.Drawing.Point(40, 167);
+            this.labelUser.Location = new System.Drawing.Point(18, 167);
             this.labelUser.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.labelUser.Name = "labelUser";
             this.labelUser.Size = new System.Drawing.Size(57, 16);
@@ -179,7 +180,7 @@
             // 
             this.labelPassword.AutoSize = true;
             this.labelPassword.BackColor = System.Drawing.Color.White;
-            this.labelPassword.Location = new System.Drawing.Point(40, 222);
+            this.labelPassword.Location = new System.Drawing.Point(18, 222);
             this.labelPassword.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.labelPassword.Name = "labelPassword";
             this.labelPassword.Size = new System.Drawing.Size(79, 16);
@@ -188,7 +189,7 @@
             // 
             // textBoxPassword
             // 
-            this.textBoxPassword.Location = new System.Drawing.Point(43, 244);
+            this.textBoxPassword.Location = new System.Drawing.Point(21, 244);
             this.textBoxPassword.Margin = new System.Windows.Forms.Padding(4);
             this.textBoxPassword.Name = "textBoxPassword";
             this.textBoxPassword.PasswordChar = '*';
@@ -200,7 +201,7 @@
             // 
             this.labelSexo.AutoSize = true;
             this.labelSexo.BackColor = System.Drawing.Color.White;
-            this.labelSexo.Location = new System.Drawing.Point(40, 389);
+            this.labelSexo.Location = new System.Drawing.Point(18, 389);
             this.labelSexo.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.labelSexo.Name = "labelSexo";
             this.labelSexo.Size = new System.Drawing.Size(41, 16);
@@ -213,7 +214,7 @@
             this.radioButtonFemenino.BackColor = System.Drawing.Color.White;
             this.radioButtonFemenino.Checked = true;
             this.radioButtonFemenino.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.radioButtonFemenino.Location = new System.Drawing.Point(43, 411);
+            this.radioButtonFemenino.Location = new System.Drawing.Point(21, 411);
             this.radioButtonFemenino.Margin = new System.Windows.Forms.Padding(4);
             this.radioButtonFemenino.Name = "radioButtonFemenino";
             this.radioButtonFemenino.Size = new System.Drawing.Size(88, 20);
@@ -227,7 +228,7 @@
             this.radioButtonMasculino.AutoSize = true;
             this.radioButtonMasculino.BackColor = System.Drawing.Color.White;
             this.radioButtonMasculino.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.radioButtonMasculino.Location = new System.Drawing.Point(195, 409);
+            this.radioButtonMasculino.Location = new System.Drawing.Point(173, 409);
             this.radioButtonMasculino.Margin = new System.Windows.Forms.Padding(4);
             this.radioButtonMasculino.Name = "radioButtonMasculino";
             this.radioButtonMasculino.Size = new System.Drawing.Size(89, 20);
@@ -239,28 +240,18 @@
             // 
             this.labelCPasword.AutoSize = true;
             this.labelCPasword.BackColor = System.Drawing.Color.White;
-            this.labelCPasword.Location = new System.Drawing.Point(40, 277);
+            this.labelCPasword.Location = new System.Drawing.Point(18, 277);
             this.labelCPasword.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.labelCPasword.Name = "labelCPasword";
             this.labelCPasword.Size = new System.Drawing.Size(139, 16);
             this.labelCPasword.TabIndex = 14;
             this.labelCPasword.Text = "Confirmar Contraseña:";
             // 
-            // textBoxCPassword
-            // 
-            this.textBoxCPassword.Location = new System.Drawing.Point(43, 299);
-            this.textBoxCPassword.Margin = new System.Windows.Forms.Padding(4);
-            this.textBoxCPassword.Name = "textBoxCPassword";
-            this.textBoxCPassword.PasswordChar = '*';
-            this.textBoxCPassword.Size = new System.Drawing.Size(132, 22);
-            this.textBoxCPassword.TabIndex = 10;
-            this.textBoxCPassword.TextChanged += new System.EventHandler(this.textBoxCPassword_TextChanged);
-            // 
             // labelEmail
             // 
             this.labelEmail.AutoSize = true;
             this.labelEmail.BackColor = System.Drawing.Color.White;
-            this.labelEmail.Location = new System.Drawing.Point(192, 167);
+            this.labelEmail.Location = new System.Drawing.Point(170, 167);
             this.labelEmail.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.labelEmail.Name = "labelEmail";
             this.labelEmail.Size = new System.Drawing.Size(44, 16);
@@ -269,7 +260,7 @@
             // 
             // textBoxEmail
             // 
-            this.textBoxEmail.Location = new System.Drawing.Point(195, 190);
+            this.textBoxEmail.Location = new System.Drawing.Point(174, 190);
             this.textBoxEmail.Margin = new System.Windows.Forms.Padding(4);
             this.textBoxEmail.Name = "textBoxEmail";
             this.textBoxEmail.Size = new System.Drawing.Size(132, 22);
@@ -280,7 +271,7 @@
             // 
             this.labelRol.AutoSize = true;
             this.labelRol.BackColor = System.Drawing.Color.White;
-            this.labelRol.Location = new System.Drawing.Point(40, 446);
+            this.labelRol.Location = new System.Drawing.Point(18, 446);
             this.labelRol.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.labelRol.Name = "labelRol";
             this.labelRol.Size = new System.Drawing.Size(34, 16);
@@ -298,7 +289,7 @@
             this.btnGuardar.IconColor = System.Drawing.Color.White;
             this.btnGuardar.IconFont = FontAwesome.Sharp.IconFont.Auto;
             this.btnGuardar.IconSize = 16;
-            this.btnGuardar.Location = new System.Drawing.Point(41, 512);
+            this.btnGuardar.Location = new System.Drawing.Point(19, 512);
             this.btnGuardar.Margin = new System.Windows.Forms.Padding(4);
             this.btnGuardar.Name = "btnGuardar";
             this.btnGuardar.Size = new System.Drawing.Size(287, 28);
@@ -320,7 +311,7 @@
             this.btnEditar.IconColor = System.Drawing.Color.White;
             this.btnEditar.IconFont = FontAwesome.Sharp.IconFont.Auto;
             this.btnEditar.IconSize = 16;
-            this.btnEditar.Location = new System.Drawing.Point(41, 548);
+            this.btnEditar.Location = new System.Drawing.Point(19, 548);
             this.btnEditar.Margin = new System.Windows.Forms.Padding(4);
             this.btnEditar.Name = "btnEditar";
             this.btnEditar.Size = new System.Drawing.Size(287, 28);
@@ -338,26 +329,27 @@
             this.btnEliminar.FlatAppearance.BorderColor = System.Drawing.Color.Black;
             this.btnEliminar.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnEliminar.ForeColor = System.Drawing.Color.White;
-            this.btnEliminar.IconChar = FontAwesome.Sharp.IconChar.TrashAlt;
+            this.btnEliminar.IconChar = FontAwesome.Sharp.IconChar.Lock;
             this.btnEliminar.IconColor = System.Drawing.Color.White;
             this.btnEliminar.IconFont = FontAwesome.Sharp.IconFont.Auto;
             this.btnEliminar.IconSize = 16;
-            this.btnEliminar.Location = new System.Drawing.Point(41, 583);
+            this.btnEliminar.Location = new System.Drawing.Point(19, 583);
             this.btnEliminar.Margin = new System.Windows.Forms.Padding(4);
             this.btnEliminar.Name = "btnEliminar";
             this.btnEliminar.Size = new System.Drawing.Size(287, 28);
             this.btnEliminar.TabIndex = 16;
-            this.btnEliminar.Text = "Eliminar";
+            this.btnEliminar.Text = "Deshabilitar usuario";
             this.btnEliminar.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
             this.btnEliminar.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
             this.btnEliminar.UseVisualStyleBackColor = false;
+            this.btnEliminar.Click += new System.EventHandler(this.btnEliminar_Click);
             // 
             // labelTitulo
             // 
             this.labelTitulo.AutoSize = true;
             this.labelTitulo.BackColor = System.Drawing.Color.White;
             this.labelTitulo.Font = new System.Drawing.Font("Microsoft Sans Serif", 20F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.labelTitulo.Location = new System.Drawing.Point(33, 4);
+            this.labelTitulo.Location = new System.Drawing.Point(11, 4);
             this.labelTitulo.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.labelTitulo.Name = "labelTitulo";
             this.labelTitulo.Size = new System.Drawing.Size(268, 39);
@@ -367,15 +359,15 @@
             // UsuariosDGV
             // 
             this.UsuariosDGV.AllowUserToAddRows = false;
-            dataGridViewCellStyle5.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
-            dataGridViewCellStyle5.BackColor = System.Drawing.SystemColors.Control;
-            dataGridViewCellStyle5.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            dataGridViewCellStyle5.ForeColor = System.Drawing.SystemColors.WindowText;
-            dataGridViewCellStyle5.Padding = new System.Windows.Forms.Padding(2);
-            dataGridViewCellStyle5.SelectionBackColor = System.Drawing.SystemColors.Highlight;
-            dataGridViewCellStyle5.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
-            dataGridViewCellStyle5.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
-            this.UsuariosDGV.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle5;
+            dataGridViewCellStyle1.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle1.BackColor = System.Drawing.SystemColors.Control;
+            dataGridViewCellStyle1.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle1.ForeColor = System.Drawing.SystemColors.WindowText;
+            dataGridViewCellStyle1.Padding = new System.Windows.Forms.Padding(2);
+            dataGridViewCellStyle1.SelectionBackColor = System.Drawing.SystemColors.Highlight;
+            dataGridViewCellStyle1.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
+            dataGridViewCellStyle1.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
+            this.UsuariosDGV.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle1;
             this.UsuariosDGV.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.UsuariosDGV.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
             this.botonSeleccionar,
@@ -391,168 +383,53 @@
             this.id_rol,
             this.rol,
             this.activo,
-            this.Estado});
-            this.UsuariosDGV.Location = new System.Drawing.Point(532, 186);
+            this.estado});
+            this.UsuariosDGV.Location = new System.Drawing.Point(370, 113);
             this.UsuariosDGV.Margin = new System.Windows.Forms.Padding(5);
             this.UsuariosDGV.MultiSelect = false;
             this.UsuariosDGV.Name = "UsuariosDGV";
             this.UsuariosDGV.ReadOnly = true;
-            dataGridViewCellStyle6.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
-            dataGridViewCellStyle6.BackColor = System.Drawing.SystemColors.Control;
-            dataGridViewCellStyle6.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            dataGridViewCellStyle6.ForeColor = System.Drawing.SystemColors.WindowText;
-            dataGridViewCellStyle6.SelectionBackColor = System.Drawing.Color.White;
-            dataGridViewCellStyle6.SelectionForeColor = System.Drawing.Color.Black;
-            dataGridViewCellStyle6.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
-            this.UsuariosDGV.RowHeadersDefaultCellStyle = dataGridViewCellStyle6;
+            dataGridViewCellStyle2.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle2.BackColor = System.Drawing.SystemColors.Control;
+            dataGridViewCellStyle2.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle2.ForeColor = System.Drawing.SystemColors.WindowText;
+            dataGridViewCellStyle2.SelectionBackColor = System.Drawing.Color.White;
+            dataGridViewCellStyle2.SelectionForeColor = System.Drawing.Color.Black;
+            dataGridViewCellStyle2.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
+            this.UsuariosDGV.RowHeadersDefaultCellStyle = dataGridViewCellStyle2;
             this.UsuariosDGV.RowHeadersWidth = 51;
             this.UsuariosDGV.RowTemplate.Height = 28;
-            this.UsuariosDGV.Size = new System.Drawing.Size(1170, 591);
+            this.UsuariosDGV.Size = new System.Drawing.Size(1170, 534);
             this.UsuariosDGV.TabIndex = 24;
             this.UsuariosDGV.CellClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.UsuariosDGV_CellClick);
+            this.UsuariosDGV.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.UsuariosDGV_CellContentClick);
             this.UsuariosDGV.CellPainting += new System.Windows.Forms.DataGridViewCellPaintingEventHandler(this.UsuariosDGV_CellPainting);
-            // 
-            // botonSeleccionar
-            // 
-            this.botonSeleccionar.HeaderText = "";
-            this.botonSeleccionar.MinimumWidth = 6;
-            this.botonSeleccionar.Name = "botonSeleccionar";
-            this.botonSeleccionar.ReadOnly = true;
-            this.botonSeleccionar.Width = 30;
-            // 
-            // id_usuario
-            // 
-            this.id_usuario.HeaderText = "id_usuario";
-            this.id_usuario.MinimumWidth = 6;
-            this.id_usuario.Name = "id_usuario";
-            this.id_usuario.ReadOnly = true;
-            this.id_usuario.Visible = false;
-            this.id_usuario.Width = 125;
-            // 
-            // dni
-            // 
-            this.dni.HeaderText = "Nro Documento";
-            this.dni.MinimumWidth = 6;
-            this.dni.Name = "dni";
-            this.dni.ReadOnly = true;
-            this.dni.Width = 170;
-            // 
-            // apellido
-            // 
-            this.apellido.HeaderText = "Apellido";
-            this.apellido.MinimumWidth = 6;
-            this.apellido.Name = "apellido";
-            this.apellido.ReadOnly = true;
-            this.apellido.Width = 125;
-            // 
-            // nombre
-            // 
-            this.nombre.HeaderText = "Nombre";
-            this.nombre.MinimumWidth = 6;
-            this.nombre.Name = "nombre";
-            this.nombre.ReadOnly = true;
-            this.nombre.Width = 170;
-            // 
-            // email
-            // 
-            this.email.HeaderText = "Correo";
-            this.email.MinimumWidth = 6;
-            this.email.Name = "email";
-            this.email.ReadOnly = true;
-            this.email.Width = 125;
-            // 
-            // fecha_nacimiento
-            // 
-            this.fecha_nacimiento.HeaderText = "Fecha de Nacimiento";
-            this.fecha_nacimiento.MinimumWidth = 6;
-            this.fecha_nacimiento.Name = "fecha_nacimiento";
-            this.fecha_nacimiento.ReadOnly = true;
-            this.fecha_nacimiento.Width = 125;
-            // 
-            // sexo
-            // 
-            this.sexo.HeaderText = "Sexo";
-            this.sexo.MinimumWidth = 6;
-            this.sexo.Name = "sexo";
-            this.sexo.ReadOnly = true;
-            this.sexo.Width = 125;
-            // 
-            // usuario
-            // 
-            this.usuario.HeaderText = "usuario";
-            this.usuario.MinimumWidth = 6;
-            this.usuario.Name = "usuario";
-            this.usuario.ReadOnly = true;
-            this.usuario.Visible = false;
-            this.usuario.Width = 125;
-            // 
-            // hash_password
-            // 
-            this.hash_password.HeaderText = "hash_password";
-            this.hash_password.MinimumWidth = 6;
-            this.hash_password.Name = "hash_password";
-            this.hash_password.ReadOnly = true;
-            this.hash_password.Visible = false;
-            this.hash_password.Width = 125;
-            // 
-            // id_rol
-            // 
-            this.id_rol.HeaderText = "id_rol";
-            this.id_rol.MinimumWidth = 6;
-            this.id_rol.Name = "id_rol";
-            this.id_rol.ReadOnly = true;
-            this.id_rol.Visible = false;
-            this.id_rol.Width = 125;
-            // 
-            // rol
-            // 
-            this.rol.HeaderText = "rol";
-            this.rol.MinimumWidth = 6;
-            this.rol.Name = "rol";
-            this.rol.ReadOnly = true;
-            this.rol.Width = 125;
-            // 
-            // activo
-            // 
-            this.activo.HeaderText = "activo";
-            this.activo.MinimumWidth = 6;
-            this.activo.Name = "activo";
-            this.activo.ReadOnly = true;
-            this.activo.Visible = false;
-            this.activo.Width = 125;
-            // 
-            // Estado
-            // 
-            this.Estado.HeaderText = "Estado";
-            this.Estado.MinimumWidth = 6;
-            this.Estado.Name = "Estado";
-            this.Estado.ReadOnly = true;
-            this.Estado.Width = 125;
             // 
             // labelListaUsuarios
             // 
             this.labelListaUsuarios.BackColor = System.Drawing.Color.White;
             this.labelListaUsuarios.Font = new System.Drawing.Font("Microsoft Sans Serif", 16F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.labelListaUsuarios.Location = new System.Drawing.Point(600, 37);
+            this.labelListaUsuarios.Location = new System.Drawing.Point(370, 23);
             this.labelListaUsuarios.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.labelListaUsuarios.Name = "labelListaUsuarios";
-            this.labelListaUsuarios.Size = new System.Drawing.Size(1036, 62);
+            this.labelListaUsuarios.Size = new System.Drawing.Size(1170, 62);
             this.labelListaUsuarios.TabIndex = 25;
             this.labelListaUsuarios.Text = "Lista de Usuarios:";
             this.labelListaUsuarios.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
             // 
             // textBoxID
             // 
-            this.textBoxID.Location = new System.Drawing.Point(285, 50);
+            this.textBoxID.Location = new System.Drawing.Point(263, 50);
             this.textBoxID.Margin = new System.Windows.Forms.Padding(4);
             this.textBoxID.Name = "textBoxID";
             this.textBoxID.Size = new System.Drawing.Size(41, 22);
             this.textBoxID.TabIndex = 15;
             this.textBoxID.Text = "0";
+            this.textBoxID.Visible = false;
             // 
             // dateTimeNacimiento
             // 
-            this.dateTimeNacimiento.Location = new System.Drawing.Point(43, 356);
+            this.dateTimeNacimiento.Location = new System.Drawing.Point(21, 356);
             this.dateTimeNacimiento.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.dateTimeNacimiento.MaxDate = new System.DateTime(2025, 9, 20, 0, 0, 0, 0);
             this.dateTimeNacimiento.MinDate = new System.DateTime(1900, 1, 1, 0, 0, 0, 0);
@@ -566,7 +443,7 @@
             // 
             this.labelFecha.AutoSize = true;
             this.labelFecha.BackColor = System.Drawing.Color.White;
-            this.labelFecha.Location = new System.Drawing.Point(41, 334);
+            this.labelFecha.Location = new System.Drawing.Point(19, 334);
             this.labelFecha.Name = "labelFecha";
             this.labelFecha.Size = new System.Drawing.Size(138, 16);
             this.labelFecha.TabIndex = 27;
@@ -576,7 +453,7 @@
             // 
             this.labelEstado.AutoSize = true;
             this.labelEstado.BackColor = System.Drawing.Color.White;
-            this.labelEstado.Location = new System.Drawing.Point(192, 446);
+            this.labelEstado.Location = new System.Drawing.Point(170, 446);
             this.labelEstado.Name = "labelEstado";
             this.labelEstado.Size = new System.Drawing.Size(119, 16);
             this.labelEstado.TabIndex = 28;
@@ -588,7 +465,7 @@
             this.comboBoxEstado.Cursor = System.Windows.Forms.Cursors.Hand;
             this.comboBoxEstado.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.comboBoxEstado.FormattingEnabled = true;
-            this.comboBoxEstado.Location = new System.Drawing.Point(195, 468);
+            this.comboBoxEstado.Location = new System.Drawing.Point(173, 468);
             this.comboBoxEstado.Margin = new System.Windows.Forms.Padding(4);
             this.comboBoxEstado.Name = "comboBoxEstado";
             this.comboBoxEstado.Size = new System.Drawing.Size(132, 24);
@@ -601,10 +478,10 @@
             this.comboBoxRoles.Cursor = System.Windows.Forms.Cursors.Hand;
             this.comboBoxRoles.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.comboBoxRoles.FormattingEnabled = true;
-            this.comboBoxRoles.Location = new System.Drawing.Point(40, 468);
+            this.comboBoxRoles.Location = new System.Drawing.Point(18, 468);
             this.comboBoxRoles.Margin = new System.Windows.Forms.Padding(4);
             this.comboBoxRoles.Name = "comboBoxRoles";
-            this.comboBoxRoles.Size = new System.Drawing.Size(132, 24);
+            this.comboBoxRoles.Size = new System.Drawing.Size(135, 24);
             this.comboBoxRoles.TabIndex = 30;
             this.comboBoxRoles.SelectedIndexChanged += new System.EventHandler(this.comboBoxRoles_SelectedIndexChanged);
             // 
@@ -612,7 +489,7 @@
             // 
             this.labelBuscar.AutoSize = true;
             this.labelBuscar.BackColor = System.Drawing.Color.White;
-            this.labelBuscar.Location = new System.Drawing.Point(909, 59);
+            this.labelBuscar.Location = new System.Drawing.Point(891, 49);
             this.labelBuscar.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.labelBuscar.Name = "labelBuscar";
             this.labelBuscar.Size = new System.Drawing.Size(76, 16);
@@ -626,16 +503,16 @@
             this.comboBoxBusqueda.Cursor = System.Windows.Forms.Cursors.Hand;
             this.comboBoxBusqueda.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.comboBoxBusqueda.FormattingEnabled = true;
-            this.comboBoxBusqueda.Location = new System.Drawing.Point(993, 53);
+            this.comboBoxBusqueda.Location = new System.Drawing.Point(1003, 46);
             this.comboBoxBusqueda.Margin = new System.Windows.Forms.Padding(4);
             this.comboBoxBusqueda.Name = "comboBoxBusqueda";
-            this.comboBoxBusqueda.Size = new System.Drawing.Size(132, 24);
+            this.comboBoxBusqueda.Size = new System.Drawing.Size(165, 24);
             this.comboBoxBusqueda.TabIndex = 32;
             this.comboBoxBusqueda.SelectedIndexChanged += new System.EventHandler(this.comboBoxBusqueda_SelectedIndexChanged);
             // 
             // textBoxBusqueda
             // 
-            this.textBoxBusqueda.Location = new System.Drawing.Point(1133, 53);
+            this.textBoxBusqueda.Location = new System.Drawing.Point(1176, 46);
             this.textBoxBusqueda.Margin = new System.Windows.Forms.Padding(4);
             this.textBoxBusqueda.Name = "textBoxBusqueda";
             this.textBoxBusqueda.Size = new System.Drawing.Size(209, 22);
@@ -652,7 +529,7 @@
             this.iconButtonLimpiar.IconColor = System.Drawing.Color.Black;
             this.iconButtonLimpiar.IconFont = FontAwesome.Sharp.IconFont.Auto;
             this.iconButtonLimpiar.IconSize = 18;
-            this.iconButtonLimpiar.Location = new System.Drawing.Point(1405, 53);
+            this.iconButtonLimpiar.Location = new System.Drawing.Point(1448, 46);
             this.iconButtonLimpiar.Margin = new System.Windows.Forms.Padding(4);
             this.iconButtonLimpiar.Name = "iconButtonLimpiar";
             this.iconButtonLimpiar.Size = new System.Drawing.Size(45, 22);
@@ -672,28 +549,180 @@
             this.iconButtonBuscar.IconColor = System.Drawing.Color.Black;
             this.iconButtonBuscar.IconFont = FontAwesome.Sharp.IconFont.Auto;
             this.iconButtonBuscar.IconSize = 16;
-            this.iconButtonBuscar.Location = new System.Drawing.Point(1352, 53);
+            this.iconButtonBuscar.Location = new System.Drawing.Point(1395, 46);
             this.iconButtonBuscar.Margin = new System.Windows.Forms.Padding(4);
             this.iconButtonBuscar.Name = "iconButtonBuscar";
             this.iconButtonBuscar.Size = new System.Drawing.Size(45, 22);
             this.iconButtonBuscar.TabIndex = 35;
             this.iconButtonBuscar.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
             this.iconButtonBuscar.UseVisualStyleBackColor = false;
+            this.iconButtonBuscar.Click += new System.EventHandler(this.iconButtonBuscar_Click);
             // 
             // textBoxIndice
             // 
-            this.textBoxIndice.Location = new System.Drawing.Point(236, 50);
+            this.textBoxIndice.Location = new System.Drawing.Point(214, 50);
             this.textBoxIndice.Margin = new System.Windows.Forms.Padding(4);
             this.textBoxIndice.Name = "textBoxIndice";
             this.textBoxIndice.Size = new System.Drawing.Size(41, 22);
             this.textBoxIndice.TabIndex = 36;
+            this.textBoxIndice.Visible = false;
+            // 
+            // iconButtonHabilitar
+            // 
+            this.iconButtonHabilitar.BackColor = System.Drawing.Color.RoyalBlue;
+            this.iconButtonHabilitar.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.iconButtonHabilitar.FlatAppearance.BorderColor = System.Drawing.Color.Black;
+            this.iconButtonHabilitar.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.iconButtonHabilitar.ForeColor = System.Drawing.Color.White;
+            this.iconButtonHabilitar.IconChar = FontAwesome.Sharp.IconChar.Unlock;
+            this.iconButtonHabilitar.IconColor = System.Drawing.Color.White;
+            this.iconButtonHabilitar.IconFont = FontAwesome.Sharp.IconFont.Auto;
+            this.iconButtonHabilitar.IconSize = 16;
+            this.iconButtonHabilitar.Location = new System.Drawing.Point(17, 619);
+            this.iconButtonHabilitar.Margin = new System.Windows.Forms.Padding(4);
+            this.iconButtonHabilitar.Name = "iconButtonHabilitar";
+            this.iconButtonHabilitar.Size = new System.Drawing.Size(287, 28);
+            this.iconButtonHabilitar.TabIndex = 37;
+            this.iconButtonHabilitar.Text = "Habilitar usuario";
+            this.iconButtonHabilitar.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
+            this.iconButtonHabilitar.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
+            this.iconButtonHabilitar.UseVisualStyleBackColor = false;
+            this.iconButtonHabilitar.Click += new System.EventHandler(this.iconButtonHabilitar_Click);
+            // 
+            // textBoxCPassword
+            // 
+            this.textBoxCPassword.Location = new System.Drawing.Point(21, 299);
+            this.textBoxCPassword.Margin = new System.Windows.Forms.Padding(4);
+            this.textBoxCPassword.Name = "textBoxCPassword";
+            this.textBoxCPassword.PasswordChar = '*';
+            this.textBoxCPassword.Size = new System.Drawing.Size(132, 22);
+            this.textBoxCPassword.TabIndex = 10;
+            this.textBoxCPassword.TextChanged += new System.EventHandler(this.textBoxCPassword_TextChanged);
+            // 
+            // estado
+            // 
+            this.estado.HeaderText = "Estado";
+            this.estado.MinimumWidth = 6;
+            this.estado.Name = "estado";
+            this.estado.ReadOnly = true;
+            this.estado.Width = 125;
+            // 
+            // activo
+            // 
+            this.activo.HeaderText = "activo";
+            this.activo.MinimumWidth = 6;
+            this.activo.Name = "activo";
+            this.activo.ReadOnly = true;
+            this.activo.Visible = false;
+            this.activo.Width = 125;
+            // 
+            // rol
+            // 
+            this.rol.HeaderText = "Rol";
+            this.rol.MinimumWidth = 6;
+            this.rol.Name = "rol";
+            this.rol.ReadOnly = true;
+            this.rol.Width = 125;
+            // 
+            // id_rol
+            // 
+            this.id_rol.HeaderText = "id_rol";
+            this.id_rol.MinimumWidth = 6;
+            this.id_rol.Name = "id_rol";
+            this.id_rol.ReadOnly = true;
+            this.id_rol.Visible = false;
+            this.id_rol.Width = 125;
+            // 
+            // hash_password
+            // 
+            this.hash_password.HeaderText = "hash_password";
+            this.hash_password.MinimumWidth = 6;
+            this.hash_password.Name = "hash_password";
+            this.hash_password.ReadOnly = true;
+            this.hash_password.Visible = false;
+            this.hash_password.Width = 125;
+            // 
+            // usuario
+            // 
+            this.usuario.HeaderText = "usuario";
+            this.usuario.MinimumWidth = 6;
+            this.usuario.Name = "usuario";
+            this.usuario.ReadOnly = true;
+            this.usuario.Visible = false;
+            this.usuario.Width = 125;
+            // 
+            // sexo
+            // 
+            this.sexo.HeaderText = "Sexo";
+            this.sexo.MinimumWidth = 6;
+            this.sexo.Name = "sexo";
+            this.sexo.ReadOnly = true;
+            this.sexo.Width = 125;
+            // 
+            // fecha_nacimiento
+            // 
+            this.fecha_nacimiento.HeaderText = "Fecha de Nacimiento";
+            this.fecha_nacimiento.MinimumWidth = 6;
+            this.fecha_nacimiento.Name = "fecha_nacimiento";
+            this.fecha_nacimiento.ReadOnly = true;
+            this.fecha_nacimiento.Width = 125;
+            // 
+            // email
+            // 
+            this.email.HeaderText = "Correo";
+            this.email.MinimumWidth = 6;
+            this.email.Name = "email";
+            this.email.ReadOnly = true;
+            this.email.Width = 125;
+            // 
+            // nombre
+            // 
+            this.nombre.HeaderText = "Nombre";
+            this.nombre.MinimumWidth = 6;
+            this.nombre.Name = "nombre";
+            this.nombre.ReadOnly = true;
+            this.nombre.Width = 170;
+            // 
+            // apellido
+            // 
+            this.apellido.HeaderText = "Apellido";
+            this.apellido.MinimumWidth = 6;
+            this.apellido.Name = "apellido";
+            this.apellido.ReadOnly = true;
+            this.apellido.Width = 125;
+            // 
+            // dni
+            // 
+            this.dni.HeaderText = "Nro Documento";
+            this.dni.MinimumWidth = 6;
+            this.dni.Name = "dni";
+            this.dni.ReadOnly = true;
+            this.dni.Width = 170;
+            // 
+            // id_usuario
+            // 
+            this.id_usuario.HeaderText = "id_usuario";
+            this.id_usuario.MinimumWidth = 6;
+            this.id_usuario.Name = "id_usuario";
+            this.id_usuario.ReadOnly = true;
+            this.id_usuario.Visible = false;
+            this.id_usuario.Width = 125;
+            // 
+            // botonSeleccionar
+            // 
+            this.botonSeleccionar.HeaderText = "";
+            this.botonSeleccionar.MinimumWidth = 6;
+            this.botonSeleccionar.Name = "botonSeleccionar";
+            this.botonSeleccionar.ReadOnly = true;
+            this.botonSeleccionar.Width = 30;
             // 
             // frmUsuarios
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.DarkRed;
-            this.ClientSize = new System.Drawing.Size(1924, 793);
+            this.ClientSize = new System.Drawing.Size(1579, 669);
+            this.Controls.Add(this.iconButtonHabilitar);
             this.Controls.Add(this.textBoxIndice);
             this.Controls.Add(this.iconButtonLimpiar);
             this.Controls.Add(this.iconButtonBuscar);
@@ -758,7 +787,6 @@
         private System.Windows.Forms.RadioButton radioButtonFemenino;
         private System.Windows.Forms.RadioButton radioButtonMasculino;
         private System.Windows.Forms.Label labelCPasword;
-        private System.Windows.Forms.TextBox textBoxCPassword;
         private System.Windows.Forms.Label labelEmail;
         private System.Windows.Forms.TextBox textBoxEmail;
         private System.Windows.Forms.Label labelRol;
@@ -780,6 +808,9 @@
         private System.Windows.Forms.TextBox textBoxBusqueda;
         private FontAwesome.Sharp.IconButton iconButtonLimpiar;
         private FontAwesome.Sharp.IconButton iconButtonBuscar;
+        private System.Windows.Forms.TextBox textBoxIndice;
+        private FontAwesome.Sharp.IconButton iconButtonHabilitar;
+        private System.Windows.Forms.TextBox textBoxCPassword;
         private System.Windows.Forms.DataGridViewTextBoxColumn botonSeleccionar;
         private System.Windows.Forms.DataGridViewTextBoxColumn id_usuario;
         private System.Windows.Forms.DataGridViewTextBoxColumn dni;
@@ -793,7 +824,6 @@
         private System.Windows.Forms.DataGridViewTextBoxColumn id_rol;
         private System.Windows.Forms.DataGridViewTextBoxColumn rol;
         private System.Windows.Forms.DataGridViewTextBoxColumn activo;
-        private System.Windows.Forms.DataGridViewTextBoxColumn Estado;
-        private System.Windows.Forms.TextBox textBoxIndice;
+        private System.Windows.Forms.DataGridViewTextBoxColumn estado;
     }
 }

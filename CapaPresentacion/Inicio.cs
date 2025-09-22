@@ -87,6 +87,15 @@ namespace CapaPresentacion
             }
 
             lbusuario.Text = usuarioActual.usuario;
+
+            IconMenuItem primerMenu = menuStrip1.Items
+                                                .OfType<IconMenuItem>()
+                                                .FirstOrDefault(m => m.Visible);
+
+            if (primerMenu != null)
+            {
+                primerMenu.PerformClick();
+            }
         }
 
         private void menuReportes_Click(object sender, EventArgs e)

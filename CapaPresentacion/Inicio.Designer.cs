@@ -46,6 +46,7 @@
             // 
             // menuStrip1
             // 
+            this.menuStrip1.ImageScalingSize = new System.Drawing.Size(20, 20);
             this.menuStrip1.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
             this.menuUsuarios,
             this.menuVentas,
@@ -54,9 +55,9 @@
             this.menuReportes,
             this.menuBackUp,
             this.menuSalir});
-            this.menuStrip1.Location = new System.Drawing.Point(0, 48);
+            this.menuStrip1.Location = new System.Drawing.Point(0, 59);
             this.menuStrip1.Name = "menuStrip1";
-            this.menuStrip1.Size = new System.Drawing.Size(1084, 73);
+            this.menuStrip1.Size = new System.Drawing.Size(1577, 73);
             this.menuStrip1.TabIndex = 0;
             this.menuStrip1.Text = "menuStrip1";
             // 
@@ -69,7 +70,7 @@
             this.menuUsuarios.IconSize = 50;
             this.menuUsuarios.ImageScaling = System.Windows.Forms.ToolStripItemImageScaling.None;
             this.menuUsuarios.Name = "menuUsuarios";
-            this.menuUsuarios.Size = new System.Drawing.Size(64, 69);
+            this.menuUsuarios.Size = new System.Drawing.Size(100, 69);
             this.menuUsuarios.Text = "Usuarios";
             this.menuUsuarios.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageAboveText;
             this.menuUsuarios.Click += new System.EventHandler(this.menuUsuarios_Click);
@@ -83,7 +84,7 @@
             this.menuVentas.IconSize = 50;
             this.menuVentas.ImageScaling = System.Windows.Forms.ToolStripItemImageScaling.None;
             this.menuVentas.Name = "menuVentas";
-            this.menuVentas.Size = new System.Drawing.Size(80, 69);
+            this.menuVentas.Size = new System.Drawing.Size(100, 69);
             this.menuVentas.Text = "Ventas";
             this.menuVentas.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageAboveText;
             this.menuVentas.Click += new System.EventHandler(this.menuVentas_Click);
@@ -97,7 +98,7 @@
             this.menuClientes.IconSize = 50;
             this.menuClientes.ImageScaling = System.Windows.Forms.ToolStripItemImageScaling.None;
             this.menuClientes.Name = "menuClientes";
-            this.menuClientes.Size = new System.Drawing.Size(80, 69);
+            this.menuClientes.Size = new System.Drawing.Size(100, 69);
             this.menuClientes.Text = "Clientes";
             this.menuClientes.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageAboveText;
             this.menuClientes.Click += new System.EventHandler(this.menuClientes_Click);
@@ -111,7 +112,7 @@
             this.menuProductos.IconSize = 50;
             this.menuProductos.ImageScaling = System.Windows.Forms.ToolStripItemImageScaling.None;
             this.menuProductos.Name = "menuProductos";
-            this.menuProductos.Size = new System.Drawing.Size(80, 69);
+            this.menuProductos.Size = new System.Drawing.Size(100, 69);
             this.menuProductos.Text = "Productos";
             this.menuProductos.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageAboveText;
             this.menuProductos.Click += new System.EventHandler(this.menuProductos_Click);
@@ -125,7 +126,7 @@
             this.menuReportes.IconSize = 50;
             this.menuReportes.ImageScaling = System.Windows.Forms.ToolStripItemImageScaling.None;
             this.menuReportes.Name = "menuReportes";
-            this.menuReportes.Size = new System.Drawing.Size(80, 69);
+            this.menuReportes.Size = new System.Drawing.Size(100, 69);
             this.menuReportes.Text = "Reportes";
             this.menuReportes.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageAboveText;
             this.menuReportes.Click += new System.EventHandler(this.menuReportes_Click);
@@ -139,7 +140,7 @@
             this.menuBackUp.IconSize = 50;
             this.menuBackUp.ImageScaling = System.Windows.Forms.ToolStripItemImageScaling.None;
             this.menuBackUp.Name = "menuBackUp";
-            this.menuBackUp.Size = new System.Drawing.Size(80, 69);
+            this.menuBackUp.Size = new System.Drawing.Size(100, 69);
             this.menuBackUp.Text = "Back Up";
             this.menuBackUp.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageAboveText;
             this.menuBackUp.Click += new System.EventHandler(this.menuBackUp_Click);
@@ -153,7 +154,7 @@
             this.menuSalir.IconSize = 50;
             this.menuSalir.ImageScaling = System.Windows.Forms.ToolStripItemImageScaling.None;
             this.menuSalir.Name = "menuSalir";
-            this.menuSalir.Size = new System.Drawing.Size(80, 69);
+            this.menuSalir.Size = new System.Drawing.Size(100, 69);
             this.menuSalir.Text = "Salir";
             this.menuSalir.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageAboveText;
             this.menuSalir.Click += new System.EventHandler(this.menuSalir_Click);
@@ -162,10 +163,11 @@
             // 
             this.menu.AutoSize = false;
             this.menu.BackColor = System.Drawing.Color.DarkRed;
+            this.menu.ImageScalingSize = new System.Drawing.Size(20, 20);
             this.menu.Location = new System.Drawing.Point(0, 0);
             this.menu.Name = "menu";
             this.menu.RightToLeft = System.Windows.Forms.RightToLeft.Yes;
-            this.menu.Size = new System.Drawing.Size(1084, 48);
+            this.menu.Size = new System.Drawing.Size(1577, 59);
             this.menu.TabIndex = 1;
             this.menu.Text = "menuStrip2";
             // 
@@ -175,18 +177,20 @@
             this.titulo.BackColor = System.Drawing.Color.DarkRed;
             this.titulo.Font = new System.Drawing.Font("Microsoft Sans Serif", 20F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.titulo.ForeColor = System.Drawing.Color.White;
-            this.titulo.Location = new System.Drawing.Point(12, 9);
+            this.titulo.Location = new System.Drawing.Point(16, 11);
+            this.titulo.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.titulo.Name = "titulo";
-            this.titulo.Size = new System.Drawing.Size(237, 31);
+            this.titulo.Size = new System.Drawing.Size(296, 39);
             this.titulo.TabIndex = 3;
             this.titulo.Text = "Sistema de ventas";
             // 
             // contenedor
             // 
             this.contenedor.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.contenedor.Location = new System.Drawing.Point(0, 121);
+            this.contenedor.Location = new System.Drawing.Point(0, 132);
+            this.contenedor.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.contenedor.Name = "contenedor";
-            this.contenedor.Size = new System.Drawing.Size(1084, 440);
+            this.contenedor.Size = new System.Drawing.Size(1577, 694);
             this.contenedor.TabIndex = 4;
             this.contenedor.Paint += new System.Windows.Forms.PaintEventHandler(this.contenedor_Paint);
             // 
@@ -196,9 +200,10 @@
             this.label1.BackColor = System.Drawing.Color.DarkRed;
             this.label1.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label1.ForeColor = System.Drawing.Color.White;
-            this.label1.Location = new System.Drawing.Point(601, 22);
+            this.label1.Location = new System.Drawing.Point(1333, 27);
+            this.label1.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(53, 15);
+            this.label1.Size = new System.Drawing.Size(64, 18);
             this.label1.TabIndex = 5;
             this.label1.Text = "Usuario:";
             this.label1.Click += new System.EventHandler(this.label1_Click);
@@ -209,18 +214,20 @@
             this.lbusuario.BackColor = System.Drawing.Color.DarkRed;
             this.lbusuario.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lbusuario.ForeColor = System.Drawing.Color.White;
-            this.lbusuario.Location = new System.Drawing.Point(651, 22);
+            this.lbusuario.Location = new System.Drawing.Point(1400, 27);
+            this.lbusuario.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.lbusuario.Name = "lbusuario";
-            this.lbusuario.Size = new System.Drawing.Size(58, 15);
+            this.lbusuario.Size = new System.Drawing.Size(68, 18);
             this.lbusuario.TabIndex = 6;
             this.lbusuario.Text = "lbusuario";
             this.lbusuario.Click += new System.EventHandler(this.lbusuario_Click);
             // 
             // Inicio
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(1084, 561);
+            this.BackColor = System.Drawing.Color.DarkRed;
+            this.ClientSize = new System.Drawing.Size(1577, 826);
             this.Controls.Add(this.lbusuario);
             this.Controls.Add(this.label1);
             this.Controls.Add(this.contenedor);
@@ -228,9 +235,10 @@
             this.Controls.Add(this.menuStrip1);
             this.Controls.Add(this.menu);
             this.MainMenuStrip = this.menuStrip1;
+            this.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.Name = "Inicio";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
-            this.Text = "Form1";
+            this.Text = "Inicio";
             this.Load += new System.EventHandler(this.Inicio_Load);
             this.menuStrip1.ResumeLayout(false);
             this.menuStrip1.PerformLayout();

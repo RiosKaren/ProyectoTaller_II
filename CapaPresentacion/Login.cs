@@ -32,15 +32,24 @@ namespace CapaPresentacion
 
         private void iconButtonIngresar_Click(object sender, EventArgs e)
         {
-            List<Usuarios> TEST = new CN_Usuario().Listar();
-
-            Usuarios ousuario = new CN_Usuario().Listar().Where(u => u.usuario == textBoxUser.Text
-                                                                && u.hash_password == textBoxPassword.Text).FirstOrDefault();
+            // Buscamos el usuario
+            Usuarios ousuario = new CN_Usuario().Listar()
+                .Where(u => u.usuario == textBoxUser.Text
+                         && u.hash_password == textBoxPassword.Text)
+                .FirstOrDefault();
 
             if (ousuario != null)
             {
-                Inicio form = new Inicio(ousuario);
+                // 👇 Validamos si está activo
+                if (!ousuario.activo)
+                {
+                    MessageBox.Show("Usuario deshabilitado. Comuniquese con el administrador.",
+                                    "Acceso denegado", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                    return; // salimos y no abre Inicio
+                }
 
+                // si está activo, abrimos el sistema
+                Inicio form = new Inicio(ousuario);
                 form.Show();
                 this.Hide();
 
@@ -48,10 +57,9 @@ namespace CapaPresentacion
             }
             else
             {
-                MessageBox.Show("No se encontró el usuario.", "Mensaje", MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
+                MessageBox.Show("Usuario o contraseña incorrectos.",
+                                "Mensaje", MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
             }
-
-
         }
 
         private void frm_closing(object sender, FormClosingEventArgs e)
@@ -68,6 +76,11 @@ namespace CapaPresentacion
         }
 
         private void textBoxUser_TextChanged(object sender, EventArgs e)
+        {
+
+        }
+
+        private void Login_Load_1(object sender, EventArgs e)
         {
 
         }

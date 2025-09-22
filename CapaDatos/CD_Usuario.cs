@@ -44,8 +44,7 @@ namespace CapaDatos
                                 sexo = Convert.ToBoolean(dr["sexo"]),
                                 hash_password = dr["hash_password"].ToString(),
                                 activo = Convert.ToBoolean(dr["activo"]),
-                                id_rol = new Roles() { id_rol = Convert.ToInt32(dr["id_rol"]), 
-                                nombre = dr["nombre"].ToString()}
+                                id_rol = new Roles() { id_rol = Convert.ToInt32(dr["id_rol"]), nombre = dr["nombre"].ToString()}
                             });
                         }
                     }
@@ -152,7 +151,7 @@ namespace CapaDatos
             return respuesta;
         }
 
-        public bool Eliminar(Usuarios obj, out string Mensaje)
+        public bool Baja(Usuarios obj, out string Mensaje)
         {
             bool respuesta = false;
             Mensaje = string.Empty;
@@ -161,20 +160,18 @@ namespace CapaDatos
             {
                 using (SqlConnection oconexion = new SqlConnection(Conexion.cadena))
                 {
-                    SqlCommand cmd = new SqlCommand("SP_ELIMINARUSUARIO", oconexion);
+                    SqlCommand cmd = new SqlCommand("SP_BAJAUSUARIO", oconexion);
                     cmd.Parameters.AddWithValue("id_usuario", obj.id_usuario);
-                    cmd.Parameters.Add("Respuesta", SqlDbType.Int).Direction = ParameterDirection.Output;
-                    cmd.Parameters.Add("Mensaje", SqlDbType.VarChar,500).Direction = ParameterDirection.Output;
+                    cmd.Parameters.Add("Respuesta", SqlDbType.Bit).Direction = ParameterDirection.Output;
+                    cmd.Parameters.Add("Mensaje", SqlDbType.VarChar, 500).Direction = ParameterDirection.Output;
 
                     cmd.CommandType = CommandType.StoredProcedure;
 
                     oconexion.Open();
-
                     cmd.ExecuteNonQuery();
 
                     respuesta = Convert.ToBoolean(cmd.Parameters["Respuesta"].Value);
                     Mensaje = cmd.Parameters["Mensaje"].Value.ToString();
-
                 }
             }
             catch (Exception ex)
@@ -183,9 +180,41 @@ namespace CapaDatos
                 Mensaje = ex.Message;
             }
 
+            return respuesta;
+        }
+
+        public bool Habilitar(Usuarios obj, out string Mensaje)
+        {
+            bool respuesta = false;
+            Mensaje = string.Empty;
+
+            try
+            {
+                using (SqlConnection oconexion = new SqlConnection(Conexion.cadena))
+                {
+                    SqlCommand cmd = new SqlCommand("SP_HABILITARUSUARIO", oconexion);
+                    cmd.Parameters.AddWithValue("id_usuario", obj.id_usuario);
+                    cmd.Parameters.Add("Respuesta", SqlDbType.Bit).Direction = ParameterDirection.Output;
+                    cmd.Parameters.Add("Mensaje", SqlDbType.VarChar, 500).Direction = ParameterDirection.Output;
+
+                    cmd.CommandType = CommandType.StoredProcedure;
+
+                    oconexion.Open();
+                    cmd.ExecuteNonQuery();
+
+                    respuesta = Convert.ToBoolean(cmd.Parameters["Respuesta"].Value);
+                    Mensaje = cmd.Parameters["Mensaje"].Value.ToString();
+                }
+            }
+            catch (Exception ex)
+            {
+                respuesta = false;
+                Mensaje = ex.Message;
+            }
 
             return respuesta;
         }
+
 
     }
 }

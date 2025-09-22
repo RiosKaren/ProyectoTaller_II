@@ -9,6 +9,7 @@ namespace CapaEntidad
     public class Clientes
     {
         public int id_cliente { get; set; }
+        public int dni { get; set; }
         public string nombre { get; set; }
         public string apellido { get; set; }
         public string email { get; set; }

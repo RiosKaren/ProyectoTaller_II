@@ -44,9 +44,13 @@ namespace CapaPresentacion
 
             foreach (DataGridViewColumn columna in UsuariosDGV.Columns)
             {
-                if(columna.Visible == true && columna.Name != "botonSeleccionar")
+                if (columna.Visible == true
+                    && columna.Name != "botonSeleccionar"
+                    && !columna.Name.Equals("estado", StringComparison.OrdinalIgnoreCase))
                 {
-                    comboBoxBusqueda.Items.Add(new OpcionCombo() { Valor = columna.Name, Texto = columna.HeaderText });
+                    comboBoxBusqueda.Items.Add(
+                        new OpcionCombo() { Valor = columna.Name, Texto = columna.HeaderText }
+                    );
                 }
             }
 
@@ -74,18 +78,50 @@ namespace CapaPresentacion
                     default: rol = "DESCONOCIDO"; break;
                 }
 
-                UsuariosDGV.Rows.Add(new object[] {"", item.id_usuario,item.dni, item.nombre, item.apellido,
+                UsuariosDGV.Rows.Add(new object[] {"", item.id_usuario,item.dni, item.apellido, item.nombre,
                                 item.email, fecha,
                                 sexo, item.usuario, item.hash_password,
-                                item.id_rol.id_rol, rol, item.activo, estado,
+                                item.id_rol.id_rol, rol, item.activo, estado
                                 });
 
             }
         }
 
+        private bool ValidarCampos()
+        {
+            if (string.IsNullOrWhiteSpace(textBoxDNI.Text) ||
+                string.IsNullOrWhiteSpace(textBoxNombre.Text) ||
+                string.IsNullOrWhiteSpace(textBoxApellido.Text) ||
+                string.IsNullOrWhiteSpace(textBoxEmail.Text) ||
+                string.IsNullOrWhiteSpace(textBoxUser.Text) ||
+                string.IsNullOrWhiteSpace(textBoxPassword.Text) ||
+                string.IsNullOrWhiteSpace(textBoxCPassword.Text) ||
+                comboBoxRoles.SelectedIndex == -1 ||
+                comboBoxEstado.SelectedIndex == -1)
+            {
+                MessageBox.Show("Por favor complete todos los campos obligatorios.",
+                                "Advertencia", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                return false;
+            }
+
+            // Ejemplo: validación de coincidencia de contraseñas
+            if (textBoxPassword.Text != textBoxCPassword.Text)
+            {
+                MessageBox.Show("Las contraseñas no coinciden.",
+                                "Advertencia", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                return false;
+            }
+
+            return true;
+        }
+
         private void btnGuardar_Click_1(object sender, EventArgs e)
         {
+            if (!ValidarCampos())
+                return; //si no pasa validación, no sigue guarda
+
             string mensaje = string.Empty;
+
 
             Usuarios objusuario = new Usuarios()
             {
@@ -188,6 +224,8 @@ namespace CapaPresentacion
             comboBoxEstado.SelectedIndex = 0;
 
             comboBoxRoles.SelectedIndex = -1;
+
+            textBoxDNI.Select();
         }
 
 
@@ -230,7 +268,7 @@ namespace CapaPresentacion
             textBoxDNI.Text = Convert.ToString(row.Cells["dni"].Value);
             textBoxApellido.Text = Convert.ToString(row.Cells["apellido"].Value);
             textBoxNombre.Text = Convert.ToString(row.Cells["nombre"].Value);
-            textBoxEmail.Text = Convert.ToString(row.Cells["email"].Value);   // Name = email
+            textBoxEmail.Text = Convert.ToString(row.Cells["email"].Value);  
             textBoxUser.Text = Convert.ToString(row.Cells["usuario"].Value);
             textBoxPassword.Text = Convert.ToString(row.Cells["hash_password"].Value);
             textBoxCPassword.Text = textBoxPassword.Text;
@@ -312,6 +350,91 @@ namespace CapaPresentacion
             radioButtonMasculino.Enabled = true;
             comboBoxRoles.Enabled = true;
             comboBoxEstado.Enabled = true;
+        }
+
+
+        private void btnEliminar_Click(object sender, EventArgs e)
+        {
+            if (Convert.ToInt32(textBoxID.Text) != 0)
+            {
+                if (MessageBox.Show("¿Desea dar de baja al usuario?", "Confirmación", MessageBoxButtons.YesNo, MessageBoxIcon.Question) == DialogResult.Yes)
+                {
+                    string mensaje = string.Empty;
+                    Usuarios objusuario = new Usuarios()
+                    {
+                        id_usuario = Convert.ToInt32(textBoxID.Text)
+                    };
+
+                    bool respuesta = new CN_Usuario().Baja(objusuario, out mensaje);
+
+                    if (respuesta)
+                    {
+                        DataGridViewRow row = UsuariosDGV.Rows[Convert.ToInt32(textBoxIndice.Text)];
+                        row.Cells["activo"].Value = "0";
+                        row.Cells["estado"].Value = "NO ACTIVO";
+                    }
+                    else
+                    {
+                        MessageBox.Show(mensaje, "Mensaje", MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
+                    }
+                }
+            }
+        }
+
+        private void iconButtonHabilitar_Click(object sender, EventArgs e)
+        {
+            if (Convert.ToInt32(textBoxID.Text) != 0)
+            {
+                if (MessageBox.Show("¿Desea habilitar al usuario?", "Confirmación",
+                    MessageBoxButtons.YesNo, MessageBoxIcon.Question) == DialogResult.Yes)
+                {
+                    string mensaje = string.Empty;
+                    Usuarios objusuario = new Usuarios()
+                    {
+                        id_usuario = Convert.ToInt32(textBoxID.Text)
+                    };
+
+                    bool respuesta = new CN_Usuario().Habilitar(objusuario, out mensaje);
+
+                    if (respuesta)
+                    {
+                        DataGridViewRow row = UsuariosDGV.Rows[Convert.ToInt32(textBoxIndice.Text)];
+                        row.Cells["activo"].Value = "1";
+                        row.Cells["estado"].Value = "ACTIVO";
+
+                        MessageBox.Show(mensaje, "Éxito", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                    }
+                    else
+                    {
+                        MessageBox.Show(mensaje, "Mensaje", MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
+                    }
+                }
+            }
+        }
+
+        private void iconButtonBuscar_Click(object sender, EventArgs e)
+        {
+            string columnaFiltro = ((OpcionCombo)comboBoxBusqueda.SelectedItem).Valor.ToString();
+
+            if(UsuariosDGV.Rows.Count > 0)
+            {
+                foreach (DataGridViewRow row in UsuariosDGV.Rows)
+                {
+                    if (row.Cells[columnaFiltro].Value.ToString().Trim().ToUpper().Contains(textBoxBusqueda.Text.Trim().ToUpper()))
+                        row.Visible = true;
+                    else
+                        row.Visible = false;
+                }
+            }
+        }
+
+        private void iconButtonLimpiar_Click(object sender, EventArgs e)
+        {
+            textBoxBusqueda.Text = "";
+            foreach(DataGridViewRow row in UsuariosDGV.Rows)
+            {
+                row.Visible = true;
+            }
         }
 
 
@@ -478,11 +601,9 @@ namespace CapaPresentacion
 
         }
 
-        private void iconButtonLimpiar_Click(object sender, EventArgs e)
+        private void UsuariosDGV_CellContentClick(object sender, DataGridViewCellEventArgs e)
         {
 
         }
-
-        
     }
 }
