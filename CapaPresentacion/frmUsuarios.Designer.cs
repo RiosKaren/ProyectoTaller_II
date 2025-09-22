@@ -454,11 +454,39 @@
             // 
             // usuario
             // 
+            this.usuario.Name = "usuario";
+            this.usuario.ReadOnly = true;
+            // 
+            // hash_password
+            // 
+            this.hash_password.Name = "hash_password";
+            this.hash_password.ReadOnly = true;
+            // 
+            // id_rol
+            // 
+            this.id_rol.Name = "id_rol";
+            this.id_rol.ReadOnly = true;
+            // 
+            // rol
+            // 
+            this.rol.Name = "rol";
+            this.rol.ReadOnly = true;
+            // 
+            // activo
+            // 
+            this.activo.Name = "activo";
+            this.activo.ReadOnly = true;
+            // 
+            // Estado
+            // 
+            this.Estado.Name = "Estado";
+            this.Estado.ReadOnly = true;
+            // 
             // labelListaUsuarios
             // 
             this.labelListaUsuarios.BackColor = System.Drawing.Color.White;
             this.labelListaUsuarios.Font = new System.Drawing.Font("Microsoft Sans Serif", 16F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.labelListaUsuarios.Location = new System.Drawing.Point(295, 42);
+            this.labelListaUsuarios.Location = new System.Drawing.Point(450, 30);
             this.labelListaUsuarios.Name = "labelListaUsuarios";
             this.labelListaUsuarios.Size = new System.Drawing.Size(777, 50);
             this.labelListaUsuarios.TabIndex = 25;
@@ -535,7 +563,7 @@
             // 
             this.labelBuscar.AutoSize = true;
             this.labelBuscar.BackColor = System.Drawing.Color.White;
-            this.labelBuscar.Location = new System.Drawing.Point(572, 65);
+            this.labelBuscar.Location = new System.Drawing.Point(682, 48);
             this.labelBuscar.Name = "labelBuscar";
             this.labelBuscar.Size = new System.Drawing.Size(62, 13);
             this.labelBuscar.TabIndex = 31;
@@ -548,7 +576,7 @@
             this.comboBoxBusqueda.Cursor = System.Windows.Forms.Cursors.Hand;
             this.comboBoxBusqueda.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.comboBoxBusqueda.FormattingEnabled = true;
-            this.comboBoxBusqueda.Location = new System.Drawing.Point(635, 60);
+            this.comboBoxBusqueda.Location = new System.Drawing.Point(745, 43);
             this.comboBoxBusqueda.Name = "comboBoxBusqueda";
             this.comboBoxBusqueda.Size = new System.Drawing.Size(100, 21);
             this.comboBoxBusqueda.TabIndex = 32;
@@ -556,7 +584,7 @@
             // 
             // textBoxBusqueda
             // 
-            this.textBoxBusqueda.Location = new System.Drawing.Point(740, 60);
+            this.textBoxBusqueda.Location = new System.Drawing.Point(850, 43);
             this.textBoxBusqueda.Name = "textBoxBusqueda";
             this.textBoxBusqueda.Size = new System.Drawing.Size(158, 20);
             this.textBoxBusqueda.TabIndex = 33;
@@ -572,7 +600,7 @@
             this.iconButtonLimpiar.IconColor = System.Drawing.Color.Black;
             this.iconButtonLimpiar.IconFont = FontAwesome.Sharp.IconFont.Auto;
             this.iconButtonLimpiar.IconSize = 18;
-            this.iconButtonLimpiar.Location = new System.Drawing.Point(944, 60);
+            this.iconButtonLimpiar.Location = new System.Drawing.Point(1054, 43);
             this.iconButtonLimpiar.Name = "iconButtonLimpiar";
             this.iconButtonLimpiar.Size = new System.Drawing.Size(34, 18);
             this.iconButtonLimpiar.TabIndex = 34;
@@ -591,7 +619,7 @@
             this.iconButtonBuscar.IconColor = System.Drawing.Color.Black;
             this.iconButtonBuscar.IconFont = FontAwesome.Sharp.IconFont.Auto;
             this.iconButtonBuscar.IconSize = 16;
-            this.iconButtonBuscar.Location = new System.Drawing.Point(904, 60);
+            this.iconButtonBuscar.Location = new System.Drawing.Point(1014, 43);
             this.iconButtonBuscar.Name = "iconButtonBuscar";
             this.iconButtonBuscar.Size = new System.Drawing.Size(34, 18);
             this.iconButtonBuscar.TabIndex = 35;

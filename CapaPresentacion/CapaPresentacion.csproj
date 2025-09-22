@@ -151,31 +151,27 @@
       <DesignTimeSharedInput>True</DesignTimeSharedInput>
     </Compile>
   </ItemGroup>
-  <ItemGroup>
-    <None Include="App.config" />
-  </ItemGroup>
-  <ItemGroup>
-    <ProjectReference Include="..\CapaEntidad\CapaEntidad.csproj">
-      <Project>{a6536f26-d9dd-401c-841b-4ccb86809934}</Project>
-      <Name>CapaEntidad</Name>
-    </ProjectReference>
-    <ProjectReference Include="..\CapaNegocio\CapaNegocio.csproj">
-      <Project>{0cb4098e-5639-4d65-8169-f1c8ec6f7b90}</Project>
-      <Name>CapaNegocio</Name>
-    </ProjectReference>
-  </ItemGroup>
-  <ItemGroup>
-<<<<<<< HEAD
-    <None Include="Resources\borrar.png" />
-  </ItemGroup>
-  <ItemGroup>
-    <None Include="Resources\check.png" />
-  </ItemGroup>
-  <ItemGroup>
-    <None Include="Resources\delete.png" />
-=======
-    <None Include="Resources\Gz2ZxD4WQAA2ZNs.jpeg" />
->>>>>>> 0fc6665ef4df78b8c4ed1336da49f25f9019690a
-  </ItemGroup>
-  <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
+	<ItemGroup>
+		<None Include="App.config" />
+	</ItemGroup>
+
+	<ItemGroup>
+		<ProjectReference Include="..\CapaEntidad\CapaEntidad.csproj">
+			<Project>{a6536f26-d9dd-401c-841b-4ccb86809934}</Project>
+			<Name>CapaEntidad</Name>
+		</ProjectReference>
+		<ProjectReference Include="..\CapaNegocio\CapaNegocio.csproj">
+			<Project>{0cb4098e-5639-4d65-8169-f1c8ec6f7b90}</Project>
+			<Name>CapaNegocio</Name>
+		</ProjectReference>
+	</ItemGroup>
+
+	<ItemGroup>
+		<None Include="Resources\borrar.png" />
+		<None Include="Resources\check.png" />
+		<None Include="Resources\delete.png" />
+		<None Include="Resources\Gz2ZxD4WQAA2ZNs.jpeg" />
+	</ItemGroup>
+
+	<Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>

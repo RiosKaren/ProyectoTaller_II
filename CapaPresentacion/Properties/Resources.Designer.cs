@@ -63,7 +63,6 @@ namespace CapaPresentacion.Properties {
         /// <summary>
         ///   Busca un recurso adaptado de tipo System.Drawing.Bitmap.
         /// </summary>
-<<<<<<< HEAD
         internal static System.Drawing.Bitmap borrar {
             get {
                 object obj = ResourceManager.GetObject("borrar", resourceCulture);
@@ -87,11 +86,6 @@ namespace CapaPresentacion.Properties {
         internal static System.Drawing.Bitmap delete {
             get {
                 object obj = ResourceManager.GetObject("delete", resourceCulture);
-=======
-        internal static System.Drawing.Bitmap Gz2ZxD4WQAA2ZNs {
-            get {
-                object obj = ResourceManager.GetObject("Gz2ZxD4WQAA2ZNs", resourceCulture);
->>>>>>> 0fc6665ef4df78b8c4ed1336da49f25f9019690a
                 return ((System.Drawing.Bitmap)(obj));
             }
         }
