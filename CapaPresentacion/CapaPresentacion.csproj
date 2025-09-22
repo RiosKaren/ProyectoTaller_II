@@ -165,6 +165,7 @@
     </ProjectReference>
   </ItemGroup>
   <ItemGroup>
+<<<<<<< HEAD
     <None Include="Resources\borrar.png" />
   </ItemGroup>
   <ItemGroup>
@@ -172,6 +173,9 @@
   </ItemGroup>
   <ItemGroup>
     <None Include="Resources\delete.png" />
+=======
+    <None Include="Resources\Gz2ZxD4WQAA2ZNs.jpeg" />
+>>>>>>> 0fc6665ef4df78b8c4ed1336da49f25f9019690a
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>
