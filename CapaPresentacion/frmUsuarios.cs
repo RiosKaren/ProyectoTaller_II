@@ -156,26 +156,73 @@ namespace CapaPresentacion
 
         private void UsuariosDGV_CellContentClick(object sender, DataGridViewCellEventArgs e)
         {
-            if (UsuariosDGV.Columns[e.ColumnIndex].Name == "botonSeleccionar")
-            {
-                int indice = e.RowIndex;
-
-                if(indice >= 0)
-                {
-                    textBoxID.Text = UsuariosDGV.Rows[indice].Cells["id_usuario"].Value.ToString();
-                    textBoxDNI.Text = UsuariosDGV.Rows[indice].Cells["dni"].Value.ToString();
-                    textBoxApellido.Text = UsuariosDGV.Rows[indice].Cells["apellido"].Value.ToString();
-                    textBoxNombre.Text = UsuariosDGV.Rows[indice].Cells["nombre"].Value.ToString();
-                    textBoxEmail.Text = UsuariosDGV.Rows[indice].Cells["correo"].Value.ToString();
-                    textBoxUser.Text = UsuariosDGV.Rows[indice].Cells["usuario"].Value.ToString();
-                    textBoxPassword.Text = UsuariosDGV.Rows[indice].Cells["hash_password"].Value.ToString();
-                    textBoxCPassword.Text = UsuariosDGV.Rows[indice].Cells["hash_password"].Value.ToString();
-
-                    
-                }
-            }
+            
         }
 
+        private void UsuariosDGV_CellClick(object sender, DataGridViewCellEventArgs e)
+        {
+            if (e.RowIndex < 0 || e.ColumnIndex < 0) return;
+
+  
+            if (UsuariosDGV.Columns[e.ColumnIndex].Name != "botonSeleccionar")
+                return;
+
+            var row = UsuariosDGV.Rows[e.RowIndex];
+
+            textBoxID.Text = Convert.ToString(row.Cells["id_usuario"].Value);
+            textBoxDNI.Text = Convert.ToString(row.Cells["dni"].Value);
+            textBoxApellido.Text = Convert.ToString(row.Cells["apellido"].Value);
+            textBoxNombre.Text = Convert.ToString(row.Cells["nombre"].Value);
+            textBoxEmail.Text = Convert.ToString(row.Cells["email"].Value);   // Name = email
+            textBoxUser.Text = Convert.ToString(row.Cells["usuario"].Value);
+            textBoxPassword.Text = Convert.ToString(row.Cells["hash_password"].Value);
+            textBoxCPassword.Text = textBoxPassword.Text;
+
+            //Fecha de nacimiento 
+            if (row.Cells["fecha_nacimiento"].Value != null)
+            {
+                DateTime fecha;
+                if (DateTime.TryParse(row.Cells["fecha_nacimiento"].Value.ToString(), out fecha))
+                {
+                    dateTimeNacimiento.Value = fecha;
+                }
+            }
+
+            //Genero
+            string sexo = Convert.ToString(row.Cells["Sexo"].Value);
+            if (sexo == "Masculino")
+            {
+                radioButtonMasculino.Checked = true;
+                radioButtonFemenino.Checked = false;
+            }
+            else
+            {
+                radioButtonFemenino.Checked = true;
+                radioButtonMasculino.Checked = false;
+            }
+
+            //Combo Rol
+            foreach (OpcionCombo oc in comboBoxRoles.Items)
+            {
+                if (Convert.ToInt32(oc.Valor) == Convert.ToInt32(row.Cells["id_rol"].Value))
+                {
+                    comboBoxRoles.SelectedIndex = comboBoxRoles.Items.IndexOf(oc);
+                    break;
+                }
+            }
+
+            //Combo Estado
+            foreach (OpcionCombo oc in comboBoxEstado.Items)
+            {
+                if (Convert.ToInt32(oc.Valor) == Convert.ToInt32(row.Cells["activo"].Value))
+                {
+                    comboBoxEstado.SelectedIndex = comboBoxEstado.Items.IndexOf(oc);
+                    break;
+                }
+            }
+
+
+        }
 
 
         ////////////////////////
