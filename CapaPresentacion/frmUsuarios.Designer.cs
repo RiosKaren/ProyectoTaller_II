@@ -89,7 +89,7 @@
             this.label1.ForeColor = System.Drawing.Color.White;
             this.label1.Location = new System.Drawing.Point(0, 0);
             this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(277, 523);
+            this.label1.Size = new System.Drawing.Size(277, 561);
             this.label1.TabIndex = 2;
             // 
             // label2
@@ -379,7 +379,7 @@
             this.UsuariosDGV.RowHeadersDefaultCellStyle = dataGridViewCellStyle2;
             this.UsuariosDGV.RowHeadersWidth = 51;
             this.UsuariosDGV.RowTemplate.Height = 28;
-            this.UsuariosDGV.Size = new System.Drawing.Size(743, 390);
+            this.UsuariosDGV.Size = new System.Drawing.Size(773, 265);
             this.UsuariosDGV.TabIndex = 24;
             this.UsuariosDGV.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.UsuariosDGV_CellContentClick);
             // 
@@ -499,7 +499,7 @@
             this.labelListaUsuarios.Font = new System.Drawing.Font("Microsoft Sans Serif", 16F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.labelListaUsuarios.Location = new System.Drawing.Point(295, 42);
             this.labelListaUsuarios.Name = "labelListaUsuarios";
-            this.labelListaUsuarios.Size = new System.Drawing.Size(748, 50);
+            this.labelListaUsuarios.Size = new System.Drawing.Size(777, 50);
             this.labelListaUsuarios.TabIndex = 25;
             this.labelListaUsuarios.Text = "Lista de Usuarios:";
             this.labelListaUsuarios.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
@@ -515,7 +515,7 @@
             // dateTimeNacimiento
             // 
             this.dateTimeNacimiento.Location = new System.Drawing.Point(32, 289);
-            this.dateTimeNacimiento.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.dateTimeNacimiento.Margin = new System.Windows.Forms.Padding(2);
             this.dateTimeNacimiento.MaxDate = new System.DateTime(2025, 9, 20, 0, 0, 0, 0);
             this.dateTimeNacimiento.MinDate = new System.DateTime(1900, 1, 1, 0, 0, 0, 0);
             this.dateTimeNacimiento.Name = "dateTimeNacimiento";
@@ -642,7 +642,7 @@
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.DarkRed;
-            this.ClientSize = new System.Drawing.Size(1270, 523);
+            this.ClientSize = new System.Drawing.Size(1084, 561);
             this.Controls.Add(this.iconButtonLimpiar);
             this.Controls.Add(this.iconButtonBuscar);
             this.Controls.Add(this.textBoxBusqueda);

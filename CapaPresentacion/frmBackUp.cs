@@ -16,8 +16,7 @@ namespace CapaPresentacion
         {
             InitializeComponent();
         }
-
-        private void label1_Click(object sender, EventArgs e)
+        private void folderBrowserDialog1_HelpRequest(object sender, EventArgs e)
         {
 
         }
