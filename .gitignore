@@ -363,3 +363,4 @@ MigrationBackup/
 FodyWeavers.xsd
 /CapaPresentacion/App.config
 /CapaPresentacion/App.config
+/.gitignore
