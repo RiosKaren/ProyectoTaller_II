@@ -10,6 +10,6 @@ namespace CapaDatos
 {
     public class Conexion
     {
-        public static string cadena = ConfigurationManager.ConnectionStrings["cadena_conexion"].ToString();
+        public static string cadena = ConfigurationManager.ConnectionStrings["cadena_conexion"].ToString(); //Cadena de conexion a la base de datos
     }
 }

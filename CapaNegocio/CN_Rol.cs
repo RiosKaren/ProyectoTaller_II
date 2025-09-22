@@ -15,7 +15,7 @@ namespace CapaNegocio
 
         public List<Roles> Listar()
         {
-            return objcd_rol.Listar();
+            return objcd_rol.Listar(); // Devuelve la lista de roles obtenida desde la capa de datos
         }
 
     }

@@ -8,31 +8,32 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace CapaDatos
+namespace CapaDatos 
 {
-    public class CD_Usuario
+    public class CD_Usuario 
     {
-        public List<Usuarios> Listar()
+        public List<Usuarios> Listar() //utiliza el metodo Listar para obtener la lista de usuarios desde la base de datos
         {
-            List<Usuarios> lista = new List<Usuarios>();
-            using (SqlConnection oconexion = new SqlConnection(Conexion.cadena))
+            List<Usuarios> lista = new List<Usuarios>(); //crea una lista de usuarios
+            using (SqlConnection oconexion = new SqlConnection(Conexion.cadena)) //crea una conexion a la base de datos
             {
                 try
                 {
-                    StringBuilder query = new StringBuilder();
-                    query.AppendLine("select u.id_usuario, u.nombre, u.apellido, u.email, u.usuario, u.dni, u.fecha_nacimiento, u.sexo, u.hash_password, u.activo, r.id_rol, r.nombre from usuarios u");
-                    query.AppendLine("inner join roles r on r.id_rol = u.id_rol");
+                    StringBuilder query = new StringBuilder(); //construye la consulta SQL
+                    query.AppendLine("select u.id_usuario, u.nombre, u.apellido, u.email, u.usuario, u.dni, u.fecha_nacimiento," +
+                        " u.sexo, u.hash_password, u.activo, r.id_rol, r.nombre from usuarios u"); //selecciona los campos de la tabla usuarios
+                    query.AppendLine("inner join roles r on r.id_rol = u.id_rol"); //selecciona los campos de la tabla roles
 
-                    SqlCommand cmd = new SqlCommand(query.ToString(), oconexion);
-                    cmd.CommandType = CommandType.Text;
+                    SqlCommand cmd = new SqlCommand(query.ToString(), oconexion); //crea un comando SQL
+                    cmd.CommandType = CommandType.Text; //indica que el comando es de tipo texto
 
-                    oconexion.Open();
+                    oconexion.Open(); //abre la conexion a la base de datos
 
-                    using (SqlDataReader dr = cmd.ExecuteReader())
+                    using (SqlDataReader dr = cmd.ExecuteReader()) //ejecuta el comando y obtiene un lector de datos
                     {
-                        while (dr.Read())
+                        while (dr.Read()) //lee los datos del lector
                         {
-                            lista.Add(new Usuarios()
+                            lista.Add(new Usuarios() //agrega un nuevo usuario a la lista
                             {
                                 id_usuario = Convert.ToInt32(dr["id_usuario"]),
                                 nombre = dr["nombre"].ToString(),
@@ -49,29 +50,26 @@ namespace CapaDatos
                         }
                     }
                 }
-                catch (Exception)
+                catch (Exception) //si ocurre un error, devuelve una lista vacia
                 {
                     lista = new List<Usuarios>();
                 }
-            }
-
-
+            }   //si no ocurre ningun error, devuelve la lista de usuarios
             return lista;
-
         }
 
 
-        public int Registrar(Usuarios obj, out string Mensaje)
+        public int Registrar(Usuarios obj, out string Mensaje) 
         {
-            int idusuariogenerado = 0;
-            Mensaje = string.Empty;
+            int idusuariogenerado = 0; //variable para almacenar el id del usuario generado
+            Mensaje = string.Empty; //variable para almacenar el mensaje de error o exito
 
-            try
+            try 
             {
-                using (SqlConnection oconexion = new SqlConnection(Conexion.cadena))
+                using (SqlConnection oconexion = new SqlConnection(Conexion.cadena)) //crea una conexion a la base de datos
                 {
-                    SqlCommand cmd = new SqlCommand("SP_REGISTRARUSUARIO", oconexion);
-                    cmd.Parameters.AddWithValue("dni", obj.dni);
+                    SqlCommand cmd = new SqlCommand("SP_REGISTRARUSUARIO", oconexion); //crea un comando SQL para ejecutar el procedimiento almacenado SP_REGISTRARUSUARIO
+                    cmd.Parameters.AddWithValue("dni", obj.dni); 
                     cmd.Parameters.AddWithValue("nombre", obj.nombre);
                     cmd.Parameters.AddWithValue("apellido", obj.apellido);
                     cmd.Parameters.AddWithValue("usuario", obj.usuario);
@@ -83,37 +81,36 @@ namespace CapaDatos
                     cmd.Parameters.AddWithValue("fecha_nacimiento", obj.fecha_nacimiento);
                     cmd.Parameters.Add("IdUsuarioResultado", SqlDbType.Int).Direction = ParameterDirection.Output;
                     cmd.Parameters.Add("Mensaje", SqlDbType.VarChar, 500).Direction = ParameterDirection.Output;
+                    //se asignan los parametros del procedimiento almacenado
+                    cmd.CommandType = CommandType.StoredProcedure; //indica que el comando es de tipo procedimiento almacenado
 
-                    cmd.CommandType = CommandType.StoredProcedure;
+                    oconexion.Open(); //abre la conexion a la base de datos
 
-                    oconexion.Open();
+                    cmd.ExecuteNonQuery(); //ejecuta el comando
 
-                    cmd.ExecuteNonQuery();
-
-                    idusuariogenerado = Convert.ToInt32(cmd.Parameters["IdUsuarioResultado"].Value);
-                    Mensaje = cmd.Parameters["Mensaje"].Value.ToString();
+                    idusuariogenerado = Convert.ToInt32(cmd.Parameters["IdUsuarioResultado"].Value); //obtiene el id del usuario generado
+                    Mensaje = cmd.Parameters["Mensaje"].Value.ToString(); //obtiene el mensaje de error o exito
 
                 }
             }
-            catch (Exception ex)
+            catch (Exception ex) //si ocurre un error, devuelve 0 y el mensaje de error
             {
                 idusuariogenerado = 0;
                 Mensaje = ex.Message;
             }
-
-
+            //si no ocurre ningun error, devuelve el id del usuario generado
             return idusuariogenerado;
         }
 
 
-        public bool Editar(Usuarios obj, out string Mensaje)
+        public bool Editar(Usuarios obj, out string Mensaje) //Edita un usuario existente
         {
-            bool respuesta = false;
-            Mensaje = string.Empty;
+            bool respuesta = false; //variable para almacenar la respuesta del procedimiento almacenado
+            Mensaje = string.Empty; //variable para almacenar el mensaje de error o exito
 
             try
             {
-                using (SqlConnection oconexion = new SqlConnection(Conexion.cadena))
+                using (SqlConnection oconexion = new SqlConnection(Conexion.cadena)) //crea una conexion a la base de datos
                 {
                     SqlCommand cmd = new SqlCommand("SP_EDITARUSUARIO", oconexion);
                     cmd.Parameters.AddWithValue("id_usuario", obj.id_usuario);
@@ -129,89 +126,89 @@ namespace CapaDatos
                     cmd.Parameters.AddWithValue("fecha_nacimiento", obj.fecha_nacimiento);
                     cmd.Parameters.Add("Respuesta", SqlDbType.Int).Direction = ParameterDirection.Output;
                     cmd.Parameters.Add("Mensaje", SqlDbType.VarChar,500).Direction = ParameterDirection.Output;
+                    //se asignan los parametros del procedimiento almacenado
+                    cmd.CommandType = CommandType.StoredProcedure; //indica que el comando es de tipo procedimiento almacenado
 
-                    cmd.CommandType = CommandType.StoredProcedure;
+                    oconexion.Open(); //abre la conexion a la base de datos
 
-                    oconexion.Open();
+                    cmd.ExecuteNonQuery(); //ejecuta el comando
 
-                    cmd.ExecuteNonQuery();
-
-                    respuesta = Convert.ToBoolean(cmd.Parameters["Respuesta"].Value);
-                    Mensaje = cmd.Parameters["Mensaje"].Value.ToString();
+                    respuesta = Convert.ToBoolean(cmd.Parameters["Respuesta"].Value); //obtiene la respuesta del procedimiento almacenado
+                    Mensaje = cmd.Parameters["Mensaje"].Value.ToString(); //obtiene el mensaje de error o exito
 
                 }
             }
-            catch (Exception ex)
+            catch (Exception ex) //si ocurre un error, devuelve false y el mensaje de error
             {
-                respuesta = false;
-                Mensaje = ex.Message;
+                respuesta = false; //variable para almacenar la respuesta del procedimiento almacenado
+                Mensaje = ex.Message;//variable para almacenar el mensaje de error o exito
             }
 
 
             return respuesta;
         }
 
-        public bool Baja(Usuarios obj, out string Mensaje)
+        public bool Baja(Usuarios obj, out string Mensaje) //Da de baja un usuario existente
         {
-            bool respuesta = false;
-            Mensaje = string.Empty;
+            bool respuesta = false; //variable para almacenar la respuesta del procedimiento almacenado
+            Mensaje = string.Empty; //variable para almacenar el mensaje de error o exito
 
             try
             {
-                using (SqlConnection oconexion = new SqlConnection(Conexion.cadena))
+                using (SqlConnection oconexion = new SqlConnection(Conexion.cadena)) //crea una conexion a la base de datos
                 {
                     SqlCommand cmd = new SqlCommand("SP_BAJAUSUARIO", oconexion);
                     cmd.Parameters.AddWithValue("id_usuario", obj.id_usuario);
                     cmd.Parameters.Add("Respuesta", SqlDbType.Bit).Direction = ParameterDirection.Output;
                     cmd.Parameters.Add("Mensaje", SqlDbType.VarChar, 500).Direction = ParameterDirection.Output;
+                    //se asignan los parametros del procedimiento almacenado
+                    cmd.CommandType = CommandType.StoredProcedure; //indica que el comando es de tipo procedimiento almacenado
 
-                    cmd.CommandType = CommandType.StoredProcedure;
+                    oconexion.Open(); //abre la conexion a la base de datos
+                    cmd.ExecuteNonQuery(); //ejecuta el comando
 
-                    oconexion.Open();
-                    cmd.ExecuteNonQuery();
-
-                    respuesta = Convert.ToBoolean(cmd.Parameters["Respuesta"].Value);
-                    Mensaje = cmd.Parameters["Mensaje"].Value.ToString();
+                    respuesta = Convert.ToBoolean(cmd.Parameters["Respuesta"].Value); //obtiene la respuesta del procedimiento almacenado
+                    Mensaje = cmd.Parameters["Mensaje"].Value.ToString(); //obtiene el mensaje de error o exito 
                 }
             }
             catch (Exception ex)
             {
-                respuesta = false;
-                Mensaje = ex.Message;
+                respuesta = false; //variable para almacenar la respuesta del procedimiento almacenado
+                Mensaje = ex.Message; //variable para almacenar el mensaje de error o exito
             }
 
-            return respuesta;
+            return respuesta; //devuelve la respuesta del procedimiento almacenado
         }
 
-        public bool Habilitar(Usuarios obj, out string Mensaje)
+        public bool Habilitar(Usuarios obj, out string Mensaje) //Habilita un usuario existente 
         {
-            bool respuesta = false;
-            Mensaje = string.Empty;
+            bool respuesta = false; //variable para almacenar la respuesta del procedimiento almacenado
+            Mensaje = string.Empty; //variable para almacenar el mensaje de error o exito 
 
             try
             {
-                using (SqlConnection oconexion = new SqlConnection(Conexion.cadena))
+                using (SqlConnection oconexion = new SqlConnection(Conexion.cadena)) //crea una conexion a la base de datos
                 {
                     SqlCommand cmd = new SqlCommand("SP_HABILITARUSUARIO", oconexion);
                     cmd.Parameters.AddWithValue("id_usuario", obj.id_usuario);
                     cmd.Parameters.Add("Respuesta", SqlDbType.Bit).Direction = ParameterDirection.Output;
                     cmd.Parameters.Add("Mensaje", SqlDbType.VarChar, 500).Direction = ParameterDirection.Output;
+                    //se asignan los parametros del procedimiento almacenado
+                    cmd.CommandType = CommandType.StoredProcedure; //indica que el comando es de tipo procedimiento almacenado
 
-                    cmd.CommandType = CommandType.StoredProcedure;
+                    oconexion.Open(); //abre la conexion a la base de datos
+                    cmd.ExecuteNonQuery(); //ejecuta el comando
 
-                    oconexion.Open();
-                    cmd.ExecuteNonQuery();
-
-                    respuesta = Convert.ToBoolean(cmd.Parameters["Respuesta"].Value);
-                    Mensaje = cmd.Parameters["Mensaje"].Value.ToString();
+                    respuesta = Convert.ToBoolean(cmd.Parameters["Respuesta"].Value); //obtiene la respuesta del procedimiento almacenado
+                    Mensaje = cmd.Parameters["Mensaje"].Value.ToString(); //obtiene el mensaje de error o exito
                 }
             }
-            catch (Exception ex)
+            catch (Exception ex) //si ocurre un error, devuelve false y el mensaje de error
             {
-                respuesta = false;
-                Mensaje = ex.Message;
+                respuesta = false; 
+                Mensaje = ex.Message; 
             }
-
+            //si no ocurre ningun error, devuelve la respuesta del procedimiento almacenado
             return respuesta;
         }
 

@@ -15,7 +15,7 @@ namespace CapaNegocio
 
         public List<Permisos> Listar(int id_usuario)
         {
-            return objcd_permiso.Listar(id_usuario);
+            return objcd_permiso.Listar(id_usuario); //Devuelve la lista de permisos que tiene un usuario desde la capa de datos
         }
         
     }

@@ -13,5 +13,5 @@ namespace CapaEntidad
         public float importe_total { get; set; }
         public Clientes id_cliente { get; set; }
         public Usuarios id_usuario { get; set; }
-    }
+    } //definicion de la tabla facturas, con sus respectivos atributos
 }

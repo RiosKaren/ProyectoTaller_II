@@ -15,22 +15,22 @@ namespace CapaNegocio
 
         public List<Usuarios> Listar()
         {
-            return objcd_usuario.Listar();
+            return objcd_usuario.Listar(); //devuelve la lista de usuarios obtenida desde la capa de datos
         }
 
         public int Registrar(Usuarios obj, out string Mensaje)
         {
-            return objcd_usuario.Registrar(obj,out Mensaje);
+            return objcd_usuario.Registrar(obj,out Mensaje); //Devuelve el id del usuario registrado desde la capa de datos
         }
 
         public bool Editar(Usuarios obj, out string Mensaje)
         {
-            return objcd_usuario.Editar(obj, out Mensaje);
+            return objcd_usuario.Editar(obj, out Mensaje);//Devuelve true o false si se edito el usuario desde la capa de datos
         }
 
         public bool Baja(Usuarios obj, out string Mensaje)
         {
-            return objcd_usuario.Baja(obj, out Mensaje);
+            return objcd_usuario.Baja(obj, out Mensaje); //Devuelve true o false si se dio de baja el usuario desde la capa de datos
         }
 
         public bool Habilitar(Usuarios obj, out string Mensaje)

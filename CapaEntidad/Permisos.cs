@@ -11,5 +11,5 @@ namespace CapaEntidad
         public int id_permiso { get; set; }
         public string nombre_menu { get; set; }
         public Roles id_rol { get; set; }
-    }
+    } //definicion de la tabla permisos, con sus respectivos atributos
 }

@@ -19,5 +19,5 @@ namespace CapaEntidad
         public string hash_password { get; set; }
         public bool activo { get; set; }
         public Roles id_rol { get; set; }
-    }
+    } //definicion de la tabla usuarios, con sus respectivos atributos
 }
