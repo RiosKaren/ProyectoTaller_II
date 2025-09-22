@@ -19,9 +19,11 @@ namespace CapaDatos
             {
                 try
                 {
-                    string query = "select id_usuario, nombre, apellido, email, usuario, dni, fecha_nacimiento, sexo, hash_password, activo from usuarios";
+                    StringBuilder query = new StringBuilder();
+                    query.AppendLine("select u.id_usuario, u.nombre, u.apellido, u.email, u.usuario, u.dni, u.fecha_nacimiento, u.sexo, u.hash_password, u.activo, r.id_rol, r.nombre from usuarios u");
+                    query.AppendLine("inner join roles r on r.id_rol = u.id_rol");
 
-                    SqlCommand cmd = new SqlCommand(query, oconexion);
+                    SqlCommand cmd = new SqlCommand(query.ToString(), oconexion);
                     cmd.CommandType = CommandType.Text;
 
                     oconexion.Open();
@@ -41,7 +43,9 @@ namespace CapaDatos
                                 fecha_nacimiento = dr["fecha_nacimiento"].ToString(),
                                 sexo = Convert.ToBoolean(dr["sexo"]),
                                 hash_password = dr["hash_password"].ToString(),
-                                activo = Convert.ToBoolean(dr["activo"])
+                                activo = Convert.ToBoolean(dr["activo"]),
+                                id_rol = new Roles() { id_rol = Convert.ToInt32(dr["id_rol"]), 
+                                nombre = dr["nombre"].ToString()}
                             });
                         }
                     }
