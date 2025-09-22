@@ -52,15 +52,42 @@ namespace CapaPresentacion
             comboBoxBusqueda.DisplayMember = "Texto";
             comboBoxBusqueda.ValueMember = "Valor";
 
+
+            //Mostrar todos los usuarios
+            List<Usuarios> listaUsuarios = new CN_Usuario().Listar();
+
+            foreach (Usuarios item in listaUsuarios)
+            {
+                string sexo = item.sexo ? "Masculino" : "Femenino";
+                DateTime fechaDT = DateTime.Parse(item.fecha_nacimiento);
+                string fecha = fechaDT.ToString("dd/MM/yyyy");
+                string estado = item.activo ? "ACTIVO" : "NO ACTIVO";
+
+                string rol = "";
+                switch (item.id_rol.id_rol)
+                {
+                    case 1: rol = "ADMINISTRADOR"; break;
+                    case 2: rol = "VENDEDOR"; break;
+                    case 3: rol = "SUPERVISOR"; break;
+                    default: rol = "DESCONOCIDO"; break;
+                }
+
+                UsuariosDGV.Rows.Add(new object[] {"", item.id_usuario,item.dni, item.nombre, item.apellido,
+                                item.email, fecha,
+                                sexo, item.usuario, item.hash_password,
+                                item.id_rol.id_rol, rol, item.activo, estado,
+                                });
+
+            }
         }
 
         private void btnGuardar_Click_1(object sender, EventArgs e)
         {
             string sexo = radioButtonFemenino.Checked ? "Femenino" : "Masculino";
 
-            UsuariosDGV.Rows.Add(new object[] { "", textBoxID.Text, textBoxDNI.Text, textBoxNombre.Text + " " + textBoxApellido.Text, 
+            UsuariosDGV.Rows.Add(new object[] { "", textBoxID.Text, textBoxDNI.Text, textBoxNombre.Text, textBoxApellido.Text, 
                                 textBoxEmail.Text, dateTimeNacimiento.Value.ToString("dd/MM/yyyy"),
-                                sexo, textBoxUser.Text, textBoxPassword.Text,
+                                sexo, textBoxUser.Text, textBoxCPassword.Text,
                                 ((OpcionCombo)comboBoxRoles.SelectedItem).Valor.ToString(),
                                 ((OpcionCombo)comboBoxRoles.SelectedItem).Texto.ToString(),
                                 ((OpcionCombo)comboBoxEstado.SelectedItem).Valor.ToString(),
@@ -103,7 +130,55 @@ namespace CapaPresentacion
             comboBoxRoles.SelectedIndex = -1;
         }
 
-        
+
+        private void UsuariosDGV_CellPainting(object sender, DataGridViewCellPaintingEventArgs e)
+        {
+            if (e.RowIndex < 0) 
+            {  
+                return; 
+            }
+
+            if (e.ColumnIndex == 0)
+            {
+                e.Paint(e.CellBounds, DataGridViewPaintParts.All);
+                var w = Properties.Resources.check.Width;
+                var h = Properties.Resources.check.Height;
+                var x = e.CellBounds.Left + (e.CellBounds.Width - w) / 2;
+                var y = e.CellBounds.Top + (e.CellBounds.Height - h) / 2;
+
+                e.Graphics.DrawImage(Properties.Resources.check, new Rectangle(x, y, w, h));
+                e.Handled = true;
+
+            }
+
+           
+        }
+
+        private void UsuariosDGV_CellContentClick(object sender, DataGridViewCellEventArgs e)
+        {
+            if (UsuariosDGV.Columns[e.ColumnIndex].Name == "botonSeleccionar")
+            {
+                int indice = e.RowIndex;
+
+                if(indice >= 0)
+                {
+                    textBoxID.Text = UsuariosDGV.Rows[indice].Cells["id_usuario"].Value.ToString();
+                    textBoxDNI.Text = UsuariosDGV.Rows[indice].Cells["dni"].Value.ToString();
+                    textBoxApellido.Text = UsuariosDGV.Rows[indice].Cells["apellido"].Value.ToString();
+                    textBoxNombre.Text = UsuariosDGV.Rows[indice].Cells["nombre"].Value.ToString();
+                    textBoxEmail.Text = UsuariosDGV.Rows[indice].Cells["correo"].Value.ToString();
+                    textBoxUser.Text = UsuariosDGV.Rows[indice].Cells["usuario"].Value.ToString();
+                    textBoxPassword.Text = UsuariosDGV.Rows[indice].Cells["hash_password"].Value.ToString();
+                    textBoxCPassword.Text = UsuariosDGV.Rows[indice].Cells["hash_password"].Value.ToString();
+
+                    
+                }
+            }
+        }
+
+
+
+        ////////////////////////
         private void textBoxNombre_TextChanged(object sender, EventArgs e)
         {
             TextBox tb = sender as TextBox;
@@ -224,10 +299,7 @@ namespace CapaPresentacion
 
         }
 
-        private void UsuariosDGV_CellContentClick(object sender, DataGridViewCellEventArgs e)
-        {
-
-        }
+        
 
         private void textBoxCPassword_TextChanged(object sender, EventArgs e)
         {
@@ -270,5 +342,7 @@ namespace CapaPresentacion
         {
 
         }
+
+        
     }
 }

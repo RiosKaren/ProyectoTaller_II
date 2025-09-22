@@ -69,14 +69,15 @@
             this.botonSeleccionar = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.id_usuario = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.dni = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.NombreCompleto = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.Correo = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.apellido = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.nombre = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.correo = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.fecha_nacimiento = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.Sexo = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.Usuario = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.sexo = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.usuario = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.hash_password = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.id_rol = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.Rol = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.rol = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.activo = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.Estado = new System.Windows.Forms.DataGridViewTextBoxColumn();
             ((System.ComponentModel.ISupportInitialize)(this.UsuariosDGV)).BeginInit();
@@ -90,7 +91,7 @@
             this.label1.Location = new System.Drawing.Point(0, 0);
             this.label1.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(369, 644);
+            this.label1.Size = new System.Drawing.Size(369, 660);
             this.label1.TabIndex = 2;
             // 
             // label2
@@ -378,17 +379,18 @@
             this.botonSeleccionar,
             this.id_usuario,
             this.dni,
-            this.NombreCompleto,
-            this.Correo,
+            this.apellido,
+            this.nombre,
+            this.correo,
             this.fecha_nacimiento,
-            this.Sexo,
-            this.Usuario,
+            this.sexo,
+            this.usuario,
             this.hash_password,
             this.id_rol,
-            this.Rol,
+            this.rol,
             this.activo,
             this.Estado});
-            this.UsuariosDGV.Location = new System.Drawing.Point(399, 151);
+            this.UsuariosDGV.Location = new System.Drawing.Point(399, 135);
             this.UsuariosDGV.Margin = new System.Windows.Forms.Padding(4);
             this.UsuariosDGV.MultiSelect = false;
             this.UsuariosDGV.Name = "UsuariosDGV";
@@ -403,9 +405,10 @@
             this.UsuariosDGV.RowHeadersDefaultCellStyle = dataGridViewCellStyle2;
             this.UsuariosDGV.RowHeadersWidth = 51;
             this.UsuariosDGV.RowTemplate.Height = 28;
-            this.UsuariosDGV.Size = new System.Drawing.Size(991, 480);
+            this.UsuariosDGV.Size = new System.Drawing.Size(1239, 480);
             this.UsuariosDGV.TabIndex = 24;
             this.UsuariosDGV.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.UsuariosDGV_CellContentClick);
+            this.UsuariosDGV.CellPainting += new System.Windows.Forms.DataGridViewCellPaintingEventHandler(this.UsuariosDGV_CellPainting);
             // 
             // labelListaUsuarios
             // 
@@ -582,21 +585,29 @@
             this.dni.ReadOnly = true;
             this.dni.Width = 170;
             // 
-            // NombreCompleto
+            // apellido
             // 
-            this.NombreCompleto.HeaderText = "Nombre Completo";
-            this.NombreCompleto.MinimumWidth = 6;
-            this.NombreCompleto.Name = "NombreCompleto";
-            this.NombreCompleto.ReadOnly = true;
-            this.NombreCompleto.Width = 170;
+            this.apellido.HeaderText = "Apellido";
+            this.apellido.MinimumWidth = 6;
+            this.apellido.Name = "apellido";
+            this.apellido.ReadOnly = true;
+            this.apellido.Width = 125;
             // 
-            // Correo
+            // nombre
             // 
-            this.Correo.HeaderText = "Correo";
-            this.Correo.MinimumWidth = 6;
-            this.Correo.Name = "Correo";
-            this.Correo.ReadOnly = true;
-            this.Correo.Width = 170;
+            this.nombre.HeaderText = "Nombre";
+            this.nombre.MinimumWidth = 6;
+            this.nombre.Name = "nombre";
+            this.nombre.ReadOnly = true;
+            this.nombre.Width = 170;
+            // 
+            // correo
+            // 
+            this.correo.HeaderText = "Correo";
+            this.correo.MinimumWidth = 6;
+            this.correo.Name = "correo";
+            this.correo.ReadOnly = true;
+            this.correo.Width = 125;
             // 
             // fecha_nacimiento
             // 
@@ -604,25 +615,24 @@
             this.fecha_nacimiento.MinimumWidth = 6;
             this.fecha_nacimiento.Name = "fecha_nacimiento";
             this.fecha_nacimiento.ReadOnly = true;
-            this.fecha_nacimiento.Visible = false;
             this.fecha_nacimiento.Width = 125;
             // 
-            // Sexo
+            // sexo
             // 
-            this.Sexo.HeaderText = "Genero";
-            this.Sexo.MinimumWidth = 6;
-            this.Sexo.Name = "Sexo";
-            this.Sexo.ReadOnly = true;
-            this.Sexo.Width = 150;
+            this.sexo.HeaderText = "Sexo";
+            this.sexo.MinimumWidth = 6;
+            this.sexo.Name = "sexo";
+            this.sexo.ReadOnly = true;
+            this.sexo.Width = 125;
             // 
-            // Usuario
+            // usuario
             // 
-            this.Usuario.HeaderText = "Usuario";
-            this.Usuario.MinimumWidth = 6;
-            this.Usuario.Name = "Usuario";
-            this.Usuario.ReadOnly = true;
-            this.Usuario.Visible = false;
-            this.Usuario.Width = 125;
+            this.usuario.HeaderText = "Usuario";
+            this.usuario.MinimumWidth = 6;
+            this.usuario.Name = "usuario";
+            this.usuario.ReadOnly = true;
+            this.usuario.Visible = false;
+            this.usuario.Width = 125;
             // 
             // hash_password
             // 
@@ -642,13 +652,13 @@
             this.id_rol.Visible = false;
             this.id_rol.Width = 125;
             // 
-            // Rol
+            // rol
             // 
-            this.Rol.HeaderText = "Rol";
-            this.Rol.MinimumWidth = 6;
-            this.Rol.Name = "Rol";
-            this.Rol.ReadOnly = true;
-            this.Rol.Width = 125;
+            this.rol.HeaderText = "Rol";
+            this.rol.MinimumWidth = 6;
+            this.rol.Name = "rol";
+            this.rol.ReadOnly = true;
+            this.rol.Width = 125;
             // 
             // activo
             // 
@@ -672,7 +682,7 @@
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.DarkRed;
-            this.ClientSize = new System.Drawing.Size(1693, 644);
+            this.ClientSize = new System.Drawing.Size(1696, 660);
             this.Controls.Add(this.iconButtonLimpiar);
             this.Controls.Add(this.iconButtonBuscar);
             this.Controls.Add(this.textBoxBusqueda);
@@ -761,14 +771,15 @@
         private System.Windows.Forms.DataGridViewTextBoxColumn botonSeleccionar;
         private System.Windows.Forms.DataGridViewTextBoxColumn id_usuario;
         private System.Windows.Forms.DataGridViewTextBoxColumn dni;
-        private System.Windows.Forms.DataGridViewTextBoxColumn NombreCompleto;
-        private System.Windows.Forms.DataGridViewTextBoxColumn Correo;
+        private System.Windows.Forms.DataGridViewTextBoxColumn apellido;
+        private System.Windows.Forms.DataGridViewTextBoxColumn nombre;
+        private System.Windows.Forms.DataGridViewTextBoxColumn correo;
         private System.Windows.Forms.DataGridViewTextBoxColumn fecha_nacimiento;
-        private System.Windows.Forms.DataGridViewTextBoxColumn Sexo;
-        private System.Windows.Forms.DataGridViewTextBoxColumn Usuario;
+        private System.Windows.Forms.DataGridViewTextBoxColumn sexo;
+        private System.Windows.Forms.DataGridViewTextBoxColumn usuario;
         private System.Windows.Forms.DataGridViewTextBoxColumn hash_password;
         private System.Windows.Forms.DataGridViewTextBoxColumn id_rol;
-        private System.Windows.Forms.DataGridViewTextBoxColumn Rol;
+        private System.Windows.Forms.DataGridViewTextBoxColumn rol;
         private System.Windows.Forms.DataGridViewTextBoxColumn activo;
         private System.Windows.Forms.DataGridViewTextBoxColumn Estado;
     }
