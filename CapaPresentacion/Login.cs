@@ -20,11 +20,6 @@ namespace CapaPresentacion
             InitializeComponent();
         }
 
-        private void Login_Load(object sender, EventArgs e)
-        {
-
-        }
-
         private void iconButtonCancelar_Click(object sender, EventArgs e)
         {
             this.Close();
@@ -68,21 +63,6 @@ namespace CapaPresentacion
             textBoxPassword.Text = "";
 
             this.Show();
-        }
-
-        private void labelUser_Click(object sender, EventArgs e)
-        {
-
-        }
-
-        private void textBoxUser_TextChanged(object sender, EventArgs e)
-        {
-
-        }
-
-        private void Login_Load_1(object sender, EventArgs e)
-        {
-
         }
     }
 }

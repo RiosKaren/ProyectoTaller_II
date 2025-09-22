@@ -192,7 +192,6 @@
             this.contenedor.Name = "contenedor";
             this.contenedor.Size = new System.Drawing.Size(1577, 694);
             this.contenedor.TabIndex = 4;
-            this.contenedor.Paint += new System.Windows.Forms.PaintEventHandler(this.contenedor_Paint);
             // 
             // label1
             // 
@@ -206,7 +205,6 @@
             this.label1.Size = new System.Drawing.Size(64, 18);
             this.label1.TabIndex = 5;
             this.label1.Text = "Usuario:";
-            this.label1.Click += new System.EventHandler(this.label1_Click);
             // 
             // lbusuario
             // 
@@ -220,7 +218,6 @@
             this.lbusuario.Size = new System.Drawing.Size(68, 18);
             this.lbusuario.TabIndex = 6;
             this.lbusuario.Text = "lbusuario";
-            this.lbusuario.Click += new System.EventHandler(this.lbusuario_Click);
             // 
             // Inicio
             // 

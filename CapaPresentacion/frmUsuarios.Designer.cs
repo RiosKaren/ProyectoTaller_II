@@ -136,7 +136,6 @@
             this.textBoxDNI.Name = "textBoxDNI";
             this.textBoxDNI.Size = new System.Drawing.Size(132, 22);
             this.textBoxDNI.TabIndex = 4;
-            this.textBoxDNI.TextChanged += new System.EventHandler(this.textBoxDNI_TextChanged);
             this.textBoxDNI.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.textBoxDNI_KeyPress);
             // 
             // textBoxNombre
@@ -195,7 +194,6 @@
             this.textBoxPassword.PasswordChar = '*';
             this.textBoxPassword.Size = new System.Drawing.Size(132, 22);
             this.textBoxPassword.TabIndex = 9;
-            this.textBoxPassword.TextChanged += new System.EventHandler(this.textBoxPassword_TextChanged);
             // 
             // labelSexo
             // 
@@ -402,7 +400,6 @@
             this.UsuariosDGV.Size = new System.Drawing.Size(1170, 534);
             this.UsuariosDGV.TabIndex = 24;
             this.UsuariosDGV.CellClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.UsuariosDGV_CellClick);
-            this.UsuariosDGV.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.UsuariosDGV_CellContentClick);
             this.UsuariosDGV.CellPainting += new System.Windows.Forms.DataGridViewCellPaintingEventHandler(this.UsuariosDGV_CellPainting);
             // 
             // labelListaUsuarios
@@ -437,7 +434,6 @@
             this.dateTimeNacimiento.Size = new System.Drawing.Size(284, 22);
             this.dateTimeNacimiento.TabIndex = 26;
             this.dateTimeNacimiento.Value = new System.DateTime(2025, 9, 20, 0, 0, 0, 0);
-            this.dateTimeNacimiento.ValueChanged += new System.EventHandler(this.dateTimeNacimiento_ValueChanged);
             // 
             // labelFecha
             // 
@@ -470,7 +466,6 @@
             this.comboBoxEstado.Name = "comboBoxEstado";
             this.comboBoxEstado.Size = new System.Drawing.Size(132, 24);
             this.comboBoxEstado.TabIndex = 29;
-            this.comboBoxEstado.SelectedIndexChanged += new System.EventHandler(this.comboBoxEstado_SelectedIndexChanged);
             // 
             // comboBoxRoles
             // 
@@ -483,7 +478,6 @@
             this.comboBoxRoles.Name = "comboBoxRoles";
             this.comboBoxRoles.Size = new System.Drawing.Size(135, 24);
             this.comboBoxRoles.TabIndex = 30;
-            this.comboBoxRoles.SelectedIndexChanged += new System.EventHandler(this.comboBoxRoles_SelectedIndexChanged);
             // 
             // labelBuscar
             // 
@@ -495,7 +489,6 @@
             this.labelBuscar.Size = new System.Drawing.Size(76, 16);
             this.labelBuscar.TabIndex = 31;
             this.labelBuscar.Text = "Buscar Por:";
-            this.labelBuscar.Click += new System.EventHandler(this.label3_Click);
             // 
             // comboBoxBusqueda
             // 
@@ -508,7 +501,6 @@
             this.comboBoxBusqueda.Name = "comboBoxBusqueda";
             this.comboBoxBusqueda.Size = new System.Drawing.Size(165, 24);
             this.comboBoxBusqueda.TabIndex = 32;
-            this.comboBoxBusqueda.SelectedIndexChanged += new System.EventHandler(this.comboBoxBusqueda_SelectedIndexChanged);
             // 
             // textBoxBusqueda
             // 
@@ -597,7 +589,6 @@
             this.textBoxCPassword.PasswordChar = '*';
             this.textBoxCPassword.Size = new System.Drawing.Size(132, 22);
             this.textBoxCPassword.TabIndex = 10;
-            this.textBoxCPassword.TextChanged += new System.EventHandler(this.textBoxCPassword_TextChanged);
             // 
             // estado
             // 

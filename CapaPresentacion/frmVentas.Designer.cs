@@ -75,7 +75,6 @@
             this.LVentas.Size = new System.Drawing.Size(123, 39);
             this.LVentas.TabIndex = 1;
             this.LVentas.Text = "Ventas";
-            this.LVentas.Click += new System.EventHandler(this.label1_Click);
             // 
             // panel1
             // 
