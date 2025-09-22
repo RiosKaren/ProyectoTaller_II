@@ -16,5 +16,20 @@ namespace CapaPresentacion
         {
             InitializeComponent();
         }
+
+        private void LDni_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void LActivo_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void DTPFechaNacimiento_ValueChanged(object sender, EventArgs e)
+        {
+
+        }
     }
 }
