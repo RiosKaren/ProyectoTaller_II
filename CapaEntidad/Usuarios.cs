@@ -14,7 +14,7 @@ namespace CapaEntidad
         public string email { get; set; }
         public string usuario { get; set; }
         public int dni { get; set; }
-        public string fecha_nacimiento { get; set; }
+        public DateTime fecha_nacimiento { get; set; }
         public bool sexo { get; set; }
         public string hash_password { get; set; }
         public bool activo { get; set; }

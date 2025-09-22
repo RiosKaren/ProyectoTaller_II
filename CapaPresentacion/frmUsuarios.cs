@@ -31,6 +31,7 @@ namespace CapaPresentacion
             comboBoxEstado.ValueMember = "Valor";
             comboBoxEstado.SelectedIndex = 0;
 
+            
 
             List<Roles> listaRoles = new CN_Rol().Listar();
 
@@ -53,13 +54,14 @@ namespace CapaPresentacion
             comboBoxBusqueda.ValueMember = "Valor";
 
 
+
             //Mostrar todos los usuarios
             List<Usuarios> listaUsuarios = new CN_Usuario().Listar();
 
             foreach (Usuarios item in listaUsuarios)
             {
                 string sexo = item.sexo ? "Masculino" : "Femenino";
-                DateTime fechaDT = DateTime.Parse(item.fecha_nacimiento);
+                DateTime fechaDT = item.fecha_nacimiento;
                 string fecha = fechaDT.ToString("dd/MM/yyyy");
                 string estado = item.activo ? "ACTIVO" : "NO ACTIVO";
 
@@ -83,22 +85,80 @@ namespace CapaPresentacion
 
         private void btnGuardar_Click_1(object sender, EventArgs e)
         {
-            string sexo = radioButtonFemenino.Checked ? "Femenino" : "Masculino";
+            string mensaje = string.Empty;
 
-            UsuariosDGV.Rows.Add(new object[] { "", textBoxID.Text, textBoxDNI.Text, textBoxNombre.Text, textBoxApellido.Text, 
+            Usuarios objusuario = new Usuarios()
+            {
+                id_usuario = Convert.ToInt32(textBoxID.Text),
+                dni = Convert.ToInt32(textBoxDNI.Text),
+                nombre = textBoxNombre.Text,
+                apellido = textBoxApellido.Text,
+                email = textBoxEmail.Text,
+                usuario = textBoxUser.Text,
+                hash_password = textBoxPassword.Text,
+                id_rol = new Roles() { id_rol = Convert.ToInt32(((OpcionCombo)comboBoxRoles.SelectedItem).Valor) },
+                activo = Convert.ToInt32(((OpcionCombo)comboBoxEstado.SelectedItem).Valor) == 1,
+                fecha_nacimiento = dateTimeNacimiento.Value,
+                sexo = radioButtonMasculino.Checked
+            };
+
+            if (objusuario.id_usuario == 0)
+            {
+                // NUEVO USUARIO
+                int idusuariogenerado = new CN_Usuario().Registrar(objusuario, out mensaje);
+
+                if (idusuariogenerado != 0)
+                {
+                    // lo agregás al DataGridView
+                    string sexo = radioButtonFemenino.Checked ? "Femenino" : "Masculino";
+                    UsuariosDGV.Rows.Add(new object[] { "", idusuariogenerado, textBoxDNI.Text, textBoxNombre.Text, textBoxApellido.Text,
                                 textBoxEmail.Text, dateTimeNacimiento.Value.ToString("dd/MM/yyyy"),
-                                sexo, textBoxUser.Text, textBoxCPassword.Text,
+                                sexo, textBoxUser.Text, textBoxPassword.Text,
                                 ((OpcionCombo)comboBoxRoles.SelectedItem).Valor.ToString(),
                                 ((OpcionCombo)comboBoxRoles.SelectedItem).Texto.ToString(),
                                 ((OpcionCombo)comboBoxEstado.SelectedItem).Valor.ToString(),
                                 ((OpcionCombo)comboBoxEstado.SelectedItem).Texto.ToString(),
                                 });
+                }
+                else
+                {
+                    MessageBox.Show(mensaje, "Error", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                }
+            }
+            else
+            {
+                // EDITAR USUARIO
+                bool resultado = new CN_Usuario().Editar(objusuario, out mensaje);
+
+                if (resultado)
+                {
+                    // actualizar fila existente en el DGV
+                    DataGridViewRow row = UsuariosDGV.Rows[Convert.ToInt32(textBoxIndice.Text)];
+                    row.Cells["dni"].Value = textBoxDNI.Text;
+                    row.Cells["nombre"].Value = textBoxNombre.Text;
+                    row.Cells["apellido"].Value = textBoxApellido.Text;
+                    row.Cells["email"].Value = textBoxEmail.Text;
+                    row.Cells["usuario"].Value = textBoxUser.Text;
+                    row.Cells["hash_password"].Value = textBoxPassword.Text;
+                    row.Cells["fecha_nacimiento"].Value = dateTimeNacimiento.Value.ToString("dd/MM/yyyy");
+                    row.Cells["sexo"].Value = radioButtonMasculino.Checked ? "Masculino" : "Femenino";
+                    row.Cells["id_rol"].Value = ((OpcionCombo)comboBoxRoles.SelectedItem).Valor.ToString();
+                    row.Cells["rol"].Value = ((OpcionCombo)comboBoxRoles.SelectedItem).Texto.ToString();
+                    row.Cells["activo"].Value = ((OpcionCombo)comboBoxEstado.SelectedItem).Valor.ToString();
+                    row.Cells["estado"].Value = ((OpcionCombo)comboBoxEstado.SelectedItem).Texto.ToString();
+                }
+                else
+                {
+                    MessageBox.Show(mensaje, "Error", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                }
+            }
 
             Limpiar();
         }
 
         private void Limpiar()
         {
+            textBoxIndice.Text = "-1";
             textBoxID.Text = "0";
             textBoxDNI.Text = "";
             textBoxNombre.Text = "";
@@ -108,7 +168,7 @@ namespace CapaPresentacion
             textBoxPassword.Text = "";
             textBoxCPassword.Text = "";
 
-            // 🔹 Fecha: asegurarse de que esté en rango
+            //asegurarse de que este en rango
             if (DateTime.Today < dateTimeNacimiento.MinDate)
             {
                 dateTimeNacimiento.Value = dateTimeNacimiento.MinDate;
@@ -154,10 +214,7 @@ namespace CapaPresentacion
            
         }
 
-        private void UsuariosDGV_CellContentClick(object sender, DataGridViewCellEventArgs e)
-        {
-            
-        }
+
 
         private void UsuariosDGV_CellClick(object sender, DataGridViewCellEventArgs e)
         {
@@ -168,7 +225,7 @@ namespace CapaPresentacion
                 return;
 
             var row = UsuariosDGV.Rows[e.RowIndex];
-
+            textBoxIndice.Text = e.RowIndex.ToString();
             textBoxID.Text = Convert.ToString(row.Cells["id_usuario"].Value);
             textBoxDNI.Text = Convert.ToString(row.Cells["dni"].Value);
             textBoxApellido.Text = Convert.ToString(row.Cells["apellido"].Value);
@@ -221,7 +278,40 @@ namespace CapaPresentacion
                 }
             }
 
+            BloquearCampos();
 
+        }
+
+        private void BloquearCampos()
+        {
+            foreach (var tb in new[] { textBoxDNI, textBoxNombre, textBoxApellido,
+                               textBoxEmail, textBoxUser, textBoxPassword, textBoxCPassword })
+            {
+                tb.ReadOnly = true;         // no editable
+                tb.Cursor = Cursors.No;     
+            }
+
+            dateTimeNacimiento.Enabled = false;
+            radioButtonFemenino.Enabled = false;
+            radioButtonMasculino.Enabled = false;
+            comboBoxRoles.Enabled = false;
+            comboBoxEstado.Enabled = false;
+        }
+
+        private void btnEditar_Click(object sender, EventArgs e)
+        {
+            foreach (var tb in new[] { textBoxDNI, textBoxNombre, textBoxApellido,
+                               textBoxEmail, textBoxUser, textBoxPassword, textBoxCPassword })
+            {
+                tb.ReadOnly = false;          // editable
+                tb.Cursor = Cursors.IBeam; 
+            }
+
+            dateTimeNacimiento.Enabled = true;
+            radioButtonFemenino.Enabled = true;
+            radioButtonMasculino.Enabled = true;
+            comboBoxRoles.Enabled = true;
+            comboBoxEstado.Enabled = true;
         }
 
 
@@ -287,6 +377,9 @@ namespace CapaPresentacion
                 textBoxEmail.Focus();
             }
         }
+
+
+        ///////////////////////// VERRRRRRRRRRRRRRR
         private void btnGuardar_Click(object sender, EventArgs e)
         {
             string nombre = textBoxNombre.Text.Trim();

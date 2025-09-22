@@ -28,8 +28,8 @@
         /// </summary>
         private void InitializeComponent()
         {
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle1 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle2 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle5 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle6 = new System.Windows.Forms.DataGridViewCellStyle();
             this.label1 = new System.Windows.Forms.Label();
             this.label2 = new System.Windows.Forms.Label();
             this.labelNombre = new System.Windows.Forms.Label();
@@ -54,18 +54,6 @@
             this.btnEliminar = new FontAwesome.Sharp.IconButton();
             this.labelTitulo = new System.Windows.Forms.Label();
             this.UsuariosDGV = new System.Windows.Forms.DataGridView();
-            this.labelListaUsuarios = new System.Windows.Forms.Label();
-            this.textBoxID = new System.Windows.Forms.TextBox();
-            this.dateTimeNacimiento = new System.Windows.Forms.DateTimePicker();
-            this.labelFecha = new System.Windows.Forms.Label();
-            this.labelEstado = new System.Windows.Forms.Label();
-            this.comboBoxEstado = new System.Windows.Forms.ComboBox();
-            this.comboBoxRoles = new System.Windows.Forms.ComboBox();
-            this.labelBuscar = new System.Windows.Forms.Label();
-            this.comboBoxBusqueda = new System.Windows.Forms.ComboBox();
-            this.textBoxBusqueda = new System.Windows.Forms.TextBox();
-            this.iconButtonLimpiar = new FontAwesome.Sharp.IconButton();
-            this.iconButtonBuscar = new FontAwesome.Sharp.IconButton();
             this.botonSeleccionar = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.id_usuario = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.dni = new System.Windows.Forms.DataGridViewTextBoxColumn();
@@ -80,6 +68,19 @@
             this.rol = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.activo = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.Estado = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.labelListaUsuarios = new System.Windows.Forms.Label();
+            this.textBoxID = new System.Windows.Forms.TextBox();
+            this.dateTimeNacimiento = new System.Windows.Forms.DateTimePicker();
+            this.labelFecha = new System.Windows.Forms.Label();
+            this.labelEstado = new System.Windows.Forms.Label();
+            this.comboBoxEstado = new System.Windows.Forms.ComboBox();
+            this.comboBoxRoles = new System.Windows.Forms.ComboBox();
+            this.labelBuscar = new System.Windows.Forms.Label();
+            this.comboBoxBusqueda = new System.Windows.Forms.ComboBox();
+            this.textBoxBusqueda = new System.Windows.Forms.TextBox();
+            this.iconButtonLimpiar = new FontAwesome.Sharp.IconButton();
+            this.iconButtonBuscar = new FontAwesome.Sharp.IconButton();
+            this.textBoxIndice = new System.Windows.Forms.TextBox();
             ((System.ComponentModel.ISupportInitialize)(this.UsuariosDGV)).BeginInit();
             this.SuspendLayout();
             // 
@@ -130,7 +131,7 @@
             // textBoxDNI
             // 
             this.textBoxDNI.Location = new System.Drawing.Point(43, 74);
-            this.textBoxDNI.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.textBoxDNI.Margin = new System.Windows.Forms.Padding(4);
             this.textBoxDNI.Name = "textBoxDNI";
             this.textBoxDNI.Size = new System.Drawing.Size(132, 22);
             this.textBoxDNI.TabIndex = 4;
@@ -140,7 +141,7 @@
             // textBoxNombre
             // 
             this.textBoxNombre.Location = new System.Drawing.Point(43, 135);
-            this.textBoxNombre.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.textBoxNombre.Margin = new System.Windows.Forms.Padding(4);
             this.textBoxNombre.Name = "textBoxNombre";
             this.textBoxNombre.Size = new System.Drawing.Size(132, 22);
             this.textBoxNombre.TabIndex = 5;
@@ -149,7 +150,7 @@
             // textBoxApellido
             // 
             this.textBoxApellido.Location = new System.Drawing.Point(195, 135);
-            this.textBoxApellido.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.textBoxApellido.Margin = new System.Windows.Forms.Padding(4);
             this.textBoxApellido.Name = "textBoxApellido";
             this.textBoxApellido.Size = new System.Drawing.Size(132, 22);
             this.textBoxApellido.TabIndex = 6;
@@ -158,7 +159,7 @@
             // textBoxUser
             // 
             this.textBoxUser.Location = new System.Drawing.Point(43, 190);
-            this.textBoxUser.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.textBoxUser.Margin = new System.Windows.Forms.Padding(4);
             this.textBoxUser.Name = "textBoxUser";
             this.textBoxUser.Size = new System.Drawing.Size(132, 22);
             this.textBoxUser.TabIndex = 7;
@@ -188,7 +189,7 @@
             // textBoxPassword
             // 
             this.textBoxPassword.Location = new System.Drawing.Point(43, 244);
-            this.textBoxPassword.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.textBoxPassword.Margin = new System.Windows.Forms.Padding(4);
             this.textBoxPassword.Name = "textBoxPassword";
             this.textBoxPassword.PasswordChar = '*';
             this.textBoxPassword.Size = new System.Drawing.Size(132, 22);
@@ -213,7 +214,7 @@
             this.radioButtonFemenino.Checked = true;
             this.radioButtonFemenino.Cursor = System.Windows.Forms.Cursors.Hand;
             this.radioButtonFemenino.Location = new System.Drawing.Point(43, 411);
-            this.radioButtonFemenino.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.radioButtonFemenino.Margin = new System.Windows.Forms.Padding(4);
             this.radioButtonFemenino.Name = "radioButtonFemenino";
             this.radioButtonFemenino.Size = new System.Drawing.Size(88, 20);
             this.radioButtonFemenino.TabIndex = 11;
@@ -227,7 +228,7 @@
             this.radioButtonMasculino.BackColor = System.Drawing.Color.White;
             this.radioButtonMasculino.Cursor = System.Windows.Forms.Cursors.Hand;
             this.radioButtonMasculino.Location = new System.Drawing.Point(195, 409);
-            this.radioButtonMasculino.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.radioButtonMasculino.Margin = new System.Windows.Forms.Padding(4);
             this.radioButtonMasculino.Name = "radioButtonMasculino";
             this.radioButtonMasculino.Size = new System.Drawing.Size(89, 20);
             this.radioButtonMasculino.TabIndex = 12;
@@ -248,7 +249,7 @@
             // textBoxCPassword
             // 
             this.textBoxCPassword.Location = new System.Drawing.Point(43, 299);
-            this.textBoxCPassword.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.textBoxCPassword.Margin = new System.Windows.Forms.Padding(4);
             this.textBoxCPassword.Name = "textBoxCPassword";
             this.textBoxCPassword.PasswordChar = '*';
             this.textBoxCPassword.Size = new System.Drawing.Size(132, 22);
@@ -269,7 +270,7 @@
             // textBoxEmail
             // 
             this.textBoxEmail.Location = new System.Drawing.Point(195, 190);
-            this.textBoxEmail.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.textBoxEmail.Margin = new System.Windows.Forms.Padding(4);
             this.textBoxEmail.Name = "textBoxEmail";
             this.textBoxEmail.Size = new System.Drawing.Size(132, 22);
             this.textBoxEmail.TabIndex = 8;
@@ -298,7 +299,7 @@
             this.btnGuardar.IconFont = FontAwesome.Sharp.IconFont.Auto;
             this.btnGuardar.IconSize = 16;
             this.btnGuardar.Location = new System.Drawing.Point(41, 512);
-            this.btnGuardar.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.btnGuardar.Margin = new System.Windows.Forms.Padding(4);
             this.btnGuardar.Name = "btnGuardar";
             this.btnGuardar.Size = new System.Drawing.Size(287, 28);
             this.btnGuardar.TabIndex = 17;
@@ -320,7 +321,7 @@
             this.btnEditar.IconFont = FontAwesome.Sharp.IconFont.Auto;
             this.btnEditar.IconSize = 16;
             this.btnEditar.Location = new System.Drawing.Point(41, 548);
-            this.btnEditar.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.btnEditar.Margin = new System.Windows.Forms.Padding(4);
             this.btnEditar.Name = "btnEditar";
             this.btnEditar.Size = new System.Drawing.Size(287, 28);
             this.btnEditar.TabIndex = 15;
@@ -328,6 +329,7 @@
             this.btnEditar.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
             this.btnEditar.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
             this.btnEditar.UseVisualStyleBackColor = false;
+            this.btnEditar.Click += new System.EventHandler(this.btnEditar_Click);
             // 
             // btnEliminar
             // 
@@ -341,7 +343,7 @@
             this.btnEliminar.IconFont = FontAwesome.Sharp.IconFont.Auto;
             this.btnEliminar.IconSize = 16;
             this.btnEliminar.Location = new System.Drawing.Point(41, 583);
-            this.btnEliminar.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.btnEliminar.Margin = new System.Windows.Forms.Padding(4);
             this.btnEliminar.Name = "btnEliminar";
             this.btnEliminar.Size = new System.Drawing.Size(287, 28);
             this.btnEliminar.TabIndex = 16;
@@ -365,15 +367,15 @@
             // UsuariosDGV
             // 
             this.UsuariosDGV.AllowUserToAddRows = false;
-            dataGridViewCellStyle1.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
-            dataGridViewCellStyle1.BackColor = System.Drawing.SystemColors.Control;
-            dataGridViewCellStyle1.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            dataGridViewCellStyle1.ForeColor = System.Drawing.SystemColors.WindowText;
-            dataGridViewCellStyle1.Padding = new System.Windows.Forms.Padding(2);
-            dataGridViewCellStyle1.SelectionBackColor = System.Drawing.SystemColors.Highlight;
-            dataGridViewCellStyle1.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
-            dataGridViewCellStyle1.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
-            this.UsuariosDGV.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle1;
+            dataGridViewCellStyle5.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle5.BackColor = System.Drawing.SystemColors.Control;
+            dataGridViewCellStyle5.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle5.ForeColor = System.Drawing.SystemColors.WindowText;
+            dataGridViewCellStyle5.Padding = new System.Windows.Forms.Padding(2);
+            dataGridViewCellStyle5.SelectionBackColor = System.Drawing.SystemColors.Highlight;
+            dataGridViewCellStyle5.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
+            dataGridViewCellStyle5.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
+            this.UsuariosDGV.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle5;
             this.UsuariosDGV.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.UsuariosDGV.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
             this.botonSeleccionar,
@@ -391,176 +393,24 @@
             this.activo,
             this.Estado});
             this.UsuariosDGV.Location = new System.Drawing.Point(532, 186);
-            this.UsuariosDGV.Margin = new System.Windows.Forms.Padding(5, 5, 5, 5);
+            this.UsuariosDGV.Margin = new System.Windows.Forms.Padding(5);
             this.UsuariosDGV.MultiSelect = false;
             this.UsuariosDGV.Name = "UsuariosDGV";
             this.UsuariosDGV.ReadOnly = true;
-            dataGridViewCellStyle2.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
-            dataGridViewCellStyle2.BackColor = System.Drawing.SystemColors.Control;
-            dataGridViewCellStyle2.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            dataGridViewCellStyle2.ForeColor = System.Drawing.SystemColors.WindowText;
-            dataGridViewCellStyle2.SelectionBackColor = System.Drawing.Color.White;
-            dataGridViewCellStyle2.SelectionForeColor = System.Drawing.Color.Black;
-            dataGridViewCellStyle2.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
-            this.UsuariosDGV.RowHeadersDefaultCellStyle = dataGridViewCellStyle2;
+            dataGridViewCellStyle6.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle6.BackColor = System.Drawing.SystemColors.Control;
+            dataGridViewCellStyle6.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle6.ForeColor = System.Drawing.SystemColors.WindowText;
+            dataGridViewCellStyle6.SelectionBackColor = System.Drawing.Color.White;
+            dataGridViewCellStyle6.SelectionForeColor = System.Drawing.Color.Black;
+            dataGridViewCellStyle6.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
+            this.UsuariosDGV.RowHeadersDefaultCellStyle = dataGridViewCellStyle6;
             this.UsuariosDGV.RowHeadersWidth = 51;
             this.UsuariosDGV.RowTemplate.Height = 28;
             this.UsuariosDGV.Size = new System.Drawing.Size(1170, 591);
             this.UsuariosDGV.TabIndex = 24;
             this.UsuariosDGV.CellClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.UsuariosDGV_CellClick);
-            this.UsuariosDGV.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.UsuariosDGV_CellContentClick);
             this.UsuariosDGV.CellPainting += new System.Windows.Forms.DataGridViewCellPaintingEventHandler(this.UsuariosDGV_CellPainting);
-            // 
-            // labelListaUsuarios
-            // 
-            this.labelListaUsuarios.BackColor = System.Drawing.Color.White;
-            this.labelListaUsuarios.Font = new System.Drawing.Font("Microsoft Sans Serif", 16F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.labelListaUsuarios.Location = new System.Drawing.Point(600, 37);
-            this.labelListaUsuarios.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
-            this.labelListaUsuarios.Name = "labelListaUsuarios";
-            this.labelListaUsuarios.Size = new System.Drawing.Size(1036, 62);
-            this.labelListaUsuarios.TabIndex = 25;
-            this.labelListaUsuarios.Text = "Lista de Usuarios:";
-            this.labelListaUsuarios.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            // 
-            // textBoxID
-            // 
-            this.textBoxID.Location = new System.Drawing.Point(285, 50);
-            this.textBoxID.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
-            this.textBoxID.Name = "textBoxID";
-            this.textBoxID.Size = new System.Drawing.Size(41, 22);
-            this.textBoxID.TabIndex = 15;
-            this.textBoxID.Text = "0";
-            // 
-            // dateTimeNacimiento
-            // 
-            this.dateTimeNacimiento.Location = new System.Drawing.Point(43, 356);
-            this.dateTimeNacimiento.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
-            this.dateTimeNacimiento.MaxDate = new System.DateTime(2025, 9, 20, 0, 0, 0, 0);
-            this.dateTimeNacimiento.MinDate = new System.DateTime(1900, 1, 1, 0, 0, 0, 0);
-            this.dateTimeNacimiento.Name = "dateTimeNacimiento";
-            this.dateTimeNacimiento.Size = new System.Drawing.Size(284, 22);
-            this.dateTimeNacimiento.TabIndex = 26;
-            this.dateTimeNacimiento.Value = new System.DateTime(2025, 9, 20, 0, 0, 0, 0);
-            this.dateTimeNacimiento.ValueChanged += new System.EventHandler(this.dateTimeNacimiento_ValueChanged);
-            // 
-            // labelFecha
-            // 
-            this.labelFecha.AutoSize = true;
-            this.labelFecha.BackColor = System.Drawing.Color.White;
-            this.labelFecha.Location = new System.Drawing.Point(41, 334);
-            this.labelFecha.Name = "labelFecha";
-            this.labelFecha.Size = new System.Drawing.Size(138, 16);
-            this.labelFecha.TabIndex = 27;
-            this.labelFecha.Text = "Fecha de Nacimiento:";
-            // 
-            // labelEstado
-            // 
-            this.labelEstado.AutoSize = true;
-            this.labelEstado.BackColor = System.Drawing.Color.White;
-            this.labelEstado.Location = new System.Drawing.Point(192, 446);
-            this.labelEstado.Name = "labelEstado";
-            this.labelEstado.Size = new System.Drawing.Size(119, 16);
-            this.labelEstado.TabIndex = 28;
-            this.labelEstado.Text = "Estado de usuario:";
-            // 
-            // comboBoxEstado
-            // 
-            this.comboBoxEstado.BackColor = System.Drawing.Color.White;
-            this.comboBoxEstado.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.comboBoxEstado.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
-            this.comboBoxEstado.FormattingEnabled = true;
-            this.comboBoxEstado.Location = new System.Drawing.Point(195, 468);
-            this.comboBoxEstado.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
-            this.comboBoxEstado.Name = "comboBoxEstado";
-            this.comboBoxEstado.Size = new System.Drawing.Size(132, 24);
-            this.comboBoxEstado.TabIndex = 29;
-            this.comboBoxEstado.SelectedIndexChanged += new System.EventHandler(this.comboBoxEstado_SelectedIndexChanged);
-            // 
-            // comboBoxRoles
-            // 
-            this.comboBoxRoles.BackColor = System.Drawing.Color.White;
-            this.comboBoxRoles.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.comboBoxRoles.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
-            this.comboBoxRoles.FormattingEnabled = true;
-            this.comboBoxRoles.Location = new System.Drawing.Point(40, 468);
-            this.comboBoxRoles.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
-            this.comboBoxRoles.Name = "comboBoxRoles";
-            this.comboBoxRoles.Size = new System.Drawing.Size(132, 24);
-            this.comboBoxRoles.TabIndex = 30;
-            this.comboBoxRoles.SelectedIndexChanged += new System.EventHandler(this.comboBoxRoles_SelectedIndexChanged);
-            // 
-            // labelBuscar
-            // 
-            this.labelBuscar.AutoSize = true;
-            this.labelBuscar.BackColor = System.Drawing.Color.White;
-            this.labelBuscar.Location = new System.Drawing.Point(909, 59);
-            this.labelBuscar.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
-            this.labelBuscar.Name = "labelBuscar";
-            this.labelBuscar.Size = new System.Drawing.Size(76, 16);
-            this.labelBuscar.TabIndex = 31;
-            this.labelBuscar.Text = "Buscar Por:";
-            this.labelBuscar.Click += new System.EventHandler(this.label3_Click);
-            // 
-            // comboBoxBusqueda
-            // 
-            this.comboBoxBusqueda.BackColor = System.Drawing.Color.White;
-            this.comboBoxBusqueda.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.comboBoxBusqueda.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
-            this.comboBoxBusqueda.FormattingEnabled = true;
-            this.comboBoxBusqueda.Location = new System.Drawing.Point(993, 53);
-            this.comboBoxBusqueda.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
-            this.comboBoxBusqueda.Name = "comboBoxBusqueda";
-            this.comboBoxBusqueda.Size = new System.Drawing.Size(132, 24);
-            this.comboBoxBusqueda.TabIndex = 32;
-            this.comboBoxBusqueda.SelectedIndexChanged += new System.EventHandler(this.comboBoxBusqueda_SelectedIndexChanged);
-            // 
-            // textBoxBusqueda
-            // 
-            this.textBoxBusqueda.Location = new System.Drawing.Point(1133, 53);
-            this.textBoxBusqueda.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
-            this.textBoxBusqueda.Name = "textBoxBusqueda";
-            this.textBoxBusqueda.Size = new System.Drawing.Size(209, 22);
-            this.textBoxBusqueda.TabIndex = 33;
-            // 
-            // iconButtonLimpiar
-            // 
-            this.iconButtonLimpiar.BackColor = System.Drawing.Color.White;
-            this.iconButtonLimpiar.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.iconButtonLimpiar.FlatAppearance.BorderColor = System.Drawing.Color.Black;
-            this.iconButtonLimpiar.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.iconButtonLimpiar.ForeColor = System.Drawing.Color.White;
-            this.iconButtonLimpiar.IconChar = FontAwesome.Sharp.IconChar.Eraser;
-            this.iconButtonLimpiar.IconColor = System.Drawing.Color.Black;
-            this.iconButtonLimpiar.IconFont = FontAwesome.Sharp.IconFont.Auto;
-            this.iconButtonLimpiar.IconSize = 18;
-            this.iconButtonLimpiar.Location = new System.Drawing.Point(1405, 53);
-            this.iconButtonLimpiar.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
-            this.iconButtonLimpiar.Name = "iconButtonLimpiar";
-            this.iconButtonLimpiar.Size = new System.Drawing.Size(45, 22);
-            this.iconButtonLimpiar.TabIndex = 34;
-            this.iconButtonLimpiar.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
-            this.iconButtonLimpiar.UseVisualStyleBackColor = false;
-            this.iconButtonLimpiar.Click += new System.EventHandler(this.iconButtonLimpiar_Click);
-            // 
-            // iconButtonBuscar
-            // 
-            this.iconButtonBuscar.BackColor = System.Drawing.Color.White;
-            this.iconButtonBuscar.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.iconButtonBuscar.FlatAppearance.BorderColor = System.Drawing.Color.Black;
-            this.iconButtonBuscar.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.iconButtonBuscar.ForeColor = System.Drawing.Color.White;
-            this.iconButtonBuscar.IconChar = FontAwesome.Sharp.IconChar.MagnifyingGlass;
-            this.iconButtonBuscar.IconColor = System.Drawing.Color.Black;
-            this.iconButtonBuscar.IconFont = FontAwesome.Sharp.IconFont.Auto;
-            this.iconButtonBuscar.IconSize = 16;
-            this.iconButtonBuscar.Location = new System.Drawing.Point(1352, 53);
-            this.iconButtonBuscar.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
-            this.iconButtonBuscar.Name = "iconButtonBuscar";
-            this.iconButtonBuscar.Size = new System.Drawing.Size(45, 22);
-            this.iconButtonBuscar.TabIndex = 35;
-            this.iconButtonBuscar.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
-            this.iconButtonBuscar.UseVisualStyleBackColor = false;
             // 
             // botonSeleccionar
             // 
@@ -679,12 +529,172 @@
             this.Estado.ReadOnly = true;
             this.Estado.Width = 125;
             // 
+            // labelListaUsuarios
+            // 
+            this.labelListaUsuarios.BackColor = System.Drawing.Color.White;
+            this.labelListaUsuarios.Font = new System.Drawing.Font("Microsoft Sans Serif", 16F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.labelListaUsuarios.Location = new System.Drawing.Point(600, 37);
+            this.labelListaUsuarios.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+            this.labelListaUsuarios.Name = "labelListaUsuarios";
+            this.labelListaUsuarios.Size = new System.Drawing.Size(1036, 62);
+            this.labelListaUsuarios.TabIndex = 25;
+            this.labelListaUsuarios.Text = "Lista de Usuarios:";
+            this.labelListaUsuarios.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            // 
+            // textBoxID
+            // 
+            this.textBoxID.Location = new System.Drawing.Point(285, 50);
+            this.textBoxID.Margin = new System.Windows.Forms.Padding(4);
+            this.textBoxID.Name = "textBoxID";
+            this.textBoxID.Size = new System.Drawing.Size(41, 22);
+            this.textBoxID.TabIndex = 15;
+            this.textBoxID.Text = "0";
+            // 
+            // dateTimeNacimiento
+            // 
+            this.dateTimeNacimiento.Location = new System.Drawing.Point(43, 356);
+            this.dateTimeNacimiento.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.dateTimeNacimiento.MaxDate = new System.DateTime(2025, 9, 20, 0, 0, 0, 0);
+            this.dateTimeNacimiento.MinDate = new System.DateTime(1900, 1, 1, 0, 0, 0, 0);
+            this.dateTimeNacimiento.Name = "dateTimeNacimiento";
+            this.dateTimeNacimiento.Size = new System.Drawing.Size(284, 22);
+            this.dateTimeNacimiento.TabIndex = 26;
+            this.dateTimeNacimiento.Value = new System.DateTime(2025, 9, 20, 0, 0, 0, 0);
+            this.dateTimeNacimiento.ValueChanged += new System.EventHandler(this.dateTimeNacimiento_ValueChanged);
+            // 
+            // labelFecha
+            // 
+            this.labelFecha.AutoSize = true;
+            this.labelFecha.BackColor = System.Drawing.Color.White;
+            this.labelFecha.Location = new System.Drawing.Point(41, 334);
+            this.labelFecha.Name = "labelFecha";
+            this.labelFecha.Size = new System.Drawing.Size(138, 16);
+            this.labelFecha.TabIndex = 27;
+            this.labelFecha.Text = "Fecha de Nacimiento:";
+            // 
+            // labelEstado
+            // 
+            this.labelEstado.AutoSize = true;
+            this.labelEstado.BackColor = System.Drawing.Color.White;
+            this.labelEstado.Location = new System.Drawing.Point(192, 446);
+            this.labelEstado.Name = "labelEstado";
+            this.labelEstado.Size = new System.Drawing.Size(119, 16);
+            this.labelEstado.TabIndex = 28;
+            this.labelEstado.Text = "Estado de usuario:";
+            // 
+            // comboBoxEstado
+            // 
+            this.comboBoxEstado.BackColor = System.Drawing.Color.White;
+            this.comboBoxEstado.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.comboBoxEstado.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
+            this.comboBoxEstado.FormattingEnabled = true;
+            this.comboBoxEstado.Location = new System.Drawing.Point(195, 468);
+            this.comboBoxEstado.Margin = new System.Windows.Forms.Padding(4);
+            this.comboBoxEstado.Name = "comboBoxEstado";
+            this.comboBoxEstado.Size = new System.Drawing.Size(132, 24);
+            this.comboBoxEstado.TabIndex = 29;
+            this.comboBoxEstado.SelectedIndexChanged += new System.EventHandler(this.comboBoxEstado_SelectedIndexChanged);
+            // 
+            // comboBoxRoles
+            // 
+            this.comboBoxRoles.BackColor = System.Drawing.Color.White;
+            this.comboBoxRoles.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.comboBoxRoles.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
+            this.comboBoxRoles.FormattingEnabled = true;
+            this.comboBoxRoles.Location = new System.Drawing.Point(40, 468);
+            this.comboBoxRoles.Margin = new System.Windows.Forms.Padding(4);
+            this.comboBoxRoles.Name = "comboBoxRoles";
+            this.comboBoxRoles.Size = new System.Drawing.Size(132, 24);
+            this.comboBoxRoles.TabIndex = 30;
+            this.comboBoxRoles.SelectedIndexChanged += new System.EventHandler(this.comboBoxRoles_SelectedIndexChanged);
+            // 
+            // labelBuscar
+            // 
+            this.labelBuscar.AutoSize = true;
+            this.labelBuscar.BackColor = System.Drawing.Color.White;
+            this.labelBuscar.Location = new System.Drawing.Point(909, 59);
+            this.labelBuscar.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+            this.labelBuscar.Name = "labelBuscar";
+            this.labelBuscar.Size = new System.Drawing.Size(76, 16);
+            this.labelBuscar.TabIndex = 31;
+            this.labelBuscar.Text = "Buscar Por:";
+            this.labelBuscar.Click += new System.EventHandler(this.label3_Click);
+            // 
+            // comboBoxBusqueda
+            // 
+            this.comboBoxBusqueda.BackColor = System.Drawing.Color.White;
+            this.comboBoxBusqueda.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.comboBoxBusqueda.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
+            this.comboBoxBusqueda.FormattingEnabled = true;
+            this.comboBoxBusqueda.Location = new System.Drawing.Point(993, 53);
+            this.comboBoxBusqueda.Margin = new System.Windows.Forms.Padding(4);
+            this.comboBoxBusqueda.Name = "comboBoxBusqueda";
+            this.comboBoxBusqueda.Size = new System.Drawing.Size(132, 24);
+            this.comboBoxBusqueda.TabIndex = 32;
+            this.comboBoxBusqueda.SelectedIndexChanged += new System.EventHandler(this.comboBoxBusqueda_SelectedIndexChanged);
+            // 
+            // textBoxBusqueda
+            // 
+            this.textBoxBusqueda.Location = new System.Drawing.Point(1133, 53);
+            this.textBoxBusqueda.Margin = new System.Windows.Forms.Padding(4);
+            this.textBoxBusqueda.Name = "textBoxBusqueda";
+            this.textBoxBusqueda.Size = new System.Drawing.Size(209, 22);
+            this.textBoxBusqueda.TabIndex = 33;
+            // 
+            // iconButtonLimpiar
+            // 
+            this.iconButtonLimpiar.BackColor = System.Drawing.Color.White;
+            this.iconButtonLimpiar.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.iconButtonLimpiar.FlatAppearance.BorderColor = System.Drawing.Color.Black;
+            this.iconButtonLimpiar.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.iconButtonLimpiar.ForeColor = System.Drawing.Color.White;
+            this.iconButtonLimpiar.IconChar = FontAwesome.Sharp.IconChar.Eraser;
+            this.iconButtonLimpiar.IconColor = System.Drawing.Color.Black;
+            this.iconButtonLimpiar.IconFont = FontAwesome.Sharp.IconFont.Auto;
+            this.iconButtonLimpiar.IconSize = 18;
+            this.iconButtonLimpiar.Location = new System.Drawing.Point(1405, 53);
+            this.iconButtonLimpiar.Margin = new System.Windows.Forms.Padding(4);
+            this.iconButtonLimpiar.Name = "iconButtonLimpiar";
+            this.iconButtonLimpiar.Size = new System.Drawing.Size(45, 22);
+            this.iconButtonLimpiar.TabIndex = 34;
+            this.iconButtonLimpiar.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
+            this.iconButtonLimpiar.UseVisualStyleBackColor = false;
+            this.iconButtonLimpiar.Click += new System.EventHandler(this.iconButtonLimpiar_Click);
+            // 
+            // iconButtonBuscar
+            // 
+            this.iconButtonBuscar.BackColor = System.Drawing.Color.White;
+            this.iconButtonBuscar.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.iconButtonBuscar.FlatAppearance.BorderColor = System.Drawing.Color.Black;
+            this.iconButtonBuscar.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.iconButtonBuscar.ForeColor = System.Drawing.Color.White;
+            this.iconButtonBuscar.IconChar = FontAwesome.Sharp.IconChar.MagnifyingGlass;
+            this.iconButtonBuscar.IconColor = System.Drawing.Color.Black;
+            this.iconButtonBuscar.IconFont = FontAwesome.Sharp.IconFont.Auto;
+            this.iconButtonBuscar.IconSize = 16;
+            this.iconButtonBuscar.Location = new System.Drawing.Point(1352, 53);
+            this.iconButtonBuscar.Margin = new System.Windows.Forms.Padding(4);
+            this.iconButtonBuscar.Name = "iconButtonBuscar";
+            this.iconButtonBuscar.Size = new System.Drawing.Size(45, 22);
+            this.iconButtonBuscar.TabIndex = 35;
+            this.iconButtonBuscar.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
+            this.iconButtonBuscar.UseVisualStyleBackColor = false;
+            // 
+            // textBoxIndice
+            // 
+            this.textBoxIndice.Location = new System.Drawing.Point(236, 50);
+            this.textBoxIndice.Margin = new System.Windows.Forms.Padding(4);
+            this.textBoxIndice.Name = "textBoxIndice";
+            this.textBoxIndice.Size = new System.Drawing.Size(41, 22);
+            this.textBoxIndice.TabIndex = 36;
+            // 
             // frmUsuarios
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.DarkRed;
             this.ClientSize = new System.Drawing.Size(1924, 793);
+            this.Controls.Add(this.textBoxIndice);
             this.Controls.Add(this.iconButtonLimpiar);
             this.Controls.Add(this.iconButtonBuscar);
             this.Controls.Add(this.textBoxBusqueda);
@@ -721,9 +731,9 @@
             this.Controls.Add(this.labelNombre);
             this.Controls.Add(this.label2);
             this.Controls.Add(this.label1);
-            this.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.Margin = new System.Windows.Forms.Padding(4);
             this.Name = "frmUsuarios";
-            this.Text = "1";
+            this.Text = "Usuarios";
             this.Load += new System.EventHandler(this.frmUsuarios_Load);
             ((System.ComponentModel.ISupportInitialize)(this.UsuariosDGV)).EndInit();
             this.ResumeLayout(false);
@@ -784,5 +794,6 @@
         private System.Windows.Forms.DataGridViewTextBoxColumn rol;
         private System.Windows.Forms.DataGridViewTextBoxColumn activo;
         private System.Windows.Forms.DataGridViewTextBoxColumn Estado;
+        private System.Windows.Forms.TextBox textBoxIndice;
     }
 }
