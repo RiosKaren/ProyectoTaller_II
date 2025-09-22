@@ -15,5 +15,5 @@ namespace CapaEntidad
         public bool activo { get; set; }
         public Facturas id_factura { get; set; }
         public Productos id_producto { get; set; }
-    } //definicion de la tabla detalles_factura, con sus respectivos atributos
+    } //Representacion la tabla detalles_factura, con sus respectivos atributos
 }

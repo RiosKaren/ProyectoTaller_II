@@ -10,5 +10,5 @@ namespace CapaEntidad
     {
         public int id_rol { get; set; }
         public string nombre { get; set; }
-    }//definicion de la tabla roles, con sus respectivos atributos
+    }//Representacion de la tabla roles, con sus respectivos atributos
 }

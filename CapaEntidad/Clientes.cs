@@ -17,5 +17,5 @@ namespace CapaEntidad
         public bool sexo { get; set; }
         public string telefono { get; set; }
         public bool activo { get; set; }
-    } //definicion de la tabla clientes, con sus respectivos atributos
+    } //Representacion de la tabla clientes, con sus respectivos atributos
 }

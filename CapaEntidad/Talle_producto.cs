@@ -12,5 +12,5 @@ namespace CapaEntidad
         public string talla { get; set; }
         public int stock { get; set; }
         public Productos id_producto { get; set; }
-    } //definicion de la tabla talle_producto, con sus respectivos atributos
+    } //Representacion de la tabla talle_producto, con sus respectivos atributos
 }

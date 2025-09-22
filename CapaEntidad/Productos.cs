@@ -15,5 +15,5 @@ namespace CapaEntidad
         public string imagen_url { get; set; }
         public bool activo { get; set; }
 
-    }//definicion de la tabla productos, con sus respectivos atributos
+    }//Representacion de la tabla productos, con sus respectivos atributos
 }
