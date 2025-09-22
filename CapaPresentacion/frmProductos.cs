@@ -10,14 +10,24 @@ using System.Windows.Forms;
 
 namespace CapaPresentacion
 {
-    public partial class frmProductos : Form
+    public partial class LCategoria : Form
     {
-        public frmProductos()
+        public LCategoria()
         {
             InitializeComponent();
         }
 
         private void label1_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void BCancelar_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void label2_Click(object sender, EventArgs e)
         {
 
         }
