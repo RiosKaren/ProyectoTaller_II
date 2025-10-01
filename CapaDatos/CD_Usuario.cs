@@ -148,67 +148,36 @@ namespace CapaDatos
             return respuesta;
         }
 
-        public bool Baja(Usuarios obj, out string Mensaje) //Da de baja un usuario existente
+        public bool CambiarEstado(Usuarios obj, string accion, out string Mensaje)
         {
-            bool respuesta = false; //variable para almacenar la respuesta del procedimiento almacenado
-            Mensaje = string.Empty; //variable para almacenar el mensaje de error o exito
+            bool respuesta = false;
+            Mensaje = string.Empty;
 
             try
             {
-                using (SqlConnection oconexion = new SqlConnection(Conexion.cadena)) //crea una conexion a la base de datos
+                using (SqlConnection oconexion = new SqlConnection(Conexion.cadena))
                 {
-                    SqlCommand cmd = new SqlCommand("SP_BAJAUSUARIO", oconexion);
+                    SqlCommand cmd = new SqlCommand("SP_AltaBajaUsuario", oconexion);
                     cmd.Parameters.AddWithValue("id_usuario", obj.id_usuario);
+                    cmd.Parameters.AddWithValue("Accion", accion); // 'BAJA' o 'ALTA'
                     cmd.Parameters.Add("Respuesta", SqlDbType.Bit).Direction = ParameterDirection.Output;
                     cmd.Parameters.Add("Mensaje", SqlDbType.VarChar, 500).Direction = ParameterDirection.Output;
-                    //se asignan los parametros del procedimiento almacenado
-                    cmd.CommandType = CommandType.StoredProcedure; //indica que el comando es de tipo procedimiento almacenado
 
-                    oconexion.Open(); //abre la conexion a la base de datos
-                    cmd.ExecuteNonQuery(); //ejecuta el comando
+                    cmd.CommandType = CommandType.StoredProcedure;
 
-                    respuesta = Convert.ToBoolean(cmd.Parameters["Respuesta"].Value); //obtiene la respuesta del procedimiento almacenado
-                    Mensaje = cmd.Parameters["Mensaje"].Value.ToString(); //obtiene el mensaje de error o exito 
+                    oconexion.Open();
+                    cmd.ExecuteNonQuery();
+
+                    respuesta = Convert.ToBoolean(cmd.Parameters["Respuesta"].Value);
+                    Mensaje = cmd.Parameters["Mensaje"].Value.ToString();
                 }
             }
             catch (Exception ex)
             {
-                respuesta = false; //variable para almacenar la respuesta del procedimiento almacenado
-                Mensaje = ex.Message; //variable para almacenar el mensaje de error o exito
+                respuesta = false;
+                Mensaje = ex.Message;
             }
 
-            return respuesta; //devuelve la respuesta del procedimiento almacenado
-        }
-
-        public bool Habilitar(Usuarios obj, out string Mensaje) //Habilita un usuario existente 
-        {
-            bool respuesta = false; //variable para almacenar la respuesta del procedimiento almacenado
-            Mensaje = string.Empty; //variable para almacenar el mensaje de error o exito 
-
-            try
-            {
-                using (SqlConnection oconexion = new SqlConnection(Conexion.cadena)) //crea una conexion a la base de datos
-                {
-                    SqlCommand cmd = new SqlCommand("SP_HABILITARUSUARIO", oconexion);
-                    cmd.Parameters.AddWithValue("id_usuario", obj.id_usuario);
-                    cmd.Parameters.Add("Respuesta", SqlDbType.Bit).Direction = ParameterDirection.Output;
-                    cmd.Parameters.Add("Mensaje", SqlDbType.VarChar, 500).Direction = ParameterDirection.Output;
-                    //se asignan los parametros del procedimiento almacenado
-                    cmd.CommandType = CommandType.StoredProcedure; //indica que el comando es de tipo procedimiento almacenado
-
-                    oconexion.Open(); //abre la conexion a la base de datos
-                    cmd.ExecuteNonQuery(); //ejecuta el comando
-
-                    respuesta = Convert.ToBoolean(cmd.Parameters["Respuesta"].Value); //obtiene la respuesta del procedimiento almacenado
-                    Mensaje = cmd.Parameters["Mensaje"].Value.ToString(); //obtiene el mensaje de error o exito
-                }
-            }
-            catch (Exception ex) //si ocurre un error, devuelve false y el mensaje de error
-            {
-                respuesta = false; 
-                Mensaje = ex.Message; 
-            }
-            //si no ocurre ningun error, devuelve la respuesta del procedimiento almacenado
             return respuesta;
         }
 

@@ -245,8 +245,6 @@ namespace CapaPresentacion
                 e.Handled = true;      //Indica que el evento se ha manejado
 
             }
-
-           
         }
 
 
@@ -314,7 +312,6 @@ namespace CapaPresentacion
             }
 
             BloquearCampos();
-
         }
 
         private void BloquearCampos()
@@ -335,11 +332,17 @@ namespace CapaPresentacion
 
         private void btnEditar_Click(object sender, EventArgs e)
         {
+            if (string.IsNullOrWhiteSpace(textBoxID.Text) || textBoxID.Text == "0")
+            {
+                MessageBox.Show("Debe seleccionar un usuario primero", "Aviso", MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
+                return;
+            }
+
             foreach (var tb in new[] { textBoxDNI, textBoxNombre, textBoxApellido,
                                textBoxEmail, textBoxUser, textBoxPassword, textBoxCPassword }) //para cada campo de texto
             {
-                tb.ReadOnly = false;          // lo hace editable
-                tb.Cursor = Cursors.IBeam;    //libera el cursor
+                tb.ReadOnly = false; // lo hace editable
+                tb.Cursor = Cursors.IBeam;  //libera el cursor
             }
 
             dateTimeNacimiento.Enabled = true;
@@ -352,61 +355,74 @@ namespace CapaPresentacion
 
         private void btnEliminar_Click(object sender, EventArgs e)
         {
-            if (Convert.ToInt32(textBoxID.Text) != 0) //si el id es diferente de 0
+            if (string.IsNullOrWhiteSpace(textBoxID.Text) || textBoxID.Text == "0")
             {
-                if (MessageBox.Show("¿Desea dar de baja al usuario?", "Confirmación", MessageBoxButtons.YesNo, MessageBoxIcon.Question) == DialogResult.Yes) //pregunta si desea eliminar
-                {//si la respuesta es si
-                    string mensaje = string.Empty; //variable para el mensaje de error
-                    Usuarios objusuario = new Usuarios() //instancia de usuario
-                    {
-                        id_usuario = Convert.ToInt32(textBoxID.Text) //solo necesita el id para eliminar
-                    };
+                MessageBox.Show("Debe seleccionar un usuario primero", "Aviso", MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
+                return;
+            }
 
-                    bool respuesta = new CN_Usuario().Baja(objusuario, out mensaje); //llama al metodo baja de la capa negocio
+            if (MessageBox.Show("¿Desea dar de baja al usuario?", "Confirmación",
+                MessageBoxButtons.YesNo, MessageBoxIcon.Question) == DialogResult.Yes)
+            {
+                string mensaje = string.Empty;
+                Usuarios objusuario = new Usuarios()
+                {
+                    id_usuario = Convert.ToInt32(textBoxID.Text)
+                };
 
-                    if (respuesta)
-                    {
-                        DataGridViewRow row = UsuariosDGV.Rows[Convert.ToInt32(textBoxIndice.Text)]; //obtiene la fila seleccionada
-                        row.Cells["activo"].Value = "0"; //cambia el valor de activo a 0
-                        row.Cells["estado"].Value = "NO ACTIVO"; //cambia el valor de estado a no activo
-                    }
-                    else
-                    {//si la respuesta es no
-                        MessageBox.Show(mensaje, "Mensaje", MessageBoxButtons.OK, MessageBoxIcon.Exclamation); //muestra el mensaje de error 
-                    }
+                bool respuesta = new CN_Usuario().CambiarEstado(objusuario, "BAJA", out mensaje);
+
+                if (respuesta)
+                {
+                    DataGridViewRow row = UsuariosDGV.Rows[Convert.ToInt32(textBoxIndice.Text)];
+                    row.Cells["activo"].Value = "0";
+                    row.Cells["estado"].Value = "NO ACTIVO";
+
+                    MessageBox.Show(mensaje, "Éxito", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                }
+                else
+                {
+                    MessageBox.Show(mensaje, "Mensaje", MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
                 }
             }
+
+            Limpiar();
         }
 
         private void iconButtonHabilitar_Click(object sender, EventArgs e)
         {
-            if (Convert.ToInt32(textBoxID.Text) != 0) //si el id es diferente de 0
+            if (string.IsNullOrWhiteSpace(textBoxID.Text) || textBoxID.Text == "0")
             {
-                if (MessageBox.Show("¿Desea habilitar al usuario?", "Confirmación", 
-                    MessageBoxButtons.YesNo, MessageBoxIcon.Question) == DialogResult.Yes) //pregunta si desea dar de alta
-                {//si la respuesta es si
-                    string mensaje = string.Empty;
-                    Usuarios objusuario = new Usuarios() //instancia un usuario
-                    {
-                        id_usuario = Convert.ToInt32(textBoxID.Text) //solo necesita el id para habilitar
-                    };
+                MessageBox.Show("Debe seleccionar un usuario primero", "Aviso", MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
+                return;
+            }
 
-                    bool respuesta = new CN_Usuario().Habilitar(objusuario, out mensaje); //llama al metodo habilitar de la capa negocio
+            if (MessageBox.Show("¿Desea dar de alta al usuario?", "Confirmación",
+                MessageBoxButtons.YesNo, MessageBoxIcon.Question) == DialogResult.Yes)
+            {
+                string mensaje = string.Empty;
+                Usuarios objusuario = new Usuarios()
+                {
+                    id_usuario = Convert.ToInt32(textBoxID.Text)
+                };
 
-                    if (respuesta)
-                    {
-                        DataGridViewRow row = UsuariosDGV.Rows[Convert.ToInt32(textBoxIndice.Text)]; //obtiene la fila seleccionada
-                        row.Cells["activo"].Value = "1"; //cambia el valor de activo a 1
-                        row.Cells["estado"].Value = "ACTIVO"; //cambia el valor de estado a activo
+                bool respuesta = new CN_Usuario().CambiarEstado(objusuario, "ALTA", out mensaje);
 
-                        MessageBox.Show(mensaje, "Éxito", MessageBoxButtons.OK, MessageBoxIcon.Information); //mensaje de confirmacion
-                    }
-                    else
-                    {//si la respuesta es no
-                        MessageBox.Show(mensaje, "Mensaje", MessageBoxButtons.OK, MessageBoxIcon.Exclamation); //muestra el mensaje de error
-                    }
+                if (respuesta)
+                {
+                    DataGridViewRow row = UsuariosDGV.Rows[Convert.ToInt32(textBoxIndice.Text)];
+                    row.Cells["activo"].Value = "1";
+                    row.Cells["estado"].Value = "ACTIVO";
+
+                    MessageBox.Show(mensaje, "Éxito", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                }
+                else
+                {
+                    MessageBox.Show(mensaje, "Mensaje", MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
                 }
             }
+
+            Limpiar();
         }
 
         private void iconButtonBuscar_Click(object sender, EventArgs e)
@@ -491,8 +507,6 @@ namespace CapaPresentacion
             }
         }
 
-
-        ///////////////////////// VERRRRRRRRRRRRRRR
         private void btnGuardar_Click(object sender, EventArgs e)
         {
             string nombre = textBoxNombre.Text.Trim(); // guarda los valores de las textbox en variables

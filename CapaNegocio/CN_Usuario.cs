@@ -25,17 +25,12 @@ namespace CapaNegocio
 
         public bool Editar(Usuarios obj, out string Mensaje)
         {
-            return objcd_usuario.Editar(obj, out Mensaje);//Devuelve true o false si se edito el usuario desde la capa de datos
+            return objcd_usuario.Editar(obj, out Mensaje); //Devuelve true o false si se edito el usuario desde la capa de datos
         }
 
-        public bool Baja(Usuarios obj, out string Mensaje)
+        public bool CambiarEstado(Usuarios obj, string accion, out string Mensaje)
         {
-            return objcd_usuario.Baja(obj, out Mensaje); //Devuelve true o false si se dio de baja el usuario desde la capa de datos
-        }
-
-        public bool Habilitar(Usuarios obj, out string Mensaje)
-        {
-            return new CD_Usuario().Habilitar(obj, out Mensaje);
+            return objcd_usuario.CambiarEstado(obj, accion, out Mensaje);
         }
 
     }
