@@ -1,6 +1,6 @@
 ﻿namespace CapaPresentacion
 {
-    partial class LCategoria
+    partial class frmProductos
     {
         /// <summary>
         /// Required designer variable.
@@ -28,75 +28,361 @@
         /// </summary>
         private void InitializeComponent()
         {
-            this.pictureBox1 = new System.Windows.Forms.PictureBox();
-            this.DGVProductos = new System.Windows.Forms.DataGridView();
-            this.panel1 = new System.Windows.Forms.Panel();
-            this.btnEditar = new FontAwesome.Sharp.IconButton();
-            this.btnGuardar = new FontAwesome.Sharp.IconButton();
-            this.panel2 = new System.Windows.Forms.Panel();
-            this.btnHabilitar = new FontAwesome.Sharp.IconButton();
-            this.btnDeshabilitar = new FontAwesome.Sharp.IconButton();
-            this.TBTalle = new System.Windows.Forms.TextBox();
-            this.LTalle = new System.Windows.Forms.Label();
-            this.LDetallesProductos = new System.Windows.Forms.Label();
-            this.TBNombre = new System.Windows.Forms.TextBox();
-            this.BImagen = new System.Windows.Forms.Button();
-            this.LNombre = new System.Windows.Forms.Label();
-            this.LDescripcion = new System.Windows.Forms.Label();
-            this.TBPrecio = new System.Windows.Forms.TextBox();
-            this.LPrecio = new System.Windows.Forms.Label();
-            this.TBDescripcion = new System.Windows.Forms.TextBox();
-            this.imagen_url = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.id_producto = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle5 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle6 = new System.Windows.Forms.DataGridViewCellStyle();
+            this.iconButtonHabilitar = new FontAwesome.Sharp.IconButton();
+            this.textBoxIndice = new System.Windows.Forms.TextBox();
+            this.iconButtonLimpiar = new FontAwesome.Sharp.IconButton();
+            this.iconButtonBuscar = new FontAwesome.Sharp.IconButton();
+            this.textBoxBusqueda = new System.Windows.Forms.TextBox();
+            this.comboBoxBusqueda = new System.Windows.Forms.ComboBox();
+            this.labelBuscar = new System.Windows.Forms.Label();
+            this.textBoxID = new System.Windows.Forms.TextBox();
+            this.labelListaUsuarios = new System.Windows.Forms.Label();
+            this.UsuariosDGV = new System.Windows.Forms.DataGridView();
+            this.botonSeleccionar = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.id_usuario = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.dni = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.apellido = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.nombre = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.descripcion = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.precio = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.email = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.fecha_nacimiento = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.sexo = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.usuario = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.hash_password = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.id_rol = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.rol = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.activo = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.estado = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.labelTitulo = new System.Windows.Forms.Label();
+            this.btnEliminar = new FontAwesome.Sharp.IconButton();
+            this.btnEditar = new FontAwesome.Sharp.IconButton();
+            this.btnGuardar = new FontAwesome.Sharp.IconButton();
+            this.textBoxStock = new System.Windows.Forms.TextBox();
+            this.labelStock = new System.Windows.Forms.Label();
+            this.labelImagen = new System.Windows.Forms.Label();
+            this.labelDescripcion = new System.Windows.Forms.Label();
+            this.textBoxNombre = new System.Windows.Forms.TextBox();
+            this.textBoxCodigo = new System.Windows.Forms.TextBox();
+            this.labelTalles = new System.Windows.Forms.Label();
+            this.labelNombre = new System.Windows.Forms.Label();
+            this.label2 = new System.Windows.Forms.Label();
+            this.label1 = new System.Windows.Forms.Label();
+            this.richTextBox1 = new System.Windows.Forms.RichTextBox();
+            this.pictureBox1 = new System.Windows.Forms.PictureBox();
+            this.comboBoxTalles = new System.Windows.Forms.ComboBox();
+            this.btnAgregarTalle = new FontAwesome.Sharp.IconButton();
+            this.dgvTalles = new System.Windows.Forms.DataGridView();
+            ((System.ComponentModel.ISupportInitialize)(this.UsuariosDGV)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.DGVProductos)).BeginInit();
-            this.panel1.SuspendLayout();
-            this.panel2.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.dgvTalles)).BeginInit();
             this.SuspendLayout();
             // 
-            // pictureBox1
+            // iconButtonHabilitar
             // 
-            this.pictureBox1.Location = new System.Drawing.Point(503, 35);
-            this.pictureBox1.Margin = new System.Windows.Forms.Padding(4);
-            this.pictureBox1.Name = "pictureBox1";
-            this.pictureBox1.Size = new System.Drawing.Size(368, 256);
-            this.pictureBox1.TabIndex = 16;
-            this.pictureBox1.TabStop = false;
-            this.pictureBox1.Click += new System.EventHandler(this.pictureBox1_Click);
+            this.iconButtonHabilitar.BackColor = System.Drawing.Color.RoyalBlue;
+            this.iconButtonHabilitar.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.iconButtonHabilitar.FlatAppearance.BorderColor = System.Drawing.Color.Black;
+            this.iconButtonHabilitar.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.iconButtonHabilitar.ForeColor = System.Drawing.Color.White;
+            this.iconButtonHabilitar.IconChar = FontAwesome.Sharp.IconChar.Unlock;
+            this.iconButtonHabilitar.IconColor = System.Drawing.Color.White;
+            this.iconButtonHabilitar.IconFont = FontAwesome.Sharp.IconFont.Auto;
+            this.iconButtonHabilitar.IconSize = 16;
+            this.iconButtonHabilitar.Location = new System.Drawing.Point(15, 532);
+            this.iconButtonHabilitar.Name = "iconButtonHabilitar";
+            this.iconButtonHabilitar.Size = new System.Drawing.Size(215, 23);
+            this.iconButtonHabilitar.TabIndex = 75;
+            this.iconButtonHabilitar.Text = "Habilitar Producto";
+            this.iconButtonHabilitar.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
+            this.iconButtonHabilitar.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
+            this.iconButtonHabilitar.UseVisualStyleBackColor = false;
             // 
-            // DGVProductos
+            // textBoxIndice
             // 
-            this.DGVProductos.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.DGVProductos.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
-            this.imagen_url,
-            this.id_producto,
+            this.textBoxIndice.Location = new System.Drawing.Point(162, 41);
+            this.textBoxIndice.Name = "textBoxIndice";
+            this.textBoxIndice.Size = new System.Drawing.Size(32, 20);
+            this.textBoxIndice.TabIndex = 74;
+            this.textBoxIndice.Visible = false;
+            // 
+            // iconButtonLimpiar
+            // 
+            this.iconButtonLimpiar.BackColor = System.Drawing.Color.White;
+            this.iconButtonLimpiar.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.iconButtonLimpiar.FlatAppearance.BorderColor = System.Drawing.Color.Black;
+            this.iconButtonLimpiar.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.iconButtonLimpiar.ForeColor = System.Drawing.Color.White;
+            this.iconButtonLimpiar.IconChar = FontAwesome.Sharp.IconChar.Eraser;
+            this.iconButtonLimpiar.IconColor = System.Drawing.Color.Black;
+            this.iconButtonLimpiar.IconFont = FontAwesome.Sharp.IconFont.Auto;
+            this.iconButtonLimpiar.IconSize = 18;
+            this.iconButtonLimpiar.Location = new System.Drawing.Point(1100, 38);
+            this.iconButtonLimpiar.Name = "iconButtonLimpiar";
+            this.iconButtonLimpiar.Size = new System.Drawing.Size(34, 18);
+            this.iconButtonLimpiar.TabIndex = 72;
+            this.iconButtonLimpiar.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
+            this.iconButtonLimpiar.UseVisualStyleBackColor = false;
+            // 
+            // iconButtonBuscar
+            // 
+            this.iconButtonBuscar.BackColor = System.Drawing.Color.White;
+            this.iconButtonBuscar.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.iconButtonBuscar.FlatAppearance.BorderColor = System.Drawing.Color.Black;
+            this.iconButtonBuscar.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.iconButtonBuscar.ForeColor = System.Drawing.Color.White;
+            this.iconButtonBuscar.IconChar = FontAwesome.Sharp.IconChar.MagnifyingGlass;
+            this.iconButtonBuscar.IconColor = System.Drawing.Color.Black;
+            this.iconButtonBuscar.IconFont = FontAwesome.Sharp.IconFont.Auto;
+            this.iconButtonBuscar.IconSize = 16;
+            this.iconButtonBuscar.Location = new System.Drawing.Point(1060, 38);
+            this.iconButtonBuscar.Name = "iconButtonBuscar";
+            this.iconButtonBuscar.Size = new System.Drawing.Size(34, 18);
+            this.iconButtonBuscar.TabIndex = 73;
+            this.iconButtonBuscar.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
+            this.iconButtonBuscar.UseVisualStyleBackColor = false;
+            // 
+            // textBoxBusqueda
+            // 
+            this.textBoxBusqueda.Location = new System.Drawing.Point(896, 38);
+            this.textBoxBusqueda.Name = "textBoxBusqueda";
+            this.textBoxBusqueda.Size = new System.Drawing.Size(158, 20);
+            this.textBoxBusqueda.TabIndex = 71;
+            // 
+            // comboBoxBusqueda
+            // 
+            this.comboBoxBusqueda.BackColor = System.Drawing.Color.White;
+            this.comboBoxBusqueda.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.comboBoxBusqueda.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
+            this.comboBoxBusqueda.FormattingEnabled = true;
+            this.comboBoxBusqueda.Location = new System.Drawing.Point(766, 38);
+            this.comboBoxBusqueda.Name = "comboBoxBusqueda";
+            this.comboBoxBusqueda.Size = new System.Drawing.Size(125, 21);
+            this.comboBoxBusqueda.TabIndex = 70;
+            // 
+            // labelBuscar
+            // 
+            this.labelBuscar.AutoSize = true;
+            this.labelBuscar.BackColor = System.Drawing.Color.White;
+            this.labelBuscar.Location = new System.Drawing.Point(682, 41);
+            this.labelBuscar.Name = "labelBuscar";
+            this.labelBuscar.Size = new System.Drawing.Size(62, 13);
+            this.labelBuscar.TabIndex = 69;
+            this.labelBuscar.Text = "Buscar Por:";
+            // 
+            // textBoxID
+            // 
+            this.textBoxID.Location = new System.Drawing.Point(199, 41);
+            this.textBoxID.Name = "textBoxID";
+            this.textBoxID.Size = new System.Drawing.Size(32, 20);
+            this.textBoxID.TabIndex = 55;
+            this.textBoxID.Text = "0";
+            this.textBoxID.Visible = false;
+            // 
+            // labelListaUsuarios
+            // 
+            this.labelListaUsuarios.BackColor = System.Drawing.Color.White;
+            this.labelListaUsuarios.Font = new System.Drawing.Font("Microsoft Sans Serif", 16F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.labelListaUsuarios.Location = new System.Drawing.Point(292, 20);
+            this.labelListaUsuarios.Name = "labelListaUsuarios";
+            this.labelListaUsuarios.Size = new System.Drawing.Size(878, 50);
+            this.labelListaUsuarios.TabIndex = 63;
+            this.labelListaUsuarios.Text = "Lista de Usuarios:";
+            this.labelListaUsuarios.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            // 
+            // UsuariosDGV
+            // 
+            this.UsuariosDGV.AllowUserToAddRows = false;
+            dataGridViewCellStyle5.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle5.BackColor = System.Drawing.SystemColors.Control;
+            dataGridViewCellStyle5.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle5.ForeColor = System.Drawing.SystemColors.WindowText;
+            dataGridViewCellStyle5.Padding = new System.Windows.Forms.Padding(2);
+            dataGridViewCellStyle5.SelectionBackColor = System.Drawing.SystemColors.Highlight;
+            dataGridViewCellStyle5.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
+            dataGridViewCellStyle5.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
+            this.UsuariosDGV.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle5;
+            this.UsuariosDGV.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.UsuariosDGV.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
+            this.botonSeleccionar,
+            this.id_usuario,
+            this.dni,
+            this.apellido,
             this.nombre,
-            this.descripcion,
-            this.precio,
+            this.email,
+            this.fecha_nacimiento,
+            this.sexo,
+            this.usuario,
+            this.hash_password,
+            this.id_rol,
+            this.rol,
             this.activo,
             this.estado});
-            this.DGVProductos.Location = new System.Drawing.Point(157, 50);
-            this.DGVProductos.Margin = new System.Windows.Forms.Padding(4);
-            this.DGVProductos.Name = "DGVProductos";
-            this.DGVProductos.RowHeadersWidth = 51;
-            this.DGVProductos.Size = new System.Drawing.Size(1288, 253);
-            this.DGVProductos.TabIndex = 19;
+            this.UsuariosDGV.Location = new System.Drawing.Point(292, 92);
+            this.UsuariosDGV.Margin = new System.Windows.Forms.Padding(4);
+            this.UsuariosDGV.MultiSelect = false;
+            this.UsuariosDGV.Name = "UsuariosDGV";
+            this.UsuariosDGV.ReadOnly = true;
+            dataGridViewCellStyle6.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle6.BackColor = System.Drawing.SystemColors.Control;
+            dataGridViewCellStyle6.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle6.ForeColor = System.Drawing.SystemColors.WindowText;
+            dataGridViewCellStyle6.SelectionBackColor = System.Drawing.Color.White;
+            dataGridViewCellStyle6.SelectionForeColor = System.Drawing.Color.Black;
+            dataGridViewCellStyle6.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
+            this.UsuariosDGV.RowHeadersDefaultCellStyle = dataGridViewCellStyle6;
+            this.UsuariosDGV.RowHeadersWidth = 51;
+            this.UsuariosDGV.RowTemplate.Height = 28;
+            this.UsuariosDGV.Size = new System.Drawing.Size(878, 434);
+            this.UsuariosDGV.TabIndex = 62;
             // 
-            // panel1
+            // botonSeleccionar
             // 
-            this.panel1.BackColor = System.Drawing.Color.DarkRed;
-            this.panel1.Controls.Add(this.DGVProductos);
-            this.panel1.Controls.Add(this.btnEditar);
-            this.panel1.Location = new System.Drawing.Point(-8, 336);
-            this.panel1.Margin = new System.Windows.Forms.Padding(4);
-            this.panel1.Name = "panel1";
-            this.panel1.Size = new System.Drawing.Size(1594, 340);
-            this.panel1.TabIndex = 20;
+            this.botonSeleccionar.HeaderText = "";
+            this.botonSeleccionar.MinimumWidth = 6;
+            this.botonSeleccionar.Name = "botonSeleccionar";
+            this.botonSeleccionar.ReadOnly = true;
+            this.botonSeleccionar.Width = 30;
+            // 
+            // id_usuario
+            // 
+            this.id_usuario.HeaderText = "id_usuario";
+            this.id_usuario.MinimumWidth = 6;
+            this.id_usuario.Name = "id_usuario";
+            this.id_usuario.ReadOnly = true;
+            this.id_usuario.Visible = false;
+            this.id_usuario.Width = 125;
+            // 
+            // dni
+            // 
+            this.dni.HeaderText = "Nro Documento";
+            this.dni.MinimumWidth = 6;
+            this.dni.Name = "dni";
+            this.dni.ReadOnly = true;
+            this.dni.Width = 170;
+            // 
+            // apellido
+            // 
+            this.apellido.HeaderText = "Apellido";
+            this.apellido.MinimumWidth = 6;
+            this.apellido.Name = "apellido";
+            this.apellido.ReadOnly = true;
+            this.apellido.Width = 125;
+            // 
+            // nombre
+            // 
+            this.nombre.HeaderText = "Nombre";
+            this.nombre.MinimumWidth = 6;
+            this.nombre.Name = "nombre";
+            this.nombre.ReadOnly = true;
+            this.nombre.Width = 170;
+            // 
+            // email
+            // 
+            this.email.HeaderText = "Correo";
+            this.email.MinimumWidth = 6;
+            this.email.Name = "email";
+            this.email.ReadOnly = true;
+            this.email.Width = 125;
+            // 
+            // fecha_nacimiento
+            // 
+            this.fecha_nacimiento.HeaderText = "Fecha de Nacimiento";
+            this.fecha_nacimiento.MinimumWidth = 6;
+            this.fecha_nacimiento.Name = "fecha_nacimiento";
+            this.fecha_nacimiento.ReadOnly = true;
+            this.fecha_nacimiento.Width = 125;
+            // 
+            // sexo
+            // 
+            this.sexo.HeaderText = "Sexo";
+            this.sexo.MinimumWidth = 6;
+            this.sexo.Name = "sexo";
+            this.sexo.ReadOnly = true;
+            this.sexo.Width = 125;
+            // 
+            // usuario
+            // 
+            this.usuario.HeaderText = "usuario";
+            this.usuario.MinimumWidth = 6;
+            this.usuario.Name = "usuario";
+            this.usuario.ReadOnly = true;
+            this.usuario.Visible = false;
+            this.usuario.Width = 125;
+            // 
+            // hash_password
+            // 
+            this.hash_password.HeaderText = "hash_password";
+            this.hash_password.MinimumWidth = 6;
+            this.hash_password.Name = "hash_password";
+            this.hash_password.ReadOnly = true;
+            this.hash_password.Visible = false;
+            this.hash_password.Width = 125;
+            // 
+            // id_rol
+            // 
+            this.id_rol.HeaderText = "id_rol";
+            this.id_rol.MinimumWidth = 6;
+            this.id_rol.Name = "id_rol";
+            this.id_rol.ReadOnly = true;
+            this.id_rol.Visible = false;
+            this.id_rol.Width = 125;
+            // 
+            // rol
+            // 
+            this.rol.HeaderText = "Rol";
+            this.rol.MinimumWidth = 6;
+            this.rol.Name = "rol";
+            this.rol.ReadOnly = true;
+            this.rol.Width = 125;
+            // 
+            // activo
+            // 
+            this.activo.HeaderText = "activo";
+            this.activo.MinimumWidth = 6;
+            this.activo.Name = "activo";
+            this.activo.ReadOnly = true;
+            this.activo.Visible = false;
+            this.activo.Width = 125;
+            // 
+            // estado
+            // 
+            this.estado.HeaderText = "Estado";
+            this.estado.MinimumWidth = 6;
+            this.estado.Name = "estado";
+            this.estado.ReadOnly = true;
+            this.estado.Width = 125;
+            // 
+            // labelTitulo
+            // 
+            this.labelTitulo.AutoSize = true;
+            this.labelTitulo.BackColor = System.Drawing.Color.White;
+            this.labelTitulo.Font = new System.Drawing.Font("Microsoft Sans Serif", 20F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.labelTitulo.Location = new System.Drawing.Point(10, 3);
+            this.labelTitulo.Name = "labelTitulo";
+            this.labelTitulo.Size = new System.Drawing.Size(229, 31);
+            this.labelTitulo.TabIndex = 60;
+            this.labelTitulo.Text = "Detalles Producto";
+            // 
+            // btnEliminar
+            // 
+            this.btnEliminar.BackColor = System.Drawing.Color.Firebrick;
+            this.btnEliminar.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.btnEliminar.FlatAppearance.BorderColor = System.Drawing.Color.Black;
+            this.btnEliminar.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnEliminar.ForeColor = System.Drawing.Color.White;
+            this.btnEliminar.IconChar = FontAwesome.Sharp.IconChar.Lock;
+            this.btnEliminar.IconColor = System.Drawing.Color.White;
+            this.btnEliminar.IconFont = FontAwesome.Sharp.IconFont.Auto;
+            this.btnEliminar.IconSize = 16;
+            this.btnEliminar.Location = new System.Drawing.Point(16, 503);
+            this.btnEliminar.Name = "btnEliminar";
+            this.btnEliminar.Size = new System.Drawing.Size(215, 23);
+            this.btnEliminar.TabIndex = 57;
+            this.btnEliminar.Text = "Deshabilitar Producto";
+            this.btnEliminar.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
+            this.btnEliminar.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
+            this.btnEliminar.UseVisualStyleBackColor = false;
             // 
             // btnEditar
             // 
@@ -109,11 +395,10 @@
             this.btnEditar.IconColor = System.Drawing.Color.White;
             this.btnEditar.IconFont = FontAwesome.Sharp.IconFont.Auto;
             this.btnEditar.IconSize = 16;
-            this.btnEditar.Location = new System.Drawing.Point(1321, 14);
-            this.btnEditar.Margin = new System.Windows.Forms.Padding(4);
+            this.btnEditar.Location = new System.Drawing.Point(16, 474);
             this.btnEditar.Name = "btnEditar";
-            this.btnEditar.Size = new System.Drawing.Size(235, 28);
-            this.btnEditar.TabIndex = 21;
+            this.btnEditar.Size = new System.Drawing.Size(215, 23);
+            this.btnEditar.TabIndex = 56;
             this.btnEditar.Text = "Editar";
             this.btnEditar.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
             this.btnEditar.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
@@ -130,282 +415,250 @@
             this.btnGuardar.IconColor = System.Drawing.Color.White;
             this.btnGuardar.IconFont = FontAwesome.Sharp.IconFont.Auto;
             this.btnGuardar.IconSize = 16;
-            this.btnGuardar.Location = new System.Drawing.Point(982, 36);
-            this.btnGuardar.Margin = new System.Windows.Forms.Padding(4);
+            this.btnGuardar.Location = new System.Drawing.Point(16, 445);
             this.btnGuardar.Name = "btnGuardar";
-            this.btnGuardar.Size = new System.Drawing.Size(287, 28);
-            this.btnGuardar.TabIndex = 23;
+            this.btnGuardar.Size = new System.Drawing.Size(215, 23);
+            this.btnGuardar.TabIndex = 58;
             this.btnGuardar.Text = "Guardar";
             this.btnGuardar.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
             this.btnGuardar.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
             this.btnGuardar.UseVisualStyleBackColor = false;
             // 
-            // panel2
+            // textBoxStock
             // 
-            this.panel2.BackColor = System.Drawing.Color.DarkRed;
-            this.panel2.Controls.Add(this.btnHabilitar);
-            this.panel2.Controls.Add(this.btnDeshabilitar);
-            this.panel2.Controls.Add(this.TBTalle);
-            this.panel2.Controls.Add(this.LTalle);
-            this.panel2.Controls.Add(this.btnGuardar);
-            this.panel2.Controls.Add(this.LDetallesProductos);
-            this.panel2.Controls.Add(this.TBNombre);
-            this.panel2.Controls.Add(this.pictureBox1);
-            this.panel2.Controls.Add(this.BImagen);
-            this.panel2.Controls.Add(this.LNombre);
-            this.panel2.Controls.Add(this.LDescripcion);
-            this.panel2.Controls.Add(this.TBPrecio);
-            this.panel2.Controls.Add(this.LPrecio);
-            this.panel2.Controls.Add(this.TBDescripcion);
-            this.panel2.Location = new System.Drawing.Point(149, 15);
-            this.panel2.Margin = new System.Windows.Forms.Padding(4);
-            this.panel2.Name = "panel2";
-            this.panel2.Size = new System.Drawing.Size(1288, 314);
-            this.panel2.TabIndex = 26;
+            this.textBoxStock.Location = new System.Drawing.Point(130, 245);
+            this.textBoxStock.Name = "textBoxStock";
+            this.textBoxStock.PasswordChar = '*';
+            this.textBoxStock.Size = new System.Drawing.Size(64, 20);
+            this.textBoxStock.TabIndex = 50;
             // 
-            // btnHabilitar
+            // labelStock
             // 
-            this.btnHabilitar.BackColor = System.Drawing.Color.RoyalBlue;
-            this.btnHabilitar.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.btnHabilitar.FlatAppearance.BorderColor = System.Drawing.Color.Black;
-            this.btnHabilitar.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnHabilitar.ForeColor = System.Drawing.Color.White;
-            this.btnHabilitar.IconChar = FontAwesome.Sharp.IconChar.Unlock;
-            this.btnHabilitar.IconColor = System.Drawing.Color.White;
-            this.btnHabilitar.IconFont = FontAwesome.Sharp.IconFont.Auto;
-            this.btnHabilitar.IconSize = 16;
-            this.btnHabilitar.Location = new System.Drawing.Point(982, 109);
-            this.btnHabilitar.Margin = new System.Windows.Forms.Padding(4);
-            this.btnHabilitar.Name = "btnHabilitar";
-            this.btnHabilitar.Size = new System.Drawing.Size(287, 28);
-            this.btnHabilitar.TabIndex = 77;
-            this.btnHabilitar.Text = "Habilitar producto";
-            this.btnHabilitar.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
-            this.btnHabilitar.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
-            this.btnHabilitar.UseVisualStyleBackColor = false;
+            this.labelStock.AutoSize = true;
+            this.labelStock.BackColor = System.Drawing.Color.White;
+            this.labelStock.Location = new System.Drawing.Point(127, 229);
+            this.labelStock.Name = "labelStock";
+            this.labelStock.Size = new System.Drawing.Size(38, 13);
+            this.labelStock.TabIndex = 54;
+            this.labelStock.Text = "Stock:";
             // 
-            // btnDeshabilitar
+            // labelImagen
             // 
-            this.btnDeshabilitar.BackColor = System.Drawing.Color.Firebrick;
-            this.btnDeshabilitar.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.btnDeshabilitar.FlatAppearance.BorderColor = System.Drawing.Color.Black;
-            this.btnDeshabilitar.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnDeshabilitar.ForeColor = System.Drawing.Color.White;
-            this.btnDeshabilitar.IconChar = FontAwesome.Sharp.IconChar.Lock;
-            this.btnDeshabilitar.IconColor = System.Drawing.Color.White;
-            this.btnDeshabilitar.IconFont = FontAwesome.Sharp.IconFont.Auto;
-            this.btnDeshabilitar.IconSize = 16;
-            this.btnDeshabilitar.Location = new System.Drawing.Point(984, 73);
-            this.btnDeshabilitar.Margin = new System.Windows.Forms.Padding(4);
-            this.btnDeshabilitar.Name = "btnDeshabilitar";
-            this.btnDeshabilitar.Size = new System.Drawing.Size(287, 28);
-            this.btnDeshabilitar.TabIndex = 76;
-            this.btnDeshabilitar.Text = "Deshabilitar producto";
-            this.btnDeshabilitar.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
-            this.btnDeshabilitar.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
-            this.btnDeshabilitar.UseVisualStyleBackColor = false;
+            this.labelImagen.AutoSize = true;
+            this.labelImagen.BackColor = System.Drawing.Color.White;
+            this.labelImagen.Location = new System.Drawing.Point(16, 366);
+            this.labelImagen.Name = "labelImagen";
+            this.labelImagen.Size = new System.Drawing.Size(108, 13);
+            this.labelImagen.TabIndex = 51;
+            this.labelImagen.Text = "Imagen del Producto:";
             // 
-            // TBTalle
+            // labelDescripcion
             // 
-            this.TBTalle.ForeColor = System.Drawing.Color.Black;
-            this.TBTalle.Location = new System.Drawing.Point(197, 217);
-            this.TBTalle.Margin = new System.Windows.Forms.Padding(4);
-            this.TBTalle.Name = "TBTalle";
-            this.TBTalle.Size = new System.Drawing.Size(69, 22);
-            this.TBTalle.TabIndex = 35;
+            this.labelDescripcion.AutoSize = true;
+            this.labelDescripcion.BackColor = System.Drawing.Color.White;
+            this.labelDescripcion.Location = new System.Drawing.Point(16, 136);
+            this.labelDescripcion.Name = "labelDescripcion";
+            this.labelDescripcion.Size = new System.Drawing.Size(66, 13);
+            this.labelDescripcion.TabIndex = 47;
+            this.labelDescripcion.Text = "Descripción:";
             // 
-            // LTalle
+            // textBoxNombre
             // 
-            this.LTalle.AutoSize = true;
-            this.LTalle.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.LTalle.ForeColor = System.Drawing.Color.White;
-            this.LTalle.Location = new System.Drawing.Point(88, 220);
-            this.LTalle.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
-            this.LTalle.Name = "LTalle";
-            this.LTalle.Size = new System.Drawing.Size(53, 17);
-            this.LTalle.TabIndex = 34;
-            this.LTalle.Text = "Stock:";
+            this.textBoxNombre.Location = new System.Drawing.Point(18, 110);
+            this.textBoxNombre.Name = "textBoxNombre";
+            this.textBoxNombre.Size = new System.Drawing.Size(213, 20);
+            this.textBoxNombre.TabIndex = 43;
             // 
-            // LDetallesProductos
+            // textBoxCodigo
             // 
-            this.LDetallesProductos.AutoSize = true;
-            this.LDetallesProductos.Font = new System.Drawing.Font("Microsoft Sans Serif", 20F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.LDetallesProductos.ForeColor = System.Drawing.Color.White;
-            this.LDetallesProductos.Location = new System.Drawing.Point(84, 10);
-            this.LDetallesProductos.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
-            this.LDetallesProductos.Name = "LDetallesProductos";
-            this.LDetallesProductos.Size = new System.Drawing.Size(303, 39);
-            this.LDetallesProductos.TabIndex = 26;
-            this.LDetallesProductos.Text = "Detalles Producto";
+            this.textBoxCodigo.Location = new System.Drawing.Point(18, 60);
+            this.textBoxCodigo.Name = "textBoxCodigo";
+            this.textBoxCodigo.Size = new System.Drawing.Size(100, 20);
+            this.textBoxCodigo.TabIndex = 42;
             // 
-            // TBNombre
+            // labelTalles
             // 
-            this.TBNombre.ForeColor = System.Drawing.Color.Black;
-            this.TBNombre.Location = new System.Drawing.Point(197, 96);
-            this.TBNombre.Margin = new System.Windows.Forms.Padding(4);
-            this.TBNombre.Name = "TBNombre";
-            this.TBNombre.Size = new System.Drawing.Size(132, 22);
-            this.TBNombre.TabIndex = 27;
+            this.labelTalles.AutoSize = true;
+            this.labelTalles.BackColor = System.Drawing.Color.White;
+            this.labelTalles.Location = new System.Drawing.Point(16, 229);
+            this.labelTalles.Name = "labelTalles";
+            this.labelTalles.Size = new System.Drawing.Size(38, 13);
+            this.labelTalles.TabIndex = 40;
+            this.labelTalles.Text = "Talles:";
             // 
-            // BImagen
+            // labelNombre
             // 
-            this.BImagen.ForeColor = System.Drawing.Color.Black;
-            this.BImagen.Location = new System.Drawing.Point(229, 263);
-            this.BImagen.Margin = new System.Windows.Forms.Padding(4);
-            this.BImagen.Name = "BImagen";
-            this.BImagen.Size = new System.Drawing.Size(100, 28);
-            this.BImagen.TabIndex = 33;
-            this.BImagen.Text = "Imagen";
-            this.BImagen.UseVisualStyleBackColor = true;
+            this.labelNombre.AutoSize = true;
+            this.labelNombre.BackColor = System.Drawing.Color.White;
+            this.labelNombre.Location = new System.Drawing.Point(16, 92);
+            this.labelNombre.Name = "labelNombre";
+            this.labelNombre.Size = new System.Drawing.Size(47, 13);
+            this.labelNombre.TabIndex = 39;
+            this.labelNombre.Text = "Nombre:";
             // 
-            // LNombre
+            // label2
             // 
-            this.LNombre.AutoSize = true;
-            this.LNombre.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.LNombre.ForeColor = System.Drawing.Color.White;
-            this.LNombre.Location = new System.Drawing.Point(88, 100);
-            this.LNombre.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
-            this.LNombre.Name = "LNombre";
-            this.LNombre.Size = new System.Drawing.Size(69, 17);
-            this.LNombre.TabIndex = 28;
-            this.LNombre.Text = "Nombre:";
+            this.label2.AutoSize = true;
+            this.label2.BackColor = System.Drawing.Color.White;
+            this.label2.Location = new System.Drawing.Point(16, 42);
+            this.label2.Name = "label2";
+            this.label2.Size = new System.Drawing.Size(46, 13);
+            this.label2.TabIndex = 41;
+            this.label2.Text = "Código: ";
             // 
-            // LDescripcion
+            // label1
             // 
-            this.LDescripcion.AutoSize = true;
-            this.LDescripcion.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.LDescripcion.ForeColor = System.Drawing.Color.White;
-            this.LDescripcion.Location = new System.Drawing.Point(88, 138);
-            this.LDescripcion.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
-            this.LDescripcion.Name = "LDescripcion";
-            this.LDescripcion.Size = new System.Drawing.Size(98, 17);
-            this.LDescripcion.TabIndex = 29;
-            this.LDescripcion.Text = "Descripcion:";
+            this.label1.BackColor = System.Drawing.Color.White;
+            this.label1.Dock = System.Windows.Forms.DockStyle.Left;
+            this.label1.ForeColor = System.Drawing.Color.White;
+            this.label1.Location = new System.Drawing.Point(0, 0);
+            this.label1.Name = "label1";
+            this.label1.Size = new System.Drawing.Size(259, 566);
+            this.label1.TabIndex = 38;
             // 
-            // TBPrecio
+            // richTextBox1
             // 
-            this.TBPrecio.ForeColor = System.Drawing.Color.Black;
-            this.TBPrecio.Location = new System.Drawing.Point(197, 174);
-            this.TBPrecio.Margin = new System.Windows.Forms.Padding(4);
-            this.TBPrecio.Name = "TBPrecio";
-            this.TBPrecio.Size = new System.Drawing.Size(132, 22);
-            this.TBPrecio.TabIndex = 32;
+            this.richTextBox1.Location = new System.Drawing.Point(19, 152);
+            this.richTextBox1.Name = "richTextBox1";
+            this.richTextBox1.Size = new System.Drawing.Size(213, 61);
+            this.richTextBox1.TabIndex = 76;
+            this.richTextBox1.Text = "";
             // 
-            // LPrecio
+            // pictureBox1
             // 
-            this.LPrecio.AutoSize = true;
-            this.LPrecio.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.LPrecio.ForeColor = System.Drawing.Color.White;
-            this.LPrecio.Location = new System.Drawing.Point(88, 177);
-            this.LPrecio.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
-            this.LPrecio.Name = "LPrecio";
-            this.LPrecio.Size = new System.Drawing.Size(59, 17);
-            this.LPrecio.TabIndex = 30;
-            this.LPrecio.Text = "Precio:";
+            this.pictureBox1.BackColor = System.Drawing.SystemColors.ControlLight;
+            this.pictureBox1.Location = new System.Drawing.Point(19, 384);
+            this.pictureBox1.Name = "pictureBox1";
+            this.pictureBox1.Size = new System.Drawing.Size(100, 55);
+            this.pictureBox1.TabIndex = 77;
+            this.pictureBox1.TabStop = false;
             // 
-            // TBDescripcion
+            // comboBoxTalles
             // 
-            this.TBDescripcion.ForeColor = System.Drawing.Color.Black;
-            this.TBDescripcion.Location = new System.Drawing.Point(197, 134);
-            this.TBDescripcion.Margin = new System.Windows.Forms.Padding(4);
-            this.TBDescripcion.Name = "TBDescripcion";
-            this.TBDescripcion.Size = new System.Drawing.Size(132, 22);
-            this.TBDescripcion.TabIndex = 31;
+            this.comboBoxTalles.FormattingEnabled = true;
+            this.comboBoxTalles.Location = new System.Drawing.Point(19, 245);
+            this.comboBoxTalles.Name = "comboBoxTalles";
+            this.comboBoxTalles.Size = new System.Drawing.Size(99, 21);
+            this.comboBoxTalles.TabIndex = 78;
             // 
-            // imagen_url
+            // btnAgregarTalle
             // 
-            this.imagen_url.HeaderText = "Imagen";
-            this.imagen_url.MinimumWidth = 6;
-            this.imagen_url.Name = "imagen_url";
-            this.imagen_url.Width = 300;
+            this.btnAgregarTalle.BackColor = System.Drawing.Color.ForestGreen;
+            this.btnAgregarTalle.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.btnAgregarTalle.FlatAppearance.BorderColor = System.Drawing.Color.Black;
+            this.btnAgregarTalle.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnAgregarTalle.ForeColor = System.Drawing.Color.White;
+            this.btnAgregarTalle.IconChar = FontAwesome.Sharp.IconChar.PlusCircle;
+            this.btnAgregarTalle.IconColor = System.Drawing.Color.White;
+            this.btnAgregarTalle.IconFont = FontAwesome.Sharp.IconFont.Auto;
+            this.btnAgregarTalle.IconSize = 16;
+            this.btnAgregarTalle.Location = new System.Drawing.Point(207, 245);
+            this.btnAgregarTalle.Name = "btnAgregarTalle";
+            this.btnAgregarTalle.Size = new System.Drawing.Size(20, 20);
+            this.btnAgregarTalle.TabIndex = 79;
+            this.btnAgregarTalle.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
+            this.btnAgregarTalle.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
+            this.btnAgregarTalle.UseVisualStyleBackColor = false;
+            this.btnAgregarTalle.Click += new System.EventHandler(this.btnAgregarTalle_Click);
             // 
-            // id_producto
+            // dgvTalles
             // 
-            this.id_producto.HeaderText = "Código";
-            this.id_producto.MinimumWidth = 6;
-            this.id_producto.Name = "id_producto";
-            this.id_producto.Width = 125;
+            this.dgvTalles.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.dgvTalles.Location = new System.Drawing.Point(20, 272);
+            this.dgvTalles.Name = "dgvTalles";
+            this.dgvTalles.Size = new System.Drawing.Size(212, 78);
+            this.dgvTalles.TabIndex = 80;
             // 
-            // nombre
+            // frmProductos
             // 
-            this.nombre.HeaderText = "Nombre";
-            this.nombre.MinimumWidth = 6;
-            this.nombre.Name = "nombre";
-            this.nombre.Width = 140;
-            // 
-            // descripcion
-            // 
-            this.descripcion.HeaderText = "Descripción";
-            this.descripcion.MinimumWidth = 6;
-            this.descripcion.Name = "descripcion";
-            this.descripcion.Width = 300;
-            // 
-            // precio
-            // 
-            this.precio.HeaderText = "Precio";
-            this.precio.MinimumWidth = 6;
-            this.precio.Name = "precio";
-            this.precio.Width = 125;
-            // 
-            // activo
-            // 
-            this.activo.HeaderText = "Activo";
-            this.activo.MinimumWidth = 6;
-            this.activo.Name = "activo";
-            this.activo.Width = 125;
-            // 
-            // estado
-            // 
-            this.estado.HeaderText = "Estado";
-            this.estado.MinimumWidth = 6;
-            this.estado.Name = "estado";
-            this.estado.Width = 125;
-            // 
-            // LCategoria
-            // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.BackColor = System.Drawing.Color.White;
-            this.ClientSize = new System.Drawing.Size(1579, 669);
-            this.Controls.Add(this.panel2);
-            this.Controls.Add(this.panel1);
-            this.Margin = new System.Windows.Forms.Padding(4);
-            this.Name = "LCategoria";
-            this.Text = "+";
+            this.BackColor = System.Drawing.Color.DarkRed;
+            this.ClientSize = new System.Drawing.Size(1189, 566);
+            this.Controls.Add(this.dgvTalles);
+            this.Controls.Add(this.btnAgregarTalle);
+            this.Controls.Add(this.comboBoxTalles);
+            this.Controls.Add(this.pictureBox1);
+            this.Controls.Add(this.richTextBox1);
+            this.Controls.Add(this.iconButtonHabilitar);
+            this.Controls.Add(this.textBoxIndice);
+            this.Controls.Add(this.iconButtonLimpiar);
+            this.Controls.Add(this.iconButtonBuscar);
+            this.Controls.Add(this.textBoxBusqueda);
+            this.Controls.Add(this.comboBoxBusqueda);
+            this.Controls.Add(this.labelBuscar);
+            this.Controls.Add(this.textBoxID);
+            this.Controls.Add(this.labelListaUsuarios);
+            this.Controls.Add(this.UsuariosDGV);
+            this.Controls.Add(this.labelTitulo);
+            this.Controls.Add(this.btnEliminar);
+            this.Controls.Add(this.btnEditar);
+            this.Controls.Add(this.btnGuardar);
+            this.Controls.Add(this.textBoxStock);
+            this.Controls.Add(this.labelStock);
+            this.Controls.Add(this.labelImagen);
+            this.Controls.Add(this.labelDescripcion);
+            this.Controls.Add(this.textBoxNombre);
+            this.Controls.Add(this.textBoxCodigo);
+            this.Controls.Add(this.labelTalles);
+            this.Controls.Add(this.labelNombre);
+            this.Controls.Add(this.label2);
+            this.Controls.Add(this.label1);
+            this.Name = "frmProductos";
+            this.Text = "frmProductos";
+            this.Load += new System.EventHandler(this.frmProductos_Load);
+            ((System.ComponentModel.ISupportInitialize)(this.UsuariosDGV)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.DGVProductos)).EndInit();
-            this.panel1.ResumeLayout(false);
-            this.panel2.ResumeLayout(false);
-            this.panel2.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.dgvTalles)).EndInit();
             this.ResumeLayout(false);
+            this.PerformLayout();
 
         }
 
         #endregion
-        private System.Windows.Forms.PictureBox pictureBox1;
-        private System.Windows.Forms.DataGridView DGVProductos;
-        private System.Windows.Forms.Panel panel1;
-        private FontAwesome.Sharp.IconButton btnEditar;
-        private FontAwesome.Sharp.IconButton btnGuardar;
-        private System.Windows.Forms.Panel panel2;
-        private System.Windows.Forms.TextBox TBTalle;
-        private System.Windows.Forms.Label LTalle;
-        private System.Windows.Forms.Label LDetallesProductos;
-        private System.Windows.Forms.TextBox TBNombre;
-        private System.Windows.Forms.Button BImagen;
-        private System.Windows.Forms.Label LNombre;
-        private System.Windows.Forms.Label LDescripcion;
-        private System.Windows.Forms.TextBox TBPrecio;
-        private System.Windows.Forms.Label LPrecio;
-        private System.Windows.Forms.TextBox TBDescripcion;
-        private FontAwesome.Sharp.IconButton btnHabilitar;
-        private FontAwesome.Sharp.IconButton btnDeshabilitar;
-        private System.Windows.Forms.DataGridViewTextBoxColumn imagen_url;
-        private System.Windows.Forms.DataGridViewTextBoxColumn id_producto;
+
+        private FontAwesome.Sharp.IconButton iconButtonHabilitar;
+        private System.Windows.Forms.TextBox textBoxIndice;
+        private FontAwesome.Sharp.IconButton iconButtonLimpiar;
+        private FontAwesome.Sharp.IconButton iconButtonBuscar;
+        private System.Windows.Forms.TextBox textBoxBusqueda;
+        private System.Windows.Forms.ComboBox comboBoxBusqueda;
+        private System.Windows.Forms.Label labelBuscar;
+        private System.Windows.Forms.TextBox textBoxID;
+        private System.Windows.Forms.Label labelListaUsuarios;
+        private System.Windows.Forms.DataGridView UsuariosDGV;
+        private System.Windows.Forms.DataGridViewTextBoxColumn botonSeleccionar;
+        private System.Windows.Forms.DataGridViewTextBoxColumn id_usuario;
+        private System.Windows.Forms.DataGridViewTextBoxColumn dni;
+        private System.Windows.Forms.DataGridViewTextBoxColumn apellido;
         private System.Windows.Forms.DataGridViewTextBoxColumn nombre;
-        private System.Windows.Forms.DataGridViewTextBoxColumn descripcion;
-        private System.Windows.Forms.DataGridViewTextBoxColumn precio;
+        private System.Windows.Forms.DataGridViewTextBoxColumn email;
+        private System.Windows.Forms.DataGridViewTextBoxColumn fecha_nacimiento;
+        private System.Windows.Forms.DataGridViewTextBoxColumn sexo;
+        private System.Windows.Forms.DataGridViewTextBoxColumn usuario;
+        private System.Windows.Forms.DataGridViewTextBoxColumn hash_password;
+        private System.Windows.Forms.DataGridViewTextBoxColumn id_rol;
+        private System.Windows.Forms.DataGridViewTextBoxColumn rol;
         private System.Windows.Forms.DataGridViewTextBoxColumn activo;
         private System.Windows.Forms.DataGridViewTextBoxColumn estado;
+        private System.Windows.Forms.Label labelTitulo;
+        private FontAwesome.Sharp.IconButton btnEliminar;
+        private FontAwesome.Sharp.IconButton btnEditar;
+        private FontAwesome.Sharp.IconButton btnGuardar;
+        private System.Windows.Forms.TextBox textBoxStock;
+        private System.Windows.Forms.Label labelStock;
+        private System.Windows.Forms.Label labelImagen;
+        private System.Windows.Forms.Label labelDescripcion;
+        private System.Windows.Forms.TextBox textBoxNombre;
+        private System.Windows.Forms.TextBox textBoxCodigo;
+        private System.Windows.Forms.Label labelTalles;
+        private System.Windows.Forms.Label labelNombre;
+        private System.Windows.Forms.Label label2;
+        private System.Windows.Forms.Label label1;
+        private System.Windows.Forms.RichTextBox richTextBox1;
+        private System.Windows.Forms.PictureBox pictureBox1;
+        private System.Windows.Forms.ComboBox comboBoxTalles;
+        private FontAwesome.Sharp.IconButton btnAgregarTalle;
+        private System.Windows.Forms.DataGridView dgvTalles;
     }
 }
