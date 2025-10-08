@@ -12,43 +12,61 @@ namespace CapaDatos
 {
     public class CD_Producto
     {
-        public List<Productos> Listar() //utiliza el metodo Listar para obtener la lista de Productos desde la base de datos
+        public List<Productos> Listar()
         {
-            List<Productos> lista = new List<Productos>(); //crea una lista de Productos
-            using (SqlConnection oconexion = new SqlConnection(Conexion.cadena)) //crea una conexion a la base de datos
+            List<Productos> lista = new List<Productos>();
+
+            using (SqlConnection oconexion = new SqlConnection(Conexion.cadena))
             {
                 try
                 {
-                    StringBuilder query = new StringBuilder(); //construye la consulta SQL
-                    query.AppendLine("select p.id_producto, p.codigo, p.nombre, p.descripcion, u.precio, p.imagen_url, p.activo from Productos p"); //selecciona los campos de la tabla Productos
-                    query.AppendLine("inner join talle_producto t on t.id_talle = t.id_talle"); //selecciona los campos de la tabla talles
+                    StringBuilder query = new StringBuilder();
+                    query.AppendLine(@"
+                        SELECT 
+                            p.id_producto,
+                            p.codigo,
+                            p.nombre,
+                            p.descripcion,
+                            p.precio,
+                            p.imagen_url,
+                            p.activo,
+                            ISNULL(STRING_AGG(CONCAT('[', t.talla, '] - ', t.stock, ' pares'), CHAR(10)), '') AS tallesTexto,
+                            ISNULL(SUM(t.stock), 0) AS stock_total
+                        FROM productos p
+                        LEFT JOIN talle_producto t ON p.id_producto = t.id_producto
+                        GROUP BY p.id_producto, p.codigo, p.nombre, p.descripcion, p.precio, p.imagen_url, p.activo
+                    ");
 
-                    SqlCommand cmd = new SqlCommand(query.ToString(), oconexion); //crea un comando SQL
-                    cmd.CommandType = CommandType.Text; //indica que el comando es de tipo texto
+                    SqlCommand cmd = new SqlCommand(query.ToString(), oconexion);
+                    cmd.CommandType = CommandType.Text;
 
-                    oconexion.Open(); //abre la conexion a la base de datos
+                    oconexion.Open();
 
-                    using (SqlDataReader dr = cmd.ExecuteReader()) //ejecuta el comando y obtiene un lector de datos
+                    using (SqlDataReader dr = cmd.ExecuteReader())
                     {
-                        while (dr.Read()) //lee los datos del lector
+                        while (dr.Read())
                         {
-                            lista.Add(new Productos() //agrega un nuevo producto a la lista
+                            lista.Add(new Productos()
                             {
                                 id_producto = Convert.ToInt32(dr["id_producto"]),
+                                codigo = dr["codigo"].ToString(),
                                 nombre = dr["nombre"].ToString(),
                                 descripcion = dr["descripcion"].ToString(),
-                                precio = Convert.ToDecimal(dr["precio"].ToString()),
+                                precio = Convert.ToDecimal(dr["precio"]),
                                 imagen_url = dr["imagen_url"].ToString(),
-                                activo = Convert.ToBoolean(dr["activo"])
+                                activo = Convert.ToBoolean(dr["activo"]),
+                                tallesTexto = dr["tallesTexto"].ToString(),
+                                stock_total = Convert.ToInt32(dr["stock_total"])
                             });
                         }
                     }
                 }
-                catch (Exception) //si ocurre un error, devuelve una lista vacia
+                catch (Exception)
                 {
                     lista = new List<Productos>();
                 }
-            }   //si no ocurre ningun error, devuelve la lista de Productos
+            }
+
             return lista;
         }
 

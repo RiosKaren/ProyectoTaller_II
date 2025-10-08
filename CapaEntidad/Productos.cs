@@ -16,5 +16,9 @@ namespace CapaEntidad
         public string imagen_url { get; set; }
         public bool activo { get; set; }
 
+        // Propiedades derivadas (para mostrar en el DGV)
+        public string tallesTexto { get; set; }
+        public int stock_total { get; set; }
+
     }//Representacion de la tabla productos, con sus respectivos atributos
 }

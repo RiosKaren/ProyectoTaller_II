@@ -1,4 +1,5 @@
-﻿using System;
+﻿
+using System;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
@@ -7,6 +8,11 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+
+using CapaEntidad;
+using CapaNegocio;
+using CapaPresentacion.Utilidades;
+
 
 namespace CapaPresentacion
 {
@@ -22,12 +28,49 @@ namespace CapaPresentacion
 
         private void frmProductos_Load(object sender, EventArgs e)
         {
-            tablaTalles = new DataTable();
-            tablaTalles.Columns.Add("Talle", typeof(string));
-            tablaTalles.Columns.Add("Stock", typeof(int));
+            foreach (DataGridViewColumn columna in ProductosDGV.Columns)
+            {
+                if (columna.Visible == true
+                    && columna.Name != "botonSeleccionar"
+                    && !columna.Name.Equals("estado", StringComparison.OrdinalIgnoreCase))
+                {
+                    comboBoxBusqueda.Items.Add(
+                        new OpcionCombo() { Valor = columna.Name, Texto = columna.HeaderText }
+                    );
+                }
+            }
 
-            // Vincularlo al DataGridView
-            dgvTalles.DataSource = tablaTalles;
+            comboBoxBusqueda.DisplayMember = "Texto";
+            comboBoxBusqueda.ValueMember = "Valor";
+
+
+            //Mostrar todos los prductos
+            List<Productos> listaProductos = new CN_Producto().Listar();
+
+            ProductosDGV.Rows.Clear();
+
+            // Permitir multilínea y ajuste de altura dinámico
+            ProductosDGV.DefaultCellStyle.WrapMode = DataGridViewTriState.True;
+            ProductosDGV.AutoSizeRowsMode = DataGridViewAutoSizeRowsMode.AllCells;
+
+            foreach (Productos item in listaProductos)
+            {
+                ProductosDGV.Rows.Add(new object[]
+                {
+                    "", // columna para seleccionar
+                    item.id_producto,
+                    item.codigo,
+                    item.imagen_url,
+                    item.nombre,
+                    item.descripcion,
+                    item.tallesTexto,   // formato: [8US] - 10 pares | [9US] - 5 pares 
+                    item.stock_total,
+                    item.precio,
+                    item.activo,
+                    item.activo ? "ACTIVO" : "NO ACTIVO"
+                });
+            }
+
         }
 
         private void btnAgregarTalle_Click(object sender, EventArgs e)
@@ -61,8 +104,6 @@ namespace CapaPresentacion
             textBoxStock.Clear();
 
         }
-
-
 
     }
 }
