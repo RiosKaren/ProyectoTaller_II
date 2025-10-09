@@ -179,5 +179,17 @@
     <None Include="Resources\delete.png" />
     <None Include="Resources\Gz2ZxD4WQAA2ZNs.jpeg" />
   </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\air-jordan-1-retro-high-og-banne.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\air-jordan-1-retro-high-og-banne %281%29.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\c865.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <Folder Include="Fotos\" />
+  </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>

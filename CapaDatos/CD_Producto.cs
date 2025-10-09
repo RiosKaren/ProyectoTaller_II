@@ -80,7 +80,7 @@ namespace CapaDatos
             {
                 using (SqlConnection oconexion = new SqlConnection(Conexion.cadena)) //crea una conexion a la base de datos
                 {
-                    SqlCommand cmd = new SqlCommand("SP_RegistrarProducto", oconexion); //crea un comando SQL para ejecutar el procedimiento almacenado SP_RegistrarProducto
+                    SqlCommand cmd = new SqlCommand("SP_REGISTRARPRODUCTO", oconexion); //crea un comando SQL para ejecutar el procedimiento almacenado SP_RegistrarProducto
                     cmd.Parameters.AddWithValue("codigo", obj.codigo);
                     cmd.Parameters.AddWithValue("nombre", obj.nombre);
                     cmd.Parameters.AddWithValue("descripcion", obj.descripcion);
@@ -120,7 +120,7 @@ namespace CapaDatos
             {
                 using (SqlConnection oconexion = new SqlConnection(Conexion.cadena)) //crea una conexion a la base de datos
                 {
-                    SqlCommand cmd = new SqlCommand("SP_EditarProducto", oconexion); //crea un comando SQL para ejecutar el procedimiento almacenado SP_EditarProducto
+                    SqlCommand cmd = new SqlCommand("SP_EDITARPRODUCTO", oconexion); //crea un comando SQL para ejecutar el procedimiento almacenado SP_EditarProducto
                     cmd.Parameters.AddWithValue("codigo", obj.codigo);
                     cmd.Parameters.AddWithValue("nombre", obj.nombre);
                     cmd.Parameters.AddWithValue("descripcion", obj.descripcion);

@@ -30,40 +30,17 @@
         {
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle1 = new System.Windows.Forms.DataGridViewCellStyle();
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle2 = new System.Windows.Forms.DataGridViewCellStyle();
-            this.iconButtonHabilitar = new FontAwesome.Sharp.IconButton();
             this.textBoxIndice = new System.Windows.Forms.TextBox();
-            this.iconButtonLimpiar = new FontAwesome.Sharp.IconButton();
-            this.iconButtonBuscar = new FontAwesome.Sharp.IconButton();
             this.textBoxBusqueda = new System.Windows.Forms.TextBox();
             this.comboBoxBusqueda = new System.Windows.Forms.ComboBox();
             this.labelBuscar = new System.Windows.Forms.Label();
             this.textBoxID = new System.Windows.Forms.TextBox();
             this.labelListaProductos = new System.Windows.Forms.Label();
             this.ProductosDGV = new System.Windows.Forms.DataGridView();
-            this.labelTitulo = new System.Windows.Forms.Label();
-            this.btnEliminar = new FontAwesome.Sharp.IconButton();
-            this.btnEditar = new FontAwesome.Sharp.IconButton();
-            this.btnGuardar = new FontAwesome.Sharp.IconButton();
-            this.textBoxStock = new System.Windows.Forms.TextBox();
-            this.labelStock = new System.Windows.Forms.Label();
-            this.labelImagen = new System.Windows.Forms.Label();
-            this.labelDescripcion = new System.Windows.Forms.Label();
-            this.textBoxNombre = new System.Windows.Forms.TextBox();
-            this.textBoxCodigo = new System.Windows.Forms.TextBox();
-            this.labelTalles = new System.Windows.Forms.Label();
-            this.labelNombre = new System.Windows.Forms.Label();
-            this.label2 = new System.Windows.Forms.Label();
-            this.label1 = new System.Windows.Forms.Label();
-            this.richTextBox1 = new System.Windows.Forms.RichTextBox();
-            this.pictureBox1 = new System.Windows.Forms.PictureBox();
-            this.comboBoxTalles = new System.Windows.Forms.ComboBox();
-            this.btnAgregarTalle = new FontAwesome.Sharp.IconButton();
-            this.dgvTalles = new System.Windows.Forms.DataGridView();
-            this.btnBorrarTalle = new FontAwesome.Sharp.IconButton();
             this.botonSeleccionar = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.id_producto = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.codigo = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.image_url = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.imagen_url = new System.Windows.Forms.DataGridViewImageColumn();
             this.nombre = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.descripcion = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.talle = new System.Windows.Forms.DataGridViewTextBoxColumn();
@@ -71,31 +48,38 @@
             this.precio = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.activo = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.estado = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.labelTitulo = new System.Windows.Forms.Label();
+            this.textBoxStock = new System.Windows.Forms.TextBox();
+            this.labelStock = new System.Windows.Forms.Label();
+            this.labelDescripcion = new System.Windows.Forms.Label();
+            this.textBoxNombre = new System.Windows.Forms.TextBox();
+            this.textBoxCodigo = new System.Windows.Forms.TextBox();
+            this.labelTalles = new System.Windows.Forms.Label();
+            this.labelNombre = new System.Windows.Forms.Label();
+            this.label2 = new System.Windows.Forms.Label();
+            this.label1 = new System.Windows.Forms.Label();
+            this.TextBoxDescripcion = new System.Windows.Forms.RichTextBox();
+            this.TallesDGV = new System.Windows.Forms.DataGridView();
+            this.TBFotoPath = new System.Windows.Forms.TextBox();
+            this.btnBorrarTalle = new FontAwesome.Sharp.IconButton();
+            this.btnAgregarTalle = new FontAwesome.Sharp.IconButton();
+            this.PBFoto = new System.Windows.Forms.PictureBox();
+            this.iconButtonHabilitar = new FontAwesome.Sharp.IconButton();
+            this.iconButtonLimpiar = new FontAwesome.Sharp.IconButton();
+            this.iconButtonBuscar = new FontAwesome.Sharp.IconButton();
+            this.btnEliminar = new FontAwesome.Sharp.IconButton();
+            this.btnEditar = new FontAwesome.Sharp.IconButton();
+            this.btnGuardar = new FontAwesome.Sharp.IconButton();
+            this.btnAgregarImagen = new FontAwesome.Sharp.IconButton();
+            this.labelPrecio = new System.Windows.Forms.Label();
+            this.textBoxPrecio = new System.Windows.Forms.TextBox();
+            this.labelPeso = new System.Windows.Forms.Label();
+            this.comboBoxTalles = new System.Windows.Forms.ComboBox();
+            this.btnEditarTalle = new FontAwesome.Sharp.IconButton();
             ((System.ComponentModel.ISupportInitialize)(this.ProductosDGV)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.dgvTalles)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.TallesDGV)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.PBFoto)).BeginInit();
             this.SuspendLayout();
-            // 
-            // iconButtonHabilitar
-            // 
-            this.iconButtonHabilitar.BackColor = System.Drawing.Color.RoyalBlue;
-            this.iconButtonHabilitar.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.iconButtonHabilitar.FlatAppearance.BorderColor = System.Drawing.Color.Black;
-            this.iconButtonHabilitar.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.iconButtonHabilitar.ForeColor = System.Drawing.Color.White;
-            this.iconButtonHabilitar.IconChar = FontAwesome.Sharp.IconChar.Unlock;
-            this.iconButtonHabilitar.IconColor = System.Drawing.Color.White;
-            this.iconButtonHabilitar.IconFont = FontAwesome.Sharp.IconFont.Auto;
-            this.iconButtonHabilitar.IconSize = 16;
-            this.iconButtonHabilitar.Location = new System.Drawing.Point(20, 655);
-            this.iconButtonHabilitar.Margin = new System.Windows.Forms.Padding(4);
-            this.iconButtonHabilitar.Name = "iconButtonHabilitar";
-            this.iconButtonHabilitar.Size = new System.Drawing.Size(287, 28);
-            this.iconButtonHabilitar.TabIndex = 75;
-            this.iconButtonHabilitar.Text = "Habilitar Producto";
-            this.iconButtonHabilitar.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
-            this.iconButtonHabilitar.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
-            this.iconButtonHabilitar.UseVisualStyleBackColor = false;
             // 
             // textBoxIndice
             // 
@@ -105,44 +89,6 @@
             this.textBoxIndice.Size = new System.Drawing.Size(41, 22);
             this.textBoxIndice.TabIndex = 74;
             this.textBoxIndice.Visible = false;
-            // 
-            // iconButtonLimpiar
-            // 
-            this.iconButtonLimpiar.BackColor = System.Drawing.Color.White;
-            this.iconButtonLimpiar.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.iconButtonLimpiar.FlatAppearance.BorderColor = System.Drawing.Color.Black;
-            this.iconButtonLimpiar.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.iconButtonLimpiar.ForeColor = System.Drawing.Color.White;
-            this.iconButtonLimpiar.IconChar = FontAwesome.Sharp.IconChar.Eraser;
-            this.iconButtonLimpiar.IconColor = System.Drawing.Color.Black;
-            this.iconButtonLimpiar.IconFont = FontAwesome.Sharp.IconFont.Auto;
-            this.iconButtonLimpiar.IconSize = 18;
-            this.iconButtonLimpiar.Location = new System.Drawing.Point(1467, 47);
-            this.iconButtonLimpiar.Margin = new System.Windows.Forms.Padding(4);
-            this.iconButtonLimpiar.Name = "iconButtonLimpiar";
-            this.iconButtonLimpiar.Size = new System.Drawing.Size(45, 22);
-            this.iconButtonLimpiar.TabIndex = 72;
-            this.iconButtonLimpiar.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
-            this.iconButtonLimpiar.UseVisualStyleBackColor = false;
-            // 
-            // iconButtonBuscar
-            // 
-            this.iconButtonBuscar.BackColor = System.Drawing.Color.White;
-            this.iconButtonBuscar.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.iconButtonBuscar.FlatAppearance.BorderColor = System.Drawing.Color.Black;
-            this.iconButtonBuscar.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.iconButtonBuscar.ForeColor = System.Drawing.Color.White;
-            this.iconButtonBuscar.IconChar = FontAwesome.Sharp.IconChar.MagnifyingGlass;
-            this.iconButtonBuscar.IconColor = System.Drawing.Color.Black;
-            this.iconButtonBuscar.IconFont = FontAwesome.Sharp.IconFont.Auto;
-            this.iconButtonBuscar.IconSize = 16;
-            this.iconButtonBuscar.Location = new System.Drawing.Point(1413, 47);
-            this.iconButtonBuscar.Margin = new System.Windows.Forms.Padding(4);
-            this.iconButtonBuscar.Name = "iconButtonBuscar";
-            this.iconButtonBuscar.Size = new System.Drawing.Size(45, 22);
-            this.iconButtonBuscar.TabIndex = 73;
-            this.iconButtonBuscar.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
-            this.iconButtonBuscar.UseVisualStyleBackColor = false;
             // 
             // textBoxBusqueda
             // 
@@ -214,7 +160,7 @@
             this.botonSeleccionar,
             this.id_producto,
             this.codigo,
-            this.image_url,
+            this.imagen_url,
             this.nombre,
             this.descripcion,
             this.talle,
@@ -239,261 +185,8 @@
             this.ProductosDGV.RowTemplate.Height = 28;
             this.ProductosDGV.Size = new System.Drawing.Size(1171, 534);
             this.ProductosDGV.TabIndex = 62;
-            // 
-            // labelTitulo
-            // 
-            this.labelTitulo.AutoSize = true;
-            this.labelTitulo.BackColor = System.Drawing.Color.White;
-            this.labelTitulo.Font = new System.Drawing.Font("Microsoft Sans Serif", 20F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.labelTitulo.Location = new System.Drawing.Point(13, 4);
-            this.labelTitulo.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
-            this.labelTitulo.Name = "labelTitulo";
-            this.labelTitulo.Size = new System.Drawing.Size(286, 39);
-            this.labelTitulo.TabIndex = 60;
-            this.labelTitulo.Text = "Detalles Producto";
-            // 
-            // btnEliminar
-            // 
-            this.btnEliminar.BackColor = System.Drawing.Color.Firebrick;
-            this.btnEliminar.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.btnEliminar.FlatAppearance.BorderColor = System.Drawing.Color.Black;
-            this.btnEliminar.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnEliminar.ForeColor = System.Drawing.Color.White;
-            this.btnEliminar.IconChar = FontAwesome.Sharp.IconChar.Lock;
-            this.btnEliminar.IconColor = System.Drawing.Color.White;
-            this.btnEliminar.IconFont = FontAwesome.Sharp.IconFont.Auto;
-            this.btnEliminar.IconSize = 16;
-            this.btnEliminar.Location = new System.Drawing.Point(21, 619);
-            this.btnEliminar.Margin = new System.Windows.Forms.Padding(4);
-            this.btnEliminar.Name = "btnEliminar";
-            this.btnEliminar.Size = new System.Drawing.Size(287, 28);
-            this.btnEliminar.TabIndex = 57;
-            this.btnEliminar.Text = "Deshabilitar Producto";
-            this.btnEliminar.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
-            this.btnEliminar.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
-            this.btnEliminar.UseVisualStyleBackColor = false;
-            // 
-            // btnEditar
-            // 
-            this.btnEditar.BackColor = System.Drawing.Color.RoyalBlue;
-            this.btnEditar.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.btnEditar.FlatAppearance.BorderColor = System.Drawing.Color.Black;
-            this.btnEditar.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnEditar.ForeColor = System.Drawing.Color.White;
-            this.btnEditar.IconChar = FontAwesome.Sharp.IconChar.Edit;
-            this.btnEditar.IconColor = System.Drawing.Color.White;
-            this.btnEditar.IconFont = FontAwesome.Sharp.IconFont.Auto;
-            this.btnEditar.IconSize = 16;
-            this.btnEditar.Location = new System.Drawing.Point(21, 583);
-            this.btnEditar.Margin = new System.Windows.Forms.Padding(4);
-            this.btnEditar.Name = "btnEditar";
-            this.btnEditar.Size = new System.Drawing.Size(287, 28);
-            this.btnEditar.TabIndex = 56;
-            this.btnEditar.Text = "Editar";
-            this.btnEditar.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
-            this.btnEditar.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
-            this.btnEditar.UseVisualStyleBackColor = false;
-            // 
-            // btnGuardar
-            // 
-            this.btnGuardar.BackColor = System.Drawing.Color.ForestGreen;
-            this.btnGuardar.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.btnGuardar.FlatAppearance.BorderColor = System.Drawing.Color.Black;
-            this.btnGuardar.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnGuardar.ForeColor = System.Drawing.Color.White;
-            this.btnGuardar.IconChar = FontAwesome.Sharp.IconChar.FloppyDisk;
-            this.btnGuardar.IconColor = System.Drawing.Color.White;
-            this.btnGuardar.IconFont = FontAwesome.Sharp.IconFont.Auto;
-            this.btnGuardar.IconSize = 16;
-            this.btnGuardar.Location = new System.Drawing.Point(21, 548);
-            this.btnGuardar.Margin = new System.Windows.Forms.Padding(4);
-            this.btnGuardar.Name = "btnGuardar";
-            this.btnGuardar.Size = new System.Drawing.Size(287, 28);
-            this.btnGuardar.TabIndex = 58;
-            this.btnGuardar.Text = "Guardar";
-            this.btnGuardar.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
-            this.btnGuardar.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
-            this.btnGuardar.UseVisualStyleBackColor = false;
-            // 
-            // textBoxStock
-            // 
-            this.textBoxStock.Location = new System.Drawing.Point(154, 278);
-            this.textBoxStock.Margin = new System.Windows.Forms.Padding(4);
-            this.textBoxStock.Name = "textBoxStock";
-            this.textBoxStock.Size = new System.Drawing.Size(84, 22);
-            this.textBoxStock.TabIndex = 50;
-            // 
-            // labelStock
-            // 
-            this.labelStock.AutoSize = true;
-            this.labelStock.BackColor = System.Drawing.Color.White;
-            this.labelStock.Location = new System.Drawing.Point(150, 258);
-            this.labelStock.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
-            this.labelStock.Name = "labelStock";
-            this.labelStock.Size = new System.Drawing.Size(44, 16);
-            this.labelStock.TabIndex = 54;
-            this.labelStock.Text = "Stock:";
-            // 
-            // labelImagen
-            // 
-            this.labelImagen.AutoSize = true;
-            this.labelImagen.BackColor = System.Drawing.Color.White;
-            this.labelImagen.Location = new System.Drawing.Point(21, 450);
-            this.labelImagen.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
-            this.labelImagen.Name = "labelImagen";
-            this.labelImagen.Size = new System.Drawing.Size(134, 16);
-            this.labelImagen.TabIndex = 51;
-            this.labelImagen.Text = "Imagen del Producto:";
-            // 
-            // labelDescripcion
-            // 
-            this.labelDescripcion.AutoSize = true;
-            this.labelDescripcion.BackColor = System.Drawing.Color.White;
-            this.labelDescripcion.Location = new System.Drawing.Point(21, 160);
-            this.labelDescripcion.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
-            this.labelDescripcion.Name = "labelDescripcion";
-            this.labelDescripcion.Size = new System.Drawing.Size(82, 16);
-            this.labelDescripcion.TabIndex = 47;
-            this.labelDescripcion.Text = "Descripción:";
-            // 
-            // textBoxNombre
-            // 
-            this.textBoxNombre.Location = new System.Drawing.Point(24, 128);
-            this.textBoxNombre.Margin = new System.Windows.Forms.Padding(4);
-            this.textBoxNombre.Name = "textBoxNombre";
-            this.textBoxNombre.Size = new System.Drawing.Size(283, 22);
-            this.textBoxNombre.TabIndex = 43;
-            // 
-            // textBoxCodigo
-            // 
-            this.textBoxCodigo.Location = new System.Drawing.Point(24, 74);
-            this.textBoxCodigo.Margin = new System.Windows.Forms.Padding(4);
-            this.textBoxCodigo.Name = "textBoxCodigo";
-            this.textBoxCodigo.Size = new System.Drawing.Size(132, 22);
-            this.textBoxCodigo.TabIndex = 42;
-            // 
-            // labelTalles
-            // 
-            this.labelTalles.AutoSize = true;
-            this.labelTalles.BackColor = System.Drawing.Color.White;
-            this.labelTalles.Location = new System.Drawing.Point(21, 258);
-            this.labelTalles.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
-            this.labelTalles.Name = "labelTalles";
-            this.labelTalles.Size = new System.Drawing.Size(48, 16);
-            this.labelTalles.TabIndex = 40;
-            this.labelTalles.Text = "Talles:";
-            // 
-            // labelNombre
-            // 
-            this.labelNombre.AutoSize = true;
-            this.labelNombre.BackColor = System.Drawing.Color.White;
-            this.labelNombre.Location = new System.Drawing.Point(21, 106);
-            this.labelNombre.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
-            this.labelNombre.Name = "labelNombre";
-            this.labelNombre.Size = new System.Drawing.Size(59, 16);
-            this.labelNombre.TabIndex = 39;
-            this.labelNombre.Text = "Nombre:";
-            // 
-            // label2
-            // 
-            this.label2.AutoSize = true;
-            this.label2.BackColor = System.Drawing.Color.White;
-            this.label2.Location = new System.Drawing.Point(21, 52);
-            this.label2.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
-            this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(57, 16);
-            this.label2.TabIndex = 41;
-            this.label2.Text = "Código: ";
-            // 
-            // label1
-            // 
-            this.label1.BackColor = System.Drawing.Color.White;
-            this.label1.Dock = System.Windows.Forms.DockStyle.Left;
-            this.label1.ForeColor = System.Drawing.Color.White;
-            this.label1.Location = new System.Drawing.Point(0, 0);
-            this.label1.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
-            this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(345, 697);
-            this.label1.TabIndex = 38;
-            // 
-            // richTextBox1
-            // 
-            this.richTextBox1.Location = new System.Drawing.Point(25, 180);
-            this.richTextBox1.Margin = new System.Windows.Forms.Padding(4);
-            this.richTextBox1.Name = "richTextBox1";
-            this.richTextBox1.Size = new System.Drawing.Size(283, 74);
-            this.richTextBox1.TabIndex = 76;
-            this.richTextBox1.Text = "";
-            // 
-            // pictureBox1
-            // 
-            this.pictureBox1.BackColor = System.Drawing.SystemColors.ControlLight;
-            this.pictureBox1.Location = new System.Drawing.Point(25, 473);
-            this.pictureBox1.Margin = new System.Windows.Forms.Padding(4);
-            this.pictureBox1.Name = "pictureBox1";
-            this.pictureBox1.Size = new System.Drawing.Size(133, 68);
-            this.pictureBox1.TabIndex = 77;
-            this.pictureBox1.TabStop = false;
-            // 
-            // comboBoxTalles
-            // 
-            this.comboBoxTalles.FormattingEnabled = true;
-            this.comboBoxTalles.Location = new System.Drawing.Point(25, 278);
-            this.comboBoxTalles.Margin = new System.Windows.Forms.Padding(4);
-            this.comboBoxTalles.Name = "comboBoxTalles";
-            this.comboBoxTalles.Size = new System.Drawing.Size(115, 24);
-            this.comboBoxTalles.TabIndex = 78;
-            // 
-            // btnAgregarTalle
-            // 
-            this.btnAgregarTalle.BackColor = System.Drawing.Color.ForestGreen;
-            this.btnAgregarTalle.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.btnAgregarTalle.FlatAppearance.BorderColor = System.Drawing.Color.Black;
-            this.btnAgregarTalle.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnAgregarTalle.ForeColor = System.Drawing.Color.White;
-            this.btnAgregarTalle.IconChar = FontAwesome.Sharp.IconChar.PlusCircle;
-            this.btnAgregarTalle.IconColor = System.Drawing.Color.White;
-            this.btnAgregarTalle.IconFont = FontAwesome.Sharp.IconFont.Auto;
-            this.btnAgregarTalle.IconSize = 16;
-            this.btnAgregarTalle.Location = new System.Drawing.Point(246, 278);
-            this.btnAgregarTalle.Margin = new System.Windows.Forms.Padding(4);
-            this.btnAgregarTalle.Name = "btnAgregarTalle";
-            this.btnAgregarTalle.Size = new System.Drawing.Size(27, 25);
-            this.btnAgregarTalle.TabIndex = 79;
-            this.btnAgregarTalle.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
-            this.btnAgregarTalle.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
-            this.btnAgregarTalle.UseVisualStyleBackColor = false;
-            this.btnAgregarTalle.Click += new System.EventHandler(this.btnAgregarTalle_Click);
-            // 
-            // dgvTalles
-            // 
-            this.dgvTalles.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dgvTalles.Location = new System.Drawing.Point(27, 311);
-            this.dgvTalles.Margin = new System.Windows.Forms.Padding(4);
-            this.dgvTalles.Name = "dgvTalles";
-            this.dgvTalles.RowHeadersWidth = 51;
-            this.dgvTalles.Size = new System.Drawing.Size(283, 135);
-            this.dgvTalles.TabIndex = 80;
-            // 
-            // btnBorrarTalle
-            // 
-            this.btnBorrarTalle.BackColor = System.Drawing.Color.Firebrick;
-            this.btnBorrarTalle.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.btnBorrarTalle.FlatAppearance.BorderColor = System.Drawing.Color.Black;
-            this.btnBorrarTalle.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnBorrarTalle.ForeColor = System.Drawing.Color.White;
-            this.btnBorrarTalle.IconChar = FontAwesome.Sharp.IconChar.Trash;
-            this.btnBorrarTalle.IconColor = System.Drawing.Color.White;
-            this.btnBorrarTalle.IconFont = FontAwesome.Sharp.IconFont.Auto;
-            this.btnBorrarTalle.IconSize = 16;
-            this.btnBorrarTalle.Location = new System.Drawing.Point(283, 278);
-            this.btnBorrarTalle.Margin = new System.Windows.Forms.Padding(4);
-            this.btnBorrarTalle.Name = "btnBorrarTalle";
-            this.btnBorrarTalle.Size = new System.Drawing.Size(27, 25);
-            this.btnBorrarTalle.TabIndex = 81;
-            this.btnBorrarTalle.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
-            this.btnBorrarTalle.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
-            this.btnBorrarTalle.UseVisualStyleBackColor = false;
+            this.ProductosDGV.CellClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.ProductosDGV_CellClick);
+            this.ProductosDGV.CellPainting += new System.Windows.Forms.DataGridViewCellPaintingEventHandler(this.ProductosDGV_CellPainting);
             // 
             // botonSeleccionar
             // 
@@ -520,13 +213,16 @@
             this.codigo.ReadOnly = true;
             this.codigo.Width = 125;
             // 
-            // image_url
+            // imagen_url
             // 
-            this.image_url.HeaderText = "Imagen";
-            this.image_url.MinimumWidth = 6;
-            this.image_url.Name = "image_url";
-            this.image_url.ReadOnly = true;
-            this.image_url.Width = 125;
+            this.imagen_url.FillWeight = 400F;
+            this.imagen_url.HeaderText = "Imagen";
+            this.imagen_url.ImageLayout = System.Windows.Forms.DataGridViewImageCellLayout.Zoom;
+            this.imagen_url.MinimumWidth = 6;
+            this.imagen_url.Name = "imagen_url";
+            this.imagen_url.ReadOnly = true;
+            this.imagen_url.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.Automatic;
+            this.imagen_url.Width = 125;
             // 
             // nombre
             // 
@@ -585,18 +281,418 @@
             this.estado.ReadOnly = true;
             this.estado.Width = 125;
             // 
+            // labelTitulo
+            // 
+            this.labelTitulo.AutoSize = true;
+            this.labelTitulo.BackColor = System.Drawing.Color.White;
+            this.labelTitulo.Font = new System.Drawing.Font("Microsoft Sans Serif", 20F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.labelTitulo.Location = new System.Drawing.Point(13, 4);
+            this.labelTitulo.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+            this.labelTitulo.Name = "labelTitulo";
+            this.labelTitulo.Size = new System.Drawing.Size(286, 39);
+            this.labelTitulo.TabIndex = 60;
+            this.labelTitulo.Text = "Detalles Producto";
+            // 
+            // textBoxStock
+            // 
+            this.textBoxStock.Location = new System.Drawing.Point(124, 278);
+            this.textBoxStock.Margin = new System.Windows.Forms.Padding(4);
+            this.textBoxStock.Name = "textBoxStock";
+            this.textBoxStock.Size = new System.Drawing.Size(84, 22);
+            this.textBoxStock.TabIndex = 50;
+            this.textBoxStock.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.textBoxStock_KeyPress);
+            // 
+            // labelStock
+            // 
+            this.labelStock.AutoSize = true;
+            this.labelStock.BackColor = System.Drawing.Color.White;
+            this.labelStock.Location = new System.Drawing.Point(120, 258);
+            this.labelStock.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+            this.labelStock.Name = "labelStock";
+            this.labelStock.Size = new System.Drawing.Size(44, 16);
+            this.labelStock.TabIndex = 54;
+            this.labelStock.Text = "Stock:";
+            // 
+            // labelDescripcion
+            // 
+            this.labelDescripcion.AutoSize = true;
+            this.labelDescripcion.BackColor = System.Drawing.Color.White;
+            this.labelDescripcion.Location = new System.Drawing.Point(21, 160);
+            this.labelDescripcion.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+            this.labelDescripcion.Name = "labelDescripcion";
+            this.labelDescripcion.Size = new System.Drawing.Size(82, 16);
+            this.labelDescripcion.TabIndex = 47;
+            this.labelDescripcion.Text = "Descripción:";
+            // 
+            // textBoxNombre
+            // 
+            this.textBoxNombre.Location = new System.Drawing.Point(24, 128);
+            this.textBoxNombre.Margin = new System.Windows.Forms.Padding(4);
+            this.textBoxNombre.Name = "textBoxNombre";
+            this.textBoxNombre.Size = new System.Drawing.Size(286, 22);
+            this.textBoxNombre.TabIndex = 43;
+            // 
+            // textBoxCodigo
+            // 
+            this.textBoxCodigo.Location = new System.Drawing.Point(24, 74);
+            this.textBoxCodigo.Margin = new System.Windows.Forms.Padding(4);
+            this.textBoxCodigo.Name = "textBoxCodigo";
+            this.textBoxCodigo.Size = new System.Drawing.Size(132, 22);
+            this.textBoxCodigo.TabIndex = 42;
+            // 
+            // labelTalles
+            // 
+            this.labelTalles.AutoSize = true;
+            this.labelTalles.BackColor = System.Drawing.Color.White;
+            this.labelTalles.Location = new System.Drawing.Point(21, 258);
+            this.labelTalles.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+            this.labelTalles.Name = "labelTalles";
+            this.labelTalles.Size = new System.Drawing.Size(48, 16);
+            this.labelTalles.TabIndex = 40;
+            this.labelTalles.Text = "Talles:";
+            // 
+            // labelNombre
+            // 
+            this.labelNombre.AutoSize = true;
+            this.labelNombre.BackColor = System.Drawing.Color.White;
+            this.labelNombre.Location = new System.Drawing.Point(21, 106);
+            this.labelNombre.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+            this.labelNombre.Name = "labelNombre";
+            this.labelNombre.Size = new System.Drawing.Size(59, 16);
+            this.labelNombre.TabIndex = 39;
+            this.labelNombre.Text = "Nombre:";
+            // 
+            // label2
+            // 
+            this.label2.AutoSize = true;
+            this.label2.BackColor = System.Drawing.Color.White;
+            this.label2.Location = new System.Drawing.Point(21, 52);
+            this.label2.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+            this.label2.Name = "label2";
+            this.label2.Size = new System.Drawing.Size(57, 16);
+            this.label2.TabIndex = 41;
+            this.label2.Text = "Código: ";
+            // 
+            // label1
+            // 
+            this.label1.BackColor = System.Drawing.Color.White;
+            this.label1.Dock = System.Windows.Forms.DockStyle.Left;
+            this.label1.ForeColor = System.Drawing.Color.White;
+            this.label1.Location = new System.Drawing.Point(0, 0);
+            this.label1.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+            this.label1.Name = "label1";
+            this.label1.Size = new System.Drawing.Size(345, 697);
+            this.label1.TabIndex = 38;
+            // 
+            // TextBoxDescripcion
+            // 
+            this.TextBoxDescripcion.Location = new System.Drawing.Point(25, 180);
+            this.TextBoxDescripcion.Margin = new System.Windows.Forms.Padding(4);
+            this.TextBoxDescripcion.Name = "TextBoxDescripcion";
+            this.TextBoxDescripcion.Size = new System.Drawing.Size(285, 33);
+            this.TextBoxDescripcion.TabIndex = 76;
+            this.TextBoxDescripcion.Text = "";
+            // 
+            // TallesDGV
+            // 
+            this.TallesDGV.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.TallesDGV.Location = new System.Drawing.Point(25, 311);
+            this.TallesDGV.Margin = new System.Windows.Forms.Padding(4);
+            this.TallesDGV.Name = "TallesDGV";
+            this.TallesDGV.RowHeadersWidth = 51;
+            this.TallesDGV.Size = new System.Drawing.Size(285, 135);
+            this.TallesDGV.TabIndex = 80;
+            this.TallesDGV.SelectionChanged += new System.EventHandler(this.TallesDGV_SelectionChanged);
+            // 
+            // TBFotoPath
+            // 
+            this.TBFotoPath.Location = new System.Drawing.Point(25, 515);
+            this.TBFotoPath.Margin = new System.Windows.Forms.Padding(4);
+            this.TBFotoPath.Name = "TBFotoPath";
+            this.TBFotoPath.ReadOnly = true;
+            this.TBFotoPath.Size = new System.Drawing.Size(192, 22);
+            this.TBFotoPath.TabIndex = 83;
+            // 
+            // btnBorrarTalle
+            // 
+            this.btnBorrarTalle.BackColor = System.Drawing.Color.Firebrick;
+            this.btnBorrarTalle.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.btnBorrarTalle.FlatAppearance.BorderColor = System.Drawing.Color.Black;
+            this.btnBorrarTalle.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnBorrarTalle.ForeColor = System.Drawing.Color.White;
+            this.btnBorrarTalle.IconChar = FontAwesome.Sharp.IconChar.Trash;
+            this.btnBorrarTalle.IconColor = System.Drawing.Color.White;
+            this.btnBorrarTalle.IconFont = FontAwesome.Sharp.IconFont.Auto;
+            this.btnBorrarTalle.IconSize = 16;
+            this.btnBorrarTalle.Location = new System.Drawing.Point(283, 278);
+            this.btnBorrarTalle.Margin = new System.Windows.Forms.Padding(4);
+            this.btnBorrarTalle.Name = "btnBorrarTalle";
+            this.btnBorrarTalle.Size = new System.Drawing.Size(27, 25);
+            this.btnBorrarTalle.TabIndex = 81;
+            this.btnBorrarTalle.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
+            this.btnBorrarTalle.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
+            this.btnBorrarTalle.UseVisualStyleBackColor = false;
+            this.btnBorrarTalle.Click += new System.EventHandler(this.btnBorrarTalle_Click);
+            // 
+            // btnAgregarTalle
+            // 
+            this.btnAgregarTalle.BackColor = System.Drawing.Color.ForestGreen;
+            this.btnAgregarTalle.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.btnAgregarTalle.FlatAppearance.BorderColor = System.Drawing.Color.Black;
+            this.btnAgregarTalle.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnAgregarTalle.ForeColor = System.Drawing.Color.White;
+            this.btnAgregarTalle.IconChar = FontAwesome.Sharp.IconChar.PlusCircle;
+            this.btnAgregarTalle.IconColor = System.Drawing.Color.White;
+            this.btnAgregarTalle.IconFont = FontAwesome.Sharp.IconFont.Auto;
+            this.btnAgregarTalle.IconSize = 16;
+            this.btnAgregarTalle.Location = new System.Drawing.Point(216, 278);
+            this.btnAgregarTalle.Margin = new System.Windows.Forms.Padding(4);
+            this.btnAgregarTalle.Name = "btnAgregarTalle";
+            this.btnAgregarTalle.Size = new System.Drawing.Size(27, 25);
+            this.btnAgregarTalle.TabIndex = 79;
+            this.btnAgregarTalle.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
+            this.btnAgregarTalle.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
+            this.btnAgregarTalle.UseVisualStyleBackColor = false;
+            this.btnAgregarTalle.Click += new System.EventHandler(this.btnAgregarTalle_Click);
+            // 
+            // PBFoto
+            // 
+            this.PBFoto.BackColor = System.Drawing.SystemColors.ControlLight;
+            this.PBFoto.Image = global::CapaPresentacion.Properties.Resources.c865;
+            this.PBFoto.Location = new System.Drawing.Point(225, 452);
+            this.PBFoto.Margin = new System.Windows.Forms.Padding(4);
+            this.PBFoto.Name = "PBFoto";
+            this.PBFoto.Size = new System.Drawing.Size(85, 85);
+            this.PBFoto.TabIndex = 77;
+            this.PBFoto.TabStop = false;
+            // 
+            // iconButtonHabilitar
+            // 
+            this.iconButtonHabilitar.BackColor = System.Drawing.Color.RoyalBlue;
+            this.iconButtonHabilitar.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.iconButtonHabilitar.FlatAppearance.BorderColor = System.Drawing.Color.Black;
+            this.iconButtonHabilitar.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.iconButtonHabilitar.ForeColor = System.Drawing.Color.White;
+            this.iconButtonHabilitar.IconChar = FontAwesome.Sharp.IconChar.Unlock;
+            this.iconButtonHabilitar.IconColor = System.Drawing.Color.White;
+            this.iconButtonHabilitar.IconFont = FontAwesome.Sharp.IconFont.Auto;
+            this.iconButtonHabilitar.IconSize = 16;
+            this.iconButtonHabilitar.Location = new System.Drawing.Point(25, 655);
+            this.iconButtonHabilitar.Margin = new System.Windows.Forms.Padding(4);
+            this.iconButtonHabilitar.Name = "iconButtonHabilitar";
+            this.iconButtonHabilitar.Size = new System.Drawing.Size(282, 28);
+            this.iconButtonHabilitar.TabIndex = 75;
+            this.iconButtonHabilitar.Text = "Habilitar Producto";
+            this.iconButtonHabilitar.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
+            this.iconButtonHabilitar.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
+            this.iconButtonHabilitar.UseVisualStyleBackColor = false;
+            // 
+            // iconButtonLimpiar
+            // 
+            this.iconButtonLimpiar.BackColor = System.Drawing.Color.White;
+            this.iconButtonLimpiar.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.iconButtonLimpiar.FlatAppearance.BorderColor = System.Drawing.Color.Black;
+            this.iconButtonLimpiar.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.iconButtonLimpiar.ForeColor = System.Drawing.Color.White;
+            this.iconButtonLimpiar.IconChar = FontAwesome.Sharp.IconChar.Eraser;
+            this.iconButtonLimpiar.IconColor = System.Drawing.Color.Black;
+            this.iconButtonLimpiar.IconFont = FontAwesome.Sharp.IconFont.Auto;
+            this.iconButtonLimpiar.IconSize = 18;
+            this.iconButtonLimpiar.Location = new System.Drawing.Point(1467, 47);
+            this.iconButtonLimpiar.Margin = new System.Windows.Forms.Padding(4);
+            this.iconButtonLimpiar.Name = "iconButtonLimpiar";
+            this.iconButtonLimpiar.Size = new System.Drawing.Size(45, 22);
+            this.iconButtonLimpiar.TabIndex = 72;
+            this.iconButtonLimpiar.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
+            this.iconButtonLimpiar.UseVisualStyleBackColor = false;
+            // 
+            // iconButtonBuscar
+            // 
+            this.iconButtonBuscar.BackColor = System.Drawing.Color.White;
+            this.iconButtonBuscar.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.iconButtonBuscar.FlatAppearance.BorderColor = System.Drawing.Color.Black;
+            this.iconButtonBuscar.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.iconButtonBuscar.ForeColor = System.Drawing.Color.White;
+            this.iconButtonBuscar.IconChar = FontAwesome.Sharp.IconChar.MagnifyingGlass;
+            this.iconButtonBuscar.IconColor = System.Drawing.Color.Black;
+            this.iconButtonBuscar.IconFont = FontAwesome.Sharp.IconFont.Auto;
+            this.iconButtonBuscar.IconSize = 16;
+            this.iconButtonBuscar.Location = new System.Drawing.Point(1413, 47);
+            this.iconButtonBuscar.Margin = new System.Windows.Forms.Padding(4);
+            this.iconButtonBuscar.Name = "iconButtonBuscar";
+            this.iconButtonBuscar.Size = new System.Drawing.Size(45, 22);
+            this.iconButtonBuscar.TabIndex = 73;
+            this.iconButtonBuscar.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
+            this.iconButtonBuscar.UseVisualStyleBackColor = false;
+            // 
+            // btnEliminar
+            // 
+            this.btnEliminar.BackColor = System.Drawing.Color.Firebrick;
+            this.btnEliminar.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.btnEliminar.FlatAppearance.BorderColor = System.Drawing.Color.Black;
+            this.btnEliminar.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnEliminar.ForeColor = System.Drawing.Color.White;
+            this.btnEliminar.IconChar = FontAwesome.Sharp.IconChar.Lock;
+            this.btnEliminar.IconColor = System.Drawing.Color.White;
+            this.btnEliminar.IconFont = FontAwesome.Sharp.IconFont.Auto;
+            this.btnEliminar.IconSize = 16;
+            this.btnEliminar.Location = new System.Drawing.Point(25, 619);
+            this.btnEliminar.Margin = new System.Windows.Forms.Padding(4);
+            this.btnEliminar.Name = "btnEliminar";
+            this.btnEliminar.Size = new System.Drawing.Size(283, 28);
+            this.btnEliminar.TabIndex = 57;
+            this.btnEliminar.Text = "Deshabilitar Producto";
+            this.btnEliminar.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
+            this.btnEliminar.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
+            this.btnEliminar.UseVisualStyleBackColor = false;
+            // 
+            // btnEditar
+            // 
+            this.btnEditar.BackColor = System.Drawing.Color.RoyalBlue;
+            this.btnEditar.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.btnEditar.FlatAppearance.BorderColor = System.Drawing.Color.Black;
+            this.btnEditar.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnEditar.ForeColor = System.Drawing.Color.White;
+            this.btnEditar.IconChar = FontAwesome.Sharp.IconChar.Edit;
+            this.btnEditar.IconColor = System.Drawing.Color.White;
+            this.btnEditar.IconFont = FontAwesome.Sharp.IconFont.Auto;
+            this.btnEditar.IconSize = 16;
+            this.btnEditar.Location = new System.Drawing.Point(25, 583);
+            this.btnEditar.Margin = new System.Windows.Forms.Padding(4);
+            this.btnEditar.Name = "btnEditar";
+            this.btnEditar.Size = new System.Drawing.Size(283, 28);
+            this.btnEditar.TabIndex = 56;
+            this.btnEditar.Text = "Editar";
+            this.btnEditar.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
+            this.btnEditar.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
+            this.btnEditar.UseVisualStyleBackColor = false;
+            this.btnEditar.Click += new System.EventHandler(this.btnEditar_Click);
+            // 
+            // btnGuardar
+            // 
+            this.btnGuardar.BackColor = System.Drawing.Color.ForestGreen;
+            this.btnGuardar.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.btnGuardar.FlatAppearance.BorderColor = System.Drawing.Color.Black;
+            this.btnGuardar.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnGuardar.ForeColor = System.Drawing.Color.White;
+            this.btnGuardar.IconChar = FontAwesome.Sharp.IconChar.FloppyDisk;
+            this.btnGuardar.IconColor = System.Drawing.Color.White;
+            this.btnGuardar.IconFont = FontAwesome.Sharp.IconFont.Auto;
+            this.btnGuardar.IconSize = 16;
+            this.btnGuardar.Location = new System.Drawing.Point(25, 548);
+            this.btnGuardar.Margin = new System.Windows.Forms.Padding(4);
+            this.btnGuardar.Name = "btnGuardar";
+            this.btnGuardar.Size = new System.Drawing.Size(283, 28);
+            this.btnGuardar.TabIndex = 58;
+            this.btnGuardar.Text = "Guardar";
+            this.btnGuardar.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
+            this.btnGuardar.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
+            this.btnGuardar.UseVisualStyleBackColor = false;
+            this.btnGuardar.Click += new System.EventHandler(this.btnGuardar_Click);
+            // 
+            // btnAgregarImagen
+            // 
+            this.btnAgregarImagen.BackColor = System.Drawing.Color.RoyalBlue;
+            this.btnAgregarImagen.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.btnAgregarImagen.FlatAppearance.BorderColor = System.Drawing.Color.Black;
+            this.btnAgregarImagen.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnAgregarImagen.ForeColor = System.Drawing.Color.White;
+            this.btnAgregarImagen.IconChar = FontAwesome.Sharp.IconChar.FloppyDisk;
+            this.btnAgregarImagen.IconColor = System.Drawing.Color.White;
+            this.btnAgregarImagen.IconFont = FontAwesome.Sharp.IconFont.Auto;
+            this.btnAgregarImagen.IconSize = 16;
+            this.btnAgregarImagen.Location = new System.Drawing.Point(25, 463);
+            this.btnAgregarImagen.Margin = new System.Windows.Forms.Padding(4);
+            this.btnAgregarImagen.Name = "btnAgregarImagen";
+            this.btnAgregarImagen.Size = new System.Drawing.Size(192, 44);
+            this.btnAgregarImagen.TabIndex = 84;
+            this.btnAgregarImagen.Text = "Seleccionar Imagen";
+            this.btnAgregarImagen.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
+            this.btnAgregarImagen.UseVisualStyleBackColor = false;
+            this.btnAgregarImagen.Click += new System.EventHandler(this.btnAgregarImagen_Click);
+            // 
+            // labelPrecio
+            // 
+            this.labelPrecio.AutoSize = true;
+            this.labelPrecio.BackColor = System.Drawing.Color.White;
+            this.labelPrecio.Location = new System.Drawing.Point(22, 226);
+            this.labelPrecio.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+            this.labelPrecio.Name = "labelPrecio";
+            this.labelPrecio.Size = new System.Drawing.Size(49, 16);
+            this.labelPrecio.TabIndex = 85;
+            this.labelPrecio.Text = "Precio:";
+            // 
+            // textBoxPrecio
+            // 
+            this.textBoxPrecio.Location = new System.Drawing.Point(110, 224);
+            this.textBoxPrecio.Margin = new System.Windows.Forms.Padding(4);
+            this.textBoxPrecio.Name = "textBoxPrecio";
+            this.textBoxPrecio.Size = new System.Drawing.Size(84, 22);
+            this.textBoxPrecio.TabIndex = 86;
+            this.textBoxPrecio.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.textBoxPrecio_KeyPress);
+            // 
+            // labelPeso
+            // 
+            this.labelPeso.AutoSize = true;
+            this.labelPeso.BackColor = System.Drawing.Color.White;
+            this.labelPeso.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.labelPeso.Location = new System.Drawing.Point(90, 225);
+            this.labelPeso.Name = "labelPeso";
+            this.labelPeso.Size = new System.Drawing.Size(16, 18);
+            this.labelPeso.TabIndex = 87;
+            this.labelPeso.Text = "$";
+            // 
+            // comboBoxTalles
+            // 
+            this.comboBoxTalles.BackColor = System.Drawing.Color.White;
+            this.comboBoxTalles.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.comboBoxTalles.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
+            this.comboBoxTalles.FormattingEnabled = true;
+            this.comboBoxTalles.Location = new System.Drawing.Point(25, 279);
+            this.comboBoxTalles.Margin = new System.Windows.Forms.Padding(4);
+            this.comboBoxTalles.Name = "comboBoxTalles";
+            this.comboBoxTalles.Size = new System.Drawing.Size(81, 24);
+            this.comboBoxTalles.TabIndex = 88;
+            // 
+            // btnEditarTalle
+            // 
+            this.btnEditarTalle.BackColor = System.Drawing.Color.RoyalBlue;
+            this.btnEditarTalle.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.btnEditarTalle.FlatAppearance.BorderColor = System.Drawing.Color.Black;
+            this.btnEditarTalle.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnEditarTalle.ForeColor = System.Drawing.Color.White;
+            this.btnEditarTalle.IconChar = FontAwesome.Sharp.IconChar.Edit;
+            this.btnEditarTalle.IconColor = System.Drawing.Color.White;
+            this.btnEditarTalle.IconFont = FontAwesome.Sharp.IconFont.Auto;
+            this.btnEditarTalle.IconSize = 16;
+            this.btnEditarTalle.Location = new System.Drawing.Point(250, 278);
+            this.btnEditarTalle.Margin = new System.Windows.Forms.Padding(4);
+            this.btnEditarTalle.Name = "btnEditarTalle";
+            this.btnEditarTalle.Size = new System.Drawing.Size(27, 25);
+            this.btnEditarTalle.TabIndex = 89;
+            this.btnEditarTalle.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
+            this.btnEditarTalle.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
+            this.btnEditarTalle.UseVisualStyleBackColor = false;
+            this.btnEditarTalle.Click += new System.EventHandler(this.btnEditarTalle_Click);
+            // 
             // frmProductos
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.DarkRed;
             this.ClientSize = new System.Drawing.Size(1585, 697);
-            this.Controls.Add(this.btnBorrarTalle);
-            this.Controls.Add(this.dgvTalles);
-            this.Controls.Add(this.btnAgregarTalle);
+            this.Controls.Add(this.btnEditarTalle);
             this.Controls.Add(this.comboBoxTalles);
-            this.Controls.Add(this.pictureBox1);
-            this.Controls.Add(this.richTextBox1);
+            this.Controls.Add(this.labelPeso);
+            this.Controls.Add(this.textBoxPrecio);
+            this.Controls.Add(this.labelPrecio);
+            this.Controls.Add(this.btnAgregarImagen);
+            this.Controls.Add(this.TBFotoPath);
+            this.Controls.Add(this.btnBorrarTalle);
+            this.Controls.Add(this.TallesDGV);
+            this.Controls.Add(this.btnAgregarTalle);
+            this.Controls.Add(this.PBFoto);
+            this.Controls.Add(this.TextBoxDescripcion);
             this.Controls.Add(this.iconButtonHabilitar);
             this.Controls.Add(this.textBoxIndice);
             this.Controls.Add(this.iconButtonLimpiar);
@@ -613,7 +709,6 @@
             this.Controls.Add(this.btnGuardar);
             this.Controls.Add(this.textBoxStock);
             this.Controls.Add(this.labelStock);
-            this.Controls.Add(this.labelImagen);
             this.Controls.Add(this.labelDescripcion);
             this.Controls.Add(this.textBoxNombre);
             this.Controls.Add(this.textBoxCodigo);
@@ -626,8 +721,8 @@
             this.Text = "frmProductos";
             this.Load += new System.EventHandler(this.frmProductos_Load);
             ((System.ComponentModel.ISupportInitialize)(this.ProductosDGV)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.dgvTalles)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.TallesDGV)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.PBFoto)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -651,7 +746,6 @@
         private FontAwesome.Sharp.IconButton btnGuardar;
         private System.Windows.Forms.TextBox textBoxStock;
         private System.Windows.Forms.Label labelStock;
-        private System.Windows.Forms.Label labelImagen;
         private System.Windows.Forms.Label labelDescripcion;
         private System.Windows.Forms.TextBox textBoxNombre;
         private System.Windows.Forms.TextBox textBoxCodigo;
@@ -659,16 +753,17 @@
         private System.Windows.Forms.Label labelNombre;
         private System.Windows.Forms.Label label2;
         private System.Windows.Forms.Label label1;
-        private System.Windows.Forms.RichTextBox richTextBox1;
-        private System.Windows.Forms.PictureBox pictureBox1;
-        private System.Windows.Forms.ComboBox comboBoxTalles;
+        private System.Windows.Forms.RichTextBox TextBoxDescripcion;
+        private System.Windows.Forms.PictureBox PBFoto;
         private FontAwesome.Sharp.IconButton btnAgregarTalle;
-        private System.Windows.Forms.DataGridView dgvTalles;
+        private System.Windows.Forms.DataGridView TallesDGV;
         private FontAwesome.Sharp.IconButton btnBorrarTalle;
+        private System.Windows.Forms.TextBox TBFotoPath;
+        private FontAwesome.Sharp.IconButton btnAgregarImagen;
         private System.Windows.Forms.DataGridViewTextBoxColumn botonSeleccionar;
         private System.Windows.Forms.DataGridViewTextBoxColumn id_producto;
         private System.Windows.Forms.DataGridViewTextBoxColumn codigo;
-        private System.Windows.Forms.DataGridViewTextBoxColumn image_url;
+        private System.Windows.Forms.DataGridViewImageColumn imagen_url;
         private System.Windows.Forms.DataGridViewTextBoxColumn nombre;
         private System.Windows.Forms.DataGridViewTextBoxColumn descripcion;
         private System.Windows.Forms.DataGridViewTextBoxColumn talle;
@@ -676,5 +771,10 @@
         private System.Windows.Forms.DataGridViewTextBoxColumn precio;
         private System.Windows.Forms.DataGridViewTextBoxColumn activo;
         private System.Windows.Forms.DataGridViewTextBoxColumn estado;
+        private System.Windows.Forms.Label labelPrecio;
+        private System.Windows.Forms.TextBox textBoxPrecio;
+        private System.Windows.Forms.Label labelPeso;
+        private System.Windows.Forms.ComboBox comboBoxTalles;
+        private FontAwesome.Sharp.IconButton btnEditarTalle;
     }
 }

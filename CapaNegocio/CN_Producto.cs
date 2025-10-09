@@ -20,6 +20,12 @@ namespace CapaNegocio
 
         public int Registrar(Productos obj, out string Mensaje)
         {
+            Mensaje = string.Empty;
+            if (string.IsNullOrEmpty(obj.nombre))
+            {
+                Mensaje = "El nombre del producto no puede estar vacío.";
+                return 0;
+            }
             return objcd_producto.Registrar(obj, out Mensaje); //Devuelve el id del usuario registrado desde la capa de datos
         }
 

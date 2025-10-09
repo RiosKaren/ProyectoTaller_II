@@ -53,6 +53,20 @@
             this.btnEliminar = new FontAwesome.Sharp.IconButton();
             this.labelTitulo = new System.Windows.Forms.Label();
             this.UsuariosDGV = new System.Windows.Forms.DataGridView();
+            this.botonSeleccionar = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.id_usuario = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.dni = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.apellido = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.nombre = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.email = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.fecha_nacimiento = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.sexo = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.usuario = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.hash_password = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.id_rol = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.rol = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.activo = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.estado = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.labelListaUsuarios = new System.Windows.Forms.Label();
             this.textBoxID = new System.Windows.Forms.TextBox();
             this.dateTimeNacimiento = new System.Windows.Forms.DateTimePicker();
@@ -68,20 +82,6 @@
             this.textBoxIndice = new System.Windows.Forms.TextBox();
             this.iconButtonHabilitar = new FontAwesome.Sharp.IconButton();
             this.textBoxCPassword = new System.Windows.Forms.TextBox();
-            this.estado = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.activo = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.rol = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.id_rol = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.hash_password = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.usuario = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.sexo = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.fecha_nacimiento = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.email = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.nombre = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.apellido = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.dni = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.id_usuario = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.botonSeleccionar = new System.Windows.Forms.DataGridViewTextBoxColumn();
             ((System.ComponentModel.ISupportInitialize)(this.UsuariosDGV)).BeginInit();
             this.SuspendLayout();
             // 
@@ -146,6 +146,7 @@
             this.textBoxNombre.Size = new System.Drawing.Size(132, 22);
             this.textBoxNombre.TabIndex = 5;
             this.textBoxNombre.TextChanged += new System.EventHandler(this.textBoxNombre_TextChanged);
+            this.textBoxNombre.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.textBoxNombre_KeyPress);
             // 
             // textBoxApellido
             // 
@@ -155,6 +156,7 @@
             this.textBoxApellido.Size = new System.Drawing.Size(132, 22);
             this.textBoxApellido.TabIndex = 6;
             this.textBoxApellido.TextChanged += new System.EventHandler(this.textBoxApellido_TextChanged);
+            this.textBoxApellido.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.textBoxApellido_KeyPress);
             // 
             // textBoxUser
             // 
@@ -402,6 +404,123 @@
             this.UsuariosDGV.CellClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.UsuariosDGV_CellClick);
             this.UsuariosDGV.CellPainting += new System.Windows.Forms.DataGridViewCellPaintingEventHandler(this.UsuariosDGV_CellPainting);
             // 
+            // botonSeleccionar
+            // 
+            this.botonSeleccionar.HeaderText = "";
+            this.botonSeleccionar.MinimumWidth = 6;
+            this.botonSeleccionar.Name = "botonSeleccionar";
+            this.botonSeleccionar.ReadOnly = true;
+            this.botonSeleccionar.Width = 30;
+            // 
+            // id_usuario
+            // 
+            this.id_usuario.HeaderText = "id_usuario";
+            this.id_usuario.MinimumWidth = 6;
+            this.id_usuario.Name = "id_usuario";
+            this.id_usuario.ReadOnly = true;
+            this.id_usuario.Visible = false;
+            this.id_usuario.Width = 125;
+            // 
+            // dni
+            // 
+            this.dni.HeaderText = "Nro Documento";
+            this.dni.MinimumWidth = 6;
+            this.dni.Name = "dni";
+            this.dni.ReadOnly = true;
+            this.dni.Width = 170;
+            // 
+            // apellido
+            // 
+            this.apellido.HeaderText = "Apellido";
+            this.apellido.MinimumWidth = 6;
+            this.apellido.Name = "apellido";
+            this.apellido.ReadOnly = true;
+            this.apellido.Width = 125;
+            // 
+            // nombre
+            // 
+            this.nombre.HeaderText = "Nombre";
+            this.nombre.MinimumWidth = 6;
+            this.nombre.Name = "nombre";
+            this.nombre.ReadOnly = true;
+            this.nombre.Width = 170;
+            // 
+            // email
+            // 
+            this.email.HeaderText = "Correo";
+            this.email.MinimumWidth = 6;
+            this.email.Name = "email";
+            this.email.ReadOnly = true;
+            this.email.Width = 125;
+            // 
+            // fecha_nacimiento
+            // 
+            this.fecha_nacimiento.HeaderText = "Fecha de Nacimiento";
+            this.fecha_nacimiento.MinimumWidth = 6;
+            this.fecha_nacimiento.Name = "fecha_nacimiento";
+            this.fecha_nacimiento.ReadOnly = true;
+            this.fecha_nacimiento.Width = 125;
+            // 
+            // sexo
+            // 
+            this.sexo.HeaderText = "Sexo";
+            this.sexo.MinimumWidth = 6;
+            this.sexo.Name = "sexo";
+            this.sexo.ReadOnly = true;
+            this.sexo.Width = 125;
+            // 
+            // usuario
+            // 
+            this.usuario.HeaderText = "usuario";
+            this.usuario.MinimumWidth = 6;
+            this.usuario.Name = "usuario";
+            this.usuario.ReadOnly = true;
+            this.usuario.Visible = false;
+            this.usuario.Width = 125;
+            // 
+            // hash_password
+            // 
+            this.hash_password.HeaderText = "hash_password";
+            this.hash_password.MinimumWidth = 6;
+            this.hash_password.Name = "hash_password";
+            this.hash_password.ReadOnly = true;
+            this.hash_password.Visible = false;
+            this.hash_password.Width = 125;
+            // 
+            // id_rol
+            // 
+            this.id_rol.HeaderText = "id_rol";
+            this.id_rol.MinimumWidth = 6;
+            this.id_rol.Name = "id_rol";
+            this.id_rol.ReadOnly = true;
+            this.id_rol.Visible = false;
+            this.id_rol.Width = 125;
+            // 
+            // rol
+            // 
+            this.rol.HeaderText = "Rol";
+            this.rol.MinimumWidth = 6;
+            this.rol.Name = "rol";
+            this.rol.ReadOnly = true;
+            this.rol.Width = 125;
+            // 
+            // activo
+            // 
+            this.activo.HeaderText = "activo";
+            this.activo.MinimumWidth = 6;
+            this.activo.Name = "activo";
+            this.activo.ReadOnly = true;
+            this.activo.Visible = false;
+            this.activo.Width = 125;
+            // 
+            // estado
+            // 
+            this.estado.HeaderText = "Estado";
+            this.estado.MinimumWidth = 6;
+            this.estado.Name = "estado";
+            this.estado.ReadOnly = true;
+            this.estado.Width = 125;
+            // 
             // labelListaUsuarios
             // 
             this.labelListaUsuarios.BackColor = System.Drawing.Color.White;
@@ -422,7 +541,6 @@
             this.textBoxID.Size = new System.Drawing.Size(41, 22);
             this.textBoxID.TabIndex = 15;
             this.textBoxID.Text = "0";
-            this.textBoxID.Visible = false;
             // 
             // dateTimeNacimiento
             // 
@@ -589,123 +707,6 @@
             this.textBoxCPassword.PasswordChar = '*';
             this.textBoxCPassword.Size = new System.Drawing.Size(132, 22);
             this.textBoxCPassword.TabIndex = 10;
-            // 
-            // estado
-            // 
-            this.estado.HeaderText = "Estado";
-            this.estado.MinimumWidth = 6;
-            this.estado.Name = "estado";
-            this.estado.ReadOnly = true;
-            this.estado.Width = 125;
-            // 
-            // activo
-            // 
-            this.activo.HeaderText = "activo";
-            this.activo.MinimumWidth = 6;
-            this.activo.Name = "activo";
-            this.activo.ReadOnly = true;
-            this.activo.Visible = false;
-            this.activo.Width = 125;
-            // 
-            // rol
-            // 
-            this.rol.HeaderText = "Rol";
-            this.rol.MinimumWidth = 6;
-            this.rol.Name = "rol";
-            this.rol.ReadOnly = true;
-            this.rol.Width = 125;
-            // 
-            // id_rol
-            // 
-            this.id_rol.HeaderText = "id_rol";
-            this.id_rol.MinimumWidth = 6;
-            this.id_rol.Name = "id_rol";
-            this.id_rol.ReadOnly = true;
-            this.id_rol.Visible = false;
-            this.id_rol.Width = 125;
-            // 
-            // hash_password
-            // 
-            this.hash_password.HeaderText = "hash_password";
-            this.hash_password.MinimumWidth = 6;
-            this.hash_password.Name = "hash_password";
-            this.hash_password.ReadOnly = true;
-            this.hash_password.Visible = false;
-            this.hash_password.Width = 125;
-            // 
-            // usuario
-            // 
-            this.usuario.HeaderText = "usuario";
-            this.usuario.MinimumWidth = 6;
-            this.usuario.Name = "usuario";
-            this.usuario.ReadOnly = true;
-            this.usuario.Visible = false;
-            this.usuario.Width = 125;
-            // 
-            // sexo
-            // 
-            this.sexo.HeaderText = "Sexo";
-            this.sexo.MinimumWidth = 6;
-            this.sexo.Name = "sexo";
-            this.sexo.ReadOnly = true;
-            this.sexo.Width = 125;
-            // 
-            // fecha_nacimiento
-            // 
-            this.fecha_nacimiento.HeaderText = "Fecha de Nacimiento";
-            this.fecha_nacimiento.MinimumWidth = 6;
-            this.fecha_nacimiento.Name = "fecha_nacimiento";
-            this.fecha_nacimiento.ReadOnly = true;
-            this.fecha_nacimiento.Width = 125;
-            // 
-            // email
-            // 
-            this.email.HeaderText = "Correo";
-            this.email.MinimumWidth = 6;
-            this.email.Name = "email";
-            this.email.ReadOnly = true;
-            this.email.Width = 125;
-            // 
-            // nombre
-            // 
-            this.nombre.HeaderText = "Nombre";
-            this.nombre.MinimumWidth = 6;
-            this.nombre.Name = "nombre";
-            this.nombre.ReadOnly = true;
-            this.nombre.Width = 170;
-            // 
-            // apellido
-            // 
-            this.apellido.HeaderText = "Apellido";
-            this.apellido.MinimumWidth = 6;
-            this.apellido.Name = "apellido";
-            this.apellido.ReadOnly = true;
-            this.apellido.Width = 125;
-            // 
-            // dni
-            // 
-            this.dni.HeaderText = "Nro Documento";
-            this.dni.MinimumWidth = 6;
-            this.dni.Name = "dni";
-            this.dni.ReadOnly = true;
-            this.dni.Width = 170;
-            // 
-            // id_usuario
-            // 
-            this.id_usuario.HeaderText = "id_usuario";
-            this.id_usuario.MinimumWidth = 6;
-            this.id_usuario.Name = "id_usuario";
-            this.id_usuario.ReadOnly = true;
-            this.id_usuario.Visible = false;
-            this.id_usuario.Width = 125;
-            // 
-            // botonSeleccionar
-            // 
-            this.botonSeleccionar.HeaderText = "";
-            this.botonSeleccionar.MinimumWidth = 6;
-            this.botonSeleccionar.Name = "botonSeleccionar";
-            this.botonSeleccionar.ReadOnly = true;
-            this.botonSeleccionar.Width = 30;
             // 
             // frmUsuarios
             // 
