@@ -1,8 +1,4 @@
-﻿
-using CapaEntidad;
-using CapaNegocio;
-using CapaPresentacion.Utilidades;
-using System;
+﻿using System;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Configuration;
@@ -15,6 +11,10 @@ using System.Text;
 using System.Text.RegularExpressions;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+
+using CapaEntidad;
+using CapaNegocio;
+using CapaPresentacion.Utilidades;
 
 
 namespace CapaPresentacion
@@ -504,7 +504,7 @@ namespace CapaPresentacion
             item.stock_total,
             item.precio,
             item.activo,
-            item.activo ? "ACTIVO" : "NO ACTIVO"
+            item.activo ? "ACTIVO" : "NO ACTIVO",
                 });
             }
         }
@@ -543,43 +543,25 @@ namespace CapaPresentacion
             if (ProductosDGV.Columns[e.ColumnIndex].Name != "botonSeleccionar")
                 return; // si no es la columna del botón seleccionar, no hace nada
 
-            // 🔹 Obtener la fila seleccionada
+            // Obtiene la fila seleccionada
             var row = ProductosDGV.Rows[e.RowIndex];
 
-            // 🔹 Guardar el índice y el id del producto seleccionado
+            // Guarda el índice y el id del producto seleccionado
             textBoxIndice.Text = e.RowIndex.ToString();
             textBoxID.Text = Convert.ToString(row.Cells["id_producto"].Value);
 
-            // 🔹 Cargar los datos del producto seleccionado
+            // Carga los datos del producto seleccionado
             textBoxCodigo.Text = Convert.ToString(row.Cells["codigo"].Value);
             textBoxNombre.Text = Convert.ToString(row.Cells["nombre"].Value);
             TextBoxDescripcion.Text = Convert.ToString(row.Cells["descripcion"].Value);
             textBoxPrecio.Text = Convert.ToString(row.Cells["precio"].Value);
 
-            // 🔹 Mostrar imagen del producto
-            string imagenUrl = Convert.ToString(row.Cells["imagen_url"].Value);
-            if (!string.IsNullOrEmpty(imagenUrl))
-            {
-                string ruta = Path.Combine(Application.StartupPath, "..\\..\\Fotos", imagenUrl);
-                if (File.Exists(ruta))
-                {
-                    PBFoto.Image = Image.FromFile(ruta);
-                    PBFoto.SizeMode = PictureBoxSizeMode.Zoom;
-                    TBFotoPath.Text = ruta;
-                }
-                else
-                {
-                    PBFoto.Image = null;
-                    TBFotoPath.Clear();
-                }
-            }
-            else
-            {
-                PBFoto.Image = null;
-                TBFotoPath.Clear();
-            }
+            // Muestra imagen del producto
+            PBFoto.Image = row.Cells["imagen_url"].Value as Image;
+            PBFoto.SizeMode = PictureBoxSizeMode.Zoom;
+            TBFotoPath.Clear();
 
-            // 🔹 Mostrar los talles asociados al producto
+            // Muestra los talles asociados al producto
             tablaTalles.Rows.Clear();
             int idProducto = Convert.ToInt32(row.Cells["id_producto"].Value);
             using (SqlConnection conn = new SqlConnection(ConfigurationManager.ConnectionStrings["cadena_conexion"].ConnectionString))
@@ -596,7 +578,7 @@ namespace CapaPresentacion
 
 
 
-            // 🔹 Bloquear campos por defecto
+            // Bloquea campos por defecto
             BloquearCamposProducto();
         }
         
@@ -639,7 +621,7 @@ namespace CapaPresentacion
                 return;
             }
 
-            // 🔹 Habilitar campos para edición
+            // Habilita campos para edición
             foreach (TextBoxBase tb in new TextBoxBase[]
             {
         textBoxCodigo,
