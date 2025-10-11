@@ -353,7 +353,7 @@ namespace CapaPresentacion
         }
 
 
-        private void btnEliminar_Click(object sender, EventArgs e)
+        private void btnDeshabilitar_Click(object sender, EventArgs e)
         {
             if (string.IsNullOrWhiteSpace(textBoxID.Text) || textBoxID.Text == "0")
             {
@@ -388,6 +388,7 @@ namespace CapaPresentacion
 
             Limpiar();
         }
+
 
         private void iconButtonHabilitar_Click(object sender, EventArgs e)
         {
@@ -574,6 +575,5 @@ namespace CapaPresentacion
                 e.Handled = true; // Bloquea la tecla
             }
         }
-
     }
 }

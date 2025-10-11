@@ -245,21 +245,21 @@ namespace CapaPresentacion
 
         private bool ValidarCampos()
         {
-            if (string.IsNullOrWhiteSpace(textBoxNombre.Text) ||
+            if (string.IsNullOrWhiteSpace(textBoxCodigo.Text) ||
+                string.IsNullOrWhiteSpace(textBoxNombre.Text) ||
                 string.IsNullOrWhiteSpace(TextBoxDescripcion.Text) ||
                 string.IsNullOrWhiteSpace(textBoxPrecio.Text) ||
-                TallesDGV.Rows.Count == 0 ||
-                string.IsNullOrWhiteSpace(TBFotoPath.Text))
+                TallesDGV.Rows.Count == 0)
             {
                 MessageBox.Show("Por favor complete todos los campos obligatorios.",
                                 "Advertencia", MessageBoxButtons.OK, MessageBoxIcon.Warning);
                 return false;
             }
 
-            // Validar que el precio sea mayor que 0.00
+            // 🔹 Validar que el precio sea mayor que 0.00
             if (!decimal.TryParse(textBoxPrecio.Text, out decimal precio) || precio <= 0)
             {
-                MessageBox.Show("Ingrese un precio.",
+                MessageBox.Show("Ingrese un precio válido mayor que 0.00.",
                                 "Advertencia", MessageBoxButtons.OK, MessageBoxIcon.Warning);
                 return false;
             }
@@ -281,6 +281,8 @@ namespace CapaPresentacion
 
             textBoxStock.Clear();
             comboBoxTalles.SelectedIndex = -1;
+
+            textBoxCodigo.Select(); //Pone el foco en la textbox DNI
         }
 
         private void textBoxPrecio_KeyPress(object sender, KeyPressEventArgs e)
@@ -386,74 +388,6 @@ namespace CapaPresentacion
             comboBoxTalles.SelectedIndex = -1;
         }
 
-
-        ////////////////////////////////////////////////////////////////////////////////////////////
-        private void btnEditarTalle_Click(object sender, EventArgs e)
-        {
-            if (TallesDGV.SelectedRows.Count == 0)
-            {
-                MessageBox.Show("Seleccione un talle para editar.",
-                    "Advertencia", MessageBoxButtons.OK, MessageBoxIcon.Warning);
-                return;
-            }
-
-            // Obtener la fila seleccionada
-            int index = TallesDGV.SelectedRows[0].Index;
-
-            // Recuperar los valores actuales
-            string talleActual = tablaTalles.Rows[index]["Talle"].ToString();
-            int stockActual = Convert.ToInt32(tablaTalles.Rows[index]["Stock"]);
-
-            // Mostrar valores actuales en los controles
-            comboBoxTalles.SelectedItem = talleActual;
-            textBoxStock.Text = stockActual.ToString();
-
-            // Confirmar edición
-            DialogResult result = MessageBox.Show(
-                $"¿Desea actualizar el talle {talleActual}?",
-                "Editar talle",
-                MessageBoxButtons.YesNo,
-                MessageBoxIcon.Question
-            );
-
-            if (result == DialogResult.Yes)
-            {
-                // Validar nuevo stock
-                if (!int.TryParse(textBoxStock.Text.Trim(), out int nuevoStock) || nuevoStock <= 0)
-                {
-                    MessageBox.Show("Ingrese un stock válido.",
-                        "Error", MessageBoxButtons.OK, MessageBoxIcon.Warning);
-                    return;
-                }
-
-                string nuevoTalle = comboBoxTalles.SelectedItem.ToString();
-
-                // Verificar si el nuevo talle ya existe en otra fila
-                for (int i = 0; i < tablaTalles.Rows.Count; i++)
-                {
-                    if (i != index && tablaTalles.Rows[i]["Talle"].ToString() == nuevoTalle)
-                    {
-                        MessageBox.Show("Ese talle ya existe en la lista.",
-                            "Error", MessageBoxButtons.OK, MessageBoxIcon.Warning);
-                        return;
-                    }
-                }
-
-                // Actualizar los valores en la tabla
-                tablaTalles.Rows[index]["Talle"] = nuevoTalle;
-                tablaTalles.Rows[index]["Stock"] = nuevoStock;
-
-                MessageBox.Show("Talle actualizado correctamente.",
-                    "Éxito", MessageBoxButtons.OK, MessageBoxIcon.Information);
-
-                // Limpiar campos
-                textBoxStock.Clear();
-                comboBoxTalles.SelectedIndex = -1;
-            }
-        }
-
-
-        ////////////////////////////////////////////////////////////////////////////////////////////
 
         private void TallesDGV_SelectionChanged(object sender, EventArgs e)
         {
@@ -641,6 +575,79 @@ namespace CapaPresentacion
             btnEditarTalle.Enabled = true;
             btnBorrarTalle.Enabled = true;
             btnAgregarImagen.Enabled = true;
+        }
+
+
+        private void iconButtonHabilitar_Click(object sender, EventArgs e)
+        {
+            if (string.IsNullOrWhiteSpace(textBoxID.Text) || textBoxID.Text == "0")
+            {
+                MessageBox.Show("Debe seleccionar un producto primero", "Aviso", MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
+                return;
+            }
+
+            if (MessageBox.Show("¿Desea dar de alta al producto?", "Confirmación",
+                MessageBoxButtons.YesNo, MessageBoxIcon.Question) == DialogResult.Yes)
+            {
+                string mensaje = string.Empty;
+                Productos objProducto = new Productos()
+                {
+                    id_producto = Convert.ToInt32(textBoxID.Text)
+                };
+
+                bool respuesta = new CN_Producto().CambiarEstado(objProducto, "ALTA", out mensaje);
+
+                if (respuesta)
+                {
+                    DataGridViewRow row = ProductosDGV.Rows[Convert.ToInt32(textBoxIndice.Text)];
+                    row.Cells["activo"].Value = "1";
+                    row.Cells["estado"].Value = "ACTIVO";
+
+                    MessageBox.Show(mensaje, "Éxito", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                }
+                else
+                {
+                    MessageBox.Show(mensaje, "Mensaje", MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
+                }
+            }
+
+            LimpiarFormulario();
+        }
+
+        private void btnDeshabilitar_Click(object sender, EventArgs e)
+        {
+            if (string.IsNullOrWhiteSpace(textBoxID.Text) || textBoxID.Text == "0")
+            {
+                MessageBox.Show("Debe seleccionar un producto primero", "Aviso", MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
+                return;
+            }
+
+            if (MessageBox.Show("¿Desea dar de baja al producto?", "Confirmación",
+                MessageBoxButtons.YesNo, MessageBoxIcon.Question) == DialogResult.Yes)
+            {
+                string mensaje = string.Empty;
+                Productos objProducto = new Productos()
+                {
+                    id_producto = Convert.ToInt32(textBoxID.Text)
+                };
+
+                bool respuesta = new CN_Producto().CambiarEstado(objProducto, "BAJA", out mensaje);
+
+                if (respuesta)
+                {
+                    DataGridViewRow row = ProductosDGV.Rows[Convert.ToInt32(textBoxIndice.Text)];
+                    row.Cells["activo"].Value = "0";
+                    row.Cells["estado"].Value = "NO ACTIVO";
+
+                    MessageBox.Show(mensaje, "Éxito", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                }
+                else
+                {
+                    MessageBox.Show(mensaje, "Mensaje", MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
+                }
+            }
+
+            LimpiarFormulario();
         }
     }
 }

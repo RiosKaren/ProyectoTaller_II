@@ -67,7 +67,7 @@
             this.iconButtonHabilitar = new FontAwesome.Sharp.IconButton();
             this.iconButtonLimpiar = new FontAwesome.Sharp.IconButton();
             this.iconButtonBuscar = new FontAwesome.Sharp.IconButton();
-            this.btnEliminar = new FontAwesome.Sharp.IconButton();
+            this.btnDeshabilitar = new FontAwesome.Sharp.IconButton();
             this.btnEditar = new FontAwesome.Sharp.IconButton();
             this.btnGuardar = new FontAwesome.Sharp.IconButton();
             this.btnAgregarImagen = new FontAwesome.Sharp.IconButton();
@@ -75,7 +75,6 @@
             this.textBoxPrecio = new System.Windows.Forms.TextBox();
             this.labelPeso = new System.Windows.Forms.Label();
             this.comboBoxTalles = new System.Windows.Forms.ComboBox();
-            this.btnEditarTalle = new FontAwesome.Sharp.IconButton();
             ((System.ComponentModel.ISupportInitialize)(this.ProductosDGV)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.TallesDGV)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.PBFoto)).BeginInit();
@@ -298,7 +297,7 @@
             this.textBoxStock.Location = new System.Drawing.Point(124, 278);
             this.textBoxStock.Margin = new System.Windows.Forms.Padding(4);
             this.textBoxStock.Name = "textBoxStock";
-            this.textBoxStock.Size = new System.Drawing.Size(84, 22);
+            this.textBoxStock.Size = new System.Drawing.Size(116, 22);
             this.textBoxStock.TabIndex = 50;
             this.textBoxStock.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.textBoxStock_KeyPress);
             // 
@@ -445,7 +444,7 @@
             this.btnAgregarTalle.IconColor = System.Drawing.Color.White;
             this.btnAgregarTalle.IconFont = FontAwesome.Sharp.IconFont.Auto;
             this.btnAgregarTalle.IconSize = 16;
-            this.btnAgregarTalle.Location = new System.Drawing.Point(216, 278);
+            this.btnAgregarTalle.Location = new System.Drawing.Point(248, 277);
             this.btnAgregarTalle.Margin = new System.Windows.Forms.Padding(4);
             this.btnAgregarTalle.Name = "btnAgregarTalle";
             this.btnAgregarTalle.Size = new System.Drawing.Size(27, 25);
@@ -486,6 +485,7 @@
             this.iconButtonHabilitar.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
             this.iconButtonHabilitar.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
             this.iconButtonHabilitar.UseVisualStyleBackColor = false;
+            this.iconButtonHabilitar.Click += new System.EventHandler(this.iconButtonHabilitar_Click);
             // 
             // iconButtonLimpiar
             // 
@@ -525,26 +525,27 @@
             this.iconButtonBuscar.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
             this.iconButtonBuscar.UseVisualStyleBackColor = false;
             // 
-            // btnEliminar
+            // btnDeshabilitar
             // 
-            this.btnEliminar.BackColor = System.Drawing.Color.Firebrick;
-            this.btnEliminar.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.btnEliminar.FlatAppearance.BorderColor = System.Drawing.Color.Black;
-            this.btnEliminar.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnEliminar.ForeColor = System.Drawing.Color.White;
-            this.btnEliminar.IconChar = FontAwesome.Sharp.IconChar.Lock;
-            this.btnEliminar.IconColor = System.Drawing.Color.White;
-            this.btnEliminar.IconFont = FontAwesome.Sharp.IconFont.Auto;
-            this.btnEliminar.IconSize = 16;
-            this.btnEliminar.Location = new System.Drawing.Point(25, 619);
-            this.btnEliminar.Margin = new System.Windows.Forms.Padding(4);
-            this.btnEliminar.Name = "btnEliminar";
-            this.btnEliminar.Size = new System.Drawing.Size(283, 28);
-            this.btnEliminar.TabIndex = 57;
-            this.btnEliminar.Text = "Deshabilitar Producto";
-            this.btnEliminar.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
-            this.btnEliminar.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
-            this.btnEliminar.UseVisualStyleBackColor = false;
+            this.btnDeshabilitar.BackColor = System.Drawing.Color.Firebrick;
+            this.btnDeshabilitar.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.btnDeshabilitar.FlatAppearance.BorderColor = System.Drawing.Color.Black;
+            this.btnDeshabilitar.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnDeshabilitar.ForeColor = System.Drawing.Color.White;
+            this.btnDeshabilitar.IconChar = FontAwesome.Sharp.IconChar.Lock;
+            this.btnDeshabilitar.IconColor = System.Drawing.Color.White;
+            this.btnDeshabilitar.IconFont = FontAwesome.Sharp.IconFont.Auto;
+            this.btnDeshabilitar.IconSize = 16;
+            this.btnDeshabilitar.Location = new System.Drawing.Point(25, 619);
+            this.btnDeshabilitar.Margin = new System.Windows.Forms.Padding(4);
+            this.btnDeshabilitar.Name = "btnDeshabilitar";
+            this.btnDeshabilitar.Size = new System.Drawing.Size(283, 28);
+            this.btnDeshabilitar.TabIndex = 57;
+            this.btnDeshabilitar.Text = "Deshabilitar Producto";
+            this.btnDeshabilitar.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
+            this.btnDeshabilitar.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
+            this.btnDeshabilitar.UseVisualStyleBackColor = false;
+            this.btnDeshabilitar.Click += new System.EventHandler(this.btnDeshabilitar_Click);
             // 
             // btnEditar
             // 
@@ -654,34 +655,12 @@
             this.comboBoxTalles.Size = new System.Drawing.Size(81, 24);
             this.comboBoxTalles.TabIndex = 88;
             // 
-            // btnEditarTalle
-            // 
-            this.btnEditarTalle.BackColor = System.Drawing.Color.RoyalBlue;
-            this.btnEditarTalle.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.btnEditarTalle.FlatAppearance.BorderColor = System.Drawing.Color.Black;
-            this.btnEditarTalle.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnEditarTalle.ForeColor = System.Drawing.Color.White;
-            this.btnEditarTalle.IconChar = FontAwesome.Sharp.IconChar.Edit;
-            this.btnEditarTalle.IconColor = System.Drawing.Color.White;
-            this.btnEditarTalle.IconFont = FontAwesome.Sharp.IconFont.Auto;
-            this.btnEditarTalle.IconSize = 16;
-            this.btnEditarTalle.Location = new System.Drawing.Point(250, 278);
-            this.btnEditarTalle.Margin = new System.Windows.Forms.Padding(4);
-            this.btnEditarTalle.Name = "btnEditarTalle";
-            this.btnEditarTalle.Size = new System.Drawing.Size(27, 25);
-            this.btnEditarTalle.TabIndex = 89;
-            this.btnEditarTalle.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
-            this.btnEditarTalle.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
-            this.btnEditarTalle.UseVisualStyleBackColor = false;
-            this.btnEditarTalle.Click += new System.EventHandler(this.btnEditarTalle_Click);
-            // 
             // frmProductos
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.DarkRed;
             this.ClientSize = new System.Drawing.Size(1585, 697);
-            this.Controls.Add(this.btnEditarTalle);
             this.Controls.Add(this.comboBoxTalles);
             this.Controls.Add(this.labelPeso);
             this.Controls.Add(this.textBoxPrecio);
@@ -704,7 +683,7 @@
             this.Controls.Add(this.labelListaProductos);
             this.Controls.Add(this.ProductosDGV);
             this.Controls.Add(this.labelTitulo);
-            this.Controls.Add(this.btnEliminar);
+            this.Controls.Add(this.btnDeshabilitar);
             this.Controls.Add(this.btnEditar);
             this.Controls.Add(this.btnGuardar);
             this.Controls.Add(this.textBoxStock);
@@ -741,7 +720,7 @@
         private System.Windows.Forms.Label labelListaProductos;
         private System.Windows.Forms.DataGridView ProductosDGV;
         private System.Windows.Forms.Label labelTitulo;
-        private FontAwesome.Sharp.IconButton btnEliminar;
+        private FontAwesome.Sharp.IconButton btnDeshabilitar;
         private FontAwesome.Sharp.IconButton btnEditar;
         private FontAwesome.Sharp.IconButton btnGuardar;
         private System.Windows.Forms.TextBox textBoxStock;
@@ -775,6 +754,5 @@
         private System.Windows.Forms.TextBox textBoxPrecio;
         private System.Windows.Forms.Label labelPeso;
         private System.Windows.Forms.ComboBox comboBoxTalles;
-        private FontAwesome.Sharp.IconButton btnEditarTalle;
     }
 }

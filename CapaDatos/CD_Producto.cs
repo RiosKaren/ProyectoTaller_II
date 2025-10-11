@@ -121,11 +121,15 @@ namespace CapaDatos
                 using (SqlConnection oconexion = new SqlConnection(Conexion.cadena)) //crea una conexion a la base de datos
                 {
                     SqlCommand cmd = new SqlCommand("SP_EDITARPRODUCTO", oconexion); //crea un comando SQL para ejecutar el procedimiento almacenado SP_EditarProducto
+                    cmd.Parameters.AddWithValue("@id_producto", obj.id_producto);
                     cmd.Parameters.AddWithValue("codigo", obj.codigo);
                     cmd.Parameters.AddWithValue("nombre", obj.nombre);
                     cmd.Parameters.AddWithValue("descripcion", obj.descripcion);
                     cmd.Parameters.AddWithValue("precio", obj.precio);
-                    cmd.Parameters.AddWithValue("imagen_url", obj.imagen_url);
+                    if (string.IsNullOrEmpty(obj.imagen_url))
+                        cmd.Parameters.AddWithValue("@imagen_url", DBNull.Value);
+                    else
+                        cmd.Parameters.AddWithValue("@imagen_url", obj.imagen_url);
                     cmd.Parameters.AddWithValue("activo", obj.activo ? 1 : 0);
                     cmd.Parameters.Add("Respuesta", SqlDbType.Int).Direction = ParameterDirection.Output;
                     cmd.Parameters.Add("Mensaje", SqlDbType.VarChar, 500).Direction = ParameterDirection.Output;
