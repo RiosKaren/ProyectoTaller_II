@@ -505,6 +505,7 @@
             this.iconButtonLimpiar.TabIndex = 72;
             this.iconButtonLimpiar.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
             this.iconButtonLimpiar.UseVisualStyleBackColor = false;
+            this.iconButtonLimpiar.Click += new System.EventHandler(this.iconButtonLimpiar_Click);
             // 
             // iconButtonBuscar
             // 
@@ -524,6 +525,7 @@
             this.iconButtonBuscar.TabIndex = 73;
             this.iconButtonBuscar.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
             this.iconButtonBuscar.UseVisualStyleBackColor = false;
+            this.iconButtonBuscar.Click += new System.EventHandler(this.iconButtonBuscar_Click);
             // 
             // btnDeshabilitar
             // 

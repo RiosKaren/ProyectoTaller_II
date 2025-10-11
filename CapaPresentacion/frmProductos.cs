@@ -31,28 +31,22 @@ namespace CapaPresentacion
 
         private void frmProductos_Load(object sender, EventArgs e)
         {
-            //1. Inicializar comboBoxBusqueda con columnas visibles del DataGridView
-            foreach (DataGridViewColumn columna in ProductosDGV.Columns)
-            {
-                if (columna.Visible == true
-                    && columna.Name != "botonSeleccionar"
-                    && !columna.Name.Equals("estado", StringComparison.OrdinalIgnoreCase))
-                {
-                    comboBoxBusqueda.Items.Add(
-                        new OpcionCombo() { Valor = columna.Name, Texto = columna.HeaderText }
-                    );
-                }
-            }
+            // Inicializa el comboBoxBusqueda con columnas visibles del DataGridView
+            comboBoxBusqueda.Items.Clear();
+
+            comboBoxBusqueda.Items.Add(new OpcionCombo() { Valor = "codigo", Texto = "Código" });
+            comboBoxBusqueda.Items.Add(new OpcionCombo() { Valor = "nombre", Texto = "Nombre" });
+            comboBoxBusqueda.Items.Add(new OpcionCombo() { Valor = "talle", Texto = "Talles" });
 
             comboBoxBusqueda.DisplayMember = "Texto";
             comboBoxBusqueda.ValueMember = "Valor";
 
-            // 2. Inicializar tabla de talles
+            // Inicializa la tabla de talles
             tablaTalles = new DataTable();
             tablaTalles.Columns.Add("Talle", typeof(string));
             tablaTalles.Columns.Add("Stock", typeof(int));
 
-            // 🔹 Vincular tabla al DataGridView para mostrar talles cargados
+            // vincula la tabla al DataGridView para mostrar talles cargados
             TallesDGV.DataSource = tablaTalles;
             TallesDGV.Columns["Talle"].HeaderText = "Talle";
             TallesDGV.Columns["Stock"].HeaderText = "Stock";
@@ -66,7 +60,7 @@ namespace CapaPresentacion
             TallesDGV.DefaultCellStyle.Alignment = DataGridViewContentAlignment.MiddleCenter;
             TallesDGV.ColumnHeadersDefaultCellStyle.Alignment = DataGridViewContentAlignment.MiddleCenter;
 
-            // 3. Preestablecer talles del 35ARG al 42ARG en el ComboBox
+            // Preestablece talles del 35ARG al 42ARG en el ComboBox
             comboBoxTalles.Items.Clear();
             for (int i = 35; i <= 42; i++)
             {
@@ -74,16 +68,16 @@ namespace CapaPresentacion
             }
             comboBoxTalles.SelectedIndex = -1; 
 
-            //4. Mostrar todos los productos existentes
+            // Muestra todos los productos existentes
             List<Productos> listaProductos = new CN_Producto().Listar();
 
             ProductosDGV.Rows.Clear();
 
-            // Configurar DataGridView para texto multilínea y ajuste dinámico
+            // Configura el DataGridView para texto multilínea y ajuste dinámico
             ProductosDGV.DefaultCellStyle.WrapMode = DataGridViewTriState.True;
             ProductosDGV.AutoSizeRowsMode = DataGridViewAutoSizeRowsMode.AllCells;
 
-            //5. Cargar productos en el DataGridView
+            // Carga productos en el DataGridView
             foreach (Productos item in listaProductos)
             {
                 Image imagenProducto = null;
@@ -111,7 +105,7 @@ namespace CapaPresentacion
                 });
             }
 
-            //6. Precio predeterminado
+            // Precio predeterminado
             textBoxPrecio.Text = "0,00";
         }
 
@@ -121,7 +115,7 @@ namespace CapaPresentacion
         {
             OpenFileDialog OFDFotos = new OpenFileDialog();
 
-            //Carpeta predeterminada: Imágenes del usuario
+            // Carpeta predeterminada: Imágenes del usuario
             string imagenesUsuario = Environment.GetFolderPath(Environment.SpecialFolder.MyPictures);
             OFDFotos.InitialDirectory = imagenesUsuario;
 
@@ -177,7 +171,7 @@ namespace CapaPresentacion
 
                 if (resultado)
                 {
-                    // Actualizo los talles (elimino y vuelvo a insertar)
+                    // Actualiza los talles (elimino y vuelvo a insertar)
                     using (SqlConnection conn = new SqlConnection(ConfigurationManager.ConnectionStrings["cadena_conexion"].ConnectionString))
                     {
                         conn.Open();
@@ -256,7 +250,7 @@ namespace CapaPresentacion
                 return false;
             }
 
-            // 🔹 Validar que el precio sea mayor que 0.00
+            // Valida que el precio sea mayor que 0.00
             if (!decimal.TryParse(textBoxPrecio.Text, out decimal precio) || precio <= 0)
             {
                 MessageBox.Show("Ingrese un precio válido mayor que 0.00.",
@@ -510,14 +504,9 @@ namespace CapaPresentacion
                 }
             }
 
-
-
             // Bloquea campos por defecto
             BloquearCamposProducto();
         }
-        
-
-
 
 
         private void BloquearCamposProducto()
@@ -538,7 +527,6 @@ namespace CapaPresentacion
             comboBoxTalles.Enabled = false;
             textBoxStock.ReadOnly = true;
             btnAgregarTalle.Enabled = false;
-            btnEditarTalle.Enabled = false;
             btnBorrarTalle.Enabled = false;
             btnAgregarImagen.Enabled = false;
         }
@@ -572,7 +560,6 @@ namespace CapaPresentacion
             comboBoxTalles.Enabled = true;
             textBoxStock.ReadOnly = false;
             btnAgregarTalle.Enabled = true;
-            btnEditarTalle.Enabled = true;
             btnBorrarTalle.Enabled = true;
             btnAgregarImagen.Enabled = true;
         }
@@ -649,5 +636,54 @@ namespace CapaPresentacion
 
             LimpiarFormulario();
         }
+
+        private void iconButtonBuscar_Click(object sender, EventArgs e)
+        {
+            // Verifica que se haya seleccionado un campo
+            if (comboBoxBusqueda.SelectedItem == null)
+            {
+                MessageBox.Show("Seleccione un campo para buscar.", "Aviso", MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
+                return;
+            }
+
+            // Verifica que haya texto escrito en el cuadro de búsqueda
+            if (string.IsNullOrWhiteSpace(textBoxBusqueda.Text))
+            {
+                MessageBox.Show("Ingrese un texto para buscar.", "Aviso", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                return;
+            }
+
+            // Obtiene la columna seleccionada
+            string columnaFiltro = ((OpcionCombo)comboBoxBusqueda.SelectedItem).Valor.ToString();
+
+            // Recorre las filas del DataGridView
+            if (ProductosDGV.Rows.Count > 0)
+            {
+                foreach (DataGridViewRow row in ProductosDGV.Rows)
+                {
+                    // evita error si la celda es nula
+                    if (row.Cells[columnaFiltro].Value != null &&
+                        row.Cells[columnaFiltro].Value.ToString().Trim().ToUpper().Contains(textBoxBusqueda.Text.Trim().ToUpper()))
+                    {
+                        row.Visible = true;  // muestra la fila
+                    }
+                    else
+                    {
+                        row.Visible = false; // oculta la fila
+                    }
+                }
+            }
+        }
+
+        private void iconButtonLimpiar_Click(object sender, EventArgs e)
+        {
+            textBoxBusqueda.Text = ""; // limpia el cuadro de texto
+
+            foreach (DataGridViewRow row in ProductosDGV.Rows)
+            {
+                row.Visible = true; // muestra todas las filas nuevamente
+            }
+        }
+
     }
 }

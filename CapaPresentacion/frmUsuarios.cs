@@ -428,6 +428,20 @@ namespace CapaPresentacion
 
         private void iconButtonBuscar_Click(object sender, EventArgs e)
         {
+            // Verifica que se haya seleccionado un campo
+            if (comboBoxBusqueda.SelectedItem == null)
+            {
+                MessageBox.Show("Seleccione un campo para buscar.", "Aviso", MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
+                return;
+            }
+
+            // Verifica que se haya escrito algo en el cuadro de búsqueda
+            if (string.IsNullOrWhiteSpace(textBoxBusqueda.Text))
+            {
+                MessageBox.Show("Ingrese un texto para buscar.", "Aviso", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                return;
+            }
+
             string columnaFiltro = ((OpcionCombo)comboBoxBusqueda.SelectedItem).Valor.ToString(); //obtiene el valor de la columna seleccionada en el combobox
 
             if (UsuariosDGV.Rows.Count > 0) //si hay filas en el datagridview
@@ -575,5 +589,6 @@ namespace CapaPresentacion
                 e.Handled = true; // Bloquea la tecla
             }
         }
+
     }
 }
