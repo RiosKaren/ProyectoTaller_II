@@ -1,20 +1,20 @@
-﻿using System;
+﻿using CapaEntidad;
+using CapaNegocio;
+using CapaPresentacion.Utilidades;
+using System;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Configuration;
 using System.Data;
 using System.Data.SqlClient;
 using System.Drawing;
+using System.Globalization;
 using System.IO;
 using System.Linq;
 using System.Text;
 using System.Text.RegularExpressions;
 using System.Threading.Tasks;
 using System.Windows.Forms;
-
-using CapaEntidad;
-using CapaNegocio;
-using CapaPresentacion.Utilidades;
 
 
 namespace CapaPresentacion
@@ -655,24 +655,47 @@ namespace CapaPresentacion
 
             // Obtiene la columna seleccionada
             string columnaFiltro = ((OpcionCombo)comboBoxBusqueda.SelectedItem).Valor.ToString();
+            string textoBuscado = RemoverAcentos(textBoxBusqueda.Text.Trim().ToUpper());
 
             // Recorre las filas del DataGridView
             if (ProductosDGV.Rows.Count > 0)
             {
                 foreach (DataGridViewRow row in ProductosDGV.Rows)
                 {
-                    // evita error si la celda es nula
-                    if (row.Cells[columnaFiltro].Value != null &&
-                        row.Cells[columnaFiltro].Value.ToString().Trim().ToUpper().Contains(textBoxBusqueda.Text.Trim().ToUpper()))
+                    if (row.Cells[columnaFiltro].Value != null)
                     {
-                        row.Visible = true;  // muestra la fila
+                        string valorCelda = RemoverAcentos(row.Cells[columnaFiltro].Value.ToString().Trim().ToUpper());
+
+                        if (valorCelda.Contains(textoBuscado))
+                            row.Visible = true;  // muestra la fila
+                        else
+                            row.Visible = false; // oculta la fila
                     }
                     else
                     {
-                        row.Visible = false; // oculta la fila
+                        row.Visible = false;
                     }
                 }
             }
+        }
+
+        private string RemoverAcentos(string texto)
+        {
+            if (string.IsNullOrEmpty(texto))
+                return texto;
+
+            // Normaliza el texto para separar letras de sus acentos
+            string textoNormalizado = texto.Normalize(NormalizationForm.FormD);
+            StringBuilder sb = new StringBuilder();
+
+            foreach (char c in textoNormalizado)
+            {
+                UnicodeCategory categoria = CharUnicodeInfo.GetUnicodeCategory(c);
+                if (categoria != UnicodeCategory.NonSpacingMark)
+                    sb.Append(c);
+            }
+
+            return sb.ToString().Normalize(NormalizationForm.FormC);
         }
 
         private void iconButtonLimpiar_Click(object sender, EventArgs e)
