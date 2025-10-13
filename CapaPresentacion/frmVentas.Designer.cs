@@ -33,21 +33,27 @@
             this.labelListaUsuarios = new System.Windows.Forms.Label();
             this.label1 = new System.Windows.Forms.Label();
             this.groupBox1 = new System.Windows.Forms.GroupBox();
+            this.textBoxVendedor = new System.Windows.Forms.TextBox();
             this.textBoxFecha = new System.Windows.Forms.TextBox();
             this.labelVendedor = new System.Windows.Forms.Label();
             this.labelFecha = new System.Windows.Forms.Label();
             this.label2 = new System.Windows.Forms.Label();
             this.label3 = new System.Windows.Forms.Label();
             this.groupBox2 = new System.Windows.Forms.GroupBox();
+            this.textBoxDNICliente = new System.Windows.Forms.TextBox();
+            this.textBoxNombreCliente = new System.Windows.Forms.TextBox();
             this.textBoxIDCliente = new System.Windows.Forms.TextBox();
+            this.btnBuscarCliente = new FontAwesome.Sharp.IconButton();
             this.groupBox3 = new System.Windows.Forms.GroupBox();
-            this.textBoxStock = new System.Windows.Forms.NumericUpDown();
+            this.textBoxIDProducto = new System.Windows.Forms.TextBox();
+            this.numericUpDownCantidad = new System.Windows.Forms.NumericUpDown();
             this.label8 = new System.Windows.Forms.Label();
             this.label7 = new System.Windows.Forms.Label();
-            this.textBox2 = new System.Windows.Forms.TextBox();
+            this.textBoxPrecio = new System.Windows.Forms.TextBox();
             this.comboBoxTalle = new System.Windows.Forms.ComboBox();
             this.label6 = new System.Windows.Forms.Label();
             this.textBoxProducto = new System.Windows.Forms.TextBox();
+            this.btnBuscarProducto = new FontAwesome.Sharp.IconButton();
             this.textBoxCodigoP = new System.Windows.Forms.TextBox();
             this.label4 = new System.Windows.Forms.Label();
             this.label5 = new System.Windows.Forms.Label();
@@ -64,18 +70,14 @@
             this.label9 = new System.Windows.Forms.Label();
             this.textBox4 = new System.Windows.Forms.TextBox();
             this.label10 = new System.Windows.Forms.Label();
-            this.textBoxVendedor = new System.Windows.Forms.TextBox();
-            this.textBoxIDProducto = new System.Windows.Forms.TextBox();
-            this.textBoxNombreCliente = new System.Windows.Forms.TextBox();
             this.iconButton1 = new FontAwesome.Sharp.IconButton();
             this.btnAgregar = new FontAwesome.Sharp.IconButton();
-            this.btnBuscarProducto = new FontAwesome.Sharp.IconButton();
-            this.btnBuscarCliente = new FontAwesome.Sharp.IconButton();
-            this.textBoxDNICliente = new System.Windows.Forms.TextBox();
+            this.labelStock = new System.Windows.Forms.Label();
+            this.textBoxStock = new System.Windows.Forms.TextBox();
             this.groupBox1.SuspendLayout();
             this.groupBox2.SuspendLayout();
             this.groupBox3.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.textBoxStock)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.numericUpDownCantidad)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.UsuariosDGV)).BeginInit();
             this.SuspendLayout();
             // 
@@ -114,6 +116,15 @@
             this.groupBox1.TabIndex = 28;
             this.groupBox1.TabStop = false;
             this.groupBox1.Text = "Información Venta";
+            // 
+            // textBoxVendedor
+            // 
+            this.textBoxVendedor.Location = new System.Drawing.Point(251, 40);
+            this.textBoxVendedor.Margin = new System.Windows.Forms.Padding(4);
+            this.textBoxVendedor.Name = "textBoxVendedor";
+            this.textBoxVendedor.ReadOnly = true;
+            this.textBoxVendedor.Size = new System.Drawing.Size(192, 22);
+            this.textBoxVendedor.TabIndex = 87;
             // 
             // textBoxFecha
             // 
@@ -176,6 +187,24 @@
             this.groupBox2.TabStop = false;
             this.groupBox2.Text = "Información Cliente";
             // 
+            // textBoxDNICliente
+            // 
+            this.textBoxDNICliente.Location = new System.Drawing.Point(35, 40);
+            this.textBoxDNICliente.Margin = new System.Windows.Forms.Padding(4);
+            this.textBoxDNICliente.Name = "textBoxDNICliente";
+            this.textBoxDNICliente.ReadOnly = true;
+            this.textBoxDNICliente.Size = new System.Drawing.Size(132, 22);
+            this.textBoxDNICliente.TabIndex = 88;
+            // 
+            // textBoxNombreCliente
+            // 
+            this.textBoxNombreCliente.Location = new System.Drawing.Point(274, 40);
+            this.textBoxNombreCliente.Margin = new System.Windows.Forms.Padding(4);
+            this.textBoxNombreCliente.Name = "textBoxNombreCliente";
+            this.textBoxNombreCliente.ReadOnly = true;
+            this.textBoxNombreCliente.Size = new System.Drawing.Size(195, 22);
+            this.textBoxNombreCliente.TabIndex = 88;
+            // 
             // textBoxIDCliente
             // 
             this.textBoxIDCliente.Location = new System.Drawing.Point(448, 12);
@@ -184,14 +213,36 @@
             this.textBoxIDCliente.Size = new System.Drawing.Size(36, 22);
             this.textBoxIDCliente.TabIndex = 30;
             // 
+            // btnBuscarCliente
+            // 
+            this.btnBuscarCliente.BackColor = System.Drawing.SystemColors.Control;
+            this.btnBuscarCliente.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.btnBuscarCliente.FlatAppearance.BorderColor = System.Drawing.Color.Black;
+            this.btnBuscarCliente.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnBuscarCliente.ForeColor = System.Drawing.Color.White;
+            this.btnBuscarCliente.IconChar = FontAwesome.Sharp.IconChar.MagnifyingGlass;
+            this.btnBuscarCliente.IconColor = System.Drawing.Color.Black;
+            this.btnBuscarCliente.IconFont = FontAwesome.Sharp.IconFont.Auto;
+            this.btnBuscarCliente.IconSize = 16;
+            this.btnBuscarCliente.Location = new System.Drawing.Point(175, 40);
+            this.btnBuscarCliente.Margin = new System.Windows.Forms.Padding(4);
+            this.btnBuscarCliente.Name = "btnBuscarCliente";
+            this.btnBuscarCliente.Size = new System.Drawing.Size(45, 22);
+            this.btnBuscarCliente.TabIndex = 36;
+            this.btnBuscarCliente.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
+            this.btnBuscarCliente.UseVisualStyleBackColor = false;
+            this.btnBuscarCliente.Click += new System.EventHandler(this.btnBuscarCliente_Click);
+            // 
             // groupBox3
             // 
             this.groupBox3.BackColor = System.Drawing.Color.White;
-            this.groupBox3.Controls.Add(this.textBoxIDProducto);
             this.groupBox3.Controls.Add(this.textBoxStock);
+            this.groupBox3.Controls.Add(this.labelStock);
+            this.groupBox3.Controls.Add(this.textBoxIDProducto);
+            this.groupBox3.Controls.Add(this.numericUpDownCantidad);
             this.groupBox3.Controls.Add(this.label8);
             this.groupBox3.Controls.Add(this.label7);
-            this.groupBox3.Controls.Add(this.textBox2);
+            this.groupBox3.Controls.Add(this.textBoxPrecio);
             this.groupBox3.Controls.Add(this.comboBoxTalle);
             this.groupBox3.Controls.Add(this.label6);
             this.groupBox3.Controls.Add(this.textBoxProducto);
@@ -206,18 +257,29 @@
             this.groupBox3.TabStop = false;
             this.groupBox3.Text = "Información Venta";
             // 
-            // textBoxStock
+            // textBoxIDProducto
             // 
-            this.textBoxStock.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.textBoxStock.Location = new System.Drawing.Point(835, 38);
-            this.textBoxStock.Name = "textBoxStock";
-            this.textBoxStock.Size = new System.Drawing.Size(116, 22);
-            this.textBoxStock.TabIndex = 90;
-            this.textBoxStock.Value = new decimal(new int[] {
+            this.textBoxIDProducto.Location = new System.Drawing.Point(184, 12);
+            this.textBoxIDProducto.Margin = new System.Windows.Forms.Padding(4);
+            this.textBoxIDProducto.Name = "textBoxIDProducto";
+            this.textBoxIDProducto.Size = new System.Drawing.Size(36, 22);
+            this.textBoxIDProducto.TabIndex = 38;
+            // 
+            // numericUpDownCantidad
+            // 
+            this.numericUpDownCantidad.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.numericUpDownCantidad.Enabled = false;
+            this.numericUpDownCantidad.Location = new System.Drawing.Point(835, 38);
+            this.numericUpDownCantidad.Name = "numericUpDownCantidad";
+            this.numericUpDownCantidad.ReadOnly = true;
+            this.numericUpDownCantidad.Size = new System.Drawing.Size(116, 22);
+            this.numericUpDownCantidad.TabIndex = 90;
+            this.numericUpDownCantidad.Value = new decimal(new int[] {
             1,
             0,
             0,
             0});
+            this.numericUpDownCantidad.ValueChanged += new System.EventHandler(this.numericUpDownCantidad_ValueChanged);
             // 
             // label8
             // 
@@ -231,20 +293,20 @@
             // label7
             // 
             this.label7.AutoSize = true;
-            this.label7.Location = new System.Drawing.Point(643, 18);
+            this.label7.Location = new System.Drawing.Point(673, 15);
             this.label7.Name = "label7";
             this.label7.Size = new System.Drawing.Size(49, 16);
             this.label7.TabIndex = 31;
             this.label7.Text = "Precio:";
             // 
-            // textBox2
+            // textBoxPrecio
             // 
-            this.textBox2.Location = new System.Drawing.Point(646, 38);
-            this.textBox2.Margin = new System.Windows.Forms.Padding(4);
-            this.textBox2.Name = "textBox2";
-            this.textBox2.ReadOnly = true;
-            this.textBox2.Size = new System.Drawing.Size(144, 22);
-            this.textBox2.TabIndex = 85;
+            this.textBoxPrecio.Location = new System.Drawing.Point(676, 38);
+            this.textBoxPrecio.Margin = new System.Windows.Forms.Padding(4);
+            this.textBoxPrecio.Name = "textBoxPrecio";
+            this.textBoxPrecio.ReadOnly = true;
+            this.textBoxPrecio.Size = new System.Drawing.Size(144, 22);
+            this.textBoxPrecio.TabIndex = 85;
             // 
             // comboBoxTalle
             // 
@@ -255,8 +317,9 @@
             this.comboBoxTalle.Location = new System.Drawing.Point(467, 38);
             this.comboBoxTalle.Margin = new System.Windows.Forms.Padding(4);
             this.comboBoxTalle.Name = "comboBoxTalle";
-            this.comboBoxTalle.Size = new System.Drawing.Size(150, 24);
+            this.comboBoxTalle.Size = new System.Drawing.Size(105, 24);
             this.comboBoxTalle.TabIndex = 34;
+            this.comboBoxTalle.SelectedIndexChanged += new System.EventHandler(this.comboBoxTalle_SelectedIndexChanged);
             // 
             // label6
             // 
@@ -275,6 +338,26 @@
             this.textBoxProducto.ReadOnly = true;
             this.textBoxProducto.Size = new System.Drawing.Size(192, 22);
             this.textBoxProducto.TabIndex = 84;
+            // 
+            // btnBuscarProducto
+            // 
+            this.btnBuscarProducto.BackColor = System.Drawing.SystemColors.Control;
+            this.btnBuscarProducto.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.btnBuscarProducto.FlatAppearance.BorderColor = System.Drawing.Color.Black;
+            this.btnBuscarProducto.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnBuscarProducto.ForeColor = System.Drawing.Color.White;
+            this.btnBuscarProducto.IconChar = FontAwesome.Sharp.IconChar.MagnifyingGlass;
+            this.btnBuscarProducto.IconColor = System.Drawing.Color.Black;
+            this.btnBuscarProducto.IconFont = FontAwesome.Sharp.IconFont.Auto;
+            this.btnBuscarProducto.IconSize = 16;
+            this.btnBuscarProducto.Location = new System.Drawing.Point(175, 38);
+            this.btnBuscarProducto.Margin = new System.Windows.Forms.Padding(4);
+            this.btnBuscarProducto.Name = "btnBuscarProducto";
+            this.btnBuscarProducto.Size = new System.Drawing.Size(45, 22);
+            this.btnBuscarProducto.TabIndex = 37;
+            this.btnBuscarProducto.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
+            this.btnBuscarProducto.UseVisualStyleBackColor = false;
+            this.btnBuscarProducto.Click += new System.EventHandler(this.btnBuscarProducto_Click);
             // 
             // textBoxCodigoP
             // 
@@ -446,32 +529,6 @@
             this.label10.TabIndex = 35;
             this.label10.Text = "Paga con:";
             // 
-            // textBoxVendedor
-            // 
-            this.textBoxVendedor.Location = new System.Drawing.Point(251, 40);
-            this.textBoxVendedor.Margin = new System.Windows.Forms.Padding(4);
-            this.textBoxVendedor.Name = "textBoxVendedor";
-            this.textBoxVendedor.ReadOnly = true;
-            this.textBoxVendedor.Size = new System.Drawing.Size(192, 22);
-            this.textBoxVendedor.TabIndex = 87;
-            // 
-            // textBoxIDProducto
-            // 
-            this.textBoxIDProducto.Location = new System.Drawing.Point(184, 12);
-            this.textBoxIDProducto.Margin = new System.Windows.Forms.Padding(4);
-            this.textBoxIDProducto.Name = "textBoxIDProducto";
-            this.textBoxIDProducto.Size = new System.Drawing.Size(36, 22);
-            this.textBoxIDProducto.TabIndex = 38;
-            // 
-            // textBoxNombreCliente
-            // 
-            this.textBoxNombreCliente.Location = new System.Drawing.Point(274, 40);
-            this.textBoxNombreCliente.Margin = new System.Windows.Forms.Padding(4);
-            this.textBoxNombreCliente.Name = "textBoxNombreCliente";
-            this.textBoxNombreCliente.ReadOnly = true;
-            this.textBoxNombreCliente.Size = new System.Drawing.Size(195, 22);
-            this.textBoxNombreCliente.TabIndex = 88;
-            // 
             // iconButton1
             // 
             this.iconButton1.Cursor = System.Windows.Forms.Cursors.Hand;
@@ -502,58 +559,29 @@
             this.btnAgregar.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageAboveText;
             this.btnAgregar.UseVisualStyleBackColor = true;
             // 
-            // btnBuscarProducto
+            // labelStock
             // 
-            this.btnBuscarProducto.BackColor = System.Drawing.SystemColors.Control;
-            this.btnBuscarProducto.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.btnBuscarProducto.FlatAppearance.BorderColor = System.Drawing.Color.Black;
-            this.btnBuscarProducto.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnBuscarProducto.ForeColor = System.Drawing.Color.White;
-            this.btnBuscarProducto.IconChar = FontAwesome.Sharp.IconChar.MagnifyingGlass;
-            this.btnBuscarProducto.IconColor = System.Drawing.Color.Black;
-            this.btnBuscarProducto.IconFont = FontAwesome.Sharp.IconFont.Auto;
-            this.btnBuscarProducto.IconSize = 16;
-            this.btnBuscarProducto.Location = new System.Drawing.Point(175, 38);
-            this.btnBuscarProducto.Margin = new System.Windows.Forms.Padding(4);
-            this.btnBuscarProducto.Name = "btnBuscarProducto";
-            this.btnBuscarProducto.Size = new System.Drawing.Size(45, 22);
-            this.btnBuscarProducto.TabIndex = 37;
-            this.btnBuscarProducto.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
-            this.btnBuscarProducto.UseVisualStyleBackColor = false;
+            this.labelStock.AutoSize = true;
+            this.labelStock.Location = new System.Drawing.Point(584, 18);
+            this.labelStock.Name = "labelStock";
+            this.labelStock.Size = new System.Drawing.Size(44, 16);
+            this.labelStock.TabIndex = 91;
+            this.labelStock.Text = "Stock:";
             // 
-            // btnBuscarCliente
+            // textBoxStock
             // 
-            this.btnBuscarCliente.BackColor = System.Drawing.SystemColors.Control;
-            this.btnBuscarCliente.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.btnBuscarCliente.FlatAppearance.BorderColor = System.Drawing.Color.Black;
-            this.btnBuscarCliente.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnBuscarCliente.ForeColor = System.Drawing.Color.White;
-            this.btnBuscarCliente.IconChar = FontAwesome.Sharp.IconChar.MagnifyingGlass;
-            this.btnBuscarCliente.IconColor = System.Drawing.Color.Black;
-            this.btnBuscarCliente.IconFont = FontAwesome.Sharp.IconFont.Auto;
-            this.btnBuscarCliente.IconSize = 16;
-            this.btnBuscarCliente.Location = new System.Drawing.Point(175, 40);
-            this.btnBuscarCliente.Margin = new System.Windows.Forms.Padding(4);
-            this.btnBuscarCliente.Name = "btnBuscarCliente";
-            this.btnBuscarCliente.Size = new System.Drawing.Size(45, 22);
-            this.btnBuscarCliente.TabIndex = 36;
-            this.btnBuscarCliente.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
-            this.btnBuscarCliente.UseVisualStyleBackColor = false;
-            this.btnBuscarCliente.Click += new System.EventHandler(this.btnBuscarCliente_Click);
-            // 
-            // textBoxDNICliente
-            // 
-            this.textBoxDNICliente.Location = new System.Drawing.Point(35, 40);
-            this.textBoxDNICliente.Margin = new System.Windows.Forms.Padding(4);
-            this.textBoxDNICliente.Name = "textBoxDNICliente";
-            this.textBoxDNICliente.ReadOnly = true;
-            this.textBoxDNICliente.Size = new System.Drawing.Size(132, 22);
-            this.textBoxDNICliente.TabIndex = 88;
+            this.textBoxStock.Location = new System.Drawing.Point(587, 38);
+            this.textBoxStock.Margin = new System.Windows.Forms.Padding(4);
+            this.textBoxStock.Name = "textBoxStock";
+            this.textBoxStock.ReadOnly = true;
+            this.textBoxStock.Size = new System.Drawing.Size(67, 22);
+            this.textBoxStock.TabIndex = 92;
             // 
             // frmVentas
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
+            this.BackColor = System.Drawing.Color.DarkRed;
             this.ClientSize = new System.Drawing.Size(1231, 690);
             this.Controls.Add(this.iconButton1);
             this.Controls.Add(this.textBox4);
@@ -577,7 +605,7 @@
             this.groupBox2.PerformLayout();
             this.groupBox3.ResumeLayout(false);
             this.groupBox3.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.textBoxStock)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.numericUpDownCantidad)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.UsuariosDGV)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
@@ -605,8 +633,8 @@
         private System.Windows.Forms.ComboBox comboBoxTalle;
         private System.Windows.Forms.Label label8;
         private System.Windows.Forms.Label label7;
-        private System.Windows.Forms.TextBox textBox2;
-        private System.Windows.Forms.NumericUpDown textBoxStock;
+        private System.Windows.Forms.TextBox textBoxPrecio;
+        private System.Windows.Forms.NumericUpDown numericUpDownCantidad;
         private System.Windows.Forms.DataGridView UsuariosDGV;
         private System.Windows.Forms.DataGridViewTextBoxColumn id_producto;
         private System.Windows.Forms.DataGridViewTextBoxColumn nombre;
@@ -628,5 +656,7 @@
         private System.Windows.Forms.TextBox textBoxIDProducto;
         private System.Windows.Forms.TextBox textBoxNombreCliente;
         private System.Windows.Forms.TextBox textBoxDNICliente;
+        private System.Windows.Forms.TextBox textBoxStock;
+        private System.Windows.Forms.Label labelStock;
     }
 }

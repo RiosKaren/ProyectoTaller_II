@@ -7,6 +7,7 @@ using System.ComponentModel;
 using System.Data;
 using System.Drawing;
 using System.Globalization;
+using System.IO;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
@@ -14,60 +15,71 @@ using System.Windows.Forms;
 
 namespace CapaPresentacion.VentanasEmergentes
 {
-    public partial class veClientes : Form
+    public partial class veProductos : Form
     {
-        public Clientes _Cliente { get; set; }
+        public Productos _Producto { get; set; }
 
-        public veClientes()
+        public veProductos()
         {
             InitializeComponent();
         }
 
-        private void veCliente_Load(object sender, EventArgs e)
+        private void veProductos_Load(object sender, EventArgs e)
         {
-            foreach (DataGridViewColumn columna in ClientesDGV.Columns)
+            List<Productos> listaProductos = new CN_Producto().ListarActivosConStock();
+
+            ProductosDGV.Rows.Clear();
+
+            // Configura el DataGridView para texto multilínea y ajuste dinámico
+            ProductosDGV.DefaultCellStyle.WrapMode = DataGridViewTriState.True;
+            ProductosDGV.AutoSizeRowsMode = DataGridViewAutoSizeRowsMode.AllCells;
+
+            // Carga productos en el DataGridView
+            foreach (Productos item in listaProductos)
             {
-                if (columna.Visible == true)
+                Image imagenProducto = null;
+
+                if (!string.IsNullOrEmpty(item.imagen_url))
                 {
-                    comboBoxBusqueda.Items.Add(new OpcionCombo() { Valor = columna.Name, Texto = columna.HeaderText });
+                    string rutaImagen = Path.Combine(Application.StartupPath, "..\\..\\Fotos", item.imagen_url);
+                    if (File.Exists(rutaImagen))
+                        imagenProducto = Image.FromFile(rutaImagen);
                 }
-            }
 
-            comboBoxBusqueda.DisplayMember = "Texto";
-            comboBoxBusqueda.ValueMember = "Valor";
-
-            ClientesDGV.Rows.Clear();
-
-            List<Clientes> listaClientes = new CN_Cliente().ListarActivos();
-
-            foreach (Clientes item in listaClientes)
-            {
-                ClientesDGV.Rows.Add(new object[]
+                ProductosDGV.Rows.Add(new object[]
                 {
-                    item.id_cliente, item.dni, item.apellido, item.nombre, item.activo
+                    item.id_producto,
+                    item.codigo,
+                    imagenProducto, // muestra la imagen del producto
+                    item.nombre,
+                    item.descripcion,
+                    item.tallesTexto, // ejemplo: [38 ARG] - 3 pares | [39 ARG] - 5 pares
+                    item.stock_total,
+                    item.precio,
+                    item.activo,
                 });
             }
-
-
         }
 
-        private void ClientesDGV_CellDoubleClick(object sender, DataGridViewCellEventArgs e)
+        private void ProductosDGV_CellDoubleClick(object sender, DataGridViewCellEventArgs e)
         {
-            int iRow = e.RowIndex;  
+            int iRow = e.RowIndex;
             int iColum = e.ColumnIndex;
-
             if(iRow >= 0 && iColum > 0)
             {
-                _Cliente = new Clientes()
+                _Producto = new Productos()
                 {
-                    id_cliente = Convert.ToInt32(ClientesDGV.Rows[iRow].Cells["id_cliente"].Value),
-                    dni = Convert.ToInt32(ClientesDGV.Rows[iRow].Cells["dni"].Value),
-                    apellido = ClientesDGV.Rows[iRow].Cells["apellido"].Value.ToString(),
-                    nombre = ClientesDGV.Rows[iRow].Cells["nombre"].Value.ToString(),
-                    activo = Convert.ToBoolean(ClientesDGV.Rows[iRow].Cells["activo"].Value)
+                    id_producto = Convert.ToInt32(ProductosDGV.Rows[iRow].Cells["id_producto"].Value),
+                    codigo = ProductosDGV.Rows[iRow].Cells["codigo"].Value.ToString(),
+                    nombre = ProductosDGV.Rows[iRow].Cells["nombre"].Value.ToString(),
+                    descripcion = ProductosDGV.Rows[iRow].Cells["descripcion"].Value.ToString(),
+                    precio = Convert.ToDecimal(ProductosDGV.Rows[iRow].Cells["precio"].Value),
+                    activo = Convert.ToBoolean(ProductosDGV.Rows[iRow].Cells["activo"].Value)
                 };
+
                 this.DialogResult = DialogResult.OK;
                 this.Close();
+
             }
         }
 
@@ -88,7 +100,7 @@ namespace CapaPresentacion.VentanasEmergentes
             string columnaFiltro = ((OpcionCombo)comboBoxBusqueda.SelectedItem).Valor.ToString();
             string textoBuscado = RemoverAcentos(textBoxBusqueda.Text.Trim().ToUpper());
 
-            foreach (DataGridViewRow row in ClientesDGV.Rows)
+            foreach (DataGridViewRow row in ProductosDGV.Rows)
             {
                 if (row.Cells[columnaFiltro].Value != null)
                 {
@@ -128,7 +140,7 @@ namespace CapaPresentacion.VentanasEmergentes
         private void iconButtonLimpiar_Click(object sender, EventArgs e)
         {
             textBoxBusqueda.Text = "";
-            foreach (DataGridViewRow row in ClientesDGV.Rows)
+            foreach (DataGridViewRow row in ProductosDGV.Rows)
             {
                 row.Visible = true;
             }

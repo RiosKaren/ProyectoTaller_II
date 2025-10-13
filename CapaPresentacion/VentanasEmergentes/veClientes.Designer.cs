@@ -28,20 +28,20 @@
         /// </summary>
         private void InitializeComponent()
         {
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle1 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle2 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle5 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle6 = new System.Windows.Forms.DataGridViewCellStyle();
             this.labelListaClientes = new System.Windows.Forms.Label();
             this.ClientesDGV = new System.Windows.Forms.DataGridView();
-            this.iconButtonLimpiar = new FontAwesome.Sharp.IconButton();
-            this.iconButtonBuscar = new FontAwesome.Sharp.IconButton();
-            this.textBoxBusqueda = new System.Windows.Forms.TextBox();
-            this.comboBoxBusqueda = new System.Windows.Forms.ComboBox();
-            this.labelBuscar = new System.Windows.Forms.Label();
             this.id_cliente = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.dni = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.apellido = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.nombre = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.activo = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.iconButtonLimpiar = new FontAwesome.Sharp.IconButton();
+            this.iconButtonBuscar = new FontAwesome.Sharp.IconButton();
+            this.textBoxBusqueda = new System.Windows.Forms.TextBox();
+            this.comboBoxBusqueda = new System.Windows.Forms.ComboBox();
+            this.labelBuscar = new System.Windows.Forms.Label();
             ((System.ComponentModel.ISupportInitialize)(this.ClientesDGV)).BeginInit();
             this.SuspendLayout();
             // 
@@ -60,15 +60,15 @@
             // ClientesDGV
             // 
             this.ClientesDGV.AllowUserToAddRows = false;
-            dataGridViewCellStyle1.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
-            dataGridViewCellStyle1.BackColor = System.Drawing.SystemColors.Control;
-            dataGridViewCellStyle1.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            dataGridViewCellStyle1.ForeColor = System.Drawing.SystemColors.WindowText;
-            dataGridViewCellStyle1.Padding = new System.Windows.Forms.Padding(2);
-            dataGridViewCellStyle1.SelectionBackColor = System.Drawing.SystemColors.Highlight;
-            dataGridViewCellStyle1.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
-            dataGridViewCellStyle1.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
-            this.ClientesDGV.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle1;
+            dataGridViewCellStyle5.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle5.BackColor = System.Drawing.SystemColors.Control;
+            dataGridViewCellStyle5.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle5.ForeColor = System.Drawing.SystemColors.WindowText;
+            dataGridViewCellStyle5.Padding = new System.Windows.Forms.Padding(2);
+            dataGridViewCellStyle5.SelectionBackColor = System.Drawing.SystemColors.Highlight;
+            dataGridViewCellStyle5.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
+            dataGridViewCellStyle5.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
+            this.ClientesDGV.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle5;
             this.ClientesDGV.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.ClientesDGV.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
             this.id_cliente,
@@ -81,14 +81,14 @@
             this.ClientesDGV.MultiSelect = false;
             this.ClientesDGV.Name = "ClientesDGV";
             this.ClientesDGV.ReadOnly = true;
-            dataGridViewCellStyle2.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
-            dataGridViewCellStyle2.BackColor = System.Drawing.SystemColors.Control;
-            dataGridViewCellStyle2.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            dataGridViewCellStyle2.ForeColor = System.Drawing.SystemColors.WindowText;
-            dataGridViewCellStyle2.SelectionBackColor = System.Drawing.Color.White;
-            dataGridViewCellStyle2.SelectionForeColor = System.Drawing.Color.Black;
-            dataGridViewCellStyle2.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
-            this.ClientesDGV.RowHeadersDefaultCellStyle = dataGridViewCellStyle2;
+            dataGridViewCellStyle6.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle6.BackColor = System.Drawing.SystemColors.Control;
+            dataGridViewCellStyle6.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle6.ForeColor = System.Drawing.SystemColors.WindowText;
+            dataGridViewCellStyle6.SelectionBackColor = System.Drawing.Color.White;
+            dataGridViewCellStyle6.SelectionForeColor = System.Drawing.Color.Black;
+            dataGridViewCellStyle6.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
+            this.ClientesDGV.RowHeadersDefaultCellStyle = dataGridViewCellStyle6;
             this.ClientesDGV.RowHeadersWidth = 51;
             this.ClientesDGV.RowTemplate.DefaultCellStyle.SelectionBackColor = System.Drawing.SystemColors.ActiveCaption;
             this.ClientesDGV.RowTemplate.DefaultCellStyle.SelectionForeColor = System.Drawing.Color.Black;
@@ -96,75 +96,7 @@
             this.ClientesDGV.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
             this.ClientesDGV.Size = new System.Drawing.Size(960, 347);
             this.ClientesDGV.TabIndex = 64;
-            // 
-            // iconButtonLimpiar
-            // 
-            this.iconButtonLimpiar.BackColor = System.Drawing.Color.White;
-            this.iconButtonLimpiar.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.iconButtonLimpiar.FlatAppearance.BorderColor = System.Drawing.Color.Black;
-            this.iconButtonLimpiar.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.iconButtonLimpiar.ForeColor = System.Drawing.Color.White;
-            this.iconButtonLimpiar.IconChar = FontAwesome.Sharp.IconChar.Eraser;
-            this.iconButtonLimpiar.IconColor = System.Drawing.Color.Black;
-            this.iconButtonLimpiar.IconFont = FontAwesome.Sharp.IconFont.Auto;
-            this.iconButtonLimpiar.IconSize = 18;
-            this.iconButtonLimpiar.Location = new System.Drawing.Point(911, 40);
-            this.iconButtonLimpiar.Margin = new System.Windows.Forms.Padding(4);
-            this.iconButtonLimpiar.Name = "iconButtonLimpiar";
-            this.iconButtonLimpiar.Size = new System.Drawing.Size(45, 22);
-            this.iconButtonLimpiar.TabIndex = 77;
-            this.iconButtonLimpiar.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
-            this.iconButtonLimpiar.UseVisualStyleBackColor = false;
-            // 
-            // iconButtonBuscar
-            // 
-            this.iconButtonBuscar.BackColor = System.Drawing.Color.White;
-            this.iconButtonBuscar.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.iconButtonBuscar.FlatAppearance.BorderColor = System.Drawing.Color.Black;
-            this.iconButtonBuscar.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.iconButtonBuscar.ForeColor = System.Drawing.Color.White;
-            this.iconButtonBuscar.IconChar = FontAwesome.Sharp.IconChar.MagnifyingGlass;
-            this.iconButtonBuscar.IconColor = System.Drawing.Color.Black;
-            this.iconButtonBuscar.IconFont = FontAwesome.Sharp.IconFont.Auto;
-            this.iconButtonBuscar.IconSize = 16;
-            this.iconButtonBuscar.Location = new System.Drawing.Point(858, 40);
-            this.iconButtonBuscar.Margin = new System.Windows.Forms.Padding(4);
-            this.iconButtonBuscar.Name = "iconButtonBuscar";
-            this.iconButtonBuscar.Size = new System.Drawing.Size(45, 22);
-            this.iconButtonBuscar.TabIndex = 78;
-            this.iconButtonBuscar.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
-            this.iconButtonBuscar.UseVisualStyleBackColor = false;
-            // 
-            // textBoxBusqueda
-            // 
-            this.textBoxBusqueda.Location = new System.Drawing.Point(639, 40);
-            this.textBoxBusqueda.Margin = new System.Windows.Forms.Padding(4);
-            this.textBoxBusqueda.Name = "textBoxBusqueda";
-            this.textBoxBusqueda.Size = new System.Drawing.Size(209, 22);
-            this.textBoxBusqueda.TabIndex = 76;
-            // 
-            // comboBoxBusqueda
-            // 
-            this.comboBoxBusqueda.BackColor = System.Drawing.Color.White;
-            this.comboBoxBusqueda.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.comboBoxBusqueda.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
-            this.comboBoxBusqueda.FormattingEnabled = true;
-            this.comboBoxBusqueda.Location = new System.Drawing.Point(466, 40);
-            this.comboBoxBusqueda.Margin = new System.Windows.Forms.Padding(4);
-            this.comboBoxBusqueda.Name = "comboBoxBusqueda";
-            this.comboBoxBusqueda.Size = new System.Drawing.Size(165, 24);
-            this.comboBoxBusqueda.TabIndex = 75;
-            // 
-            // labelBuscar
-            // 
-            this.labelBuscar.AutoSize = true;
-            this.labelBuscar.BackColor = System.Drawing.Color.White;
-            this.labelBuscar.Location = new System.Drawing.Point(354, 43);
-            this.labelBuscar.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
-            this.labelBuscar.Name = "labelBuscar";
-            this.labelBuscar.Size = new System.Drawing.Size(76, 16);
-            this.labelBuscar.TabIndex = 74;
-            this.labelBuscar.Text = "Buscar Por:";
+            this.ClientesDGV.CellDoubleClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.ClientesDGV_CellDoubleClick);
             // 
             // id_cliente
             // 
@@ -208,10 +140,82 @@
             this.activo.Visible = false;
             this.activo.Width = 125;
             // 
-            // veCliente
+            // iconButtonLimpiar
+            // 
+            this.iconButtonLimpiar.BackColor = System.Drawing.Color.White;
+            this.iconButtonLimpiar.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.iconButtonLimpiar.FlatAppearance.BorderColor = System.Drawing.Color.Black;
+            this.iconButtonLimpiar.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.iconButtonLimpiar.ForeColor = System.Drawing.Color.White;
+            this.iconButtonLimpiar.IconChar = FontAwesome.Sharp.IconChar.Eraser;
+            this.iconButtonLimpiar.IconColor = System.Drawing.Color.Black;
+            this.iconButtonLimpiar.IconFont = FontAwesome.Sharp.IconFont.Auto;
+            this.iconButtonLimpiar.IconSize = 18;
+            this.iconButtonLimpiar.Location = new System.Drawing.Point(911, 40);
+            this.iconButtonLimpiar.Margin = new System.Windows.Forms.Padding(4);
+            this.iconButtonLimpiar.Name = "iconButtonLimpiar";
+            this.iconButtonLimpiar.Size = new System.Drawing.Size(45, 22);
+            this.iconButtonLimpiar.TabIndex = 77;
+            this.iconButtonLimpiar.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
+            this.iconButtonLimpiar.UseVisualStyleBackColor = false;
+            this.iconButtonLimpiar.Click += new System.EventHandler(this.iconButtonLimpiar_Click);
+            // 
+            // iconButtonBuscar
+            // 
+            this.iconButtonBuscar.BackColor = System.Drawing.Color.White;
+            this.iconButtonBuscar.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.iconButtonBuscar.FlatAppearance.BorderColor = System.Drawing.Color.Black;
+            this.iconButtonBuscar.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.iconButtonBuscar.ForeColor = System.Drawing.Color.White;
+            this.iconButtonBuscar.IconChar = FontAwesome.Sharp.IconChar.MagnifyingGlass;
+            this.iconButtonBuscar.IconColor = System.Drawing.Color.Black;
+            this.iconButtonBuscar.IconFont = FontAwesome.Sharp.IconFont.Auto;
+            this.iconButtonBuscar.IconSize = 16;
+            this.iconButtonBuscar.Location = new System.Drawing.Point(858, 40);
+            this.iconButtonBuscar.Margin = new System.Windows.Forms.Padding(4);
+            this.iconButtonBuscar.Name = "iconButtonBuscar";
+            this.iconButtonBuscar.Size = new System.Drawing.Size(45, 22);
+            this.iconButtonBuscar.TabIndex = 78;
+            this.iconButtonBuscar.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
+            this.iconButtonBuscar.UseVisualStyleBackColor = false;
+            this.iconButtonBuscar.Click += new System.EventHandler(this.iconButtonBuscar_Click);
+            // 
+            // textBoxBusqueda
+            // 
+            this.textBoxBusqueda.Location = new System.Drawing.Point(639, 40);
+            this.textBoxBusqueda.Margin = new System.Windows.Forms.Padding(4);
+            this.textBoxBusqueda.Name = "textBoxBusqueda";
+            this.textBoxBusqueda.Size = new System.Drawing.Size(209, 22);
+            this.textBoxBusqueda.TabIndex = 76;
+            // 
+            // comboBoxBusqueda
+            // 
+            this.comboBoxBusqueda.BackColor = System.Drawing.Color.White;
+            this.comboBoxBusqueda.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.comboBoxBusqueda.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
+            this.comboBoxBusqueda.FormattingEnabled = true;
+            this.comboBoxBusqueda.Location = new System.Drawing.Point(466, 40);
+            this.comboBoxBusqueda.Margin = new System.Windows.Forms.Padding(4);
+            this.comboBoxBusqueda.Name = "comboBoxBusqueda";
+            this.comboBoxBusqueda.Size = new System.Drawing.Size(165, 24);
+            this.comboBoxBusqueda.TabIndex = 75;
+            // 
+            // labelBuscar
+            // 
+            this.labelBuscar.AutoSize = true;
+            this.labelBuscar.BackColor = System.Drawing.Color.White;
+            this.labelBuscar.Location = new System.Drawing.Point(354, 43);
+            this.labelBuscar.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+            this.labelBuscar.Name = "labelBuscar";
+            this.labelBuscar.Size = new System.Drawing.Size(76, 16);
+            this.labelBuscar.TabIndex = 74;
+            this.labelBuscar.Text = "Buscar Por:";
+            // 
+            // veClientes
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
+            this.BackColor = System.Drawing.Color.DarkRed;
             this.ClientSize = new System.Drawing.Size(1026, 493);
             this.Controls.Add(this.iconButtonLimpiar);
             this.Controls.Add(this.iconButtonBuscar);
@@ -220,7 +224,7 @@
             this.Controls.Add(this.labelBuscar);
             this.Controls.Add(this.labelListaClientes);
             this.Controls.Add(this.ClientesDGV);
-            this.Name = "veCliente";
+            this.Name = "veClientes";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "veCliente";
             this.Load += new System.EventHandler(this.veCliente_Load);

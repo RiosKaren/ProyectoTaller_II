@@ -117,6 +117,12 @@
     <Compile Include="VentanasEmergentes\veClientes.Designer.cs">
       <DependentUpon>veClientes.cs</DependentUpon>
     </Compile>
+    <Compile Include="VentanasEmergentes\veProductos.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="VentanasEmergentes\veProductos.Designer.cs">
+      <DependentUpon>veProductos.cs</DependentUpon>
+    </Compile>
     <EmbeddedResource Include="frmBackUp.resx">
       <DependentUpon>frmBackUp.cs</DependentUpon>
     </EmbeddedResource>
@@ -157,6 +163,9 @@
     </Compile>
     <EmbeddedResource Include="VentanasEmergentes\veClientes.resx">
       <DependentUpon>veClientes.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="VentanasEmergentes\veProductos.resx">
+      <DependentUpon>veProductos.cs</DependentUpon>
     </EmbeddedResource>
     <None Include="packages.config" />
     <None Include="Properties\Settings.settings">

@@ -18,6 +18,19 @@ namespace CapaNegocio
             return objcd_producto.Listar(); //devuelve la lista de Productos obtenida desde la capa de datos
         }
 
+        public List<Productos> ListarActivosConStock()
+        {
+            List<Productos> lista = new CD_Producto().Listar();
+            return lista
+                .Where(p => p.activo == true && p.stock_total > 0)
+                .ToList(); // devuelve solo los productos activos con stock
+        }
+
+        public List<Talle_producto> ObtenerTallesPorProducto(int idProducto)
+        {
+            return objcd_producto.ObtenerTallesPorProducto(idProducto);
+        }
+
         public int Registrar(Productos obj, out string Mensaje)
         {
             Mensaje = string.Empty;

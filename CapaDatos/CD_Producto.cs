@@ -1,12 +1,12 @@
-﻿using System;
+﻿using CapaEntidad;
+using System;
 using System.Collections.Generic;
+using System.Configuration;
+using System.Data;
+using System.Data.SqlClient;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
-
-using CapaEntidad;
-using System.Data.SqlClient;
-using System.Data;
 
 namespace CapaDatos
 {
@@ -70,6 +70,46 @@ namespace CapaDatos
             return lista;
         }
 
+        public List<Talle_producto> ObtenerTallesPorProducto(int idProducto)
+        {
+            List<Talle_producto> lista = new List<Talle_producto>();
+
+            try
+            {
+                using (SqlConnection conn = new SqlConnection(ConfigurationManager.ConnectionStrings["cadena_conexion"].ToString()))
+                {
+                    string query = @"SELECT id_talle, talla, stock
+                             FROM talle_producto
+                             WHERE id_producto = @id_producto AND stock > 0
+                             ORDER BY talla";
+
+                    SqlCommand cmd = new SqlCommand(query, conn);
+                    cmd.Parameters.AddWithValue("@id_producto", idProducto);
+                    cmd.CommandType = CommandType.Text;
+
+                    conn.Open();
+                    using (SqlDataReader dr = cmd.ExecuteReader())
+                    {
+                        while (dr.Read())
+                        {
+                            lista.Add(new Talle_producto()
+                            {
+                                id_talle = Convert.ToInt32(dr["id_talle"]),
+                                talla = dr["talla"].ToString(),
+                                stock = Convert.ToInt32(dr["stock"]),
+                                id_producto = new Productos() { id_producto = idProducto }
+                            });
+                        }
+                    }
+                }
+            }
+            catch
+            {
+                lista = new List<Talle_producto>();
+            }
+
+            return lista;
+        }
 
         public int Registrar(Productos obj, out string Mensaje)
         {
