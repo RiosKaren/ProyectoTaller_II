@@ -256,6 +256,7 @@
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
+            this.BackColor = System.Drawing.Color.DarkRed;
             this.ClientSize = new System.Drawing.Size(1198, 654);
             this.Controls.Add(this.iconButtonLimpiar);
             this.Controls.Add(this.iconButtonBuscar);

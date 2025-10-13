@@ -91,17 +91,17 @@ namespace CapaPresentacion
 
                 ProductosDGV.Rows.Add(new object[]
                 {
-            "", // columna botón seleccionar
-            item.id_producto,
-            item.codigo,
-            imagenProducto, // muestra la imagen del producto
-            item.nombre,
-            item.descripcion,
-            item.tallesTexto, // ejemplo: [38 ARG] - 3 pares | [39 ARG] - 5 pares
-            item.stock_total,
-            item.precio,
-            item.activo,
-            item.activo ? "ACTIVO" : "NO ACTIVO"
+                    "", // columna botón seleccionar
+                    item.id_producto,
+                    item.codigo,
+                    imagenProducto, // muestra la imagen del producto
+                    item.nombre,
+                    item.descripcion,
+                    item.tallesTexto, // ejemplo: [38 ARG] - 3 pares | [39 ARG] - 5 pares
+                    item.stock_total,
+                    item.precio,
+                    item.activo,
+                    item.activo ? "ACTIVO" : "NO ACTIVO"
                 });
             }
 
@@ -546,11 +546,11 @@ namespace CapaPresentacion
             // Habilita campos para edición
             foreach (TextBoxBase tb in new TextBoxBase[]
             {
-        textBoxCodigo,
-        textBoxNombre,
-        TextBoxDescripcion,
-        textBoxPrecio,
-        TBFotoPath
+                textBoxCodigo,
+                textBoxNombre,
+                TextBoxDescripcion,
+                textBoxPrecio,
+                TBFotoPath
             })
             {
                 tb.ReadOnly = false;

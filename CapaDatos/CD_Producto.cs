@@ -30,8 +30,12 @@ namespace CapaDatos
                             p.precio,
                             p.imagen_url,
                             p.activo,
-                            ISNULL(STRING_AGG(CONCAT('[', t.talla, '] - ', t.stock, ' pares'), CHAR(10)), '') AS tallesTexto,
-                            ISNULL(SUM(t.stock), 0) AS stock_total
+                            ISNULL(
+                            STRING_AGG(CONCAT('[', t.talla, '] - ', t.stock, ' pares'), CHAR(13) + CHAR(10)) 
+                            WITHIN GROUP (ORDER BY t.talla),
+                            ''
+                        ) AS tallesTexto,
+                        ISNULL(SUM(t.stock), 0) AS stock_total
                         FROM productos p
                         LEFT JOIN talle_producto t ON p.id_producto = t.id_producto
                         GROUP BY p.id_producto, p.codigo, p.nombre, p.descripcion, p.precio, p.imagen_url, p.activo
