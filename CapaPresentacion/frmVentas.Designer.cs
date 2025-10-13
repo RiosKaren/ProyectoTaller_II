@@ -45,6 +45,8 @@
             this.textBoxIDCliente = new System.Windows.Forms.TextBox();
             this.btnBuscarCliente = new FontAwesome.Sharp.IconButton();
             this.groupBox3 = new System.Windows.Forms.GroupBox();
+            this.textBoxStock = new System.Windows.Forms.TextBox();
+            this.labelStock = new System.Windows.Forms.Label();
             this.textBoxIDProducto = new System.Windows.Forms.TextBox();
             this.numericUpDownCantidad = new System.Windows.Forms.NumericUpDown();
             this.label8 = new System.Windows.Forms.Label();
@@ -72,8 +74,6 @@
             this.label10 = new System.Windows.Forms.Label();
             this.iconButton1 = new FontAwesome.Sharp.IconButton();
             this.btnAgregar = new FontAwesome.Sharp.IconButton();
-            this.labelStock = new System.Windows.Forms.Label();
-            this.textBoxStock = new System.Windows.Forms.TextBox();
             this.groupBox1.SuspendLayout();
             this.groupBox2.SuspendLayout();
             this.groupBox3.SuspendLayout();
@@ -257,6 +257,24 @@
             this.groupBox3.TabStop = false;
             this.groupBox3.Text = "Información Venta";
             // 
+            // textBoxStock
+            // 
+            this.textBoxStock.Location = new System.Drawing.Point(587, 38);
+            this.textBoxStock.Margin = new System.Windows.Forms.Padding(4);
+            this.textBoxStock.Name = "textBoxStock";
+            this.textBoxStock.ReadOnly = true;
+            this.textBoxStock.Size = new System.Drawing.Size(67, 22);
+            this.textBoxStock.TabIndex = 92;
+            // 
+            // labelStock
+            // 
+            this.labelStock.AutoSize = true;
+            this.labelStock.Location = new System.Drawing.Point(584, 18);
+            this.labelStock.Name = "labelStock";
+            this.labelStock.Size = new System.Drawing.Size(44, 16);
+            this.labelStock.TabIndex = 91;
+            this.labelStock.Text = "Stock:";
+            // 
             // textBoxIDProducto
             // 
             this.textBoxIDProducto.Location = new System.Drawing.Point(184, 12);
@@ -366,6 +384,7 @@
             this.textBoxCodigoP.Name = "textBoxCodigoP";
             this.textBoxCodigoP.Size = new System.Drawing.Size(132, 22);
             this.textBoxCodigoP.TabIndex = 29;
+            this.textBoxCodigoP.KeyDown += new System.Windows.Forms.KeyEventHandler(this.textBoxCodigoP_KeyDown);
             // 
             // label4
             // 
@@ -558,24 +577,6 @@
             this.btnAgregar.TextAlign = System.Drawing.ContentAlignment.BottomCenter;
             this.btnAgregar.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageAboveText;
             this.btnAgregar.UseVisualStyleBackColor = true;
-            // 
-            // labelStock
-            // 
-            this.labelStock.AutoSize = true;
-            this.labelStock.Location = new System.Drawing.Point(584, 18);
-            this.labelStock.Name = "labelStock";
-            this.labelStock.Size = new System.Drawing.Size(44, 16);
-            this.labelStock.TabIndex = 91;
-            this.labelStock.Text = "Stock:";
-            // 
-            // textBoxStock
-            // 
-            this.textBoxStock.Location = new System.Drawing.Point(587, 38);
-            this.textBoxStock.Margin = new System.Windows.Forms.Padding(4);
-            this.textBoxStock.Name = "textBoxStock";
-            this.textBoxStock.ReadOnly = true;
-            this.textBoxStock.Size = new System.Drawing.Size(67, 22);
-            this.textBoxStock.TabIndex = 92;
             // 
             // frmVentas
             // 

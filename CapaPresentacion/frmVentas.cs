@@ -152,5 +152,42 @@ namespace CapaPresentacion
                 }
             }
         }
+
+        //Para buscar el producto por su codigo al presionar Enter
+        private void textBoxCodigoP_KeyDown(object sender, KeyEventArgs e)
+        {
+            if(e.KeyData == Keys.Enter)
+            {
+                Productos oProducto = new CN_Producto().ListarActivosConStock().Where(p => p.codigo == textBoxCodigoP.Text && p.activo == true).FirstOrDefault();
+
+                if(oProducto != null)
+                {
+                    textBoxCodigoP.BackColor = Color.Honeydew;
+                    textBoxIDProducto.Text = oProducto.id_producto.ToString();
+                    textBoxProducto.Text = oProducto.nombre.ToString();
+                    CargarTalles(oProducto.id_producto);
+                    textBoxPrecio.Text = oProducto.precio.ToString("$0.00");
+                    numericUpDownCantidad.ReadOnly = false;
+                    numericUpDownCantidad.Enabled = true;
+                    numericUpDownCantidad.Value = 1;
+                    comboBoxTalle.Focus();
+
+                } else
+                {
+                                       textBoxCodigoP.BackColor = Color.MistyRose;
+                    textBoxIDProducto.Text = "0";
+                    textBoxProducto.Text = "";
+                    comboBoxTalle.Items.Clear();
+                    comboBoxTalle.Enabled = false;
+                    textBoxPrecio.Text = "";
+                    numericUpDownCantidad.Value = 1;
+                    numericUpDownCantidad.ReadOnly = true;
+                    numericUpDownCantidad.Enabled = false;
+                }
+
+            }
+
+
+        }
     }
 }
