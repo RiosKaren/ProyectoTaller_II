@@ -59,7 +59,7 @@
             this.textBoxCodigoP = new System.Windows.Forms.TextBox();
             this.label4 = new System.Windows.Forms.Label();
             this.label5 = new System.Windows.Forms.Label();
-            this.UsuariosDGV = new System.Windows.Forms.DataGridView();
+            this.VentaProductosDGV = new System.Windows.Forms.DataGridView();
             this.id_producto = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.nombre = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.id_talle = new System.Windows.Forms.DataGridViewTextBoxColumn();
@@ -68,7 +68,7 @@
             this.cantidad = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.subtotal = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.btnEliminar = new System.Windows.Forms.DataGridViewButtonColumn();
-            this.textBox3 = new System.Windows.Forms.TextBox();
+            this.textBoxTotal = new System.Windows.Forms.TextBox();
             this.label9 = new System.Windows.Forms.Label();
             this.textBox4 = new System.Windows.Forms.TextBox();
             this.label10 = new System.Windows.Forms.Label();
@@ -78,7 +78,7 @@
             this.groupBox2.SuspendLayout();
             this.groupBox3.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.numericUpDownCantidad)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.UsuariosDGV)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.VentaProductosDGV)).BeginInit();
             this.SuspendLayout();
             // 
             // labelListaUsuarios
@@ -212,6 +212,7 @@
             this.textBoxIDCliente.Name = "textBoxIDCliente";
             this.textBoxIDCliente.Size = new System.Drawing.Size(36, 22);
             this.textBoxIDCliente.TabIndex = 30;
+            this.textBoxIDCliente.Visible = false;
             // 
             // btnBuscarCliente
             // 
@@ -404,9 +405,9 @@
             this.label5.TabIndex = 0;
             this.label5.Text = "Cod. Producto:";
             // 
-            // UsuariosDGV
+            // VentaProductosDGV
             // 
-            this.UsuariosDGV.AllowUserToAddRows = false;
+            this.VentaProductosDGV.AllowUserToAddRows = false;
             dataGridViewCellStyle1.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
             dataGridViewCellStyle1.BackColor = System.Drawing.SystemColors.Control;
             dataGridViewCellStyle1.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
@@ -415,9 +416,9 @@
             dataGridViewCellStyle1.SelectionBackColor = System.Drawing.SystemColors.Highlight;
             dataGridViewCellStyle1.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
             dataGridViewCellStyle1.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
-            this.UsuariosDGV.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle1;
-            this.UsuariosDGV.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.UsuariosDGV.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
+            this.VentaProductosDGV.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle1;
+            this.VentaProductosDGV.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.VentaProductosDGV.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
             this.id_producto,
             this.nombre,
             this.id_talle,
@@ -426,11 +427,11 @@
             this.cantidad,
             this.subtotal,
             this.btnEliminar});
-            this.UsuariosDGV.Location = new System.Drawing.Point(79, 312);
-            this.UsuariosDGV.Margin = new System.Windows.Forms.Padding(5);
-            this.UsuariosDGV.MultiSelect = false;
-            this.UsuariosDGV.Name = "UsuariosDGV";
-            this.UsuariosDGV.ReadOnly = true;
+            this.VentaProductosDGV.Location = new System.Drawing.Point(79, 312);
+            this.VentaProductosDGV.Margin = new System.Windows.Forms.Padding(5);
+            this.VentaProductosDGV.MultiSelect = false;
+            this.VentaProductosDGV.Name = "VentaProductosDGV";
+            this.VentaProductosDGV.ReadOnly = true;
             dataGridViewCellStyle2.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
             dataGridViewCellStyle2.BackColor = System.Drawing.SystemColors.Control;
             dataGridViewCellStyle2.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
@@ -438,11 +439,11 @@
             dataGridViewCellStyle2.SelectionBackColor = System.Drawing.Color.White;
             dataGridViewCellStyle2.SelectionForeColor = System.Drawing.Color.Black;
             dataGridViewCellStyle2.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
-            this.UsuariosDGV.RowHeadersDefaultCellStyle = dataGridViewCellStyle2;
-            this.UsuariosDGV.RowHeadersWidth = 51;
-            this.UsuariosDGV.RowTemplate.Height = 28;
-            this.UsuariosDGV.Size = new System.Drawing.Size(971, 337);
-            this.UsuariosDGV.TabIndex = 31;
+            this.VentaProductosDGV.RowHeadersDefaultCellStyle = dataGridViewCellStyle2;
+            this.VentaProductosDGV.RowHeadersWidth = 51;
+            this.VentaProductosDGV.RowTemplate.Height = 28;
+            this.VentaProductosDGV.Size = new System.Drawing.Size(971, 337);
+            this.VentaProductosDGV.TabIndex = 31;
             // 
             // id_producto
             // 
@@ -512,13 +513,13 @@
             this.btnEliminar.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.Automatic;
             this.btnEliminar.Width = 30;
             // 
-            // textBox3
+            // textBoxTotal
             // 
-            this.textBox3.Location = new System.Drawing.Point(1069, 474);
-            this.textBox3.Margin = new System.Windows.Forms.Padding(4);
-            this.textBox3.Name = "textBox3";
-            this.textBox3.Size = new System.Drawing.Size(117, 22);
-            this.textBox3.TabIndex = 34;
+            this.textBoxTotal.Location = new System.Drawing.Point(1069, 474);
+            this.textBoxTotal.Margin = new System.Windows.Forms.Padding(4);
+            this.textBoxTotal.Name = "textBoxTotal";
+            this.textBoxTotal.Size = new System.Drawing.Size(117, 22);
+            this.textBoxTotal.TabIndex = 34;
             // 
             // label9
             // 
@@ -577,6 +578,7 @@
             this.btnAgregar.TextAlign = System.Drawing.ContentAlignment.BottomCenter;
             this.btnAgregar.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageAboveText;
             this.btnAgregar.UseVisualStyleBackColor = true;
+            this.btnAgregar.Click += new System.EventHandler(this.btnAgregar_Click);
             // 
             // frmVentas
             // 
@@ -587,10 +589,10 @@
             this.Controls.Add(this.iconButton1);
             this.Controls.Add(this.textBox4);
             this.Controls.Add(this.label10);
-            this.Controls.Add(this.textBox3);
+            this.Controls.Add(this.textBoxTotal);
             this.Controls.Add(this.label9);
             this.Controls.Add(this.btnAgregar);
-            this.Controls.Add(this.UsuariosDGV);
+            this.Controls.Add(this.VentaProductosDGV);
             this.Controls.Add(this.groupBox3);
             this.Controls.Add(this.groupBox2);
             this.Controls.Add(this.groupBox1);
@@ -607,7 +609,7 @@
             this.groupBox3.ResumeLayout(false);
             this.groupBox3.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.numericUpDownCantidad)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.UsuariosDGV)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.VentaProductosDGV)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -636,7 +638,7 @@
         private System.Windows.Forms.Label label7;
         private System.Windows.Forms.TextBox textBoxPrecio;
         private System.Windows.Forms.NumericUpDown numericUpDownCantidad;
-        private System.Windows.Forms.DataGridView UsuariosDGV;
+        private System.Windows.Forms.DataGridView VentaProductosDGV;
         private System.Windows.Forms.DataGridViewTextBoxColumn id_producto;
         private System.Windows.Forms.DataGridViewTextBoxColumn nombre;
         private System.Windows.Forms.DataGridViewTextBoxColumn id_talle;
@@ -646,7 +648,7 @@
         private System.Windows.Forms.DataGridViewTextBoxColumn subtotal;
         private System.Windows.Forms.DataGridViewButtonColumn btnEliminar;
         private FontAwesome.Sharp.IconButton btnAgregar;
-        private System.Windows.Forms.TextBox textBox3;
+        private System.Windows.Forms.TextBox textBoxTotal;
         private System.Windows.Forms.Label label9;
         private System.Windows.Forms.TextBox textBox4;
         private System.Windows.Forms.Label label10;

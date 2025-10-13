@@ -189,5 +189,70 @@ namespace CapaPresentacion
 
 
         }
+
+        private void btnAgregar_Click(object sender, EventArgs e)
+        {
+            bool productoExiste = false;
+
+            if (int.Parse(textBoxIDProducto.Text) == 0)
+            {
+                MessageBox.Show("Debe seleccionar un producto.", "Aviso", MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
+                return;
+            }
+
+            foreach (DataGridViewRow fila in VentaProductosDGV.Rows)
+            {
+                if (fila.Cells["id_producto"].Value.ToString() == textBoxIDProducto.Text &&
+                    fila.Cells["talle"].Value.ToString() == comboBoxTalle.Text)
+                {
+                    productoExiste = true;
+                    break;
+                }
+            }
+            
+            
+            if(!productoExiste)
+            {
+                VentaProductosDGV.Rows.Add(new object[]
+                {
+                    textBoxIDProducto.Text,
+                    textBoxCodigoP.Text,
+                    textBoxProducto.Text,
+                    comboBoxTalle.Text,
+                    numericUpDownCantidad.Value,
+                    textBoxPrecio.Text,
+                    (numericUpDownCantidad.Value * decimal.Parse(textBoxPrecio.Text.Replace("$",""))).ToString("$0.00")
+                });
+            }
+
+            calcularTotal();
+            limpiarProducto();
+            textBoxCodigoP.Focus();
+
+        }
+
+        private void limpiarProducto()
+        {
+            textBoxIDProducto.Text = "0";
+            textBoxCodigoP.Text = "";
+            textBoxProducto.Text = "";
+            comboBoxTalle.Items.Clear();
+            comboBoxTalle.Enabled = false;
+            textBoxPrecio.Text = "";
+            textBoxStock.Text = "";
+            numericUpDownCantidad.Value = 1;
+            numericUpDownCantidad.ReadOnly = true;
+        }
+
+        private void calcularTotal()
+        {
+            decimal total = 0;
+            foreach (DataGridViewRow fila in VentaProductosDGV.Rows)
+            {
+                total += Convert.ToDecimal(fila.Cells["subtotal"].Value.ToString().Replace("$", ""));
+            }
+            textBoxTotal.Text = total.ToString("$0.00");
+        }   
+
     }
 }
