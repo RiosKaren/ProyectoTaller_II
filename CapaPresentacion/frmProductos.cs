@@ -273,7 +273,7 @@ namespace CapaPresentacion
             if (tablaTalles != null)
                 tablaTalles.Rows.Clear();
 
-            textBoxStock.Clear();
+            textBoxStock.Value = 0;
             comboBoxTalles.SelectedIndex = -1;
 
             textBoxCodigo.Select(); //Pone el foco en la textbox DNI
@@ -346,7 +346,7 @@ namespace CapaPresentacion
             }
 
             tablaTalles.Rows.Add(talle, stock);
-            textBoxStock.Clear();
+            textBoxStock.Value = 0;
             comboBoxTalles.SelectedIndex = -1;
 
         }
@@ -378,7 +378,7 @@ namespace CapaPresentacion
                     MessageBoxIcon.Warning);
             }
 
-            textBoxStock.Clear();
+            textBoxStock.Value = 0;
             comboBoxTalles.SelectedIndex = -1;
         }
 
@@ -707,6 +707,5 @@ namespace CapaPresentacion
                 row.Visible = true; // muestra todas las filas nuevamente
             }
         }
-
     }
 }

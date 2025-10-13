@@ -49,7 +49,6 @@
             this.activo = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.estado = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.labelTitulo = new System.Windows.Forms.Label();
-            this.textBoxStock = new System.Windows.Forms.TextBox();
             this.labelStock = new System.Windows.Forms.Label();
             this.labelDescripcion = new System.Windows.Forms.Label();
             this.textBoxNombre = new System.Windows.Forms.TextBox();
@@ -75,9 +74,11 @@
             this.textBoxPrecio = new System.Windows.Forms.TextBox();
             this.labelPeso = new System.Windows.Forms.Label();
             this.comboBoxTalles = new System.Windows.Forms.ComboBox();
+            this.textBoxStock = new System.Windows.Forms.NumericUpDown();
             ((System.ComponentModel.ISupportInitialize)(this.ProductosDGV)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.TallesDGV)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.PBFoto)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.textBoxStock)).BeginInit();
             this.SuspendLayout();
             // 
             // textBoxIndice
@@ -182,6 +183,7 @@
             this.ProductosDGV.RowHeadersDefaultCellStyle = dataGridViewCellStyle2;
             this.ProductosDGV.RowHeadersWidth = 51;
             this.ProductosDGV.RowTemplate.Height = 28;
+            this.ProductosDGV.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
             this.ProductosDGV.Size = new System.Drawing.Size(1171, 534);
             this.ProductosDGV.TabIndex = 62;
             this.ProductosDGV.CellClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.ProductosDGV_CellClick);
@@ -291,15 +293,6 @@
             this.labelTitulo.Size = new System.Drawing.Size(286, 39);
             this.labelTitulo.TabIndex = 60;
             this.labelTitulo.Text = "Detalles Producto";
-            // 
-            // textBoxStock
-            // 
-            this.textBoxStock.Location = new System.Drawing.Point(124, 278);
-            this.textBoxStock.Margin = new System.Windows.Forms.Padding(4);
-            this.textBoxStock.Name = "textBoxStock";
-            this.textBoxStock.Size = new System.Drawing.Size(116, 22);
-            this.textBoxStock.TabIndex = 50;
-            this.textBoxStock.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.textBoxStock_KeyPress);
             // 
             // labelStock
             // 
@@ -657,12 +650,26 @@
             this.comboBoxTalles.Size = new System.Drawing.Size(81, 24);
             this.comboBoxTalles.TabIndex = 88;
             // 
+            // textBoxStock
+            // 
+            this.textBoxStock.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.textBoxStock.Location = new System.Drawing.Point(123, 280);
+            this.textBoxStock.Name = "textBoxStock";
+            this.textBoxStock.Size = new System.Drawing.Size(116, 22);
+            this.textBoxStock.TabIndex = 89;
+            this.textBoxStock.Value = new decimal(new int[] {
+            1,
+            0,
+            0,
+            0});
+            // 
             // frmProductos
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.DarkRed;
             this.ClientSize = new System.Drawing.Size(1585, 697);
+            this.Controls.Add(this.textBoxStock);
             this.Controls.Add(this.comboBoxTalles);
             this.Controls.Add(this.labelPeso);
             this.Controls.Add(this.textBoxPrecio);
@@ -688,7 +695,6 @@
             this.Controls.Add(this.btnDeshabilitar);
             this.Controls.Add(this.btnEditar);
             this.Controls.Add(this.btnGuardar);
-            this.Controls.Add(this.textBoxStock);
             this.Controls.Add(this.labelStock);
             this.Controls.Add(this.labelDescripcion);
             this.Controls.Add(this.textBoxNombre);
@@ -704,6 +710,7 @@
             ((System.ComponentModel.ISupportInitialize)(this.ProductosDGV)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.TallesDGV)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.PBFoto)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.textBoxStock)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -725,7 +732,6 @@
         private FontAwesome.Sharp.IconButton btnDeshabilitar;
         private FontAwesome.Sharp.IconButton btnEditar;
         private FontAwesome.Sharp.IconButton btnGuardar;
-        private System.Windows.Forms.TextBox textBoxStock;
         private System.Windows.Forms.Label labelStock;
         private System.Windows.Forms.Label labelDescripcion;
         private System.Windows.Forms.TextBox textBoxNombre;
@@ -756,5 +762,6 @@
         private System.Windows.Forms.TextBox textBoxPrecio;
         private System.Windows.Forms.Label labelPeso;
         private System.Windows.Forms.ComboBox comboBoxTalles;
+        private System.Windows.Forms.NumericUpDown textBoxStock;
     }
 }

@@ -18,6 +18,12 @@ namespace CapaNegocio
             return objCD_Cliente.Listar(); //devuelve la lista de clientes obtenida desde la capa de datos
         }
 
+        public List<Clientes> ListarActivos()
+        {
+            List<Clientes> lista = new CD_Cliente().Listar();
+            return lista.Where(c => c.activo == true).ToList(); //devuelve la lista de clientes activos obtenida desde la capa de datos
+        }
+
         public int Registrar(Clientes obj, out string Mensaje)
         {
             return objCD_Cliente.Registrar(obj, out Mensaje); //Devuelve el id del cliente registrado desde la capa de datos

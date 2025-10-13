@@ -111,6 +111,12 @@
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="Utilidades\OpcionCombo.cs" />
+    <Compile Include="VentanasEmergentes\veClientes.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="VentanasEmergentes\veClientes.Designer.cs">
+      <DependentUpon>veClientes.cs</DependentUpon>
+    </Compile>
     <EmbeddedResource Include="frmBackUp.resx">
       <DependentUpon>frmBackUp.cs</DependentUpon>
     </EmbeddedResource>
@@ -149,6 +155,9 @@
       <DependentUpon>Resources.resx</DependentUpon>
       <DesignTime>True</DesignTime>
     </Compile>
+    <EmbeddedResource Include="VentanasEmergentes\veClientes.resx">
+      <DependentUpon>veClientes.cs</DependentUpon>
+    </EmbeddedResource>
     <None Include="packages.config" />
     <None Include="Properties\Settings.settings">
       <Generator>SettingsSingleFileGenerator</Generator>
