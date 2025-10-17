@@ -294,6 +294,7 @@ namespace CapaPresentacion
                 labelCuotas.Visible = true;
                 comboBoxCuotas.Visible = true;
 
+                comboBoxCuotas.Items.Add("Seleccione las cuotas");
                 comboBoxCuotas.Items.Add($"1 cuota de ${total:N0} sin interés");
                 comboBoxCuotas.Items.Add($"3 cuotas de ${(total / 3):N0} sin interés");
                 comboBoxCuotas.Items.Add($"6 cuotas de ${(total / 6):N0} sin interés");
@@ -322,21 +323,20 @@ namespace CapaPresentacion
             if (e.RowIndex < 0)
                 return; // No pintar encabezado
 
-            // Verificamos si la columna actual es la del botón seleccionar
-            if (e.ColumnIndex == 0) // Asegúrate que la columna del botón tenga índice 0
+            // Verificamos si la columna actual es la del botón eliminar
+            if (e.ColumnIndex == 7) // Asegúrate que la columna del botón tenga índice 8
             {
                 e.Paint(e.CellBounds, DataGridViewPaintParts.All);
 
                 // Dimensiones del icono
-                var w = Properties.Resources.check.Width;
-                var h = Properties.Resources.check.Height;
+                var w = Properties.Resources.borrar.Width;
+                var h = Properties.Resources.borrar.Height;
 
                 // Centramos la imagen dentro de la celda
                 var x = e.CellBounds.Left + (e.CellBounds.Width - w) / 2;
                 var y = e.CellBounds.Top + (e.CellBounds.Height - h) / 2;
 
-                // Dibuja el ícono (usa el mismo "check" del proyecto)
-                e.Graphics.DrawImage(Properties.Resources.check, new Rectangle(x, y, w, h));
+                e.Graphics.DrawImage(Properties.Resources.borrar, new Rectangle(x, y, w, h));
 
                 e.Handled = true; // Marcamos el evento como manejado
             }
@@ -344,16 +344,25 @@ namespace CapaPresentacion
 
         private void VentaProductosDGV_CellContentClick(object sender, DataGridViewCellEventArgs e)
         {
-            if (VentaProductosDGV.Columns[e.ColumnIndex].Name == "btnEliminar" )
+            if (VentaProductosDGV.Columns[e.ColumnIndex].Name == "btnEliminar")
             {
                 int index = e.RowIndex;
                 if (index >= 0)
                 {
                     VentaProductosDGV.Rows.RemoveAt(index);
                     calcularTotal();
+
+                    // Si ya no quedan filas, deshabilitar opciones de pago
+                    if (VentaProductosDGV.Rows.Count == 0)
+                    {
+                        comboBoxPagaCon.Enabled = false;
+                        comboBoxCuotas.Visible = false;
+                        labelCuotas.Visible = false;
+                    }
                 }
             }
         }
+
 
         private void comboBoxPagaCon_SelectedIndexChanged_1(object sender, EventArgs e)
         {
