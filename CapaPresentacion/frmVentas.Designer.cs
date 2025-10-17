@@ -28,8 +28,8 @@
         /// </summary>
         private void InitializeComponent()
         {
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle5 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle6 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle1 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle2 = new System.Windows.Forms.DataGridViewCellStyle();
             this.labelListaUsuarios = new System.Windows.Forms.Label();
             this.label1 = new System.Windows.Forms.Label();
             this.groupBox1 = new System.Windows.Forms.GroupBox();
@@ -70,10 +70,12 @@
             this.btnEliminar = new System.Windows.Forms.DataGridViewButtonColumn();
             this.textBoxTotal = new System.Windows.Forms.TextBox();
             this.label9 = new System.Windows.Forms.Label();
-            this.textBox4 = new System.Windows.Forms.TextBox();
             this.label10 = new System.Windows.Forms.Label();
             this.iconButton1 = new FontAwesome.Sharp.IconButton();
             this.btnAgregar = new FontAwesome.Sharp.IconButton();
+            this.comboBoxPagaCon = new System.Windows.Forms.ComboBox();
+            this.labelCuotas = new System.Windows.Forms.Label();
+            this.comboBoxCuotas = new System.Windows.Forms.ComboBox();
             this.groupBox1.SuspendLayout();
             this.groupBox2.SuspendLayout();
             this.groupBox3.SuspendLayout();
@@ -391,7 +393,6 @@
             this.textBoxCodigoP.Name = "textBoxCodigoP";
             this.textBoxCodigoP.Size = new System.Drawing.Size(132, 22);
             this.textBoxCodigoP.TabIndex = 29;
-            this.textBoxCodigoP.KeyDown += new System.Windows.Forms.KeyEventHandler(this.textBoxCodigoP_KeyDown);
             // 
             // label4
             // 
@@ -414,15 +415,15 @@
             // VentaProductosDGV
             // 
             this.VentaProductosDGV.AllowUserToAddRows = false;
-            dataGridViewCellStyle5.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
-            dataGridViewCellStyle5.BackColor = System.Drawing.SystemColors.Control;
-            dataGridViewCellStyle5.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            dataGridViewCellStyle5.ForeColor = System.Drawing.SystemColors.WindowText;
-            dataGridViewCellStyle5.Padding = new System.Windows.Forms.Padding(2);
-            dataGridViewCellStyle5.SelectionBackColor = System.Drawing.SystemColors.Highlight;
-            dataGridViewCellStyle5.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
-            dataGridViewCellStyle5.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
-            this.VentaProductosDGV.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle5;
+            dataGridViewCellStyle1.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle1.BackColor = System.Drawing.SystemColors.Control;
+            dataGridViewCellStyle1.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle1.ForeColor = System.Drawing.SystemColors.WindowText;
+            dataGridViewCellStyle1.Padding = new System.Windows.Forms.Padding(2);
+            dataGridViewCellStyle1.SelectionBackColor = System.Drawing.SystemColors.Highlight;
+            dataGridViewCellStyle1.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
+            dataGridViewCellStyle1.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
+            this.VentaProductosDGV.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle1;
             this.VentaProductosDGV.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.VentaProductosDGV.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
             this.id_producto,
@@ -438,18 +439,20 @@
             this.VentaProductosDGV.MultiSelect = false;
             this.VentaProductosDGV.Name = "VentaProductosDGV";
             this.VentaProductosDGV.ReadOnly = true;
-            dataGridViewCellStyle6.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
-            dataGridViewCellStyle6.BackColor = System.Drawing.SystemColors.Control;
-            dataGridViewCellStyle6.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            dataGridViewCellStyle6.ForeColor = System.Drawing.SystemColors.WindowText;
-            dataGridViewCellStyle6.SelectionBackColor = System.Drawing.Color.White;
-            dataGridViewCellStyle6.SelectionForeColor = System.Drawing.Color.Black;
-            dataGridViewCellStyle6.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
-            this.VentaProductosDGV.RowHeadersDefaultCellStyle = dataGridViewCellStyle6;
+            dataGridViewCellStyle2.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle2.BackColor = System.Drawing.SystemColors.Control;
+            dataGridViewCellStyle2.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle2.ForeColor = System.Drawing.SystemColors.WindowText;
+            dataGridViewCellStyle2.SelectionBackColor = System.Drawing.Color.White;
+            dataGridViewCellStyle2.SelectionForeColor = System.Drawing.Color.Black;
+            dataGridViewCellStyle2.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
+            this.VentaProductosDGV.RowHeadersDefaultCellStyle = dataGridViewCellStyle2;
             this.VentaProductosDGV.RowHeadersWidth = 51;
             this.VentaProductosDGV.RowTemplate.Height = 28;
-            this.VentaProductosDGV.Size = new System.Drawing.Size(971, 337);
+            this.VentaProductosDGV.Size = new System.Drawing.Size(820, 337);
             this.VentaProductosDGV.TabIndex = 31;
+            this.VentaProductosDGV.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.VentaProductosDGV_CellContentClick);
+            this.VentaProductosDGV.CellPainting += new System.Windows.Forms.DataGridViewCellPaintingEventHandler(this.VentaProductosDGV_CellPainting);
             // 
             // id_producto
             // 
@@ -521,35 +524,27 @@
             // 
             // textBoxTotal
             // 
-            this.textBoxTotal.Location = new System.Drawing.Point(1069, 474);
+            this.textBoxTotal.Location = new System.Drawing.Point(914, 521);
             this.textBoxTotal.Margin = new System.Windows.Forms.Padding(4);
             this.textBoxTotal.Name = "textBoxTotal";
-            this.textBoxTotal.Size = new System.Drawing.Size(117, 22);
+            this.textBoxTotal.Size = new System.Drawing.Size(249, 22);
             this.textBoxTotal.TabIndex = 34;
             // 
             // label9
             // 
             this.label9.AutoSize = true;
             this.label9.BackColor = System.Drawing.Color.White;
-            this.label9.Location = new System.Drawing.Point(1066, 454);
+            this.label9.Location = new System.Drawing.Point(911, 501);
             this.label9.Name = "label9";
             this.label9.Size = new System.Drawing.Size(92, 16);
             this.label9.TabIndex = 33;
             this.label9.Text = "Total a Pagar:";
             // 
-            // textBox4
-            // 
-            this.textBox4.Location = new System.Drawing.Point(1069, 536);
-            this.textBox4.Margin = new System.Windows.Forms.Padding(4);
-            this.textBox4.Name = "textBox4";
-            this.textBox4.Size = new System.Drawing.Size(117, 22);
-            this.textBox4.TabIndex = 36;
-            // 
             // label10
             // 
             this.label10.AutoSize = true;
             this.label10.BackColor = System.Drawing.Color.White;
-            this.label10.Location = new System.Drawing.Point(1066, 516);
+            this.label10.Location = new System.Drawing.Point(911, 385);
             this.label10.Name = "label10";
             this.label10.Size = new System.Drawing.Size(68, 16);
             this.label10.TabIndex = 35;
@@ -561,9 +556,9 @@
             this.iconButton1.IconChar = FontAwesome.Sharp.IconChar.Tags;
             this.iconButton1.IconColor = System.Drawing.Color.SteelBlue;
             this.iconButton1.IconFont = FontAwesome.Sharp.IconFont.Auto;
-            this.iconButton1.Location = new System.Drawing.Point(1069, 583);
+            this.iconButton1.Location = new System.Drawing.Point(914, 561);
             this.iconButton1.Name = "iconButton1";
-            this.iconButton1.Size = new System.Drawing.Size(117, 66);
+            this.iconButton1.Size = new System.Drawing.Size(249, 88);
             this.iconButton1.TabIndex = 37;
             this.iconButton1.Text = "Crear Venta";
             this.iconButton1.TextAlign = System.Drawing.ContentAlignment.BottomCenter;
@@ -586,14 +581,43 @@
             this.btnAgregar.UseVisualStyleBackColor = true;
             this.btnAgregar.Click += new System.EventHandler(this.btnAgregar_Click);
             // 
+            // comboBoxPagaCon
+            // 
+            this.comboBoxPagaCon.FormattingEnabled = true;
+            this.comboBoxPagaCon.Location = new System.Drawing.Point(914, 404);
+            this.comboBoxPagaCon.Name = "comboBoxPagaCon";
+            this.comboBoxPagaCon.Size = new System.Drawing.Size(249, 24);
+            this.comboBoxPagaCon.TabIndex = 38;
+            this.comboBoxPagaCon.SelectedIndexChanged += new System.EventHandler(this.comboBoxPagaCon_SelectedIndexChanged_1);
+            // 
+            // labelCuotas
+            // 
+            this.labelCuotas.AutoSize = true;
+            this.labelCuotas.BackColor = System.Drawing.Color.White;
+            this.labelCuotas.Location = new System.Drawing.Point(911, 443);
+            this.labelCuotas.Name = "labelCuotas";
+            this.labelCuotas.Size = new System.Drawing.Size(52, 16);
+            this.labelCuotas.TabIndex = 39;
+            this.labelCuotas.Text = "Cuotas:";
+            // 
+            // comboBoxCuotas
+            // 
+            this.comboBoxCuotas.FormattingEnabled = true;
+            this.comboBoxCuotas.Location = new System.Drawing.Point(914, 462);
+            this.comboBoxCuotas.Name = "comboBoxCuotas";
+            this.comboBoxCuotas.Size = new System.Drawing.Size(249, 24);
+            this.comboBoxCuotas.TabIndex = 41;
+            // 
             // frmVentas
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.DarkRed;
             this.ClientSize = new System.Drawing.Size(1231, 690);
+            this.Controls.Add(this.comboBoxCuotas);
+            this.Controls.Add(this.labelCuotas);
+            this.Controls.Add(this.comboBoxPagaCon);
             this.Controls.Add(this.iconButton1);
-            this.Controls.Add(this.textBox4);
             this.Controls.Add(this.label10);
             this.Controls.Add(this.textBoxTotal);
             this.Controls.Add(this.label9);
@@ -656,7 +680,6 @@
         private FontAwesome.Sharp.IconButton btnAgregar;
         private System.Windows.Forms.TextBox textBoxTotal;
         private System.Windows.Forms.Label label9;
-        private System.Windows.Forms.TextBox textBox4;
         private System.Windows.Forms.Label label10;
         private FontAwesome.Sharp.IconButton iconButton1;
         private System.Windows.Forms.TextBox textBoxFecha;
@@ -667,5 +690,8 @@
         private System.Windows.Forms.TextBox textBoxDNICliente;
         private System.Windows.Forms.TextBox textBoxStock;
         private System.Windows.Forms.Label labelStock;
+        private System.Windows.Forms.ComboBox comboBoxPagaCon;
+        private System.Windows.Forms.Label labelCuotas;
+        private System.Windows.Forms.ComboBox comboBoxCuotas;
     }
 }

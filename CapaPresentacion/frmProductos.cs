@@ -707,5 +707,6 @@ namespace CapaPresentacion
                 row.Visible = true; // muestra todas las filas nuevamente
             }
         }
+
     }
 }

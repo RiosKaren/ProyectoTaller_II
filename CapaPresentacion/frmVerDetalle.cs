@@ -17,9 +17,5 @@ namespace CapaPresentacion
             InitializeComponent();
         }
 
-        private void frmVerDetalle_Load(object sender, EventArgs e)
-        {
-
-        }
     }
 }
