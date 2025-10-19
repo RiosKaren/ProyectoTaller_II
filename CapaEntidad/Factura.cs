@@ -6,11 +6,11 @@ using System.Threading.Tasks;
 
 namespace CapaEntidad
 {
-    public class Facturas
+    public class Factura
     {
         public int id_factura { get; set; }
-        public string fecha { get; set; }
-        public float importe_total { get; set; }
+        public DateTime fecha { get; set; }
+        public decimal importe_total { get; set; }
         public Clientes id_cliente { get; set; }
         public Usuarios id_usuario { get; set; }
     } //Representacion de la tabla facturas, con sus respectivos atributos

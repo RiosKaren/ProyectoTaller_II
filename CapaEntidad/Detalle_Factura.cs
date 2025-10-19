@@ -6,14 +6,14 @@ using System.Threading.Tasks;
 
 namespace CapaEntidad
 {
-    public class Detalles_Factura
+    public class Detalle_Factura
     {
         public int id_detalle { get; set; }
         public int cantidad { get; set; }
-        public float precio_unitario { get; set; }
-        public float subtotal { get; set; }
+        public decimal precio_unitario { get; set; }
+        public decimal subtotal { get; set; }
         public bool activo { get; set; }
-        public Facturas id_factura { get; set; }
-        public Productos id_producto { get; set; }
+        public Factura id_factura { get; set; }
+        public Talle_producto id_talle { get; set; }
     } //Representacion la tabla detalles_factura, con sus respectivos atributos
 }

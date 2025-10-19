@@ -1,5 +1,4 @@
-﻿using CapaEntidad;
-using CapaNegocio;
+﻿
 using CapaPresentacion.Utilidades;
 using CapaPresentacion.VentanasEmergentes;
 using FontAwesome.Sharp;
@@ -12,6 +11,10 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+
+using CapaDatos;
+using CapaEntidad;
+using CapaNegocio;
 
 namespace CapaPresentacion
 {
@@ -30,6 +33,7 @@ namespace CapaPresentacion
             textBoxFecha.Text = DateTime.Now.ToString("dd/MM/yyyy");
             textBoxIDCliente.Text = "0";
             textBoxIDProducto.Text = "0";
+            textBoxIDTalle.Text = "0";
             textBoxVendedor.Text = _Usuario.nombre + ", " + _Usuario.apellido;
 
             // Combo tipo de pago
@@ -135,35 +139,31 @@ namespace CapaPresentacion
         {
             comboBoxTalle.Items.Clear();
 
-            // Obtiene la lista de talles del producto desde la capa de negocio
             List<Talle_producto> listaTalles = new CN_Producto().ObtenerTallesPorProducto(idProducto);
-
-            // Filtra solo los talles con stock mayor a 0
             var tallesDisponibles = listaTalles.Where(t => t.stock > 0).ToList();
 
             if (tallesDisponibles.Count > 0)
             {
-                // Carga solo los talles disponibles en el combo
                 foreach (Talle_producto t in tallesDisponibles)
                 {
-                    comboBoxTalle.Items.Add(new OpcionCombo()
+                    comboBoxTalle.Items.Add(new TalleComboItem()
                     {
-                        Valor = t.stock,
+                        IdTalle = t.id_talle, // Asumiendo que existe esta propiedad
+                        Stock = t.stock,
                         Texto = t.talla
                     });
                 }
 
                 comboBoxTalle.DisplayMember = "Texto";
-                comboBoxTalle.ValueMember = "Valor";
                 comboBoxTalle.SelectedIndex = 0;
                 comboBoxTalle.Enabled = true;
             }
             else
             {
-                // Si ningún talle tiene stock, deshabilita el combo
-                comboBoxTalle.Items.Add(new OpcionCombo()
+                comboBoxTalle.Items.Add(new TalleComboItem()
                 {
-                    Valor = 0,
+                    IdTalle = 0,
+                    Stock = 0,
                     Texto = "Sin stock disponible"
                 });
                 comboBoxTalle.SelectedIndex = 0;
@@ -173,16 +173,16 @@ namespace CapaPresentacion
 
         private void comboBoxTalle_SelectedIndexChanged(object sender, EventArgs e)
         {
-            if (comboBoxTalle.SelectedItem != null && comboBoxTalle.SelectedItem is OpcionCombo opcion)
+            if (comboBoxTalle.SelectedItem != null && comboBoxTalle.SelectedItem is TalleComboItem item)
             {
-                // Convierte el valor del item seleccionado en stock disponible
-                int stockDisponible = Convert.ToInt32(opcion.Valor);
+                // Muestra el ID del talle
+                textBoxIDTalle.Text = item.IdTalle.ToString();
 
                 // Muestra el stock en el TextBox
-                textBoxStock.Text = stockDisponible.ToString();
+                textBoxStock.Text = item.Stock.ToString();
 
                 // Actualiza el máximo permitido en el NumericUpDown de cantidad
-                numericUpDownCantidad.Maximum = stockDisponible;
+                numericUpDownCantidad.Maximum = item.Stock;
 
                 // Reinicia la cantidad a 1 cada vez que cambia el talle
                 numericUpDownCantidad.Value = 1;
@@ -191,10 +191,9 @@ namespace CapaPresentacion
 
         private void numericUpDownCantidad_ValueChanged(object sender, EventArgs e)
         {
-            if (comboBoxTalle.SelectedItem != null && comboBoxTalle.SelectedItem is OpcionCombo opcion)
+            if (comboBoxTalle.SelectedItem is TalleComboItem item) // <- antes OpcionCombo
             {
-                int stockMaximo = Convert.ToInt32(opcion.Valor);
-
+                int stockMaximo = item.Stock;
                 if (numericUpDownCantidad.Value > stockMaximo)
                 {
                     numericUpDownCantidad.Value = stockMaximo;
@@ -218,7 +217,7 @@ namespace CapaPresentacion
             foreach (DataGridViewRow fila in VentaProductosDGV.Rows)
             {
                 if (fila.Cells["id_producto"].Value.ToString() == textBoxIDProducto.Text &&
-                    fila.Cells["talle"].Value.ToString() == comboBoxTalle.Text)
+                    fila.Cells["talla"].Value.ToString() == comboBoxTalle.Text)
                 {
                     productoExiste = true;
                     break;
@@ -231,8 +230,8 @@ namespace CapaPresentacion
                 VentaProductosDGV.Rows.Add(new object[]
                 {
                     textBoxIDProducto.Text,
-                    textBoxCodigoP.Text,
                     textBoxProducto.Text,
+                    textBoxIDTalle.Text,
                     comboBoxTalle.Text,
                     numericUpDownCantidad.Value,
                     textBoxPrecio.Text,
@@ -252,6 +251,7 @@ namespace CapaPresentacion
             textBoxIDProducto.Text = "0";
             textBoxCodigoP.Text = "";
             textBoxProducto.Text = "";
+            textBoxIDTalle.Text = "0";
             comboBoxTalle.Items.Clear();
             comboBoxTalle.Enabled = false;
             textBoxPrecio.Text = "";
@@ -316,8 +316,6 @@ namespace CapaPresentacion
             }
         }
 
-
-
         private void VentaProductosDGV_CellPainting(object sender, DataGridViewCellPaintingEventArgs e)
         {
             if (e.RowIndex < 0)
@@ -367,7 +365,69 @@ namespace CapaPresentacion
         private void comboBoxPagaCon_SelectedIndexChanged_1(object sender, EventArgs e)
         {
             ActualizarCuotas();
-
         }
+
+        private void btnRegistrarVenta_Click(object sender, EventArgs e)
+        {
+            // Validaciones mínimas
+            if (VentaProductosDGV.Rows.Count == 0)
+            {
+                MessageBox.Show("Agregue al menos un producto.", "Aviso",
+                                MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
+                return;
+            }
+            if (!int.TryParse(textBoxIDCliente.Text, out int idCliente) || idCliente == 0)
+            {
+                MessageBox.Show("Debe seleccionar un cliente.", "Aviso",
+                                MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
+                return;
+            }
+
+            // Armar TVP desde el DGV
+            var dt = CapaDatos.CD_Venta.NuevaTablaDetalles();
+            foreach (DataGridViewRow fila in VentaProductosDGV.Rows)
+            {
+                if (fila.IsNewRow) continue;
+
+                int idTalle = Convert.ToInt32(fila.Cells["id_talle"].Value);
+                int cantidad = Convert.ToInt32(fila.Cells["cantidad"].Value);
+
+                // "precio" llega con símbolo "$"
+                decimal precioUnit =
+                    Convert.ToDecimal(fila.Cells["precio_unitario"].Value.ToString().Replace("$", "").Trim());
+
+                dt.Rows.Add(idTalle, cantidad, precioUnit);
+            }
+
+            // Llamada a negocio
+            var cn = new CapaNegocio.CN_Venta();
+            bool ok = cn.RegistrarVenta(
+                idCliente: idCliente,
+                idUsuario: _Usuario.id_usuario,   // <- tu objeto ya está en el form
+                detalles: dt,
+                idFactura: out int idFactura,
+                mensaje: out string msg
+            );
+
+            if (ok)
+            {
+                MessageBox.Show($"Venta registrada. Factura #{idFactura}", "OK",
+                                MessageBoxButtons.OK, MessageBoxIcon.Information);
+
+                // Reset UI
+                VentaProductosDGV.Rows.Clear();
+                textBoxTotal.Text = "$0.00";
+                comboBoxPagaCon.Enabled = false;
+                comboBoxCuotas.Visible = false;
+                labelCuotas.Visible = false;
+            }
+            else
+            {
+                MessageBox.Show($"No se pudo registrar la venta.\n{msg}", "Error",
+                                MessageBoxButtons.OK, MessageBoxIcon.Error);
+            }
+        }
+
+
     }
 }

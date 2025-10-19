@@ -111,6 +111,7 @@
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="Utilidades\OpcionCombo.cs" />
+    <Compile Include="Utilidades\TalleComboItem.cs" />
     <Compile Include="VentanasEmergentes\veClientes.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -182,6 +183,10 @@
     <None Include="App.config" />
   </ItemGroup>
   <ItemGroup>
+    <ProjectReference Include="..\CapaDatos\CapaDatos.csproj">
+      <Project>{27941ba8-8a92-4de8-b660-dd9244aa7a29}</Project>
+      <Name>CapaDatos</Name>
+    </ProjectReference>
     <ProjectReference Include="..\CapaEntidad\CapaEntidad.csproj">
       <Project>{a6536f26-d9dd-401c-841b-4ccb86809934}</Project>
       <Name>CapaEntidad</Name>

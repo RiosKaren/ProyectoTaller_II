@@ -45,6 +45,7 @@
             this.textBoxIDCliente = new System.Windows.Forms.TextBox();
             this.btnBuscarCliente = new FontAwesome.Sharp.IconButton();
             this.groupBox3 = new System.Windows.Forms.GroupBox();
+            this.textBoxIDTalle = new System.Windows.Forms.TextBox();
             this.textBoxStock = new System.Windows.Forms.TextBox();
             this.labelStock = new System.Windows.Forms.Label();
             this.textBoxIDProducto = new System.Windows.Forms.TextBox();
@@ -60,22 +61,22 @@
             this.label4 = new System.Windows.Forms.Label();
             this.label5 = new System.Windows.Forms.Label();
             this.VentaProductosDGV = new System.Windows.Forms.DataGridView();
-            this.id_producto = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.nombre = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.id_talle = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.talla = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.precio_unitario = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.cantidad = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.subtotal = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.btnEliminar = new System.Windows.Forms.DataGridViewButtonColumn();
             this.textBoxTotal = new System.Windows.Forms.TextBox();
             this.label9 = new System.Windows.Forms.Label();
             this.label10 = new System.Windows.Forms.Label();
-            this.iconButton1 = new FontAwesome.Sharp.IconButton();
+            this.btnRegistrarVenta = new FontAwesome.Sharp.IconButton();
             this.btnAgregar = new FontAwesome.Sharp.IconButton();
             this.comboBoxPagaCon = new System.Windows.Forms.ComboBox();
             this.labelCuotas = new System.Windows.Forms.Label();
             this.comboBoxCuotas = new System.Windows.Forms.ComboBox();
+            this.id_producto = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.nombre = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.id_talle = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.talla = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.cantidad = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.precio_unitario = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.subtotal = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.btnEliminar = new System.Windows.Forms.DataGridViewButtonColumn();
             this.groupBox1.SuspendLayout();
             this.groupBox2.SuspendLayout();
             this.groupBox3.SuspendLayout();
@@ -239,6 +240,7 @@
             // groupBox3
             // 
             this.groupBox3.BackColor = System.Drawing.Color.White;
+            this.groupBox3.Controls.Add(this.textBoxIDTalle);
             this.groupBox3.Controls.Add(this.textBoxStock);
             this.groupBox3.Controls.Add(this.labelStock);
             this.groupBox3.Controls.Add(this.textBoxIDProducto);
@@ -259,6 +261,14 @@
             this.groupBox3.TabIndex = 30;
             this.groupBox3.TabStop = false;
             this.groupBox3.Text = "Información Venta";
+            // 
+            // textBoxIDTalle
+            // 
+            this.textBoxIDTalle.Location = new System.Drawing.Point(536, 12);
+            this.textBoxIDTalle.Margin = new System.Windows.Forms.Padding(4);
+            this.textBoxIDTalle.Name = "textBoxIDTalle";
+            this.textBoxIDTalle.Size = new System.Drawing.Size(36, 22);
+            this.textBoxIDTalle.TabIndex = 42;
             // 
             // textBoxStock
             // 
@@ -285,7 +295,6 @@
             this.textBoxIDProducto.Name = "textBoxIDProducto";
             this.textBoxIDProducto.Size = new System.Drawing.Size(36, 22);
             this.textBoxIDProducto.TabIndex = 38;
-            this.textBoxIDProducto.Visible = false;
             // 
             // numericUpDownCantidad
             // 
@@ -430,8 +439,8 @@
             this.nombre,
             this.id_talle,
             this.talla,
-            this.precio_unitario,
             this.cantidad,
+            this.precio_unitario,
             this.subtotal,
             this.btnEliminar});
             this.VentaProductosDGV.Location = new System.Drawing.Point(79, 312);
@@ -453,74 +462,6 @@
             this.VentaProductosDGV.TabIndex = 31;
             this.VentaProductosDGV.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.VentaProductosDGV_CellContentClick);
             this.VentaProductosDGV.CellPainting += new System.Windows.Forms.DataGridViewCellPaintingEventHandler(this.VentaProductosDGV_CellPainting);
-            // 
-            // id_producto
-            // 
-            this.id_producto.HeaderText = "id_producto";
-            this.id_producto.MinimumWidth = 6;
-            this.id_producto.Name = "id_producto";
-            this.id_producto.ReadOnly = true;
-            this.id_producto.Visible = false;
-            this.id_producto.Width = 125;
-            // 
-            // nombre
-            // 
-            this.nombre.HeaderText = "Producto";
-            this.nombre.MinimumWidth = 6;
-            this.nombre.Name = "nombre";
-            this.nombre.ReadOnly = true;
-            this.nombre.Width = 170;
-            // 
-            // id_talle
-            // 
-            this.id_talle.HeaderText = "id talle";
-            this.id_talle.MinimumWidth = 6;
-            this.id_talle.Name = "id_talle";
-            this.id_talle.ReadOnly = true;
-            this.id_talle.Visible = false;
-            this.id_talle.Width = 125;
-            // 
-            // talla
-            // 
-            this.talla.HeaderText = "Talle";
-            this.talla.MinimumWidth = 6;
-            this.talla.Name = "talla";
-            this.talla.ReadOnly = true;
-            this.talla.Width = 125;
-            // 
-            // precio_unitario
-            // 
-            this.precio_unitario.HeaderText = "Precio";
-            this.precio_unitario.MinimumWidth = 6;
-            this.precio_unitario.Name = "precio_unitario";
-            this.precio_unitario.ReadOnly = true;
-            this.precio_unitario.Width = 125;
-            // 
-            // cantidad
-            // 
-            this.cantidad.HeaderText = "Cantidad";
-            this.cantidad.MinimumWidth = 6;
-            this.cantidad.Name = "cantidad";
-            this.cantidad.ReadOnly = true;
-            this.cantidad.Width = 125;
-            // 
-            // subtotal
-            // 
-            this.subtotal.HeaderText = "Sub Total";
-            this.subtotal.MinimumWidth = 6;
-            this.subtotal.Name = "subtotal";
-            this.subtotal.ReadOnly = true;
-            this.subtotal.Width = 125;
-            // 
-            // btnEliminar
-            // 
-            this.btnEliminar.HeaderText = "";
-            this.btnEliminar.MinimumWidth = 6;
-            this.btnEliminar.Name = "btnEliminar";
-            this.btnEliminar.ReadOnly = true;
-            this.btnEliminar.Resizable = System.Windows.Forms.DataGridViewTriState.True;
-            this.btnEliminar.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.Automatic;
-            this.btnEliminar.Width = 30;
             // 
             // textBoxTotal
             // 
@@ -550,20 +491,21 @@
             this.label10.TabIndex = 35;
             this.label10.Text = "Paga con:";
             // 
-            // iconButton1
+            // btnRegistrarVenta
             // 
-            this.iconButton1.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.iconButton1.IconChar = FontAwesome.Sharp.IconChar.Tags;
-            this.iconButton1.IconColor = System.Drawing.Color.SteelBlue;
-            this.iconButton1.IconFont = FontAwesome.Sharp.IconFont.Auto;
-            this.iconButton1.Location = new System.Drawing.Point(914, 561);
-            this.iconButton1.Name = "iconButton1";
-            this.iconButton1.Size = new System.Drawing.Size(249, 88);
-            this.iconButton1.TabIndex = 37;
-            this.iconButton1.Text = "Crear Venta";
-            this.iconButton1.TextAlign = System.Drawing.ContentAlignment.BottomCenter;
-            this.iconButton1.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageAboveText;
-            this.iconButton1.UseVisualStyleBackColor = true;
+            this.btnRegistrarVenta.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.btnRegistrarVenta.IconChar = FontAwesome.Sharp.IconChar.Tags;
+            this.btnRegistrarVenta.IconColor = System.Drawing.Color.SteelBlue;
+            this.btnRegistrarVenta.IconFont = FontAwesome.Sharp.IconFont.Auto;
+            this.btnRegistrarVenta.Location = new System.Drawing.Point(914, 561);
+            this.btnRegistrarVenta.Name = "btnRegistrarVenta";
+            this.btnRegistrarVenta.Size = new System.Drawing.Size(249, 88);
+            this.btnRegistrarVenta.TabIndex = 37;
+            this.btnRegistrarVenta.Text = "Crear Venta";
+            this.btnRegistrarVenta.TextAlign = System.Drawing.ContentAlignment.BottomCenter;
+            this.btnRegistrarVenta.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageAboveText;
+            this.btnRegistrarVenta.UseVisualStyleBackColor = true;
+            this.btnRegistrarVenta.Click += new System.EventHandler(this.btnRegistrarVenta_Click);
             // 
             // btnAgregar
             // 
@@ -608,6 +550,74 @@
             this.comboBoxCuotas.Size = new System.Drawing.Size(249, 24);
             this.comboBoxCuotas.TabIndex = 41;
             // 
+            // id_producto
+            // 
+            this.id_producto.HeaderText = "id_producto";
+            this.id_producto.MinimumWidth = 6;
+            this.id_producto.Name = "id_producto";
+            this.id_producto.ReadOnly = true;
+            this.id_producto.Visible = false;
+            this.id_producto.Width = 125;
+            // 
+            // nombre
+            // 
+            this.nombre.HeaderText = "Producto";
+            this.nombre.MinimumWidth = 6;
+            this.nombre.Name = "nombre";
+            this.nombre.ReadOnly = true;
+            this.nombre.Width = 170;
+            // 
+            // id_talle
+            // 
+            this.id_talle.HeaderText = "id talle";
+            this.id_talle.MinimumWidth = 6;
+            this.id_talle.Name = "id_talle";
+            this.id_talle.ReadOnly = true;
+            this.id_talle.Visible = false;
+            this.id_talle.Width = 125;
+            // 
+            // talla
+            // 
+            this.talla.HeaderText = "Talle";
+            this.talla.MinimumWidth = 6;
+            this.talla.Name = "talla";
+            this.talla.ReadOnly = true;
+            this.talla.Width = 125;
+            // 
+            // cantidad
+            // 
+            this.cantidad.HeaderText = "Cantidad";
+            this.cantidad.MinimumWidth = 6;
+            this.cantidad.Name = "cantidad";
+            this.cantidad.ReadOnly = true;
+            this.cantidad.Width = 125;
+            // 
+            // precio_unitario
+            // 
+            this.precio_unitario.HeaderText = "Precio";
+            this.precio_unitario.MinimumWidth = 6;
+            this.precio_unitario.Name = "precio_unitario";
+            this.precio_unitario.ReadOnly = true;
+            this.precio_unitario.Width = 125;
+            // 
+            // subtotal
+            // 
+            this.subtotal.HeaderText = "Sub Total";
+            this.subtotal.MinimumWidth = 6;
+            this.subtotal.Name = "subtotal";
+            this.subtotal.ReadOnly = true;
+            this.subtotal.Width = 125;
+            // 
+            // btnEliminar
+            // 
+            this.btnEliminar.HeaderText = "";
+            this.btnEliminar.MinimumWidth = 6;
+            this.btnEliminar.Name = "btnEliminar";
+            this.btnEliminar.ReadOnly = true;
+            this.btnEliminar.Resizable = System.Windows.Forms.DataGridViewTriState.True;
+            this.btnEliminar.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.Automatic;
+            this.btnEliminar.Width = 30;
+            // 
             // frmVentas
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
@@ -617,7 +627,7 @@
             this.Controls.Add(this.comboBoxCuotas);
             this.Controls.Add(this.labelCuotas);
             this.Controls.Add(this.comboBoxPagaCon);
-            this.Controls.Add(this.iconButton1);
+            this.Controls.Add(this.btnRegistrarVenta);
             this.Controls.Add(this.label10);
             this.Controls.Add(this.textBoxTotal);
             this.Controls.Add(this.label9);
@@ -669,19 +679,11 @@
         private System.Windows.Forms.TextBox textBoxPrecio;
         private System.Windows.Forms.NumericUpDown numericUpDownCantidad;
         private System.Windows.Forms.DataGridView VentaProductosDGV;
-        private System.Windows.Forms.DataGridViewTextBoxColumn id_producto;
-        private System.Windows.Forms.DataGridViewTextBoxColumn nombre;
-        private System.Windows.Forms.DataGridViewTextBoxColumn id_talle;
-        private System.Windows.Forms.DataGridViewTextBoxColumn talla;
-        private System.Windows.Forms.DataGridViewTextBoxColumn precio_unitario;
-        private System.Windows.Forms.DataGridViewTextBoxColumn cantidad;
-        private System.Windows.Forms.DataGridViewTextBoxColumn subtotal;
-        private System.Windows.Forms.DataGridViewButtonColumn btnEliminar;
         private FontAwesome.Sharp.IconButton btnAgregar;
         private System.Windows.Forms.TextBox textBoxTotal;
         private System.Windows.Forms.Label label9;
         private System.Windows.Forms.Label label10;
-        private FontAwesome.Sharp.IconButton iconButton1;
+        private FontAwesome.Sharp.IconButton btnRegistrarVenta;
         private System.Windows.Forms.TextBox textBoxFecha;
         private System.Windows.Forms.Label labelVendedor;
         private System.Windows.Forms.TextBox textBoxVendedor;
@@ -693,5 +695,14 @@
         private System.Windows.Forms.ComboBox comboBoxPagaCon;
         private System.Windows.Forms.Label labelCuotas;
         private System.Windows.Forms.ComboBox comboBoxCuotas;
+        private System.Windows.Forms.TextBox textBoxIDTalle;
+        private System.Windows.Forms.DataGridViewTextBoxColumn id_producto;
+        private System.Windows.Forms.DataGridViewTextBoxColumn nombre;
+        private System.Windows.Forms.DataGridViewTextBoxColumn id_talle;
+        private System.Windows.Forms.DataGridViewTextBoxColumn talla;
+        private System.Windows.Forms.DataGridViewTextBoxColumn cantidad;
+        private System.Windows.Forms.DataGridViewTextBoxColumn precio_unitario;
+        private System.Windows.Forms.DataGridViewTextBoxColumn subtotal;
+        private System.Windows.Forms.DataGridViewButtonColumn btnEliminar;
     }
 }
