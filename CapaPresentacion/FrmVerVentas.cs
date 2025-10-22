@@ -144,5 +144,9 @@ namespace CapaPresentacion
             VentasDGV.ClearSelection();
         }
 
+        private void VentasDGV_CellContentClick(object sender, DataGridViewCellEventArgs e)
+        {
+
+        }
     }
 }

@@ -211,7 +211,9 @@ namespace CapaPresentacion
 
         }
 
+        private void iconButtonPDF_Click(object sender, EventArgs e)
+        {
 
-
+        }
     }
 }

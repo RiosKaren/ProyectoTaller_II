@@ -57,10 +57,9 @@
             this.iconButtonLimpiar.IconColor = System.Drawing.Color.Black;
             this.iconButtonLimpiar.IconFont = FontAwesome.Sharp.IconFont.Auto;
             this.iconButtonLimpiar.IconSize = 18;
-            this.iconButtonLimpiar.Location = new System.Drawing.Point(1112, 52);
-            this.iconButtonLimpiar.Margin = new System.Windows.Forms.Padding(4);
+            this.iconButtonLimpiar.Location = new System.Drawing.Point(834, 42);
             this.iconButtonLimpiar.Name = "iconButtonLimpiar";
-            this.iconButtonLimpiar.Size = new System.Drawing.Size(45, 22);
+            this.iconButtonLimpiar.Size = new System.Drawing.Size(34, 18);
             this.iconButtonLimpiar.TabIndex = 86;
             this.iconButtonLimpiar.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
             this.iconButtonLimpiar.UseVisualStyleBackColor = false;
@@ -77,10 +76,9 @@
             this.iconButtonBuscar.IconColor = System.Drawing.Color.Black;
             this.iconButtonBuscar.IconFont = FontAwesome.Sharp.IconFont.Auto;
             this.iconButtonBuscar.IconSize = 16;
-            this.iconButtonBuscar.Location = new System.Drawing.Point(1058, 52);
-            this.iconButtonBuscar.Margin = new System.Windows.Forms.Padding(4);
+            this.iconButtonBuscar.Location = new System.Drawing.Point(794, 42);
             this.iconButtonBuscar.Name = "iconButtonBuscar";
-            this.iconButtonBuscar.Size = new System.Drawing.Size(45, 22);
+            this.iconButtonBuscar.Size = new System.Drawing.Size(34, 18);
             this.iconButtonBuscar.TabIndex = 87;
             this.iconButtonBuscar.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
             this.iconButtonBuscar.UseVisualStyleBackColor = false;
@@ -88,10 +86,9 @@
             // 
             // textBoxBusqueda
             // 
-            this.textBoxBusqueda.Location = new System.Drawing.Point(840, 52);
-            this.textBoxBusqueda.Margin = new System.Windows.Forms.Padding(4);
+            this.textBoxBusqueda.Location = new System.Drawing.Point(630, 42);
             this.textBoxBusqueda.Name = "textBoxBusqueda";
-            this.textBoxBusqueda.Size = new System.Drawing.Size(209, 22);
+            this.textBoxBusqueda.Size = new System.Drawing.Size(158, 20);
             this.textBoxBusqueda.TabIndex = 85;
             // 
             // comboBoxBusqueda
@@ -100,20 +97,18 @@
             this.comboBoxBusqueda.Cursor = System.Windows.Forms.Cursors.Hand;
             this.comboBoxBusqueda.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.comboBoxBusqueda.FormattingEnabled = true;
-            this.comboBoxBusqueda.Location = new System.Drawing.Point(666, 52);
-            this.comboBoxBusqueda.Margin = new System.Windows.Forms.Padding(4);
+            this.comboBoxBusqueda.Location = new System.Drawing.Point(500, 42);
             this.comboBoxBusqueda.Name = "comboBoxBusqueda";
-            this.comboBoxBusqueda.Size = new System.Drawing.Size(165, 24);
+            this.comboBoxBusqueda.Size = new System.Drawing.Size(125, 21);
             this.comboBoxBusqueda.TabIndex = 84;
             // 
             // labelBuscar
             // 
             this.labelBuscar.AutoSize = true;
             this.labelBuscar.BackColor = System.Drawing.Color.White;
-            this.labelBuscar.Location = new System.Drawing.Point(554, 55);
-            this.labelBuscar.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+            this.labelBuscar.Location = new System.Drawing.Point(416, 45);
             this.labelBuscar.Name = "labelBuscar";
-            this.labelBuscar.Size = new System.Drawing.Size(76, 16);
+            this.labelBuscar.Size = new System.Drawing.Size(62, 13);
             this.labelBuscar.TabIndex = 83;
             this.labelBuscar.Text = "Buscar Por:";
             // 
@@ -121,10 +116,9 @@
             // 
             this.labelListaProductos.BackColor = System.Drawing.Color.White;
             this.labelListaProductos.Font = new System.Drawing.Font("Microsoft Sans Serif", 16F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.labelListaProductos.Location = new System.Drawing.Point(34, 30);
-            this.labelListaProductos.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+            this.labelListaProductos.Location = new System.Drawing.Point(26, 24);
             this.labelListaProductos.Name = "labelListaProductos";
-            this.labelListaProductos.Size = new System.Drawing.Size(1171, 62);
+            this.labelListaProductos.Size = new System.Drawing.Size(878, 50);
             this.labelListaProductos.TabIndex = 82;
             this.labelListaProductos.Text = "Ventas Registradas";
             this.labelListaProductos.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
@@ -149,8 +143,8 @@
             this.id_cliente,
             this.dni,
             this.importe_total});
-            this.VentasDGV.Location = new System.Drawing.Point(34, 118);
-            this.VentasDGV.Margin = new System.Windows.Forms.Padding(5);
+            this.VentasDGV.Location = new System.Drawing.Point(26, 96);
+            this.VentasDGV.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.VentasDGV.MultiSelect = false;
             this.VentasDGV.Name = "VentasDGV";
             this.VentasDGV.ReadOnly = true;
@@ -165,8 +159,9 @@
             this.VentasDGV.RowHeadersWidth = 51;
             this.VentasDGV.RowTemplate.Height = 28;
             this.VentasDGV.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
-            this.VentasDGV.Size = new System.Drawing.Size(1171, 511);
+            this.VentasDGV.Size = new System.Drawing.Size(878, 415);
             this.VentasDGV.TabIndex = 81;
+            this.VentasDGV.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.VentasDGV_CellContentClick);
             this.VentasDGV.CellDoubleClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.VentasDGV_CellDoubleClick);
             // 
             // id_factura
@@ -221,10 +216,10 @@
             // 
             // FrmVerVentas
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.DarkRed;
-            this.ClientSize = new System.Drawing.Size(1238, 683);
+            this.ClientSize = new System.Drawing.Size(928, 555);
             this.Controls.Add(this.iconButtonLimpiar);
             this.Controls.Add(this.iconButtonBuscar);
             this.Controls.Add(this.textBoxBusqueda);
@@ -232,6 +227,7 @@
             this.Controls.Add(this.labelBuscar);
             this.Controls.Add(this.labelListaProductos);
             this.Controls.Add(this.VentasDGV);
+            this.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.Name = "FrmVerVentas";
             this.Text = "FrmVerVentas";
             this.Load += new System.EventHandler(this.FrmVerVentas_Load);
