@@ -11,10 +11,18 @@ namespace CapaNegocio
 {
     public class CN_Venta
     {
+        private CD_Venta objcd_venta = new CD_Venta();
         private readonly CD_Venta _cd = new CD_Venta();
 
         public bool RegistrarVenta(int idCliente, int idUsuario, DataTable detalles,
                                    out int idFactura, out string mensaje)
             => _cd.RegistrarVenta(idCliente, idUsuario, detalles, out idFactura, out mensaje);
+
+        public List<Factura> ListarVentas()
+        {
+            return objcd_venta.ListarVentas();
+        }
+
+
     }
 }

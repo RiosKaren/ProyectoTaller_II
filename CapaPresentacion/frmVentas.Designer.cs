@@ -61,14 +61,6 @@
             this.label4 = new System.Windows.Forms.Label();
             this.label5 = new System.Windows.Forms.Label();
             this.VentaProductosDGV = new System.Windows.Forms.DataGridView();
-            this.textBoxTotal = new System.Windows.Forms.TextBox();
-            this.label9 = new System.Windows.Forms.Label();
-            this.label10 = new System.Windows.Forms.Label();
-            this.btnRegistrarVenta = new FontAwesome.Sharp.IconButton();
-            this.btnAgregar = new FontAwesome.Sharp.IconButton();
-            this.comboBoxPagaCon = new System.Windows.Forms.ComboBox();
-            this.labelCuotas = new System.Windows.Forms.Label();
-            this.comboBoxCuotas = new System.Windows.Forms.ComboBox();
             this.id_producto = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.nombre = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.id_talle = new System.Windows.Forms.DataGridViewTextBoxColumn();
@@ -77,6 +69,14 @@
             this.precio_unitario = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.subtotal = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.btnEliminar = new System.Windows.Forms.DataGridViewButtonColumn();
+            this.textBoxTotal = new System.Windows.Forms.TextBox();
+            this.label9 = new System.Windows.Forms.Label();
+            this.label10 = new System.Windows.Forms.Label();
+            this.btnRegistrarVenta = new FontAwesome.Sharp.IconButton();
+            this.btnAgregar = new FontAwesome.Sharp.IconButton();
+            this.comboBoxPagaCon = new System.Windows.Forms.ComboBox();
+            this.labelCuotas = new System.Windows.Forms.Label();
+            this.comboBoxCuotas = new System.Windows.Forms.ComboBox();
             this.groupBox1.SuspendLayout();
             this.groupBox2.SuspendLayout();
             this.groupBox3.SuspendLayout();
@@ -269,6 +269,7 @@
             this.textBoxIDTalle.Name = "textBoxIDTalle";
             this.textBoxIDTalle.Size = new System.Drawing.Size(36, 22);
             this.textBoxIDTalle.TabIndex = 42;
+            this.textBoxIDTalle.Visible = false;
             // 
             // textBoxStock
             // 
@@ -295,6 +296,7 @@
             this.textBoxIDProducto.Name = "textBoxIDProducto";
             this.textBoxIDProducto.Size = new System.Drawing.Size(36, 22);
             this.textBoxIDProducto.TabIndex = 38;
+            this.textBoxIDProducto.Visible = false;
             // 
             // numericUpDownCantidad
             // 
@@ -463,6 +465,74 @@
             this.VentaProductosDGV.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.VentaProductosDGV_CellContentClick);
             this.VentaProductosDGV.CellPainting += new System.Windows.Forms.DataGridViewCellPaintingEventHandler(this.VentaProductosDGV_CellPainting);
             // 
+            // id_producto
+            // 
+            this.id_producto.HeaderText = "id_producto";
+            this.id_producto.MinimumWidth = 6;
+            this.id_producto.Name = "id_producto";
+            this.id_producto.ReadOnly = true;
+            this.id_producto.Visible = false;
+            this.id_producto.Width = 125;
+            // 
+            // nombre
+            // 
+            this.nombre.HeaderText = "Producto";
+            this.nombre.MinimumWidth = 6;
+            this.nombre.Name = "nombre";
+            this.nombre.ReadOnly = true;
+            this.nombre.Width = 170;
+            // 
+            // id_talle
+            // 
+            this.id_talle.HeaderText = "id talle";
+            this.id_talle.MinimumWidth = 6;
+            this.id_talle.Name = "id_talle";
+            this.id_talle.ReadOnly = true;
+            this.id_talle.Visible = false;
+            this.id_talle.Width = 125;
+            // 
+            // talla
+            // 
+            this.talla.HeaderText = "Talle";
+            this.talla.MinimumWidth = 6;
+            this.talla.Name = "talla";
+            this.talla.ReadOnly = true;
+            this.talla.Width = 125;
+            // 
+            // cantidad
+            // 
+            this.cantidad.HeaderText = "Cantidad";
+            this.cantidad.MinimumWidth = 6;
+            this.cantidad.Name = "cantidad";
+            this.cantidad.ReadOnly = true;
+            this.cantidad.Width = 125;
+            // 
+            // precio_unitario
+            // 
+            this.precio_unitario.HeaderText = "Precio";
+            this.precio_unitario.MinimumWidth = 6;
+            this.precio_unitario.Name = "precio_unitario";
+            this.precio_unitario.ReadOnly = true;
+            this.precio_unitario.Width = 125;
+            // 
+            // subtotal
+            // 
+            this.subtotal.HeaderText = "Sub Total";
+            this.subtotal.MinimumWidth = 6;
+            this.subtotal.Name = "subtotal";
+            this.subtotal.ReadOnly = true;
+            this.subtotal.Width = 125;
+            // 
+            // btnEliminar
+            // 
+            this.btnEliminar.HeaderText = "";
+            this.btnEliminar.MinimumWidth = 6;
+            this.btnEliminar.Name = "btnEliminar";
+            this.btnEliminar.ReadOnly = true;
+            this.btnEliminar.Resizable = System.Windows.Forms.DataGridViewTriState.True;
+            this.btnEliminar.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.Automatic;
+            this.btnEliminar.Width = 30;
+            // 
             // textBoxTotal
             // 
             this.textBoxTotal.Location = new System.Drawing.Point(914, 521);
@@ -549,74 +619,6 @@
             this.comboBoxCuotas.Name = "comboBoxCuotas";
             this.comboBoxCuotas.Size = new System.Drawing.Size(249, 24);
             this.comboBoxCuotas.TabIndex = 41;
-            // 
-            // id_producto
-            // 
-            this.id_producto.HeaderText = "id_producto";
-            this.id_producto.MinimumWidth = 6;
-            this.id_producto.Name = "id_producto";
-            this.id_producto.ReadOnly = true;
-            this.id_producto.Visible = false;
-            this.id_producto.Width = 125;
-            // 
-            // nombre
-            // 
-            this.nombre.HeaderText = "Producto";
-            this.nombre.MinimumWidth = 6;
-            this.nombre.Name = "nombre";
-            this.nombre.ReadOnly = true;
-            this.nombre.Width = 170;
-            // 
-            // id_talle
-            // 
-            this.id_talle.HeaderText = "id talle";
-            this.id_talle.MinimumWidth = 6;
-            this.id_talle.Name = "id_talle";
-            this.id_talle.ReadOnly = true;
-            this.id_talle.Visible = false;
-            this.id_talle.Width = 125;
-            // 
-            // talla
-            // 
-            this.talla.HeaderText = "Talle";
-            this.talla.MinimumWidth = 6;
-            this.talla.Name = "talla";
-            this.talla.ReadOnly = true;
-            this.talla.Width = 125;
-            // 
-            // cantidad
-            // 
-            this.cantidad.HeaderText = "Cantidad";
-            this.cantidad.MinimumWidth = 6;
-            this.cantidad.Name = "cantidad";
-            this.cantidad.ReadOnly = true;
-            this.cantidad.Width = 125;
-            // 
-            // precio_unitario
-            // 
-            this.precio_unitario.HeaderText = "Precio";
-            this.precio_unitario.MinimumWidth = 6;
-            this.precio_unitario.Name = "precio_unitario";
-            this.precio_unitario.ReadOnly = true;
-            this.precio_unitario.Width = 125;
-            // 
-            // subtotal
-            // 
-            this.subtotal.HeaderText = "Sub Total";
-            this.subtotal.MinimumWidth = 6;
-            this.subtotal.Name = "subtotal";
-            this.subtotal.ReadOnly = true;
-            this.subtotal.Width = 125;
-            // 
-            // btnEliminar
-            // 
-            this.btnEliminar.HeaderText = "";
-            this.btnEliminar.MinimumWidth = 6;
-            this.btnEliminar.Name = "btnEliminar";
-            this.btnEliminar.ReadOnly = true;
-            this.btnEliminar.Resizable = System.Windows.Forms.DataGridViewTriState.True;
-            this.btnEliminar.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.Automatic;
-            this.btnEliminar.Width = 30;
             // 
             // frmVentas
             // 

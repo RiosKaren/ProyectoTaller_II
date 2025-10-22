@@ -120,7 +120,7 @@ namespace CapaPresentacion
 
         private void SubMenuVerDetalle_Click(object sender, EventArgs e)
         {
-            AbrirFormulario(menuVentas, new frmVerDetalle());
+            AbrirFormulario(menuVentas, new FrmVerVentas());
         }
     }
 }

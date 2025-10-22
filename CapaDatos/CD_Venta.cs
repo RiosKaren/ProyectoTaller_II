@@ -65,5 +65,46 @@ namespace CapaDatos
                 return false;
             }
         }
+
+        public List<Factura> ListarVentas()
+        {
+            var lista = new List<Factura>();
+
+            using (var cn = new SqlConnection(Conexion.cadena))
+            using (var cmd = new SqlCommand(@"
+                SELECT f.id_factura,
+                       f.id_cliente,
+                       c.dni,
+                       f.importe_total,
+                       f.fecha
+                FROM factura f
+                INNER JOIN clientes c ON c.id_cliente = f.id_cliente
+                ORDER BY f.id_factura DESC;", cn))
+            {
+                cn.Open();
+                using (var dr = cmd.ExecuteReader())
+                {
+                    while (dr.Read())
+                    {
+
+                        lista.Add(new Factura
+                        {
+                            id_factura = Convert.ToInt32(dr["id_factura"]),
+                            fecha = Convert.ToDateTime(dr["fecha"]),
+                            id_cliente = new Clientes               // construir el objeto
+                            {
+                                id_cliente = Convert.ToInt32(dr["id_cliente"]),
+                                dni = Convert.ToInt32(dr["dni"])
+                                                                 
+                            },
+                            importe_total = Convert.ToDecimal(dr["importe_total"]),
+                            
+                        });
+                    }
+                }
+            }
+            return lista;
+        }
+
     }
 }

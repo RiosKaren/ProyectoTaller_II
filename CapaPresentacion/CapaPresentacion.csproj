@@ -90,11 +90,17 @@
     <Compile Include="frmVentas.Designer.cs">
       <DependentUpon>frmVentas.cs</DependentUpon>
     </Compile>
-    <Compile Include="frmVerDetalle.cs">
+    <Compile Include="VentanasEmergentes\veDetalleVenta.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="frmVerDetalle.Designer.cs">
-      <DependentUpon>frmVerDetalle.cs</DependentUpon>
+    <Compile Include="VentanasEmergentes\veDetalleVenta.Designer.cs">
+      <DependentUpon>veDetalleVenta.cs</DependentUpon>
+    </Compile>
+    <Compile Include="FrmVerVentas.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FrmVerVentas.Designer.cs">
+      <DependentUpon>FrmVerVentas.cs</DependentUpon>
     </Compile>
     <Compile Include="Inicio.cs">
       <SubType>Form</SubType>
@@ -143,8 +149,11 @@
     <EmbeddedResource Include="frmVentas.resx">
       <DependentUpon>frmVentas.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="frmVerDetalle.resx">
-      <DependentUpon>frmVerDetalle.cs</DependentUpon>
+    <EmbeddedResource Include="VentanasEmergentes\veDetalleVenta.resx">
+      <DependentUpon>veDetalleVenta.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="FrmVerVentas.resx">
+      <DependentUpon>FrmVerVentas.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Inicio.resx">
       <DependentUpon>Inicio.cs</DependentUpon>

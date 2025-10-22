@@ -10,12 +10,18 @@ using System.Windows.Forms;
 
 namespace CapaPresentacion
 {
-    public partial class frmVerDetalle : Form
+    public partial class veDetalleVenta : Form
     {
-        public frmVerDetalle()
+        public veDetalleVenta()
         {
             InitializeComponent();
         }
+
+        private void frmVerDetalle_Load(object sender, EventArgs e)
+        {
+
+        }
+
 
     }
 }

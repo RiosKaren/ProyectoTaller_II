@@ -1,6 +1,6 @@
 ﻿namespace CapaPresentacion
 {
-    partial class frmVerDetalle
+    partial class veDetalleVenta
     {
         /// <summary>
         /// Required designer variable.
@@ -43,14 +43,14 @@
             this.labelFecha = new System.Windows.Forms.Label();
             this.groupBox2 = new System.Windows.Forms.GroupBox();
             this.label4 = new System.Windows.Forms.Label();
-            this.textBox1 = new System.Windows.Forms.TextBox();
+            this.textBoxTelefono = new System.Windows.Forms.TextBox();
             this.textBoxNombreCliente = new System.Windows.Forms.TextBox();
             this.textBoxDNI = new System.Windows.Forms.TextBox();
             this.label1 = new System.Windows.Forms.Label();
-            this.textBox2 = new System.Windows.Forms.TextBox();
+            this.textBoxCorreo = new System.Windows.Forms.TextBox();
             this.label3 = new System.Windows.Forms.Label();
             this.label2 = new System.Windows.Forms.Label();
-            this.VentaProductosDGV = new System.Windows.Forms.DataGridView();
+            this.VerProductosDGV = new System.Windows.Forms.DataGridView();
             this.id_producto = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.nombre = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.id_talle = new System.Windows.Forms.DataGridViewTextBoxColumn();
@@ -60,11 +60,11 @@
             this.subtotal = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.btnEliminar = new System.Windows.Forms.DataGridViewButtonColumn();
             this.label5 = new System.Windows.Forms.Label();
-            this.textBox3 = new System.Windows.Forms.TextBox();
+            this.textBoxMontoTotal = new System.Windows.Forms.TextBox();
             this.iconButtonPDF = new FontAwesome.Sharp.IconButton();
             this.groupBox1.SuspendLayout();
             this.groupBox2.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.VentaProductosDGV)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.VerProductosDGV)).BeginInit();
             this.SuspendLayout();
             // 
             // labelListaUsuarios
@@ -201,11 +201,11 @@
             // 
             this.groupBox2.BackColor = System.Drawing.Color.White;
             this.groupBox2.Controls.Add(this.label4);
-            this.groupBox2.Controls.Add(this.textBox1);
+            this.groupBox2.Controls.Add(this.textBoxTelefono);
             this.groupBox2.Controls.Add(this.textBoxNombreCliente);
             this.groupBox2.Controls.Add(this.textBoxDNI);
             this.groupBox2.Controls.Add(this.label1);
-            this.groupBox2.Controls.Add(this.textBox2);
+            this.groupBox2.Controls.Add(this.textBoxCorreo);
             this.groupBox2.Controls.Add(this.label3);
             this.groupBox2.Controls.Add(this.label2);
             this.groupBox2.Location = new System.Drawing.Point(67, 208);
@@ -224,14 +224,14 @@
             this.label4.TabIndex = 90;
             this.label4.Text = "Telefono:";
             // 
-            // textBox1
+            // textBoxTelefono
             // 
-            this.textBox1.Location = new System.Drawing.Point(630, 42);
-            this.textBox1.Margin = new System.Windows.Forms.Padding(4);
-            this.textBox1.Name = "textBox1";
-            this.textBox1.ReadOnly = true;
-            this.textBox1.Size = new System.Drawing.Size(139, 22);
-            this.textBox1.TabIndex = 87;
+            this.textBoxTelefono.Location = new System.Drawing.Point(630, 42);
+            this.textBoxTelefono.Margin = new System.Windows.Forms.Padding(4);
+            this.textBoxTelefono.Name = "textBoxTelefono";
+            this.textBoxTelefono.ReadOnly = true;
+            this.textBoxTelefono.Size = new System.Drawing.Size(139, 22);
+            this.textBoxTelefono.TabIndex = 87;
             // 
             // textBoxNombreCliente
             // 
@@ -260,14 +260,14 @@
             this.label1.TabIndex = 29;
             this.label1.Text = "Nro. Documento:";
             // 
-            // textBox2
+            // textBoxCorreo
             // 
-            this.textBox2.Location = new System.Drawing.Point(473, 42);
-            this.textBox2.Margin = new System.Windows.Forms.Padding(4);
-            this.textBox2.Name = "textBox2";
-            this.textBox2.ReadOnly = true;
-            this.textBox2.Size = new System.Drawing.Size(139, 22);
-            this.textBox2.TabIndex = 86;
+            this.textBoxCorreo.Location = new System.Drawing.Point(473, 42);
+            this.textBoxCorreo.Margin = new System.Windows.Forms.Padding(4);
+            this.textBoxCorreo.Name = "textBoxCorreo";
+            this.textBoxCorreo.ReadOnly = true;
+            this.textBoxCorreo.Size = new System.Drawing.Size(139, 22);
+            this.textBoxCorreo.TabIndex = 86;
             // 
             // label3
             // 
@@ -287,9 +287,9 @@
             this.label2.TabIndex = 0;
             this.label2.Text = "Correo:";
             // 
-            // VentaProductosDGV
+            // VerProductosDGV
             // 
-            this.VentaProductosDGV.AllowUserToAddRows = false;
+            this.VerProductosDGV.AllowUserToAddRows = false;
             dataGridViewCellStyle1.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
             dataGridViewCellStyle1.BackColor = System.Drawing.SystemColors.Control;
             dataGridViewCellStyle1.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
@@ -298,9 +298,9 @@
             dataGridViewCellStyle1.SelectionBackColor = System.Drawing.SystemColors.Highlight;
             dataGridViewCellStyle1.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
             dataGridViewCellStyle1.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
-            this.VentaProductosDGV.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle1;
-            this.VentaProductosDGV.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.VentaProductosDGV.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
+            this.VerProductosDGV.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle1;
+            this.VerProductosDGV.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.VerProductosDGV.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
             this.id_producto,
             this.nombre,
             this.id_talle,
@@ -309,11 +309,11 @@
             this.cantidad,
             this.subtotal,
             this.btnEliminar});
-            this.VentaProductosDGV.Location = new System.Drawing.Point(67, 313);
-            this.VentaProductosDGV.Margin = new System.Windows.Forms.Padding(5);
-            this.VentaProductosDGV.MultiSelect = false;
-            this.VentaProductosDGV.Name = "VentaProductosDGV";
-            this.VentaProductosDGV.ReadOnly = true;
+            this.VerProductosDGV.Location = new System.Drawing.Point(67, 313);
+            this.VerProductosDGV.Margin = new System.Windows.Forms.Padding(5);
+            this.VerProductosDGV.MultiSelect = false;
+            this.VerProductosDGV.Name = "VerProductosDGV";
+            this.VerProductosDGV.ReadOnly = true;
             dataGridViewCellStyle2.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
             dataGridViewCellStyle2.BackColor = System.Drawing.SystemColors.Control;
             dataGridViewCellStyle2.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
@@ -321,11 +321,11 @@
             dataGridViewCellStyle2.SelectionBackColor = System.Drawing.Color.White;
             dataGridViewCellStyle2.SelectionForeColor = System.Drawing.Color.Black;
             dataGridViewCellStyle2.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
-            this.VentaProductosDGV.RowHeadersDefaultCellStyle = dataGridViewCellStyle2;
-            this.VentaProductosDGV.RowHeadersWidth = 51;
-            this.VentaProductosDGV.RowTemplate.Height = 28;
-            this.VentaProductosDGV.Size = new System.Drawing.Size(813, 285);
-            this.VentaProductosDGV.TabIndex = 84;
+            this.VerProductosDGV.RowHeadersDefaultCellStyle = dataGridViewCellStyle2;
+            this.VerProductosDGV.RowHeadersWidth = 51;
+            this.VerProductosDGV.RowTemplate.Height = 28;
+            this.VerProductosDGV.Size = new System.Drawing.Size(813, 285);
+            this.VerProductosDGV.TabIndex = 84;
             // 
             // id_producto
             // 
@@ -405,15 +405,15 @@
             this.label5.TabIndex = 85;
             this.label5.Text = "Monto total:";
             // 
-            // textBox3
+            // textBoxMontoTotal
             // 
-            this.textBox3.Location = new System.Drawing.Point(146, 623);
-            this.textBox3.Margin = new System.Windows.Forms.Padding(4);
-            this.textBox3.Name = "textBox3";
-            this.textBox3.ReadOnly = true;
-            this.textBox3.Size = new System.Drawing.Size(115, 22);
-            this.textBox3.TabIndex = 88;
-            this.textBox3.Text = "0";
+            this.textBoxMontoTotal.Location = new System.Drawing.Point(146, 623);
+            this.textBoxMontoTotal.Margin = new System.Windows.Forms.Padding(4);
+            this.textBoxMontoTotal.Name = "textBoxMontoTotal";
+            this.textBoxMontoTotal.ReadOnly = true;
+            this.textBoxMontoTotal.Size = new System.Drawing.Size(115, 22);
+            this.textBoxMontoTotal.TabIndex = 88;
+            this.textBoxMontoTotal.Text = "0";
             // 
             // iconButtonPDF
             // 
@@ -442,9 +442,9 @@
             this.BackColor = System.Drawing.Color.DarkRed;
             this.ClientSize = new System.Drawing.Size(1006, 689);
             this.Controls.Add(this.iconButtonPDF);
-            this.Controls.Add(this.textBox3);
+            this.Controls.Add(this.textBoxMontoTotal);
             this.Controls.Add(this.label5);
-            this.Controls.Add(this.VentaProductosDGV);
+            this.Controls.Add(this.VerProductosDGV);
             this.Controls.Add(this.groupBox2);
             this.Controls.Add(this.groupBox1);
             this.Controls.Add(this.iconButtonLimpiar);
@@ -456,11 +456,12 @@
             this.Margin = new System.Windows.Forms.Padding(4);
             this.Name = "frmVerDetalle";
             this.Text = "frmVerDetalle";
+            this.Load += new System.EventHandler(this.frmVerDetalle_Load);
             this.groupBox1.ResumeLayout(false);
             this.groupBox1.PerformLayout();
             this.groupBox2.ResumeLayout(false);
             this.groupBox2.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.VentaProductosDGV)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.VerProductosDGV)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -481,14 +482,14 @@
         private System.Windows.Forms.Label labelFecha;
         private System.Windows.Forms.GroupBox groupBox2;
         private System.Windows.Forms.Label label4;
-        private System.Windows.Forms.TextBox textBox1;
+        private System.Windows.Forms.TextBox textBoxTelefono;
         private System.Windows.Forms.TextBox textBoxNombreCliente;
         private System.Windows.Forms.TextBox textBoxDNI;
         private System.Windows.Forms.Label label1;
-        private System.Windows.Forms.TextBox textBox2;
+        private System.Windows.Forms.TextBox textBoxCorreo;
         private System.Windows.Forms.Label label3;
         private System.Windows.Forms.Label label2;
-        private System.Windows.Forms.DataGridView VentaProductosDGV;
+        private System.Windows.Forms.DataGridView VerProductosDGV;
         private System.Windows.Forms.DataGridViewTextBoxColumn id_producto;
         private System.Windows.Forms.DataGridViewTextBoxColumn nombre;
         private System.Windows.Forms.DataGridViewTextBoxColumn id_talle;
@@ -498,7 +499,7 @@
         private System.Windows.Forms.DataGridViewTextBoxColumn subtotal;
         private System.Windows.Forms.DataGridViewButtonColumn btnEliminar;
         private System.Windows.Forms.Label label5;
-        private System.Windows.Forms.TextBox textBox3;
+        private System.Windows.Forms.TextBox textBoxMontoTotal;
         private FontAwesome.Sharp.IconButton iconButtonPDF;
     }
 }

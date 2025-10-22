@@ -12,6 +12,7 @@ namespace CapaEntidad
         public DateTime fecha { get; set; }
         public decimal importe_total { get; set; }
         public Clientes id_cliente { get; set; }
+        public int dni { get; set; }
         public Usuarios id_usuario { get; set; }
     } //Representacion de la tabla facturas, con sus respectivos atributos
 }
