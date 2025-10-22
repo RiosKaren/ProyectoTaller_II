@@ -28,14 +28,10 @@
         /// </summary>
         private void InitializeComponent()
         {
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle1 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle2 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle5 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle6 = new System.Windows.Forms.DataGridViewCellStyle();
             this.labelListaUsuarios = new System.Windows.Forms.Label();
             this.labelTitulo = new System.Windows.Forms.Label();
-            this.comboBoxBusqueda = new System.Windows.Forms.ComboBox();
-            this.iconButtonLimpiar = new FontAwesome.Sharp.IconButton();
-            this.iconButtonBuscar = new FontAwesome.Sharp.IconButton();
-            this.textBoxBusqueda = new System.Windows.Forms.TextBox();
             this.groupBox1 = new System.Windows.Forms.GroupBox();
             this.textBoxVendedor = new System.Windows.Forms.TextBox();
             this.textBoxFecha = new System.Windows.Forms.TextBox();
@@ -51,6 +47,10 @@
             this.label3 = new System.Windows.Forms.Label();
             this.label2 = new System.Windows.Forms.Label();
             this.VerProductosDGV = new System.Windows.Forms.DataGridView();
+            this.label5 = new System.Windows.Forms.Label();
+            this.textBoxMontoTotal = new System.Windows.Forms.TextBox();
+            this.iconButtonPDF = new FontAwesome.Sharp.IconButton();
+            this.textBoxNroFactura = new System.Windows.Forms.TextBox();
             this.id_producto = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.nombre = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.id_talle = new System.Windows.Forms.DataGridViewTextBoxColumn();
@@ -58,10 +58,7 @@
             this.precio_unitario = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.cantidad = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.subtotal = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.btnEliminar = new System.Windows.Forms.DataGridViewButtonColumn();
-            this.label5 = new System.Windows.Forms.Label();
-            this.textBoxMontoTotal = new System.Windows.Forms.TextBox();
-            this.iconButtonPDF = new FontAwesome.Sharp.IconButton();
+            this.iconButtonDevolucion = new FontAwesome.Sharp.IconButton();
             this.groupBox1.SuspendLayout();
             this.groupBox2.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.VerProductosDGV)).BeginInit();
@@ -74,7 +71,7 @@
             this.labelListaUsuarios.Location = new System.Drawing.Point(13, 9);
             this.labelListaUsuarios.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.labelListaUsuarios.Name = "labelListaUsuarios";
-            this.labelListaUsuarios.Size = new System.Drawing.Size(978, 663);
+            this.labelListaUsuarios.Size = new System.Drawing.Size(882, 671);
             this.labelListaUsuarios.TabIndex = 27;
             this.labelListaUsuarios.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
             // 
@@ -83,69 +80,11 @@
             this.labelTitulo.AutoSize = true;
             this.labelTitulo.BackColor = System.Drawing.Color.White;
             this.labelTitulo.Font = new System.Drawing.Font("Microsoft Sans Serif", 15F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.labelTitulo.Location = new System.Drawing.Point(72, 40);
+            this.labelTitulo.Location = new System.Drawing.Point(62, 40);
             this.labelTitulo.Name = "labelTitulo";
-            this.labelTitulo.Size = new System.Drawing.Size(114, 29);
+            this.labelTitulo.Size = new System.Drawing.Size(139, 29);
             this.labelTitulo.TabIndex = 28;
-            this.labelTitulo.Text = "VENTAS";
-            // 
-            // comboBoxBusqueda
-            // 
-            this.comboBoxBusqueda.BackColor = System.Drawing.Color.White;
-            this.comboBoxBusqueda.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.comboBoxBusqueda.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
-            this.comboBoxBusqueda.FormattingEnabled = true;
-            this.comboBoxBusqueda.Location = new System.Drawing.Point(448, 45);
-            this.comboBoxBusqueda.Margin = new System.Windows.Forms.Padding(4);
-            this.comboBoxBusqueda.Name = "comboBoxBusqueda";
-            this.comboBoxBusqueda.Size = new System.Drawing.Size(165, 24);
-            this.comboBoxBusqueda.TabIndex = 76;
-            // 
-            // iconButtonLimpiar
-            // 
-            this.iconButtonLimpiar.BackColor = System.Drawing.Color.White;
-            this.iconButtonLimpiar.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.iconButtonLimpiar.FlatAppearance.BorderColor = System.Drawing.Color.Black;
-            this.iconButtonLimpiar.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.iconButtonLimpiar.ForeColor = System.Drawing.Color.White;
-            this.iconButtonLimpiar.IconChar = FontAwesome.Sharp.IconChar.Eraser;
-            this.iconButtonLimpiar.IconColor = System.Drawing.Color.Black;
-            this.iconButtonLimpiar.IconFont = FontAwesome.Sharp.IconFont.Auto;
-            this.iconButtonLimpiar.IconSize = 18;
-            this.iconButtonLimpiar.Location = new System.Drawing.Point(917, 47);
-            this.iconButtonLimpiar.Margin = new System.Windows.Forms.Padding(4);
-            this.iconButtonLimpiar.Name = "iconButtonLimpiar";
-            this.iconButtonLimpiar.Size = new System.Drawing.Size(45, 22);
-            this.iconButtonLimpiar.TabIndex = 80;
-            this.iconButtonLimpiar.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
-            this.iconButtonLimpiar.UseVisualStyleBackColor = false;
-            // 
-            // iconButtonBuscar
-            // 
-            this.iconButtonBuscar.BackColor = System.Drawing.Color.White;
-            this.iconButtonBuscar.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.iconButtonBuscar.FlatAppearance.BorderColor = System.Drawing.Color.Black;
-            this.iconButtonBuscar.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.iconButtonBuscar.ForeColor = System.Drawing.Color.White;
-            this.iconButtonBuscar.IconChar = FontAwesome.Sharp.IconChar.MagnifyingGlass;
-            this.iconButtonBuscar.IconColor = System.Drawing.Color.Black;
-            this.iconButtonBuscar.IconFont = FontAwesome.Sharp.IconFont.Auto;
-            this.iconButtonBuscar.IconSize = 16;
-            this.iconButtonBuscar.Location = new System.Drawing.Point(864, 47);
-            this.iconButtonBuscar.Margin = new System.Windows.Forms.Padding(4);
-            this.iconButtonBuscar.Name = "iconButtonBuscar";
-            this.iconButtonBuscar.Size = new System.Drawing.Size(45, 22);
-            this.iconButtonBuscar.TabIndex = 81;
-            this.iconButtonBuscar.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
-            this.iconButtonBuscar.UseVisualStyleBackColor = false;
-            // 
-            // textBoxBusqueda
-            // 
-            this.textBoxBusqueda.Location = new System.Drawing.Point(645, 47);
-            this.textBoxBusqueda.Margin = new System.Windows.Forms.Padding(4);
-            this.textBoxBusqueda.Name = "textBoxBusqueda";
-            this.textBoxBusqueda.Size = new System.Drawing.Size(209, 22);
-            this.textBoxBusqueda.TabIndex = 79;
+            this.labelTitulo.Text = "Factura Nº:";
             // 
             // groupBox1
             // 
@@ -156,14 +95,14 @@
             this.groupBox1.Controls.Add(this.labelFecha);
             this.groupBox1.Location = new System.Drawing.Point(67, 87);
             this.groupBox1.Name = "groupBox1";
-            this.groupBox1.Size = new System.Drawing.Size(499, 88);
+            this.groupBox1.Size = new System.Drawing.Size(813, 88);
             this.groupBox1.TabIndex = 82;
             this.groupBox1.TabStop = false;
             this.groupBox1.Text = "Información Venta";
             // 
             // textBoxVendedor
             // 
-            this.textBoxVendedor.Location = new System.Drawing.Point(251, 40);
+            this.textBoxVendedor.Location = new System.Drawing.Point(473, 38);
             this.textBoxVendedor.Margin = new System.Windows.Forms.Padding(4);
             this.textBoxVendedor.Name = "textBoxVendedor";
             this.textBoxVendedor.ReadOnly = true;
@@ -182,7 +121,7 @@
             // labelVendedor
             // 
             this.labelVendedor.AutoSize = true;
-            this.labelVendedor.Location = new System.Drawing.Point(250, 18);
+            this.labelVendedor.Location = new System.Drawing.Point(472, 16);
             this.labelVendedor.Name = "labelVendedor";
             this.labelVendedor.Size = new System.Drawing.Size(70, 16);
             this.labelVendedor.TabIndex = 29;
@@ -218,7 +157,7 @@
             // label4
             // 
             this.label4.AutoSize = true;
-            this.label4.Location = new System.Drawing.Point(627, 22);
+            this.label4.Location = new System.Drawing.Point(654, 22);
             this.label4.Name = "label4";
             this.label4.Size = new System.Drawing.Size(64, 16);
             this.label4.TabIndex = 90;
@@ -226,7 +165,7 @@
             // 
             // textBoxTelefono
             // 
-            this.textBoxTelefono.Location = new System.Drawing.Point(630, 42);
+            this.textBoxTelefono.Location = new System.Drawing.Point(657, 42);
             this.textBoxTelefono.Margin = new System.Windows.Forms.Padding(4);
             this.textBoxTelefono.Name = "textBoxTelefono";
             this.textBoxTelefono.ReadOnly = true;
@@ -235,11 +174,11 @@
             // 
             // textBoxNombreCliente
             // 
-            this.textBoxNombreCliente.Location = new System.Drawing.Point(249, 44);
+            this.textBoxNombreCliente.Location = new System.Drawing.Point(199, 44);
             this.textBoxNombreCliente.Margin = new System.Windows.Forms.Padding(4);
             this.textBoxNombreCliente.Name = "textBoxNombreCliente";
             this.textBoxNombreCliente.ReadOnly = true;
-            this.textBoxNombreCliente.Size = new System.Drawing.Size(192, 22);
+            this.textBoxNombreCliente.Size = new System.Drawing.Size(213, 22);
             this.textBoxNombreCliente.TabIndex = 89;
             // 
             // textBoxDNI
@@ -248,7 +187,7 @@
             this.textBoxDNI.Margin = new System.Windows.Forms.Padding(4);
             this.textBoxDNI.Name = "textBoxDNI";
             this.textBoxDNI.ReadOnly = true;
-            this.textBoxDNI.Size = new System.Drawing.Size(192, 22);
+            this.textBoxDNI.Size = new System.Drawing.Size(148, 22);
             this.textBoxDNI.TabIndex = 87;
             // 
             // label1
@@ -262,17 +201,17 @@
             // 
             // textBoxCorreo
             // 
-            this.textBoxCorreo.Location = new System.Drawing.Point(473, 42);
+            this.textBoxCorreo.Location = new System.Drawing.Point(436, 42);
             this.textBoxCorreo.Margin = new System.Windows.Forms.Padding(4);
             this.textBoxCorreo.Name = "textBoxCorreo";
             this.textBoxCorreo.ReadOnly = true;
-            this.textBoxCorreo.Size = new System.Drawing.Size(139, 22);
+            this.textBoxCorreo.Size = new System.Drawing.Size(188, 22);
             this.textBoxCorreo.TabIndex = 86;
             // 
             // label3
             // 
             this.label3.AutoSize = true;
-            this.label3.Location = new System.Drawing.Point(248, 22);
+            this.label3.Location = new System.Drawing.Point(198, 22);
             this.label3.Name = "label3";
             this.label3.Size = new System.Drawing.Size(51, 16);
             this.label3.TabIndex = 88;
@@ -281,7 +220,7 @@
             // label2
             // 
             this.label2.AutoSize = true;
-            this.label2.Location = new System.Drawing.Point(470, 22);
+            this.label2.Location = new System.Drawing.Point(433, 22);
             this.label2.Name = "label2";
             this.label2.Size = new System.Drawing.Size(51, 16);
             this.label2.TabIndex = 0;
@@ -290,15 +229,15 @@
             // VerProductosDGV
             // 
             this.VerProductosDGV.AllowUserToAddRows = false;
-            dataGridViewCellStyle1.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
-            dataGridViewCellStyle1.BackColor = System.Drawing.SystemColors.Control;
-            dataGridViewCellStyle1.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            dataGridViewCellStyle1.ForeColor = System.Drawing.SystemColors.WindowText;
-            dataGridViewCellStyle1.Padding = new System.Windows.Forms.Padding(2);
-            dataGridViewCellStyle1.SelectionBackColor = System.Drawing.SystemColors.Highlight;
-            dataGridViewCellStyle1.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
-            dataGridViewCellStyle1.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
-            this.VerProductosDGV.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle1;
+            dataGridViewCellStyle5.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle5.BackColor = System.Drawing.SystemColors.Control;
+            dataGridViewCellStyle5.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle5.ForeColor = System.Drawing.SystemColors.WindowText;
+            dataGridViewCellStyle5.Padding = new System.Windows.Forms.Padding(2);
+            dataGridViewCellStyle5.SelectionBackColor = System.Drawing.SystemColors.Highlight;
+            dataGridViewCellStyle5.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
+            dataGridViewCellStyle5.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
+            this.VerProductosDGV.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle5;
             this.VerProductosDGV.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.VerProductosDGV.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
             this.id_producto,
@@ -307,25 +246,73 @@
             this.talla,
             this.precio_unitario,
             this.cantidad,
-            this.subtotal,
-            this.btnEliminar});
+            this.subtotal});
             this.VerProductosDGV.Location = new System.Drawing.Point(67, 313);
             this.VerProductosDGV.Margin = new System.Windows.Forms.Padding(5);
             this.VerProductosDGV.MultiSelect = false;
             this.VerProductosDGV.Name = "VerProductosDGV";
             this.VerProductosDGV.ReadOnly = true;
-            dataGridViewCellStyle2.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
-            dataGridViewCellStyle2.BackColor = System.Drawing.SystemColors.Control;
-            dataGridViewCellStyle2.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            dataGridViewCellStyle2.ForeColor = System.Drawing.SystemColors.WindowText;
-            dataGridViewCellStyle2.SelectionBackColor = System.Drawing.Color.White;
-            dataGridViewCellStyle2.SelectionForeColor = System.Drawing.Color.Black;
-            dataGridViewCellStyle2.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
-            this.VerProductosDGV.RowHeadersDefaultCellStyle = dataGridViewCellStyle2;
+            dataGridViewCellStyle6.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle6.BackColor = System.Drawing.SystemColors.Control;
+            dataGridViewCellStyle6.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle6.ForeColor = System.Drawing.SystemColors.WindowText;
+            dataGridViewCellStyle6.SelectionBackColor = System.Drawing.Color.White;
+            dataGridViewCellStyle6.SelectionForeColor = System.Drawing.Color.Black;
+            dataGridViewCellStyle6.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
+            this.VerProductosDGV.RowHeadersDefaultCellStyle = dataGridViewCellStyle6;
             this.VerProductosDGV.RowHeadersWidth = 51;
             this.VerProductosDGV.RowTemplate.Height = 28;
             this.VerProductosDGV.Size = new System.Drawing.Size(813, 285);
             this.VerProductosDGV.TabIndex = 84;
+            // 
+            // label5
+            // 
+            this.label5.AutoSize = true;
+            this.label5.BackColor = System.Drawing.Color.White;
+            this.label5.Location = new System.Drawing.Point(64, 626);
+            this.label5.Name = "label5";
+            this.label5.Size = new System.Drawing.Size(75, 16);
+            this.label5.TabIndex = 85;
+            this.label5.Text = "Monto total:";
+            // 
+            // textBoxMontoTotal
+            // 
+            this.textBoxMontoTotal.Location = new System.Drawing.Point(146, 623);
+            this.textBoxMontoTotal.Margin = new System.Windows.Forms.Padding(4);
+            this.textBoxMontoTotal.Name = "textBoxMontoTotal";
+            this.textBoxMontoTotal.ReadOnly = true;
+            this.textBoxMontoTotal.Size = new System.Drawing.Size(115, 22);
+            this.textBoxMontoTotal.TabIndex = 88;
+            this.textBoxMontoTotal.Text = "0";
+            // 
+            // iconButtonPDF
+            // 
+            this.iconButtonPDF.BackColor = System.Drawing.Color.Green;
+            this.iconButtonPDF.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.iconButtonPDF.FlatAppearance.BorderColor = System.Drawing.Color.Black;
+            this.iconButtonPDF.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.iconButtonPDF.ForeColor = System.Drawing.Color.White;
+            this.iconButtonPDF.IconChar = FontAwesome.Sharp.IconChar.FileDownload;
+            this.iconButtonPDF.IconColor = System.Drawing.Color.White;
+            this.iconButtonPDF.IconFont = FontAwesome.Sharp.IconFont.Auto;
+            this.iconButtonPDF.IconSize = 22;
+            this.iconButtonPDF.Location = new System.Drawing.Point(736, 609);
+            this.iconButtonPDF.Margin = new System.Windows.Forms.Padding(4);
+            this.iconButtonPDF.Name = "iconButtonPDF";
+            this.iconButtonPDF.Size = new System.Drawing.Size(144, 51);
+            this.iconButtonPDF.TabIndex = 89;
+            this.iconButtonPDF.Text = "Generar Comprobante";
+            this.iconButtonPDF.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
+            this.iconButtonPDF.UseVisualStyleBackColor = false;
+            // 
+            // textBoxNroFactura
+            // 
+            this.textBoxNroFactura.Location = new System.Drawing.Point(203, 47);
+            this.textBoxNroFactura.Margin = new System.Windows.Forms.Padding(4);
+            this.textBoxNroFactura.Name = "textBoxNroFactura";
+            this.textBoxNroFactura.ReadOnly = true;
+            this.textBoxNroFactura.Size = new System.Drawing.Size(148, 22);
+            this.textBoxNroFactura.TabIndex = 90;
             // 
             // id_producto
             // 
@@ -385,76 +372,46 @@
             this.subtotal.ReadOnly = true;
             this.subtotal.Width = 125;
             // 
-            // btnEliminar
+            // iconButtonDevolucion
             // 
-            this.btnEliminar.HeaderText = "";
-            this.btnEliminar.MinimumWidth = 6;
-            this.btnEliminar.Name = "btnEliminar";
-            this.btnEliminar.ReadOnly = true;
-            this.btnEliminar.Resizable = System.Windows.Forms.DataGridViewTriState.True;
-            this.btnEliminar.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.Automatic;
-            this.btnEliminar.Width = 30;
+            this.iconButtonDevolucion.BackColor = System.Drawing.Color.Crimson;
+            this.iconButtonDevolucion.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.iconButtonDevolucion.FlatAppearance.BorderColor = System.Drawing.Color.Black;
+            this.iconButtonDevolucion.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.iconButtonDevolucion.ForeColor = System.Drawing.Color.Transparent;
+            this.iconButtonDevolucion.IconChar = FontAwesome.Sharp.IconChar.HandHoldingUsd;
+            this.iconButtonDevolucion.IconColor = System.Drawing.Color.White;
+            this.iconButtonDevolucion.IconFont = FontAwesome.Sharp.IconFont.Auto;
+            this.iconButtonDevolucion.IconSize = 22;
+            this.iconButtonDevolucion.Location = new System.Drawing.Point(584, 609);
+            this.iconButtonDevolucion.Margin = new System.Windows.Forms.Padding(4);
+            this.iconButtonDevolucion.Name = "iconButtonDevolucion";
+            this.iconButtonDevolucion.Size = new System.Drawing.Size(144, 51);
+            this.iconButtonDevolucion.TabIndex = 91;
+            this.iconButtonDevolucion.Text = "Devolución";
+            this.iconButtonDevolucion.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
+            this.iconButtonDevolucion.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
+            this.iconButtonDevolucion.UseVisualStyleBackColor = false;
+            this.iconButtonDevolucion.Click += new System.EventHandler(this.iconButtonDevolucion_Click);
             // 
-            // label5
-            // 
-            this.label5.AutoSize = true;
-            this.label5.BackColor = System.Drawing.Color.White;
-            this.label5.Location = new System.Drawing.Point(64, 626);
-            this.label5.Name = "label5";
-            this.label5.Size = new System.Drawing.Size(75, 16);
-            this.label5.TabIndex = 85;
-            this.label5.Text = "Monto total:";
-            // 
-            // textBoxMontoTotal
-            // 
-            this.textBoxMontoTotal.Location = new System.Drawing.Point(146, 623);
-            this.textBoxMontoTotal.Margin = new System.Windows.Forms.Padding(4);
-            this.textBoxMontoTotal.Name = "textBoxMontoTotal";
-            this.textBoxMontoTotal.ReadOnly = true;
-            this.textBoxMontoTotal.Size = new System.Drawing.Size(115, 22);
-            this.textBoxMontoTotal.TabIndex = 88;
-            this.textBoxMontoTotal.Text = "0";
-            // 
-            // iconButtonPDF
-            // 
-            this.iconButtonPDF.BackColor = System.Drawing.Color.White;
-            this.iconButtonPDF.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.iconButtonPDF.FlatAppearance.BorderColor = System.Drawing.Color.Black;
-            this.iconButtonPDF.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.iconButtonPDF.ForeColor = System.Drawing.Color.Black;
-            this.iconButtonPDF.IconChar = FontAwesome.Sharp.IconChar.FileDownload;
-            this.iconButtonPDF.IconColor = System.Drawing.Color.Green;
-            this.iconButtonPDF.IconFont = FontAwesome.Sharp.IconFont.Auto;
-            this.iconButtonPDF.IconSize = 22;
-            this.iconButtonPDF.Location = new System.Drawing.Point(758, 623);
-            this.iconButtonPDF.Margin = new System.Windows.Forms.Padding(4);
-            this.iconButtonPDF.Name = "iconButtonPDF";
-            this.iconButtonPDF.Size = new System.Drawing.Size(176, 28);
-            this.iconButtonPDF.TabIndex = 89;
-            this.iconButtonPDF.Text = "Generar Comprobante";
-            this.iconButtonPDF.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
-            this.iconButtonPDF.UseVisualStyleBackColor = false;
-            // 
-            // frmVerDetalle
+            // veDetalleVenta
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.DarkRed;
-            this.ClientSize = new System.Drawing.Size(1006, 689);
+            this.ClientSize = new System.Drawing.Size(917, 698);
+            this.Controls.Add(this.iconButtonDevolucion);
+            this.Controls.Add(this.textBoxNroFactura);
             this.Controls.Add(this.iconButtonPDF);
             this.Controls.Add(this.textBoxMontoTotal);
             this.Controls.Add(this.label5);
             this.Controls.Add(this.VerProductosDGV);
             this.Controls.Add(this.groupBox2);
             this.Controls.Add(this.groupBox1);
-            this.Controls.Add(this.iconButtonLimpiar);
-            this.Controls.Add(this.iconButtonBuscar);
-            this.Controls.Add(this.textBoxBusqueda);
-            this.Controls.Add(this.comboBoxBusqueda);
             this.Controls.Add(this.labelTitulo);
             this.Controls.Add(this.labelListaUsuarios);
             this.Margin = new System.Windows.Forms.Padding(4);
-            this.Name = "frmVerDetalle";
+            this.Name = "veDetalleVenta";
             this.Text = "frmVerDetalle";
             this.Load += new System.EventHandler(this.frmVerDetalle_Load);
             this.groupBox1.ResumeLayout(false);
@@ -471,10 +428,6 @@
 
         private System.Windows.Forms.Label labelListaUsuarios;
         private System.Windows.Forms.Label labelTitulo;
-        private System.Windows.Forms.ComboBox comboBoxBusqueda;
-        private FontAwesome.Sharp.IconButton iconButtonLimpiar;
-        private FontAwesome.Sharp.IconButton iconButtonBuscar;
-        private System.Windows.Forms.TextBox textBoxBusqueda;
         private System.Windows.Forms.GroupBox groupBox1;
         private System.Windows.Forms.TextBox textBoxVendedor;
         private System.Windows.Forms.TextBox textBoxFecha;
@@ -490,6 +443,10 @@
         private System.Windows.Forms.Label label3;
         private System.Windows.Forms.Label label2;
         private System.Windows.Forms.DataGridView VerProductosDGV;
+        private System.Windows.Forms.Label label5;
+        private System.Windows.Forms.TextBox textBoxMontoTotal;
+        private FontAwesome.Sharp.IconButton iconButtonPDF;
+        private System.Windows.Forms.TextBox textBoxNroFactura;
         private System.Windows.Forms.DataGridViewTextBoxColumn id_producto;
         private System.Windows.Forms.DataGridViewTextBoxColumn nombre;
         private System.Windows.Forms.DataGridViewTextBoxColumn id_talle;
@@ -497,9 +454,6 @@
         private System.Windows.Forms.DataGridViewTextBoxColumn precio_unitario;
         private System.Windows.Forms.DataGridViewTextBoxColumn cantidad;
         private System.Windows.Forms.DataGridViewTextBoxColumn subtotal;
-        private System.Windows.Forms.DataGridViewButtonColumn btnEliminar;
-        private System.Windows.Forms.Label label5;
-        private System.Windows.Forms.TextBox textBoxMontoTotal;
-        private FontAwesome.Sharp.IconButton iconButtonPDF;
+        private FontAwesome.Sharp.IconButton iconButtonDevolucion;
     }
 }

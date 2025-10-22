@@ -38,6 +38,7 @@
             this.labelListaProductos = new System.Windows.Forms.Label();
             this.VentasDGV = new System.Windows.Forms.DataGridView();
             this.id_factura = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.nro_factura = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.fecha = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.id_cliente = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.dni = new System.Windows.Forms.DataGridViewTextBoxColumn();
@@ -143,6 +144,7 @@
             this.VentasDGV.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.VentasDGV.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
             this.id_factura,
+            this.nro_factura,
             this.fecha,
             this.id_cliente,
             this.dni,
@@ -165,14 +167,24 @@
             this.VentasDGV.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
             this.VentasDGV.Size = new System.Drawing.Size(1171, 511);
             this.VentasDGV.TabIndex = 81;
+            this.VentasDGV.CellDoubleClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.VentasDGV_CellDoubleClick);
             // 
             // id_factura
             // 
-            this.id_factura.HeaderText = "Nº Factura";
+            this.id_factura.HeaderText = "ID factura";
             this.id_factura.MinimumWidth = 6;
             this.id_factura.Name = "id_factura";
             this.id_factura.ReadOnly = true;
-            this.id_factura.Width = 200;
+            this.id_factura.Visible = false;
+            this.id_factura.Width = 125;
+            // 
+            // nro_factura
+            // 
+            this.nro_factura.HeaderText = "Nº Factura";
+            this.nro_factura.MinimumWidth = 6;
+            this.nro_factura.Name = "nro_factura";
+            this.nro_factura.ReadOnly = true;
+            this.nro_factura.Width = 200;
             // 
             // fecha
             // 
@@ -180,7 +192,7 @@
             this.fecha.MinimumWidth = 6;
             this.fecha.Name = "fecha";
             this.fecha.ReadOnly = true;
-            this.fecha.Width = 125;
+            this.fecha.Width = 230;
             // 
             // id_cliente
             // 
@@ -239,6 +251,7 @@
         private System.Windows.Forms.Label labelListaProductos;
         private System.Windows.Forms.DataGridView VentasDGV;
         private System.Windows.Forms.DataGridViewTextBoxColumn id_factura;
+        private System.Windows.Forms.DataGridViewTextBoxColumn nro_factura;
         private System.Windows.Forms.DataGridViewTextBoxColumn fecha;
         private System.Windows.Forms.DataGridViewTextBoxColumn id_cliente;
         private System.Windows.Forms.DataGridViewTextBoxColumn dni;

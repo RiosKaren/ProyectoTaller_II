@@ -21,10 +21,11 @@ namespace CapaDatos
             return dt;
         }
 
-        public bool RegistrarVenta(int idCliente, int idUsuario, DataTable detalles,
-                                   out int idFactura, out string mensaje)
+        public bool RegistrarVenta(int puntoVenta, int idCliente, int idUsuario, DataTable detalles,
+                                   out int idFactura, out string nroFactura, out string mensaje)
         {
             idFactura = 0;
+            nroFactura = string.Empty;
             mensaje = string.Empty;
 
             try
@@ -34,6 +35,7 @@ namespace CapaDatos
                 {
                     cmd.CommandType = CommandType.StoredProcedure;
 
+                    cmd.Parameters.AddWithValue("@punto_venta", puntoVenta);
                     cmd.Parameters.AddWithValue("@id_cliente", idCliente);
                     cmd.Parameters.AddWithValue("@id_usuario", idUsuario);
 
@@ -42,10 +44,12 @@ namespace CapaDatos
                     pDetalles.TypeName = "dbo.Edetalles_factura";
 
                     var pId = new SqlParameter("@IdFacturaResultado", SqlDbType.Int) { Direction = ParameterDirection.Output };
+                    var pNro = new SqlParameter("@NroFactura", SqlDbType.VarChar, 15) { Direction = ParameterDirection.Output };
                     var pRes = new SqlParameter("@Resultado", SqlDbType.Bit) { Direction = ParameterDirection.Output };
                     var pMsg = new SqlParameter("@Mensaje", SqlDbType.VarChar, 500) { Direction = ParameterDirection.Output };
 
                     cmd.Parameters.Add(pId);
+                    cmd.Parameters.Add(pNro);
                     cmd.Parameters.Add(pRes);
                     cmd.Parameters.Add(pMsg);
 
@@ -53,6 +57,7 @@ namespace CapaDatos
                     cmd.ExecuteNonQuery();
 
                     idFactura = (int)(pId.Value ?? 0);
+                    nroFactura = pNro.Value?.ToString() ?? "";
                     var ok = pRes.Value != DBNull.Value && (bool)pRes.Value;
                     mensaje = pMsg.Value?.ToString() ?? "";
 
@@ -73,6 +78,7 @@ namespace CapaDatos
             using (var cn = new SqlConnection(Conexion.cadena))
             using (var cmd = new SqlCommand(@"
                 SELECT f.id_factura,
+                       f.nro_factura,
                        f.id_cliente,
                        c.dni,
                        f.importe_total,
@@ -90,6 +96,7 @@ namespace CapaDatos
                         lista.Add(new Factura
                         {
                             id_factura = Convert.ToInt32(dr["id_factura"]),
+                            nro_factura = dr["nro_factura"].ToString(),
                             fecha = Convert.ToDateTime(dr["fecha"]),
                             id_cliente = new Clientes               // construir el objeto
                             {
@@ -105,6 +112,90 @@ namespace CapaDatos
             }
             return lista;
         }
+
+        public DataSet ObtenerVenta(int idFactura)
+        {
+            using (var cn = new SqlConnection(Conexion.cadena))
+            using (var cmd = new SqlCommand("SP_OBTENER_VENTA", cn))
+            using (var da = new SqlDataAdapter(cmd))
+            {
+                cmd.CommandType = CommandType.StoredProcedure;
+                cmd.Parameters.AddWithValue("@id_factura", idFactura);
+
+                var ds = new DataSet();
+                cn.Open();
+                da.Fill(ds);
+
+                ds.Tables[0].TableName = "Cabecera";
+                ds.Tables[1].TableName = "Detalle";
+                return ds;
+            }
+        }
+
+        public static DataTable NuevaTablaDevolucion()
+        {
+            var dt = new DataTable();
+            dt.Columns.Add("id_talle", typeof(int));
+            dt.Columns.Add("cantidad", typeof(int));
+            return dt;
+        }
+
+        public bool RegistrarDevolucion(
+            int puntoVenta,
+            int idFacturaOrigen,
+            int idUsuario,
+            DataTable detallesDevolucion,
+            out int idFacturaNC,
+            out string nroFacturaNC,
+            out string mensaje)
+        {
+            idFacturaNC = 0;
+            nroFacturaNC = string.Empty;
+            mensaje = string.Empty;
+
+            try
+            {
+                using (var cn = new SqlConnection(Conexion.cadena))
+                using (var cmd = new SqlCommand("SP_REGISTRARDEVOLUCION", cn))
+                {
+                    cmd.CommandType = CommandType.StoredProcedure;
+
+                    cmd.Parameters.AddWithValue("@punto_venta", puntoVenta);
+                    cmd.Parameters.AddWithValue("@id_factura_origen", idFacturaOrigen);
+                    cmd.Parameters.AddWithValue("@id_usuario", idUsuario);
+
+                    var pDetalles = cmd.Parameters.AddWithValue("@detalles", detallesDevolucion);
+                    pDetalles.SqlDbType = SqlDbType.Structured;
+                    pDetalles.TypeName = "dbo.Edetalles_devolucion";
+
+                    var pId = new SqlParameter("@IdFacturaNC", SqlDbType.Int) { Direction = ParameterDirection.Output };
+                    var pNro = new SqlParameter("@NroFacturaNC", SqlDbType.VarChar, 15) { Direction = ParameterDirection.Output };
+                    var pRes = new SqlParameter("@Resultado", SqlDbType.Bit) { Direction = ParameterDirection.Output };
+                    var pMsg = new SqlParameter("@Mensaje", SqlDbType.VarChar, 500) { Direction = ParameterDirection.Output };
+
+                    cmd.Parameters.Add(pId);
+                    cmd.Parameters.Add(pNro);
+                    cmd.Parameters.Add(pRes);
+                    cmd.Parameters.Add(pMsg);
+
+                    cn.Open();
+                    cmd.ExecuteNonQuery();
+
+                    idFacturaNC = (int)(pId.Value ?? 0);
+                    nroFacturaNC = pNro.Value?.ToString() ?? "";
+                    mensaje = pMsg.Value?.ToString() ?? "";
+
+                    return (pRes.Value != DBNull.Value) && (bool)pRes.Value;
+                }
+            }
+            catch (Exception ex)
+            {
+                mensaje = ex.Message;
+                return false;
+            }
+        }
+
+
 
     }
 }

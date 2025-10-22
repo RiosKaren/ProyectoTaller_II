@@ -402,16 +402,18 @@ namespace CapaPresentacion
             // Llamada a negocio
             var cn = new CapaNegocio.CN_Venta();
             bool ok = cn.RegistrarVenta(
+                puntoVenta: 1, 
                 idCliente: idCliente,
                 idUsuario: _Usuario.id_usuario,   // <- tu objeto ya está en el form
                 detalles: dt,
                 idFactura: out int idFactura,
+                nroFactura: out string nroFactura,
                 mensaje: out string msg
             );
 
             if (ok)
             {
-                MessageBox.Show($"Venta registrada. Factura #{idFactura}", "OK",
+                MessageBox.Show($"Venta registrada. Factura #{nroFactura}", "OK",
                                 MessageBoxButtons.OK, MessageBoxIcon.Information);
 
                 // Reset UI
@@ -420,6 +422,9 @@ namespace CapaPresentacion
                 comboBoxPagaCon.Enabled = false;
                 comboBoxCuotas.Visible = false;
                 labelCuotas.Visible = false;
+                textBoxDNICliente.Text = string.Empty;
+                textBoxNombreCliente.Text = string.Empty;
+                textBoxIDCliente.Text = "0";
             }
             else
             {

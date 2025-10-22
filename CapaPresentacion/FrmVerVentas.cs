@@ -17,23 +17,26 @@ namespace CapaPresentacion
 {
     public partial class FrmVerVentas : Form
     {
-        public FrmVerVentas()
+        private Usuarios _Usuario;
+
+        public FrmVerVentas(Usuarios usuario)
         {
             InitializeComponent();
+            _Usuario = usuario;
         }
 
         private void FrmVerVentas_Load(object sender, EventArgs e)
         {
             // llenar combo de búsqueda
             comboBoxBusqueda.Items.Clear();
-            comboBoxBusqueda.Items.Add(new OpcionCombo { Valor = "id_factura", Texto = "N° Factura" });
+            comboBoxBusqueda.Items.Add(new OpcionCombo { Valor = "nro_factura", Texto = "N° Factura" }); 
             comboBoxBusqueda.Items.Add(new OpcionCombo { Valor = "dni", Texto = "DNI Cliente" });
             comboBoxBusqueda.DisplayMember = "Texto";
             comboBoxBusqueda.ValueMember = "Valor";
-            comboBoxBusqueda.SelectedIndex = 0; 
-            
+            comboBoxBusqueda.SelectedIndex = 0;
+
             // limpiar y cargar ventas
-            VentasDGV.Rows.Clear();
+            CargarVentasGrid();
 
             List<Factura> listaVentas = new CN_Venta().ListarVentas();
 
@@ -42,6 +45,7 @@ namespace CapaPresentacion
                 VentasDGV.Rows.Add(new object[]
                 {
                     f.id_factura,
+                    f.nro_factura,
                     f.fecha.ToString("dd/MM/yyyy HH:mm:ss"),
                     f.id_cliente,
                     f.id_cliente.dni,
@@ -116,8 +120,44 @@ namespace CapaPresentacion
             }
         }
 
+        private void VentasDGV_CellDoubleClick(object sender, DataGridViewCellEventArgs e)
+        {
+            if (e.RowIndex < 0) return;
 
+            int idFactura = Convert.ToInt32(VentasDGV.Rows[e.RowIndex].Cells["id_factura"].Value);
+            int idUsuarioActual = _Usuario?.id_usuario ?? 0;
 
+            using (var f = new veDetalleVenta(idUsuarioActual))
+            {
+                f.Cargar(idFactura);
+                if (f.ShowDialog(this) == DialogResult.OK)
+                {
+                    CargarVentasGrid();  
+     
+                }
+            }
+        }
+
+        private void CargarVentasGrid()
+        {
+            VentasDGV.Rows.Clear();
+
+            List<Factura> listaVentas = new CN_Venta().ListarVentas();
+            foreach (Factura f in listaVentas)
+            {
+                VentasDGV.Rows.Add(new object[]
+                {
+                    f.id_factura,
+                    f.nro_factura,
+                    f.fecha.ToString("dd/MM/yyyy HH:mm:ss"),
+                    f.id_cliente,          
+                    f.id_cliente.dni,      
+                    f.importe_total.ToString("0.00")
+                });
+            }
+
+            VentasDGV.ClearSelection();
+        }
 
     }
 }

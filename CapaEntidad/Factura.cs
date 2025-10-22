@@ -9,6 +9,8 @@ namespace CapaEntidad
     public class Factura
     {
         public int id_factura { get; set; }
+        public string nro_factura { get; set; }
+        public int punto_venta { get; set; }
         public DateTime fecha { get; set; }
         public decimal importe_total { get; set; }
         public Clientes id_cliente { get; set; }
