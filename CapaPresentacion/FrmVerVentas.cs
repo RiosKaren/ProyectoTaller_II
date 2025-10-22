@@ -38,21 +38,6 @@ namespace CapaPresentacion
             // limpiar y cargar ventas
             CargarVentasGrid();
 
-            List<Factura> listaVentas = new CN_Venta().ListarVentas();
-
-            foreach (Factura f in listaVentas)
-            {
-                VentasDGV.Rows.Add(new object[]
-                {
-                    f.id_factura,
-                    f.nro_factura,
-                    f.fecha.ToString("dd/MM/yyyy HH:mm:ss"),
-                    f.id_cliente,
-                    f.id_cliente.dni,
-                    f.importe_total.ToString("0.00")
-                });
-            }
-
             VentasDGV.ClearSelection();
         }
 
