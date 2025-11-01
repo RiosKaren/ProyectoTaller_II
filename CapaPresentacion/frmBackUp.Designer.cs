@@ -31,11 +31,11 @@
             this.LDetallesBackup = new System.Windows.Forms.Label();
             this.label1 = new System.Windows.Forms.Label();
             this.label2 = new System.Windows.Forms.Label();
-            this.CB_BDD = new System.Windows.Forms.ComboBox();
-            this.BConectar = new System.Windows.Forms.Button();
+            this.bCopiaDeSeguridad = new System.Windows.Forms.Button();
             this.folderBrowserDialog1 = new System.Windows.Forms.FolderBrowserDialog();
-            this.BSeleccionarRuta = new System.Windows.Forms.Button();
+            this.bElegirRuta = new System.Windows.Forms.Button();
             this.panel1 = new System.Windows.Forms.Panel();
+            this.tbRutaDeGuardado = new System.Windows.Forms.TextBox();
             this.panel1.SuspendLayout();
             this.SuspendLayout();
             // 
@@ -75,53 +75,52 @@
             this.label2.TabIndex = 3;
             this.label2.Text = "Ruta a guardar:";
             // 
-            // CB_BDD
+            // bCopiaDeSeguridad
             // 
-            this.CB_BDD.FormattingEnabled = true;
-            this.CB_BDD.Location = new System.Drawing.Point(164, 123);
-            this.CB_BDD.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
-            this.CB_BDD.Name = "CB_BDD";
-            this.CB_BDD.Size = new System.Drawing.Size(243, 24);
-            this.CB_BDD.TabIndex = 4;
-            // 
-            // BConectar
-            // 
-            this.BConectar.Location = new System.Drawing.Point(459, 123);
-            this.BConectar.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
-            this.BConectar.Name = "BConectar";
-            this.BConectar.Size = new System.Drawing.Size(100, 28);
-            this.BConectar.TabIndex = 5;
-            this.BConectar.Text = "Conectar";
-            this.BConectar.UseVisualStyleBackColor = true;
+            this.bCopiaDeSeguridad.Location = new System.Drawing.Point(459, 123);
+            this.bCopiaDeSeguridad.Margin = new System.Windows.Forms.Padding(4);
+            this.bCopiaDeSeguridad.Name = "bCopiaDeSeguridad";
+            this.bCopiaDeSeguridad.Size = new System.Drawing.Size(100, 28);
+            this.bCopiaDeSeguridad.TabIndex = 5;
+            this.bCopiaDeSeguridad.Text = "Guardar";
+            this.bCopiaDeSeguridad.UseVisualStyleBackColor = true;
+            this.bCopiaDeSeguridad.Click += new System.EventHandler(this.bCopiaDeSeguridad_Click);
             // 
             // folderBrowserDialog1
             // 
-            this.folderBrowserDialog1.HelpRequest += new System.EventHandler(this.folderBrowserDialog1_HelpRequest);
             // 
-            // BSeleccionarRuta
+            // bElegirRuta
             // 
-            this.BSeleccionarRuta.Location = new System.Drawing.Point(164, 170);
-            this.BSeleccionarRuta.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
-            this.BSeleccionarRuta.Name = "BSeleccionarRuta";
-            this.BSeleccionarRuta.Size = new System.Drawing.Size(244, 28);
-            this.BSeleccionarRuta.TabIndex = 6;
-            this.BSeleccionarRuta.Text = "Seleccionar Ruta";
-            this.BSeleccionarRuta.UseVisualStyleBackColor = true;
+            this.bElegirRuta.Location = new System.Drawing.Point(164, 170);
+            this.bElegirRuta.Margin = new System.Windows.Forms.Padding(4);
+            this.bElegirRuta.Name = "bElegirRuta";
+            this.bElegirRuta.Size = new System.Drawing.Size(244, 28);
+            this.bElegirRuta.TabIndex = 6;
+            this.bElegirRuta.Text = "Seleccionar Ruta";
+            this.bElegirRuta.UseVisualStyleBackColor = true;
+            this.bElegirRuta.Click += new System.EventHandler(this.bElegirRuta_Click);
             // 
             // panel1
             // 
             this.panel1.BackColor = System.Drawing.Color.DarkRed;
+            this.panel1.Controls.Add(this.tbRutaDeGuardado);
             this.panel1.Controls.Add(this.LDetallesBackup);
-            this.panel1.Controls.Add(this.BSeleccionarRuta);
+            this.panel1.Controls.Add(this.bElegirRuta);
             this.panel1.Controls.Add(this.label1);
-            this.panel1.Controls.Add(this.BConectar);
+            this.panel1.Controls.Add(this.bCopiaDeSeguridad);
             this.panel1.Controls.Add(this.label2);
-            this.panel1.Controls.Add(this.CB_BDD);
-            this.panel1.Location = new System.Drawing.Point(528, 289);
-            this.panel1.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.panel1.Location = new System.Drawing.Point(514, 231);
+            this.panel1.Margin = new System.Windows.Forms.Padding(4);
             this.panel1.Name = "panel1";
             this.panel1.Size = new System.Drawing.Size(589, 278);
             this.panel1.TabIndex = 7;
+            // 
+            // tbRutaDeGuardado
+            // 
+            this.tbRutaDeGuardado.Location = new System.Drawing.Point(164, 123);
+            this.tbRutaDeGuardado.Name = "tbRutaDeGuardado";
+            this.tbRutaDeGuardado.Size = new System.Drawing.Size(244, 22);
+            this.tbRutaDeGuardado.TabIndex = 7;
             // 
             // frmBackUp
             // 
@@ -130,7 +129,7 @@
             this.BackColor = System.Drawing.Color.DarkRed;
             this.ClientSize = new System.Drawing.Size(1579, 669);
             this.Controls.Add(this.panel1);
-            this.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.Margin = new System.Windows.Forms.Padding(4);
             this.Name = "frmBackUp";
             this.Text = "frmBackUp";
             this.panel1.ResumeLayout(false);
@@ -144,10 +143,10 @@
         private System.Windows.Forms.Label LDetallesBackup;
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.Label label2;
-        private System.Windows.Forms.ComboBox CB_BDD;
-        private System.Windows.Forms.Button BConectar;
+        private System.Windows.Forms.Button bCopiaDeSeguridad;
         private System.Windows.Forms.FolderBrowserDialog folderBrowserDialog1;
-        private System.Windows.Forms.Button BSeleccionarRuta;
+        private System.Windows.Forms.Button bElegirRuta;
         private System.Windows.Forms.Panel panel1;
+        private System.Windows.Forms.TextBox tbRutaDeGuardado;
     }
 }
