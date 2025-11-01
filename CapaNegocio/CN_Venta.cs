@@ -18,26 +18,25 @@ namespace CapaNegocio
                                    out int idFactura, out string nroFactura, out string mensaje)
             => _cd.RegistrarVenta(puntoVenta, idCliente, idUsuario, detalles, out idFactura, out nroFactura, out mensaje);
 
+        
+        /*
         public List<Factura> ListarVentas()
         {
             return objcd_venta.ListarVentas();
         }
+        */
+
+        public List<Factura> ListarVentasPorUsuario(int idUsuario, bool incluirDevoluciones = false)
+    => _cd.ListarVentasPorUsuario(idUsuario, incluirDevoluciones);
 
         public DataSet ObtenerVentaDS(int idFactura) => _cd.ObtenerVenta(idFactura);
 
-        public bool RegistrarDevolucion(
-            int puntoVenta,
-            int idFacturaOrigen,
-            int idUsuario,
-            DataTable detallesDevolucion,
-            out int idFacturaNC,
-            out string nroFacturaNC,
-            out string mensaje)
+        public bool RegistrarDevolucionTotal(int puntoVenta, int idFacturaOrigen, int idUsuario,
+            out int idFacturaNC, out string nroFacturaNC, out string mensaje)
         {
             var cd = new CD_Venta();
-            return cd.RegistrarDevolucion(
-                puntoVenta, idFacturaOrigen, idUsuario, detallesDevolucion,
-                out idFacturaNC, out nroFacturaNC, out mensaje);
+            return cd.RegistrarDevolucion(puntoVenta, idFacturaOrigen, idUsuario,out idFacturaNC, 
+                                            out nroFacturaNC, out mensaje);
         }
 
 

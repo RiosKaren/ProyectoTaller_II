@@ -71,6 +71,51 @@ namespace CapaDatos
             }
         }
 
+        public List<Factura> ListarVentasPorUsuario(int idUsuario, bool incluirDevoluciones = false)
+        {
+            var lista = new List<Factura>();
+
+            using (var cn = new SqlConnection(Conexion.cadena))
+            using (var cmd = new SqlCommand(@"
+                SELECT f.id_factura,
+                       f.nro_factura,
+                       f.id_cliente,
+                       c.dni,
+                       f.importe_total,
+                       f.fecha
+                FROM dbo.factura f
+                INNER JOIN dbo.clientes c ON c.id_cliente = f.id_cliente
+                WHERE f.id_usuario = @id_usuario
+                  AND (@incluir = 1 OR f.importe_total >= 0)   -- por defecto: solo ventas, sin NC
+                ORDER BY f.id_factura DESC;", cn))
+            {
+                cmd.Parameters.AddWithValue("@id_usuario", idUsuario);
+                cmd.Parameters.Add("@incluir", SqlDbType.Bit).Value = incluirDevoluciones ? 1 : 0;
+
+                cn.Open();
+                using (var dr = cmd.ExecuteReader())
+                {
+                    while (dr.Read())
+                    {
+                        lista.Add(new Factura
+                        {
+                            id_factura = Convert.ToInt32(dr["id_factura"]),
+                            nro_factura = dr["nro_factura"].ToString(),
+                            fecha = Convert.ToDateTime(dr["fecha"]),
+                            id_cliente = new Clientes
+                            {
+                                id_cliente = Convert.ToInt32(dr["id_cliente"]),
+                                dni = Convert.ToInt32(dr["dni"])
+                            },
+                            importe_total = Convert.ToDecimal(dr["importe_total"]),
+                        });
+                    }
+                }
+            }
+            return lista;
+        }
+
+        /*
         public List<Factura> ListarVentas()
         {
             var lista = new List<Factura>();
@@ -112,6 +157,7 @@ namespace CapaDatos
             }
             return lista;
         }
+        */
 
         public DataSet ObtenerVenta(int idFactura)
         {
@@ -132,31 +178,17 @@ namespace CapaDatos
             }
         }
 
-        public static DataTable NuevaTablaDevolucion()
+        public bool RegistrarDevolucion(int puntoVenta, int idFacturaOrigen, int idUsuario,
+                                out int idFacturaNC, out string nroFacturaNC, out string mensaje)
         {
-            var dt = new DataTable();
-            dt.Columns.Add("id_talle", typeof(int));
-            dt.Columns.Add("cantidad", typeof(int));
-            return dt;
-        }
-
-        public bool RegistrarDevolucion(
-            int puntoVenta,
-            int idFacturaOrigen,
-            int idUsuario,
-            DataTable detallesDevolucion,
-            out int idFacturaNC,
-            out string nroFacturaNC,
-            out string mensaje)
-        {
-            idFacturaNC = 0;
-            nroFacturaNC = string.Empty;
-            mensaje = string.Empty;
+                idFacturaNC = 0;
+                nroFacturaNC = string.Empty;
+                mensaje = string.Empty;
 
             try
             {
                 using (var cn = new SqlConnection(Conexion.cadena))
-                using (var cmd = new SqlCommand("SP_REGISTRARDEVOLUCION", cn))
+                using (var cmd = new SqlCommand("SP_REGISTRARDEVOLUCION_TOTAL", cn))
                 {
                     cmd.CommandType = CommandType.StoredProcedure;
 
@@ -164,12 +196,8 @@ namespace CapaDatos
                     cmd.Parameters.AddWithValue("@id_factura_origen", idFacturaOrigen);
                     cmd.Parameters.AddWithValue("@id_usuario", idUsuario);
 
-                    var pDetalles = cmd.Parameters.AddWithValue("@detalles", detallesDevolucion);
-                    pDetalles.SqlDbType = SqlDbType.Structured;
-                    pDetalles.TypeName = "dbo.Edetalles_devolucion";
-
                     var pId = new SqlParameter("@IdFacturaNC", SqlDbType.Int) { Direction = ParameterDirection.Output };
-                    var pNro = new SqlParameter("@NroFacturaNC", SqlDbType.VarChar, 15) { Direction = ParameterDirection.Output };
+                    var pNro = new SqlParameter("@NroFacturaNC", SqlDbType.VarChar, 16) { Direction = ParameterDirection.Output };
                     var pRes = new SqlParameter("@Resultado", SqlDbType.Bit) { Direction = ParameterDirection.Output };
                     var pMsg = new SqlParameter("@Mensaje", SqlDbType.VarChar, 500) { Direction = ParameterDirection.Output };
 

@@ -127,19 +127,30 @@ namespace CapaPresentacion
         {
             VentasDGV.Rows.Clear();
 
-            List<Factura> listaVentas = new CN_Venta().ListarVentas();
+            // incluirDevoluciones = true -> trae ventas y NC del usuario actual
+            List<Factura> listaVentas = new CN_Venta().ListarVentasPorUsuario(_Usuario.id_usuario, true);
+
             foreach (Factura f in listaVentas)
             {
-                VentasDGV.Rows.Add(new object[]
+                int rowIndex = VentasDGV.Rows.Add(new object[]
                 {
                     f.id_factura,
-                    f.nro_factura,
+                    f.nro_factura,      // "A ..." o "NC ..."
                     f.fecha.ToString("dd/MM/yyyy HH:mm:ss"),
                     f.id_cliente,          
                     f.id_cliente.dni,      
                     f.importe_total.ToString("0.00")
                 });
+
+                if (f.importe_total < 0)
+                {
+                    var row = VentasDGV.Rows[rowIndex];
+                    row.DefaultCellStyle.ForeColor = Color.IndianRed;
+                    row.DefaultCellStyle.Font = new Font(VentasDGV.Font, FontStyle.Bold);
+                }
             }
+
+            
 
             VentasDGV.ClearSelection();
         }
