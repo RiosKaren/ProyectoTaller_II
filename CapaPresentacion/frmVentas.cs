@@ -1,6 +1,4 @@
-﻿
-using CapaPresentacion.Utilidades;
-using CapaPresentacion.VentanasEmergentes;
+﻿using CapaPresentacion.VentanasEmergentes;
 using FontAwesome.Sharp;
 using System;
 using System.Collections.Generic;
@@ -15,6 +13,7 @@ using System.Windows.Forms;
 using CapaDatos;
 using CapaEntidad;
 using CapaNegocio;
+using CapaPresentacion.Utilidades;
 
 namespace CapaPresentacion
 {
@@ -415,6 +414,20 @@ namespace CapaPresentacion
             {
                 MessageBox.Show($"Venta registrada. Factura #{nroFactura}", "OK",
                                 MessageBoxButtons.OK, MessageBoxIcon.Information);
+
+                try
+                {
+                    var ds = new CapaNegocio.CN_Venta().ObtenerVentaDS(idFactura);
+                    string rutaPdf = PdfFactura.GenerarDesdeVentaDS(ds); // crea en Mis Documentos\Facturas
+                    PdfFactura.Abrir(rutaPdf);                           // lo abre con el visor por defecto
+                                                                         // Si querés mandarlo directo a impresión:
+                                                                         // PdfFactura.Imprimir(rutaPdf);
+                }
+                catch (Exception ex)
+                {
+                    MessageBox.Show("La venta se registró, pero no se pudo generar/abrir el PDF.\n" + ex.Message,
+                                    "PDF", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                }
 
                 // Reset UI
                 VentaProductosDGV.Rows.Clear();

@@ -372,7 +372,7 @@
             this.textBoxDireccion.Location = new System.Drawing.Point(21, 244);
             this.textBoxDireccion.Margin = new System.Windows.Forms.Padding(4);
             this.textBoxDireccion.Name = "textBoxDireccion";
-            this.textBoxDireccion.Size = new System.Drawing.Size(132, 22);
+            this.textBoxDireccion.Size = new System.Drawing.Size(283, 22);
             this.textBoxDireccion.TabIndex = 49;
             // 
             // labelDireccion

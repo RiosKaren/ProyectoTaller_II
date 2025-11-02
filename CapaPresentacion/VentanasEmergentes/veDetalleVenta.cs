@@ -1,5 +1,4 @@
-﻿using CapaNegocio;
-using System;
+﻿using System;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
@@ -8,6 +7,9 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+
+using CapaNegocio;
+using CapaPresentacion.Utilidades;
 
 namespace CapaPresentacion
 {
@@ -148,7 +150,20 @@ namespace CapaPresentacion
 
         private void iconButtonPDF_Click(object sender, EventArgs e)
         {
-
+            try
+            {
+                var ds = new CapaNegocio.CN_Venta().ObtenerVentaDS(_idFactura);
+                string ruta = PdfFactura.GenerarDesdeVentaDS(ds); //re-genera 
+                PdfFactura.Abrir(ruta);
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show("No se pudo generar el PDF.\n" + ex.Message,
+                    "PDF", MessageBoxButtons.OK, MessageBoxIcon.Error);
+            }
         }
+
+
+
     }
 }

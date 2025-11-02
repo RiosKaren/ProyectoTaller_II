@@ -28,8 +28,8 @@
         /// </summary>
         private void InitializeComponent()
         {
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle3 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle4 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle1 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle2 = new System.Windows.Forms.DataGridViewCellStyle();
             this.labelListaUsuarios = new System.Windows.Forms.Label();
             this.labelTitulo = new System.Windows.Forms.Label();
             this.groupBox1 = new System.Windows.Forms.GroupBox();
@@ -105,7 +105,7 @@
             // textBoxVendedor
             // 
             this.textBoxVendedor.Location = new System.Drawing.Point(473, 38);
-            this.textBoxVendedor.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.textBoxVendedor.Margin = new System.Windows.Forms.Padding(4);
             this.textBoxVendedor.Name = "textBoxVendedor";
             this.textBoxVendedor.ReadOnly = true;
             this.textBoxVendedor.Size = new System.Drawing.Size(192, 22);
@@ -114,7 +114,7 @@
             // textBoxFecha
             // 
             this.textBoxFecha.Location = new System.Drawing.Point(35, 38);
-            this.textBoxFecha.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.textBoxFecha.Margin = new System.Windows.Forms.Padding(4);
             this.textBoxFecha.Name = "textBoxFecha";
             this.textBoxFecha.ReadOnly = true;
             this.textBoxFecha.Size = new System.Drawing.Size(185, 22);
@@ -170,7 +170,7 @@
             // textBoxTelefono
             // 
             this.textBoxTelefono.Location = new System.Drawing.Point(657, 42);
-            this.textBoxTelefono.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.textBoxTelefono.Margin = new System.Windows.Forms.Padding(4);
             this.textBoxTelefono.Name = "textBoxTelefono";
             this.textBoxTelefono.ReadOnly = true;
             this.textBoxTelefono.Size = new System.Drawing.Size(139, 22);
@@ -179,7 +179,7 @@
             // textBoxNombreCliente
             // 
             this.textBoxNombreCliente.Location = new System.Drawing.Point(199, 44);
-            this.textBoxNombreCliente.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.textBoxNombreCliente.Margin = new System.Windows.Forms.Padding(4);
             this.textBoxNombreCliente.Name = "textBoxNombreCliente";
             this.textBoxNombreCliente.ReadOnly = true;
             this.textBoxNombreCliente.Size = new System.Drawing.Size(213, 22);
@@ -188,7 +188,7 @@
             // textBoxDNI
             // 
             this.textBoxDNI.Location = new System.Drawing.Point(28, 44);
-            this.textBoxDNI.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.textBoxDNI.Margin = new System.Windows.Forms.Padding(4);
             this.textBoxDNI.Name = "textBoxDNI";
             this.textBoxDNI.ReadOnly = true;
             this.textBoxDNI.Size = new System.Drawing.Size(148, 22);
@@ -206,7 +206,7 @@
             // textBoxCorreo
             // 
             this.textBoxCorreo.Location = new System.Drawing.Point(436, 42);
-            this.textBoxCorreo.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.textBoxCorreo.Margin = new System.Windows.Forms.Padding(4);
             this.textBoxCorreo.Name = "textBoxCorreo";
             this.textBoxCorreo.ReadOnly = true;
             this.textBoxCorreo.Size = new System.Drawing.Size(188, 22);
@@ -233,15 +233,15 @@
             // VerProductosDGV
             // 
             this.VerProductosDGV.AllowUserToAddRows = false;
-            dataGridViewCellStyle3.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
-            dataGridViewCellStyle3.BackColor = System.Drawing.SystemColors.Control;
-            dataGridViewCellStyle3.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            dataGridViewCellStyle3.ForeColor = System.Drawing.SystemColors.WindowText;
-            dataGridViewCellStyle3.Padding = new System.Windows.Forms.Padding(2);
-            dataGridViewCellStyle3.SelectionBackColor = System.Drawing.SystemColors.Highlight;
-            dataGridViewCellStyle3.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
-            dataGridViewCellStyle3.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
-            this.VerProductosDGV.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle3;
+            dataGridViewCellStyle1.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle1.BackColor = System.Drawing.SystemColors.Control;
+            dataGridViewCellStyle1.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle1.ForeColor = System.Drawing.SystemColors.WindowText;
+            dataGridViewCellStyle1.Padding = new System.Windows.Forms.Padding(2);
+            dataGridViewCellStyle1.SelectionBackColor = System.Drawing.SystemColors.Highlight;
+            dataGridViewCellStyle1.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
+            dataGridViewCellStyle1.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
+            this.VerProductosDGV.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle1;
             this.VerProductosDGV.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.VerProductosDGV.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
             this.id_producto,
@@ -252,18 +252,18 @@
             this.cantidad,
             this.subtotal});
             this.VerProductosDGV.Location = new System.Drawing.Point(67, 313);
-            this.VerProductosDGV.Margin = new System.Windows.Forms.Padding(5, 5, 5, 5);
+            this.VerProductosDGV.Margin = new System.Windows.Forms.Padding(5);
             this.VerProductosDGV.MultiSelect = false;
             this.VerProductosDGV.Name = "VerProductosDGV";
             this.VerProductosDGV.ReadOnly = true;
-            dataGridViewCellStyle4.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
-            dataGridViewCellStyle4.BackColor = System.Drawing.SystemColors.Control;
-            dataGridViewCellStyle4.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            dataGridViewCellStyle4.ForeColor = System.Drawing.SystemColors.WindowText;
-            dataGridViewCellStyle4.SelectionBackColor = System.Drawing.Color.White;
-            dataGridViewCellStyle4.SelectionForeColor = System.Drawing.Color.Black;
-            dataGridViewCellStyle4.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
-            this.VerProductosDGV.RowHeadersDefaultCellStyle = dataGridViewCellStyle4;
+            dataGridViewCellStyle2.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle2.BackColor = System.Drawing.SystemColors.Control;
+            dataGridViewCellStyle2.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle2.ForeColor = System.Drawing.SystemColors.WindowText;
+            dataGridViewCellStyle2.SelectionBackColor = System.Drawing.Color.White;
+            dataGridViewCellStyle2.SelectionForeColor = System.Drawing.Color.Black;
+            dataGridViewCellStyle2.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
+            this.VerProductosDGV.RowHeadersDefaultCellStyle = dataGridViewCellStyle2;
             this.VerProductosDGV.RowHeadersWidth = 51;
             this.VerProductosDGV.RowTemplate.Height = 28;
             this.VerProductosDGV.Size = new System.Drawing.Size(964, 286);
@@ -340,7 +340,7 @@
             // textBoxMontoTotal
             // 
             this.textBoxMontoTotal.Location = new System.Drawing.Point(173, 623);
-            this.textBoxMontoTotal.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.textBoxMontoTotal.Margin = new System.Windows.Forms.Padding(4);
             this.textBoxMontoTotal.Name = "textBoxMontoTotal";
             this.textBoxMontoTotal.ReadOnly = true;
             this.textBoxMontoTotal.Size = new System.Drawing.Size(115, 22);
@@ -359,7 +359,7 @@
             this.iconButtonPDF.IconFont = FontAwesome.Sharp.IconFont.Auto;
             this.iconButtonPDF.IconSize = 22;
             this.iconButtonPDF.Location = new System.Drawing.Point(885, 613);
-            this.iconButtonPDF.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.iconButtonPDF.Margin = new System.Windows.Forms.Padding(4);
             this.iconButtonPDF.Name = "iconButtonPDF";
             this.iconButtonPDF.Size = new System.Drawing.Size(144, 50);
             this.iconButtonPDF.TabIndex = 89;
@@ -371,7 +371,7 @@
             // textBoxNroFactura
             // 
             this.textBoxNroFactura.Location = new System.Drawing.Point(203, 47);
-            this.textBoxNroFactura.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.textBoxNroFactura.Margin = new System.Windows.Forms.Padding(4);
             this.textBoxNroFactura.Name = "textBoxNroFactura";
             this.textBoxNroFactura.ReadOnly = true;
             this.textBoxNroFactura.Size = new System.Drawing.Size(148, 22);
@@ -389,7 +389,7 @@
             this.iconButtonDevolucion.IconFont = FontAwesome.Sharp.IconFont.Auto;
             this.iconButtonDevolucion.IconSize = 22;
             this.iconButtonDevolucion.Location = new System.Drawing.Point(733, 613);
-            this.iconButtonDevolucion.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.iconButtonDevolucion.Margin = new System.Windows.Forms.Padding(4);
             this.iconButtonDevolucion.Name = "iconButtonDevolucion";
             this.iconButtonDevolucion.Size = new System.Drawing.Size(144, 50);
             this.iconButtonDevolucion.TabIndex = 91;
@@ -415,7 +415,7 @@
             this.Controls.Add(this.groupBox1);
             this.Controls.Add(this.labelTitulo);
             this.Controls.Add(this.labelListaUsuarios);
-            this.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.Margin = new System.Windows.Forms.Padding(4);
             this.Name = "veDetalleVenta";
             this.Text = "frmVerDetalle";
             this.groupBox1.ResumeLayout(false);
