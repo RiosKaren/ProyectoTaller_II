@@ -57,50 +57,47 @@
             this.PGenerar.Controls.Add(this.comboBox1);
             this.PGenerar.Controls.Add(this.bBuscar);
             this.PGenerar.Controls.Add(this.LVendedor);
-            this.PGenerar.Location = new System.Drawing.Point(0, 320);
-            this.PGenerar.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.PGenerar.Location = new System.Drawing.Point(0, 260);
             this.PGenerar.Name = "PGenerar";
-            this.PGenerar.Size = new System.Drawing.Size(1580, 354);
+            this.PGenerar.Size = new System.Drawing.Size(1185, 288);
             this.PGenerar.TabIndex = 6;
             // 
             // BGenerarReporte
             // 
-            this.BGenerarReporte.Location = new System.Drawing.Point(1284, 263);
-            this.BGenerarReporte.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.BGenerarReporte.Location = new System.Drawing.Point(963, 214);
             this.BGenerarReporte.Name = "BGenerarReporte";
-            this.BGenerarReporte.Size = new System.Drawing.Size(250, 55);
+            this.BGenerarReporte.Size = new System.Drawing.Size(188, 45);
             this.BGenerarReporte.TabIndex = 13;
             this.BGenerarReporte.Text = "Generar Reporte";
             this.BGenerarReporte.UseVisualStyleBackColor = true;
+            this.BGenerarReporte.Click += new System.EventHandler(this.BGenerarReporte_Click);
             // 
             // comboBox1
             // 
             this.comboBox1.FormattingEnabled = true;
-            this.comboBox1.Location = new System.Drawing.Point(264, 137);
-            this.comboBox1.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.comboBox1.Location = new System.Drawing.Point(198, 111);
             this.comboBox1.Name = "comboBox1";
-            this.comboBox1.Size = new System.Drawing.Size(375, 24);
+            this.comboBox1.Size = new System.Drawing.Size(282, 21);
             this.comboBox1.TabIndex = 12;
             // 
             // bBuscar
             // 
-            this.bBuscar.Location = new System.Drawing.Point(664, 137);
-            this.bBuscar.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.bBuscar.Location = new System.Drawing.Point(498, 111);
             this.bBuscar.Name = "bBuscar";
-            this.bBuscar.Size = new System.Drawing.Size(100, 28);
+            this.bBuscar.Size = new System.Drawing.Size(75, 23);
             this.bBuscar.TabIndex = 11;
             this.bBuscar.Text = "Buscar";
             this.bBuscar.UseVisualStyleBackColor = true;
+            this.bBuscar.Click += new System.EventHandler(this.bBuscar_Click);
             // 
             // LVendedor
             // 
             this.LVendedor.AutoSize = true;
             this.LVendedor.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.LVendedor.ForeColor = System.Drawing.Color.White;
-            this.LVendedor.Location = new System.Drawing.Point(260, 91);
-            this.LVendedor.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+            this.LVendedor.Location = new System.Drawing.Point(195, 74);
             this.LVendedor.Name = "LVendedor";
-            this.LVendedor.Size = new System.Drawing.Size(78, 17);
+            this.LVendedor.Size = new System.Drawing.Size(61, 13);
             this.LVendedor.TabIndex = 10;
             this.LVendedor.Text = "Vendedor";
             // 
@@ -111,49 +108,44 @@
             this.panel2.Controls.Add(this.DTPReporteHasta);
             this.panel2.Controls.Add(this.DTPReporteDesde);
             this.panel2.Controls.Add(this.LDesde);
-            this.panel2.Location = new System.Drawing.Point(41, 111);
-            this.panel2.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.panel2.Location = new System.Drawing.Point(31, 90);
             this.panel2.Name = "panel2";
-            this.panel2.Size = new System.Drawing.Size(488, 127);
+            this.panel2.Size = new System.Drawing.Size(366, 103);
             this.panel2.TabIndex = 10;
             // 
             // LHasta
             // 
             this.LHasta.AutoSize = true;
             this.LHasta.ForeColor = System.Drawing.Color.White;
-            this.LHasta.Location = new System.Drawing.Point(272, 22);
-            this.LHasta.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+            this.LHasta.Location = new System.Drawing.Point(204, 18);
             this.LHasta.Name = "LHasta";
-            this.LHasta.Size = new System.Drawing.Size(46, 16);
+            this.LHasta.Size = new System.Drawing.Size(38, 13);
             this.LHasta.TabIndex = 5;
             this.LHasta.Text = "Hasta:";
             // 
             // DTPReporteHasta
             // 
             this.DTPReporteHasta.Format = System.Windows.Forms.DateTimePickerFormat.Short;
-            this.DTPReporteHasta.Location = new System.Drawing.Point(276, 55);
-            this.DTPReporteHasta.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.DTPReporteHasta.Location = new System.Drawing.Point(207, 45);
             this.DTPReporteHasta.Name = "DTPReporteHasta";
-            this.DTPReporteHasta.Size = new System.Drawing.Size(175, 22);
+            this.DTPReporteHasta.Size = new System.Drawing.Size(132, 20);
             this.DTPReporteHasta.TabIndex = 3;
             // 
             // DTPReporteDesde
             // 
             this.DTPReporteDesde.Format = System.Windows.Forms.DateTimePickerFormat.Short;
-            this.DTPReporteDesde.Location = new System.Drawing.Point(28, 55);
-            this.DTPReporteDesde.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.DTPReporteDesde.Location = new System.Drawing.Point(21, 45);
             this.DTPReporteDesde.Name = "DTPReporteDesde";
-            this.DTPReporteDesde.Size = new System.Drawing.Size(179, 22);
+            this.DTPReporteDesde.Size = new System.Drawing.Size(135, 20);
             this.DTPReporteDesde.TabIndex = 3;
             // 
             // LDesde
             // 
             this.LDesde.AutoSize = true;
             this.LDesde.ForeColor = System.Drawing.Color.White;
-            this.LDesde.Location = new System.Drawing.Point(24, 22);
-            this.LDesde.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+            this.LDesde.Location = new System.Drawing.Point(18, 18);
             this.LDesde.Name = "LDesde";
-            this.LDesde.Size = new System.Drawing.Size(51, 16);
+            this.LDesde.Size = new System.Drawing.Size(41, 13);
             this.LDesde.TabIndex = 4;
             this.LDesde.Text = "Desde:";
             // 
@@ -162,10 +154,9 @@
             this.label1.AutoSize = true;
             this.label1.Font = new System.Drawing.Font("Microsoft Sans Serif", 20F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label1.ForeColor = System.Drawing.Color.Black;
-            this.label1.Location = new System.Drawing.Point(713, 22);
-            this.label1.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+            this.label1.Location = new System.Drawing.Point(535, 18);
             this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(155, 39);
+            this.label1.Size = new System.Drawing.Size(125, 31);
             this.label1.TabIndex = 8;
             this.label1.Text = "Reportes";
             // 
@@ -173,51 +164,49 @@
             // 
             this.LElegirFechas.AutoSize = true;
             this.LElegirFechas.ForeColor = System.Drawing.Color.Black;
-            this.LElegirFechas.Location = new System.Drawing.Point(37, 76);
-            this.LElegirFechas.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+            this.LElegirFechas.Location = new System.Drawing.Point(28, 62);
             this.LElegirFechas.Name = "LElegirFechas";
-            this.LElegirFechas.Size = new System.Drawing.Size(90, 16);
+            this.LElegirFechas.Size = new System.Drawing.Size(71, 13);
             this.LElegirFechas.TabIndex = 9;
             this.LElegirFechas.Text = "Elegir Fechas";
             // 
             // BTotalVentas
             // 
-            this.BTotalVentas.Location = new System.Drawing.Point(435, 52);
-            this.BTotalVentas.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.BTotalVentas.Location = new System.Drawing.Point(326, 42);
             this.BTotalVentas.Name = "BTotalVentas";
-            this.BTotalVentas.Size = new System.Drawing.Size(193, 52);
+            this.BTotalVentas.Size = new System.Drawing.Size(145, 42);
             this.BTotalVentas.TabIndex = 11;
             this.BTotalVentas.Text = "Total Ventas";
             this.BTotalVentas.UseVisualStyleBackColor = true;
+            this.BTotalVentas.Click += new System.EventHandler(this.BTotalVentas_Click);
             // 
             // BProductosMasVendidos
             // 
-            this.BProductosMasVendidos.Location = new System.Drawing.Point(224, 52);
-            this.BProductosMasVendidos.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.BProductosMasVendidos.Location = new System.Drawing.Point(168, 42);
             this.BProductosMasVendidos.Name = "BProductosMasVendidos";
-            this.BProductosMasVendidos.Size = new System.Drawing.Size(188, 52);
+            this.BProductosMasVendidos.Size = new System.Drawing.Size(141, 42);
             this.BProductosMasVendidos.TabIndex = 12;
             this.BProductosMasVendidos.Text = "Productos mas vendidos";
             this.BProductosMasVendidos.UseVisualStyleBackColor = true;
+            this.BProductosMasVendidos.Click += new System.EventHandler(this.BProductosMasVendidos_Click);
             // 
             // BRecaudacion
             // 
-            this.BRecaudacion.Location = new System.Drawing.Point(13, 52);
-            this.BRecaudacion.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.BRecaudacion.Location = new System.Drawing.Point(10, 42);
             this.BRecaudacion.Name = "BRecaudacion";
-            this.BRecaudacion.Size = new System.Drawing.Size(191, 52);
+            this.BRecaudacion.Size = new System.Drawing.Size(143, 42);
             this.BRecaudacion.TabIndex = 13;
             this.BRecaudacion.Text = "Recaudacion";
             this.BRecaudacion.UseVisualStyleBackColor = true;
+            this.BRecaudacion.Click += new System.EventHandler(this.BRecaudacion_Click);
             // 
             // LGenerarReporte
             // 
             this.LGenerarReporte.AutoSize = true;
             this.LGenerarReporte.ForeColor = System.Drawing.Color.Black;
-            this.LGenerarReporte.Location = new System.Drawing.Point(17, 17);
-            this.LGenerarReporte.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+            this.LGenerarReporte.Location = new System.Drawing.Point(13, 14);
             this.LGenerarReporte.Name = "LGenerarReporte";
-            this.LGenerarReporte.Size = new System.Drawing.Size(128, 16);
+            this.LGenerarReporte.Size = new System.Drawing.Size(102, 13);
             this.LGenerarReporte.TabIndex = 14;
             this.LGenerarReporte.Text = "Generar reporte por:";
             // 
@@ -227,24 +216,22 @@
             this.PanelGenerarReporte.Controls.Add(this.LGenerarReporte);
             this.PanelGenerarReporte.Controls.Add(this.BTotalVentas);
             this.PanelGenerarReporte.Controls.Add(this.BProductosMasVendidos);
-            this.PanelGenerarReporte.Location = new System.Drawing.Point(664, 114);
-            this.PanelGenerarReporte.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.PanelGenerarReporte.Location = new System.Drawing.Point(498, 93);
             this.PanelGenerarReporte.Name = "PanelGenerarReporte";
-            this.PanelGenerarReporte.Size = new System.Drawing.Size(644, 123);
+            this.PanelGenerarReporte.Size = new System.Drawing.Size(483, 100);
             this.PanelGenerarReporte.TabIndex = 15;
             // 
             // frmReportes
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.White;
-            this.ClientSize = new System.Drawing.Size(1579, 669);
+            this.ClientSize = new System.Drawing.Size(1389, 736);
             this.Controls.Add(this.PanelGenerarReporte);
             this.Controls.Add(this.panel2);
             this.Controls.Add(this.label1);
             this.Controls.Add(this.LElegirFechas);
             this.Controls.Add(this.PGenerar);
-            this.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.Name = "frmReportes";
             this.Text = "frmReportes";
             this.PGenerar.ResumeLayout(false);

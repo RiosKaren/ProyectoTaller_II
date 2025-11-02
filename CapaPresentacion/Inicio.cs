@@ -8,10 +8,10 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
-
+using CapaDatos;
 using CapaEntidad;
-using FontAwesome.Sharp;
 using CapaNegocio;
+using FontAwesome.Sharp;
 
 
 namespace CapaPresentacion
@@ -95,7 +95,7 @@ namespace CapaPresentacion
 
         private void menuReportes_Click(object sender, EventArgs e)
         {
-            AbrirFormulario((IconMenuItem)sender, new frmReportes());
+            AbrirFormulario((IconMenuItem)sender, new frmReportes(usuarioActual));
         }
 
         private void menuProductos_Click(object sender, EventArgs e)
