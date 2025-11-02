@@ -133,5 +133,10 @@ namespace CapaPresentacion.VentanasEmergentes
                 row.Visible = true;
             }
         }
+
+        private void btnAgregarCliente_Click(object sender, EventArgs e)
+        {
+
+        }
     }
 }
