@@ -32,7 +32,8 @@
             this.btnExportar.TabIndex = 1;
             this.btnExportar.Text = "Exportar";
             this.btnExportar.UseVisualStyleBackColor = true;
-            this.btnExportar.Click += new System.EventHandler(this.btnExportar_Click);            // 
+            this.btnExportar.Click += new System.EventHandler(this.btnExportar_Click);
+            // 
             // panel1
             // 
             this.panel1.BackColor = System.Drawing.Color.DarkRed;
@@ -42,6 +43,7 @@
             this.panel1.Name = "panel1";
             this.panel1.Size = new System.Drawing.Size(866, 511);
             this.panel1.TabIndex = 2;
+            this.panel1.Paint += new System.Windows.Forms.PaintEventHandler(this.panel1_Paint);
             // 
             // dgvDatos
             // 

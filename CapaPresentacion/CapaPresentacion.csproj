@@ -180,6 +180,7 @@
       <DependentUpon>frmVentas.cs</DependentUpon>
     </Compile>
     <Compile Include="Utilidades\PdfFactura.cs" />
+    <Compile Include="Utilidades\PdfReporte.cs" />
     <Compile Include="VentanasEmergentes\frmReporteResultado.cs">
       <SubType>Form</SubType>
     </Compile>

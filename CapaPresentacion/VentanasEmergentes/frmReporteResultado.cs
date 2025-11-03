@@ -1,67 +1,75 @@
 ﻿using System;
-using System.Collections.Generic;
-using System.ComponentModel;
 using System.Data;
-using System.Drawing;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 using System.Windows.Forms;
+using CapaPresentacion.Utilidades;
+using System.Diagnostics;
 
 namespace CapaPresentacion.VentanasEmergentes
 {
     public partial class frmReporteResultado : Form
     {
+        private DataTable _dtActual;
+        private string _tituloActual;
+
         public frmReporteResultado()
         {
             InitializeComponent();
         }
 
-        // lo llama frmReportes
+        // Lo llama frmReportes
         public void CargarDatos(DataTable dt, string titulo = "Reporte")
         {
+            _dtActual = dt;
+            _tituloActual = titulo;
+
             this.Text = titulo;
+
             dgvDatos.DataSource = dt;
             dgvDatos.ReadOnly = true;
             dgvDatos.AllowUserToAddRows = false;
             dgvDatos.AutoSizeColumnsMode = DataGridViewAutoSizeColumnsMode.Fill;
+            dgvDatos.SelectionMode = DataGridViewSelectionMode.FullRowSelect;
+            dgvDatos.MultiSelect = false;
         }
 
-        // ESTE MÉTODO ES EL QUE QUIERE EL DISEÑADOR
+        // Exportar a PDF
         private void btnExportar_Click(object sender, EventArgs e)
         {
-            var dt = dgvDatos.DataSource as DataTable;
-            if (dt == null || dt.Rows.Count == 0)
+            if (_dtActual == null)
             {
                 MessageBox.Show("No hay datos para exportar.");
                 return;
             }
 
-            using (var sfd = new SaveFileDialog())
+            try
             {
-                sfd.Filter = "CSV (*.csv)|*.csv";
-                sfd.FileName = "reporte.csv";
+                string ruta = PdfReporte.GenerarDesdeDataTable(_dtActual, _tituloActual);
 
-                if (sfd.ShowDialog() == DialogResult.OK)
+                // Abrir el PDF automáticamente con la app predeterminada del sistema
+                if (System.IO.File.Exists(ruta))
                 {
-                    using (var sw = new System.IO.StreamWriter(sfd.FileName, false, System.Text.Encoding.UTF8))
+                    var psi = new ProcessStartInfo
                     {
-                        // encabezados
-                        var headers = dt.Columns.Cast<DataColumn>().Select(c => c.ColumnName);
-                        sw.WriteLine(string.Join(";", headers));
-
-                        // filas
-                        foreach (DataRow row in dt.Rows)
-                        {
-                            var celdas = dt.Columns.Cast<DataColumn>()
-                                                   .Select(c => row[c].ToString().Replace(";", ","));
-                            sw.WriteLine(string.Join(";", celdas));
-                        }
-                    }
-
-                    MessageBox.Show("Exportado.");
+                        FileName = ruta,
+                        UseShellExecute = true // importante para que Windows lo abra con el visor por defecto
+                    };
+                    Process.Start(psi);
+                }
+                else
+                {
+                    MessageBox.Show("Se exportó el PDF, pero no se encontró el archivo en disco.");
                 }
             }
+            catch (Exception ex)
+            {
+                MessageBox.Show("No se pudo exportar/abrir el PDF.\n" + ex.Message);
+            }
+        }
+
+
+        private void panel1_Paint(object sender, PaintEventArgs e)
+        {
+            // sin uso
         }
     }
 }

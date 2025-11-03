@@ -10,41 +10,40 @@ namespace CapaPresentacion
     {
         private readonly Usuarios _usuarioActual;
         private DataTable _ultimoResultado;
+        private string _tituloActualReporte = "Reporte";
+
+        // IDs reales de roles (según tu script)
+        private const int ROL_ADMIN = 1;
+        private const int ROL_VENDEDOR = 2;
+        private const int ROL_SUPERVISOR = 3;
 
         public frmReportes(Usuarios usuario)
         {
             _usuarioActual = usuario;
             InitializeComponent();
-            this.Load += frmReportes_Load;     // solo el Load, los Click ya los pone el designer
+            this.Load += frmReportes_Load; // los Clicks los maneja el Designer
         }
 
         private void frmReportes_Load(object sender, EventArgs e)
         {
             DTPReporteDesde.Value = DateTime.Today;
             DTPReporteHasta.Value = DateTime.Today;
-
             ConfigurarSegunRol();
         }
 
         private void ConfigurarSegunRol()
         {
-            // si por alguna razón no llegó el usuario, muestro todo
             if (_usuarioActual == null)
             {
                 CargarVendedores();
                 return;
             }
 
-            // ids reales (de tu script)
-            const int ROL_ADMIN = 1;
-            const int ROL_VENDEDOR = 2;
-            const int ROL_SUPERVISOR = 3;
-
             int idRol = _usuarioActual.id_rol.id_rol;
 
             if (idRol == ROL_VENDEDOR)
             {
-                // vendedor → solo él
+                // Vendedor: combo fijo consigo mismo y Buscar deshabilitado
                 comboBox1.Items.Clear();
                 comboBox1.Items.Add(new Utilidades.OpcionCombo
                 {
@@ -58,17 +57,12 @@ namespace CapaPresentacion
                 comboBox1.Enabled = false;
                 bBuscar.Enabled = false;
             }
-            else if (idRol == ROL_ADMIN || idRol == ROL_SUPERVISOR)
+            else
             {
-                // admin / supervisor → pueden elegir
+                // Admin / Supervisor: puede elegir
                 CargarVendedores();
                 comboBox1.Enabled = true;
                 bBuscar.Enabled = true;
-            }
-            else
-            {
-                // por si en el futuro hay otro rol
-                CargarVendedores();
             }
         }
 
@@ -92,112 +86,74 @@ namespace CapaPresentacion
             comboBox1.SelectedIndex = 0;
         }
 
-        private void BRecaudacion_Click(object sender, EventArgs e)
+        // ---------- Utilitario común ----------
+        private int ObtenerIdVendedorSeleccionado()
         {
-            const int ROL_ADMIN = 1;
-            const int ROL_VENDEDOR = 2;
-            const int ROL_SUPERVISOR = 3;
-
             int idRol = _usuarioActual.id_rol.id_rol;
-            int idVend;
 
             if (idRol == ROL_VENDEDOR)
-            {
-                // vendedor → siempre él
-                idVend = _usuarioActual.id_usuario;
-            }
-            else
-            {
-                // admin / supervisor → lo que figure en el combo
-                if (comboBox1.SelectedItem is Utilidades.OpcionCombo oc)
-                    idVend = Convert.ToInt32(oc.Valor);
-                else
-                    idVend = 0; // todos
-            }
+                return _usuarioActual.id_usuario; // siempre él
+
+            if (comboBox1.SelectedItem is Utilidades.OpcionCombo oc)
+                return Convert.ToInt32(oc.Valor);
+
+            return 0; // todos
+        }
+
+        // ---------- Botones de reporte ----------
+        private void BRecaudacion_Click(object sender, EventArgs e)
+        {
+            int idVend = ObtenerIdVendedorSeleccionado();
 
             var cn = new CapaNegocio.CN_Reportes();
             var dt = cn.ObtenerRecaudacion(
                 DTPReporteDesde.Value,
                 DTPReporteHasta.Value,
                 idVend,
-                true   // incluir NC
+                true // incluir NC
             );
 
             _ultimoResultado = dt;
+            _tituloActualReporte = "Recaudación";
             MessageBox.Show("Recaudación generada. Ahora podés mostrarla.");
         }
 
         private void BProductosMasVendidos_Click(object sender, EventArgs e)
         {
-            const int ROL_ADMIN = 1;
-            const int ROL_VENDEDOR = 2;
-            const int ROL_SUPERVISOR = 3;
-
-            int idRol = _usuarioActual.id_rol.id_rol;
-            int idVend;
-
-            if (idRol == ROL_VENDEDOR)
-            {
-                idVend = _usuarioActual.id_usuario;
-            }
-            else
-            {
-                if (comboBox1.SelectedItem is Utilidades.OpcionCombo oc)
-                    idVend = Convert.ToInt32(oc.Valor);
-                else
-                    idVend = 0;
-            }
+            int idVend = ObtenerIdVendedorSeleccionado();
 
             var cn = new CapaNegocio.CN_Reportes();
             var dt = cn.ObtenerProductosMasVendidos(
                 DTPReporteDesde.Value,
                 DTPReporteHasta.Value,
                 idVend,
-                false   // no contamos NC
+                false // no contamos NC
             );
 
             _ultimoResultado = dt;
+            _tituloActualReporte = "Productos más vendidos";
             MessageBox.Show("Reporte de productos generado. Ahora podés mostrarlo.");
         }
 
         private void BTotalVentas_Click(object sender, EventArgs e)
         {
-            const int ROL_ADMIN = 1;
-            const int ROL_VENDEDOR = 2;
-            const int ROL_SUPERVISOR = 3;
-
-            int idRol = _usuarioActual.id_rol.id_rol;
-            int idVend;
-
-            if (idRol == ROL_VENDEDOR)
-            {
-                // vendedor: solo sus ventas
-                idVend = _usuarioActual.id_usuario;
-            }
-            else
-            {
-                // admin / supervisor: lo que diga el combo (0 = todos)
-                if (comboBox1.SelectedItem is Utilidades.OpcionCombo oc)
-                    idVend = Convert.ToInt32(oc.Valor);
-                else
-                    idVend = 0;
-            }
+            int idVend = ObtenerIdVendedorSeleccionado();
 
             var cn = new CapaNegocio.CN_Reportes();
             var dt = cn.ObtenerTotalVentas(
                 DTPReporteDesde.Value,
                 DTPReporteHasta.Value,
                 idVend,
-                false   // no contamos NC
+                false // no contamos NC
             );
 
             _ultimoResultado = dt;
+            _tituloActualReporte = "Total de ventas";
             MessageBox.Show("Reporte de total de ventas generado. Ahora podés mostrarlo.");
         }
 
         private void BGenerarReporte_Click(object sender, EventArgs e)
         {
-            // si nunca se generó nada
             if (_ultimoResultado == null)
             {
                 MessageBox.Show("No hay datos para mostrar. Primero generá un reporte.");
@@ -205,13 +161,15 @@ namespace CapaPresentacion
             }
 
             var f = new frmReporteResultado();
-            f.CargarDatos(_ultimoResultado, "Reporte");
+            f.CargarDatos(_ultimoResultado, _tituloActualReporte);
             f.ShowDialog(this);
         }
 
         private void bBuscar_Click(object sender, EventArgs e)
         {
-
+            // Refrescar lista de vendedores (solo útil para admin/supervisor)
+            if (comboBox1.Enabled)
+                CargarVendedores();
         }
     }
 }
