@@ -19,6 +19,7 @@
             this.btnExportar = new System.Windows.Forms.Button();
             this.panel1 = new System.Windows.Forms.Panel();
             this.dgvDatos = new System.Windows.Forms.DataGridView();
+            this.btnGrafico = new FontAwesome.Sharp.IconButton();
             this.panel1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dgvDatos)).BeginInit();
             this.SuspendLayout();
@@ -37,13 +38,13 @@
             // panel1
             // 
             this.panel1.BackColor = System.Drawing.Color.DarkRed;
+            this.panel1.Controls.Add(this.btnGrafico);
             this.panel1.Controls.Add(this.dgvDatos);
             this.panel1.Controls.Add(this.btnExportar);
             this.panel1.Location = new System.Drawing.Point(12, 12);
             this.panel1.Name = "panel1";
             this.panel1.Size = new System.Drawing.Size(866, 511);
             this.panel1.TabIndex = 2;
-            this.panel1.Paint += new System.Windows.Forms.PaintEventHandler(this.panel1_Paint);
             // 
             // dgvDatos
             // 
@@ -59,6 +60,19 @@
             this.dgvDatos.ReadOnly = true;
             this.dgvDatos.Size = new System.Drawing.Size(835, 446);
             this.dgvDatos.TabIndex = 1;
+            // 
+            // btnGrafico
+            // 
+            this.btnGrafico.IconChar = FontAwesome.Sharp.IconChar.None;
+            this.btnGrafico.IconColor = System.Drawing.Color.Black;
+            this.btnGrafico.IconFont = FontAwesome.Sharp.IconFont.Auto;
+            this.btnGrafico.Location = new System.Drawing.Point(644, 469);
+            this.btnGrafico.Name = "btnGrafico";
+            this.btnGrafico.Size = new System.Drawing.Size(115, 23);
+            this.btnGrafico.TabIndex = 2;
+            this.btnGrafico.Text = "Mostrar Grafico";
+            this.btnGrafico.UseVisualStyleBackColor = true;
+            this.btnGrafico.Click += new System.EventHandler(this.btnGrafico_Click);
             // 
             // frmReporteResultado
             // 
@@ -77,5 +91,6 @@
 
         private System.Windows.Forms.Panel panel1;
         private System.Windows.Forms.DataGridView dgvDatos;
+        private FontAwesome.Sharp.IconButton btnGrafico;
     }
 }

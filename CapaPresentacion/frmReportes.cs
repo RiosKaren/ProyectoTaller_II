@@ -160,8 +160,18 @@ namespace CapaPresentacion
                 return;
             }
 
-            var f = new frmReporteResultado();
-            f.CargarDatos(_ultimoResultado, _tituloActualReporte);
+            // Texto vendedor (si es "Todos", mostrémoslo claro)
+            string textoVendedor;
+            if (comboBox1.Enabled && comboBox1.SelectedItem is Utilidades.OpcionCombo oc)
+                textoVendedor = (Convert.ToInt32(oc.Valor) == 0) ? "Todos" : oc.Texto;
+            else
+                textoVendedor = $"{_usuarioActual.apellido}, {_usuarioActual.nombre}";
+
+            // Subtítulo con período + vendedor
+            string subtitulo = $"Período: {DTPReporteDesde.Value:dd/MM/yyyy} – {DTPReporteHasta.Value:dd/MM/yyyy} | Vendedor: {textoVendedor}";
+
+            var f = new CapaPresentacion.VentanasEmergentes.frmReporteResultado();
+            f.CargarDatos(_ultimoResultado, _tituloActualReporte, subtitulo); // ← usa la sobrecarga con subtítulo
             f.ShowDialog(this);
         }
 
