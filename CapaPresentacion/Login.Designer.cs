@@ -45,9 +45,8 @@
             this.label1.BackColor = System.Drawing.Color.DarkRed;
             this.label1.Dock = System.Windows.Forms.DockStyle.Left;
             this.label1.Location = new System.Drawing.Point(0, 0);
-            this.label1.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(340, 375);
+            this.label1.Size = new System.Drawing.Size(255, 305);
             this.label1.TabIndex = 0;
             // 
             // labelTitulo
@@ -56,10 +55,9 @@
             this.labelTitulo.BackColor = System.Drawing.Color.DarkRed;
             this.labelTitulo.Font = new System.Drawing.Font("Microsoft Sans Serif", 15F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.labelTitulo.ForeColor = System.Drawing.Color.White;
-            this.labelTitulo.Location = new System.Drawing.Point(60, 294);
-            this.labelTitulo.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+            this.labelTitulo.Location = new System.Drawing.Point(45, 239);
             this.labelTitulo.Name = "labelTitulo";
-            this.labelTitulo.Size = new System.Drawing.Size(214, 29);
+            this.labelTitulo.Size = new System.Drawing.Size(167, 25);
             this.labelTitulo.TabIndex = 2;
             this.labelTitulo.Text = "Sistema de Venta";
             // 
@@ -69,49 +67,44 @@
             this.iconPictureBox1.IconChar = FontAwesome.Sharp.IconChar.Store;
             this.iconPictureBox1.IconColor = System.Drawing.Color.White;
             this.iconPictureBox1.IconFont = FontAwesome.Sharp.IconFont.Auto;
-            this.iconPictureBox1.IconSize = 161;
-            this.iconPictureBox1.Location = new System.Drawing.Point(83, 57);
-            this.iconPictureBox1.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.iconPictureBox1.IconSize = 131;
+            this.iconPictureBox1.Location = new System.Drawing.Point(62, 46);
             this.iconPictureBox1.Name = "iconPictureBox1";
-            this.iconPictureBox1.Size = new System.Drawing.Size(175, 161);
+            this.iconPictureBox1.Size = new System.Drawing.Size(131, 131);
             this.iconPictureBox1.TabIndex = 3;
             this.iconPictureBox1.TabStop = false;
             // 
             // labelUser
             // 
             this.labelUser.AutoSize = true;
-            this.labelUser.Location = new System.Drawing.Point(388, 70);
-            this.labelUser.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+            this.labelUser.Location = new System.Drawing.Point(291, 57);
             this.labelUser.Name = "labelUser";
-            this.labelUser.Size = new System.Drawing.Size(57, 16);
+            this.labelUser.Size = new System.Drawing.Size(46, 13);
             this.labelUser.TabIndex = 6;
             this.labelUser.Text = "Usuario:";
             // 
             // textBoxUser
             // 
-            this.textBoxUser.Location = new System.Drawing.Point(388, 105);
-            this.textBoxUser.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.textBoxUser.Location = new System.Drawing.Point(291, 85);
             this.textBoxUser.Name = "textBoxUser";
-            this.textBoxUser.Size = new System.Drawing.Size(275, 22);
+            this.textBoxUser.Size = new System.Drawing.Size(207, 20);
             this.textBoxUser.TabIndex = 7;
             // 
             // labelPassword
             // 
             this.labelPassword.AutoSize = true;
-            this.labelPassword.Location = new System.Drawing.Point(388, 149);
-            this.labelPassword.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+            this.labelPassword.Location = new System.Drawing.Point(291, 121);
             this.labelPassword.Name = "labelPassword";
-            this.labelPassword.Size = new System.Drawing.Size(79, 16);
+            this.labelPassword.Size = new System.Drawing.Size(64, 13);
             this.labelPassword.TabIndex = 8;
             this.labelPassword.Text = "Contraseña:";
             // 
             // textBoxPassword
             // 
-            this.textBoxPassword.Location = new System.Drawing.Point(388, 180);
-            this.textBoxPassword.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.textBoxPassword.Location = new System.Drawing.Point(291, 146);
             this.textBoxPassword.Name = "textBoxPassword";
             this.textBoxPassword.PasswordChar = '*';
-            this.textBoxPassword.Size = new System.Drawing.Size(275, 22);
+            this.textBoxPassword.Size = new System.Drawing.Size(207, 20);
             this.textBoxPassword.TabIndex = 9;
             // 
             // iconButtonIngresar
@@ -124,10 +117,9 @@
             this.iconButtonIngresar.IconColor = System.Drawing.Color.DimGray;
             this.iconButtonIngresar.IconFont = FontAwesome.Sharp.IconFont.Auto;
             this.iconButtonIngresar.IconSize = 21;
-            this.iconButtonIngresar.Location = new System.Drawing.Point(392, 238);
-            this.iconButtonIngresar.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.iconButtonIngresar.Location = new System.Drawing.Point(294, 193);
             this.iconButtonIngresar.Name = "iconButtonIngresar";
-            this.iconButtonIngresar.Size = new System.Drawing.Size(272, 32);
+            this.iconButtonIngresar.Size = new System.Drawing.Size(204, 26);
             this.iconButtonIngresar.TabIndex = 10;
             this.iconButtonIngresar.Text = "Ingresar";
             this.iconButtonIngresar.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
@@ -143,10 +135,9 @@
             this.iconButtonCancelar.IconChar = FontAwesome.Sharp.IconChar.None;
             this.iconButtonCancelar.IconColor = System.Drawing.Color.Black;
             this.iconButtonCancelar.IconFont = FontAwesome.Sharp.IconFont.Auto;
-            this.iconButtonCancelar.Location = new System.Drawing.Point(481, 277);
-            this.iconButtonCancelar.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.iconButtonCancelar.Location = new System.Drawing.Point(361, 225);
             this.iconButtonCancelar.Name = "iconButtonCancelar";
-            this.iconButtonCancelar.Size = new System.Drawing.Size(100, 28);
+            this.iconButtonCancelar.Size = new System.Drawing.Size(75, 23);
             this.iconButtonCancelar.TabIndex = 11;
             this.iconButtonCancelar.Text = "Cancelar";
             this.iconButtonCancelar.UseVisualStyleBackColor = true;
@@ -154,9 +145,9 @@
             // 
             // Login
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(721, 375);
+            this.ClientSize = new System.Drawing.Size(541, 305);
             this.Controls.Add(this.iconButtonCancelar);
             this.Controls.Add(this.iconButtonIngresar);
             this.Controls.Add(this.textBoxPassword);
@@ -166,10 +157,8 @@
             this.Controls.Add(this.iconPictureBox1);
             this.Controls.Add(this.labelTitulo);
             this.Controls.Add(this.label1);
-            this.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.Name = "Login";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
-            this.Text = "Login";
             ((System.ComponentModel.ISupportInitialize)(this.iconPictureBox1)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();

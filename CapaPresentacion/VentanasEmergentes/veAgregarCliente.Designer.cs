@@ -256,7 +256,6 @@
             this.Controls.Add(this.label2);
             this.Name = "veAgregarCliente";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
-            this.Text = "veAgregarCliente";
             this.ResumeLayout(false);
             this.PerformLayout();
 

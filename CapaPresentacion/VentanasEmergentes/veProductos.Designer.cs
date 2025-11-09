@@ -28,8 +28,8 @@
         /// </summary>
         private void InitializeComponent()
         {
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle1 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle2 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle3 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle4 = new System.Windows.Forms.DataGridViewCellStyle();
             this.iconButtonLimpiar = new FontAwesome.Sharp.IconButton();
             this.iconButtonBuscar = new FontAwesome.Sharp.IconButton();
             this.textBoxBusqueda = new System.Windows.Forms.TextBox();
@@ -60,10 +60,9 @@
             this.iconButtonLimpiar.IconColor = System.Drawing.Color.Black;
             this.iconButtonLimpiar.IconFont = FontAwesome.Sharp.IconFont.Auto;
             this.iconButtonLimpiar.IconSize = 18;
-            this.iconButtonLimpiar.Location = new System.Drawing.Point(1092, 38);
-            this.iconButtonLimpiar.Margin = new System.Windows.Forms.Padding(4);
+            this.iconButtonLimpiar.Location = new System.Drawing.Point(819, 31);
             this.iconButtonLimpiar.Name = "iconButtonLimpiar";
-            this.iconButtonLimpiar.Size = new System.Drawing.Size(45, 22);
+            this.iconButtonLimpiar.Size = new System.Drawing.Size(34, 18);
             this.iconButtonLimpiar.TabIndex = 79;
             this.iconButtonLimpiar.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
             this.iconButtonLimpiar.UseVisualStyleBackColor = false;
@@ -80,10 +79,9 @@
             this.iconButtonBuscar.IconColor = System.Drawing.Color.Black;
             this.iconButtonBuscar.IconFont = FontAwesome.Sharp.IconFont.Auto;
             this.iconButtonBuscar.IconSize = 16;
-            this.iconButtonBuscar.Location = new System.Drawing.Point(1038, 38);
-            this.iconButtonBuscar.Margin = new System.Windows.Forms.Padding(4);
+            this.iconButtonBuscar.Location = new System.Drawing.Point(778, 31);
             this.iconButtonBuscar.Name = "iconButtonBuscar";
-            this.iconButtonBuscar.Size = new System.Drawing.Size(45, 22);
+            this.iconButtonBuscar.Size = new System.Drawing.Size(34, 18);
             this.iconButtonBuscar.TabIndex = 80;
             this.iconButtonBuscar.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
             this.iconButtonBuscar.UseVisualStyleBackColor = false;
@@ -91,10 +89,9 @@
             // 
             // textBoxBusqueda
             // 
-            this.textBoxBusqueda.Location = new System.Drawing.Point(820, 38);
-            this.textBoxBusqueda.Margin = new System.Windows.Forms.Padding(4);
+            this.textBoxBusqueda.Location = new System.Drawing.Point(615, 31);
             this.textBoxBusqueda.Name = "textBoxBusqueda";
-            this.textBoxBusqueda.Size = new System.Drawing.Size(209, 22);
+            this.textBoxBusqueda.Size = new System.Drawing.Size(158, 20);
             this.textBoxBusqueda.TabIndex = 78;
             // 
             // comboBoxBusqueda
@@ -103,20 +100,18 @@
             this.comboBoxBusqueda.Cursor = System.Windows.Forms.Cursors.Hand;
             this.comboBoxBusqueda.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.comboBoxBusqueda.FormattingEnabled = true;
-            this.comboBoxBusqueda.Location = new System.Drawing.Point(646, 38);
-            this.comboBoxBusqueda.Margin = new System.Windows.Forms.Padding(4);
+            this.comboBoxBusqueda.Location = new System.Drawing.Point(484, 31);
             this.comboBoxBusqueda.Name = "comboBoxBusqueda";
-            this.comboBoxBusqueda.Size = new System.Drawing.Size(165, 24);
+            this.comboBoxBusqueda.Size = new System.Drawing.Size(125, 21);
             this.comboBoxBusqueda.TabIndex = 77;
             // 
             // labelBuscar
             // 
             this.labelBuscar.AutoSize = true;
             this.labelBuscar.BackColor = System.Drawing.Color.White;
-            this.labelBuscar.Location = new System.Drawing.Point(534, 41);
-            this.labelBuscar.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+            this.labelBuscar.Location = new System.Drawing.Point(400, 33);
             this.labelBuscar.Name = "labelBuscar";
-            this.labelBuscar.Size = new System.Drawing.Size(76, 16);
+            this.labelBuscar.Size = new System.Drawing.Size(62, 13);
             this.labelBuscar.TabIndex = 76;
             this.labelBuscar.Text = "Buscar Por:";
             // 
@@ -124,10 +119,9 @@
             // 
             this.labelListaProductos.BackColor = System.Drawing.Color.White;
             this.labelListaProductos.Font = new System.Drawing.Font("Microsoft Sans Serif", 16F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.labelListaProductos.Location = new System.Drawing.Point(14, 16);
-            this.labelListaProductos.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+            this.labelListaProductos.Location = new System.Drawing.Point(10, 13);
             this.labelListaProductos.Name = "labelListaProductos";
-            this.labelListaProductos.Size = new System.Drawing.Size(1171, 62);
+            this.labelListaProductos.Size = new System.Drawing.Size(878, 50);
             this.labelListaProductos.TabIndex = 75;
             this.labelListaProductos.Text = "Lista de Productos:";
             this.labelListaProductos.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
@@ -135,15 +129,15 @@
             // ProductosDGV
             // 
             this.ProductosDGV.AllowUserToAddRows = false;
-            dataGridViewCellStyle1.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
-            dataGridViewCellStyle1.BackColor = System.Drawing.SystemColors.Control;
-            dataGridViewCellStyle1.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            dataGridViewCellStyle1.ForeColor = System.Drawing.SystemColors.WindowText;
-            dataGridViewCellStyle1.Padding = new System.Windows.Forms.Padding(2);
-            dataGridViewCellStyle1.SelectionBackColor = System.Drawing.SystemColors.Highlight;
-            dataGridViewCellStyle1.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
-            dataGridViewCellStyle1.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
-            this.ProductosDGV.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle1;
+            dataGridViewCellStyle3.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle3.BackColor = System.Drawing.SystemColors.Control;
+            dataGridViewCellStyle3.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle3.ForeColor = System.Drawing.SystemColors.WindowText;
+            dataGridViewCellStyle3.Padding = new System.Windows.Forms.Padding(2);
+            dataGridViewCellStyle3.SelectionBackColor = System.Drawing.SystemColors.Highlight;
+            dataGridViewCellStyle3.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
+            dataGridViewCellStyle3.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
+            this.ProductosDGV.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle3;
             this.ProductosDGV.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.ProductosDGV.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
             this.id_producto,
@@ -155,23 +149,23 @@
             this.stock,
             this.precio,
             this.activo});
-            this.ProductosDGV.Location = new System.Drawing.Point(14, 104);
-            this.ProductosDGV.Margin = new System.Windows.Forms.Padding(5);
+            this.ProductosDGV.Location = new System.Drawing.Point(10, 84);
+            this.ProductosDGV.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.ProductosDGV.MultiSelect = false;
             this.ProductosDGV.Name = "ProductosDGV";
             this.ProductosDGV.ReadOnly = true;
-            dataGridViewCellStyle2.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
-            dataGridViewCellStyle2.BackColor = System.Drawing.SystemColors.Control;
-            dataGridViewCellStyle2.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            dataGridViewCellStyle2.ForeColor = System.Drawing.SystemColors.WindowText;
-            dataGridViewCellStyle2.SelectionBackColor = System.Drawing.Color.White;
-            dataGridViewCellStyle2.SelectionForeColor = System.Drawing.Color.Black;
-            dataGridViewCellStyle2.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
-            this.ProductosDGV.RowHeadersDefaultCellStyle = dataGridViewCellStyle2;
+            dataGridViewCellStyle4.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle4.BackColor = System.Drawing.SystemColors.Control;
+            dataGridViewCellStyle4.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle4.ForeColor = System.Drawing.SystemColors.WindowText;
+            dataGridViewCellStyle4.SelectionBackColor = System.Drawing.Color.White;
+            dataGridViewCellStyle4.SelectionForeColor = System.Drawing.Color.Black;
+            dataGridViewCellStyle4.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
+            this.ProductosDGV.RowHeadersDefaultCellStyle = dataGridViewCellStyle4;
             this.ProductosDGV.RowHeadersWidth = 51;
             this.ProductosDGV.RowTemplate.Height = 28;
             this.ProductosDGV.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
-            this.ProductosDGV.Size = new System.Drawing.Size(1171, 534);
+            this.ProductosDGV.Size = new System.Drawing.Size(878, 434);
             this.ProductosDGV.TabIndex = 74;
             this.ProductosDGV.CellDoubleClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.ProductosDGV_CellDoubleClick);
             // 
@@ -254,10 +248,10 @@
             // 
             // veProductos
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.DarkRed;
-            this.ClientSize = new System.Drawing.Size(1198, 654);
+            this.ClientSize = new System.Drawing.Size(898, 531);
             this.Controls.Add(this.iconButtonLimpiar);
             this.Controls.Add(this.iconButtonBuscar);
             this.Controls.Add(this.textBoxBusqueda);
@@ -265,9 +259,9 @@
             this.Controls.Add(this.labelBuscar);
             this.Controls.Add(this.labelListaProductos);
             this.Controls.Add(this.ProductosDGV);
+            this.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.Name = "veProductos";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
-            this.Text = "veProductos";
             this.Load += new System.EventHandler(this.veProductos_Load);
             ((System.ComponentModel.ISupportInitialize)(this.ProductosDGV)).EndInit();
             this.ResumeLayout(false);

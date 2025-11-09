@@ -209,7 +209,6 @@
             this.Controls.Add(this.LElegirFechas);
             this.Controls.Add(this.PGenerar);
             this.Name = "frmReportes";
-            this.Text = "frmReportes";
             this.PGenerar.ResumeLayout(false);
             this.PGenerar.PerformLayout();
             this.panel2.ResumeLayout(false);

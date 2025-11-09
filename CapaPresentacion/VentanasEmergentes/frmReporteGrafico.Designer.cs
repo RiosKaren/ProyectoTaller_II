@@ -59,7 +59,7 @@
             this.ClientSize = new System.Drawing.Size(800, 450);
             this.Controls.Add(this.chart1);
             this.Name = "frmReporteGrafico";
-            this.Text = "frmReporteGrafico";
+            this.Text = "Reporte Gráfico";
             ((System.ComponentModel.ISupportInitialize)(this.chart1)).EndInit();
             this.ResumeLayout(false);
 
