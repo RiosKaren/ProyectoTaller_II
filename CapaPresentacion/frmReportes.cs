@@ -68,7 +68,7 @@ namespace CapaPresentacion
             comboBox1.Items.Clear();
             comboBox1.Items.Add(new Utilidades.OpcionCombo { Valor = 0, Texto = "-- Todos --" });
 
-            var lista = new CapaNegocio.CN_Usuario().Listar();
+            var lista = new CapaNegocio.CN_Usuario().ListarActivos();
             foreach (var u in lista)
             {
                 comboBox1.Items.Add(new Utilidades.OpcionCombo
@@ -172,6 +172,5 @@ namespace CapaPresentacion
             f.CargarDatos(_ultimoResultado, _tituloActualReporte, subtitulo); 
             f.ShowDialog(this);
         }
-        
     }
 }

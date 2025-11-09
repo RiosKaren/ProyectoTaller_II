@@ -18,6 +18,11 @@ namespace CapaNegocio
             return objcd_usuario.Listar(); //devuelve la lista de usuarios obtenida desde la capa de datos
         }
 
+        public List<Usuarios> ListarActivos()
+        {
+            return objcd_usuario.ListarActivos(); //devuelve la lista de usuarios obtenida desde la capa de datos
+        }
+
         public int Registrar(Usuarios obj, out string Mensaje)
         {
             return objcd_usuario.Registrar(obj,out Mensaje); //Devuelve el id del usuario registrado desde la capa de datos
