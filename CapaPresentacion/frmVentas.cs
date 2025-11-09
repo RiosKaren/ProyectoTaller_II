@@ -104,9 +104,8 @@ namespace CapaPresentacion
                     textBoxDNICliente.Text = oCliente.dni.ToString();
                     textBoxNombreCliente.Text = oCliente.apellido + ", " + oCliente.nombre;
                 }
-
-
             }
+
         }
 
         private void btnBuscarProducto_Click(object sender, EventArgs e)
@@ -269,7 +268,7 @@ namespace CapaPresentacion
 
             textBoxTotal.Text = total.ToString("$0.00");
 
-            // --- Actualizar comboBoxCuotas si el pago ya está habilitado ---
+            // Actualizar comboBoxCuotas si el pago ya está habilitado
             if (comboBoxPagaCon.Enabled)
             {
                 ActualizarCuotas();

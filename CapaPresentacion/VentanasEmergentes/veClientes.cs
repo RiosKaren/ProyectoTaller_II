@@ -136,7 +136,17 @@ namespace CapaPresentacion.VentanasEmergentes
 
         private void btnAgregarCliente_Click(object sender, EventArgs e)
         {
-
+            using (var ven = new veAgregarCliente())
+            {
+                var r = ven.ShowDialog(this);
+                if (r == DialogResult.OK && ven.ClienteCreado != null)
+                {
+                    _Cliente = ven.ClienteCreado;     
+                    
+                    this.DialogResult = DialogResult.OK;
+                    this.Close();
+                }
+            }
         }
     }
 }

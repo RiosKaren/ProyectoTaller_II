@@ -180,7 +180,7 @@
             this.activo,
             this.estado});
             this.ClientesDGV.Location = new System.Drawing.Point(292, 92);
-            this.ClientesDGV.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.ClientesDGV.Margin = new System.Windows.Forms.Padding(4);
             this.ClientesDGV.MultiSelect = false;
             this.ClientesDGV.Name = "ClientesDGV";
             this.ClientesDGV.ReadOnly = true;
