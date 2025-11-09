@@ -18,8 +18,8 @@
         {
             this.btnExportar = new System.Windows.Forms.Button();
             this.panel1 = new System.Windows.Forms.Panel();
-            this.dgvDatos = new System.Windows.Forms.DataGridView();
             this.btnGrafico = new FontAwesome.Sharp.IconButton();
+            this.dgvDatos = new System.Windows.Forms.DataGridView();
             this.panel1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dgvDatos)).BeginInit();
             this.SuspendLayout();
@@ -46,6 +46,19 @@
             this.panel1.Size = new System.Drawing.Size(866, 511);
             this.panel1.TabIndex = 2;
             // 
+            // btnGrafico
+            // 
+            this.btnGrafico.IconChar = FontAwesome.Sharp.IconChar.None;
+            this.btnGrafico.IconColor = System.Drawing.Color.Black;
+            this.btnGrafico.IconFont = FontAwesome.Sharp.IconFont.Auto;
+            this.btnGrafico.Location = new System.Drawing.Point(644, 469);
+            this.btnGrafico.Name = "btnGrafico";
+            this.btnGrafico.Size = new System.Drawing.Size(115, 23);
+            this.btnGrafico.TabIndex = 2;
+            this.btnGrafico.Text = "Mostrar Grafico";
+            this.btnGrafico.UseVisualStyleBackColor = true;
+            this.btnGrafico.Click += new System.EventHandler(this.btnGrafico_Click);
+            // 
             // dgvDatos
             // 
             this.dgvDatos.AllowUserToAddRows = false;
@@ -60,19 +73,6 @@
             this.dgvDatos.ReadOnly = true;
             this.dgvDatos.Size = new System.Drawing.Size(835, 446);
             this.dgvDatos.TabIndex = 1;
-            // 
-            // btnGrafico
-            // 
-            this.btnGrafico.IconChar = FontAwesome.Sharp.IconChar.None;
-            this.btnGrafico.IconColor = System.Drawing.Color.Black;
-            this.btnGrafico.IconFont = FontAwesome.Sharp.IconFont.Auto;
-            this.btnGrafico.Location = new System.Drawing.Point(644, 469);
-            this.btnGrafico.Name = "btnGrafico";
-            this.btnGrafico.Size = new System.Drawing.Size(115, 23);
-            this.btnGrafico.TabIndex = 2;
-            this.btnGrafico.Text = "Mostrar Grafico";
-            this.btnGrafico.UseVisualStyleBackColor = true;
-            this.btnGrafico.Click += new System.EventHandler(this.btnGrafico_Click);
             // 
             // frmReporteResultado
             // 

@@ -1,9 +1,10 @@
-﻿using System;
-using System.Data;
-using System.IO;
-using MigraDoc.DocumentObjectModel;
+﻿using MigraDoc.DocumentObjectModel;
 using MigraDoc.DocumentObjectModel.Tables;
 using MigraDoc.Rendering;
+using System;
+using System.Data;
+using System.IO;
+using System.Linq;
 
 namespace CapaPresentacion.Utilidades
 {
@@ -31,7 +32,7 @@ namespace CapaPresentacion.Utilidades
             string nombreArchivo = $"{SanearNombre(titulo)}_{DateTime.Now:yyyyMMdd_HHmmss}.pdf";
             string rutaFinal = Path.Combine(carpetaDestino, nombreArchivo);
 
-            // ===== documento =====
+            // documento 
             var doc = new Document();
             doc.Info.Title = titulo;
 
@@ -40,7 +41,7 @@ namespace CapaPresentacion.Utilidades
             normal.Font.Name = "Arial";
             normal.Font.Size = 9;
 
-            // ===== sección =====
+            // sección 
             var section = doc.AddSection();
             section.PageSetup.LeftMargin = Unit.FromCentimeter(1.5);
             section.PageSetup.RightMargin = Unit.FromCentimeter(1.5);
@@ -59,12 +60,12 @@ namespace CapaPresentacion.Utilidades
             if (dt.Columns.Count > 6)
                 section.PageSetup.Orientation = Orientation.Landscape;
 
-            // ancho útil (lo usamos para el gráfico y para la tabla contenedora)
+            // ancho útil (para el grAfico y para la tabla contenedora)
             Unit anchoUtil = section.PageSetup.PageWidth
                                 - section.PageSetup.LeftMargin
                                 - section.PageSetup.RightMargin;
 
-            // ===== cabecera =====
+            // cabecera 
             var pTitulo = section.AddParagraph(titulo);
             pTitulo.Format.Alignment = ParagraphAlignment.Center;
             pTitulo.Format.Font.Size = 16;
@@ -86,24 +87,21 @@ namespace CapaPresentacion.Utilidades
             pFecha.Format.Font.Color = Colors.Gray;
             pFecha.Format.SpaceAfter = Unit.FromCentimeter(0.4);
 
-            // =================================================================
-            // 1) TABLA CONTENEDORA (para centrar)
-            // =================================================================
+            
+            // TABLA CONTENEDORA (para centrar)
             var cont = section.AddTable();
             cont.Borders.Visible = false;
             cont.AddColumn(anchoUtil); // ocupa todo el ancho útil
 
             var filaCont = cont.AddRow();
             var celdaCont = filaCont.Cells[0];
-            celdaCont.Format.Alignment = ParagraphAlignment.Center; // lo que metas adentro queda centrado
+            celdaCont.Format.Alignment = ParagraphAlignment.Center; 
 
-            // =================================================================
+
             // 2) TABLA REAL (dentro del contenedor)
-            // =================================================================
             var table = celdaCont.Elements.AddTable();
             table.Borders.Width = 0.5;
 
-            // ======= AQUÍ CAMBIAMOS EL REPARTO DE ANCHO =======
             double anchoUtilCm = anchoUtil.Centimeter;
 
             bool esRecaudacionClasica =
@@ -203,7 +201,8 @@ namespace CapaPresentacion.Utilidades
                     {
                         // Verificar si es una columna de importe (NO cantidad)
                         string nombreCol = dt.Columns[i].ColumnName.ToLower();
-                        bool esCantidad = nombreCol.Contains("cantidad") || nombreCol.Equals("total_cantidad");
+                        string[] columnasCantidad = { "cantidad", "total_cantidad", "cant_ventas", "cantidad_ventas" };
+                        bool esCantidad = columnasCantidad.Any(c => nombreCol.Contains(c));
 
                         if (esCantidad)
                         {
@@ -223,7 +222,6 @@ namespace CapaPresentacion.Utilidades
                 }
             }
 
-            // ===== gráfico centrado =====
             if (grafico != null && grafico.Length > 0)
             {
                 var tGraf = section.AddParagraph("Gráfico");
@@ -242,7 +240,7 @@ namespace CapaPresentacion.Utilidades
                 img.Width = Unit.FromCentimeter(16);
             }
 
-            // ===== render =====
+            // render 
             var renderer = new PdfDocumentRenderer(unicode: true)
             {
                 Document = doc

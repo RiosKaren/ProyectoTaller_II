@@ -15,9 +15,7 @@ namespace CapaPresentacion.VentanasEmergentes
             InitializeComponent();
         }
 
-        // =========================
         // CARGA DEL GRÁFICO
-        // =========================
         public void Cargar(DataTable dt, string titulo)
         {
             Text = "Gráfico - " + titulo;
@@ -185,9 +183,7 @@ namespace CapaPresentacion.VentanasEmergentes
             }
         }
 
-        // =========================
         // helpers
-        // =========================
         private static string Col(DataTable dt, string name)
         {
             var n = name.ToUpperInvariant();
@@ -221,5 +217,6 @@ namespace CapaPresentacion.VentanasEmergentes
             DateTime.TryParse(Convert.ToString(o), out DateTime d);
             return d;
         }
+
     }
 }

@@ -63,12 +63,12 @@ namespace CapaPresentacion.VentanasEmergentes
                     var fg = new frmReporteGrafico();
                     fg.Cargar(_dtActual, _tituloActual ?? "Reporte");
 
-                    // menos resolución → texto más grande en el PDF
+                    // menos resolución (texto más grande en el PDF)
                     grafBytes = fg.ExportarComoImagen(1000, 550);
                 }
                 catch
                 {
-                    // si falla el gráfico seguimos sin él
+                    //si falla el gráfico seguimos sin el
                 }
 
                 string ruta = CapaPresentacion.Utilidades.PdfReporte.GenerarDesdeDataTable(
@@ -104,5 +104,7 @@ namespace CapaPresentacion.VentanasEmergentes
             f.Cargar(_dtActual, _tituloActual ?? "Reporte");
             f.ShowDialog(this);
         }
+
+
     }
 }
