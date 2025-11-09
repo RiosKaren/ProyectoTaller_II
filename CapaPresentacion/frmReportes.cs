@@ -124,7 +124,7 @@ namespace CapaPresentacion
                 DTPReporteDesde.Value,
                 DTPReporteHasta.Value,
                 idVend,
-                false // no contamos NC
+                true // contamos NC
             );
 
             _ultimoResultado = dt;
@@ -169,9 +169,9 @@ namespace CapaPresentacion
             string subtitulo = $"Período: {DTPReporteDesde.Value:dd/MM/yyyy} – {DTPReporteHasta.Value:dd/MM/yyyy} | Vendedor: {textoVendedor}";
 
             var f = new CapaPresentacion.VentanasEmergentes.frmReporteResultado();
-            f.CargarDatos(_ultimoResultado, _tituloActualReporte, subtitulo); // ← usa la sobrecarga con subtítulo
+            f.CargarDatos(_ultimoResultado, _tituloActualReporte, subtitulo); 
             f.ShowDialog(this);
         }
-
+        
     }
 }
