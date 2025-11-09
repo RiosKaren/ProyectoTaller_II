@@ -29,9 +29,7 @@
         private void InitializeComponent()
         {
             this.PGenerar = new System.Windows.Forms.Panel();
-            this.BGenerarReporte = new System.Windows.Forms.Button();
             this.comboBox1 = new System.Windows.Forms.ComboBox();
-            this.bBuscar = new System.Windows.Forms.Button();
             this.LVendedor = new System.Windows.Forms.Label();
             this.panel2 = new System.Windows.Forms.Panel();
             this.LHasta = new System.Windows.Forms.Label();
@@ -53,24 +51,12 @@
             // PGenerar
             // 
             this.PGenerar.BackColor = System.Drawing.Color.DarkRed;
-            this.PGenerar.Controls.Add(this.BGenerarReporte);
             this.PGenerar.Controls.Add(this.comboBox1);
-            this.PGenerar.Controls.Add(this.bBuscar);
             this.PGenerar.Controls.Add(this.LVendedor);
             this.PGenerar.Location = new System.Drawing.Point(0, 260);
             this.PGenerar.Name = "PGenerar";
             this.PGenerar.Size = new System.Drawing.Size(1185, 288);
             this.PGenerar.TabIndex = 6;
-            // 
-            // BGenerarReporte
-            // 
-            this.BGenerarReporte.Location = new System.Drawing.Point(963, 214);
-            this.BGenerarReporte.Name = "BGenerarReporte";
-            this.BGenerarReporte.Size = new System.Drawing.Size(188, 45);
-            this.BGenerarReporte.TabIndex = 13;
-            this.BGenerarReporte.Text = "Generar Reporte";
-            this.BGenerarReporte.UseVisualStyleBackColor = true;
-            this.BGenerarReporte.Click += new System.EventHandler(this.BGenerarReporte_Click);
             // 
             // comboBox1
             // 
@@ -79,16 +65,6 @@
             this.comboBox1.Name = "comboBox1";
             this.comboBox1.Size = new System.Drawing.Size(282, 21);
             this.comboBox1.TabIndex = 12;
-            // 
-            // bBuscar
-            // 
-            this.bBuscar.Location = new System.Drawing.Point(498, 111);
-            this.bBuscar.Name = "bBuscar";
-            this.bBuscar.Size = new System.Drawing.Size(75, 23);
-            this.bBuscar.TabIndex = 11;
-            this.bBuscar.Text = "Buscar";
-            this.bBuscar.UseVisualStyleBackColor = true;
-            this.bBuscar.Click += new System.EventHandler(this.bBuscar_Click);
             // 
             // LVendedor
             // 
@@ -226,7 +202,7 @@
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.White;
-            this.ClientSize = new System.Drawing.Size(1389, 736);
+            this.ClientSize = new System.Drawing.Size(1183, 589);
             this.Controls.Add(this.PanelGenerarReporte);
             this.Controls.Add(this.panel2);
             this.Controls.Add(this.label1);
@@ -258,9 +234,7 @@
         private System.Windows.Forms.Button BTotalVentas;
         private System.Windows.Forms.Button BProductosMasVendidos;
         private System.Windows.Forms.Button BRecaudacion;
-        private System.Windows.Forms.Button BGenerarReporte;
         private System.Windows.Forms.ComboBox comboBox1;
-        private System.Windows.Forms.Button bBuscar;
         private System.Windows.Forms.Label LGenerarReporte;
         private System.Windows.Forms.Panel PanelGenerarReporte;
     }

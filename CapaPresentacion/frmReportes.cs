@@ -12,7 +12,6 @@ namespace CapaPresentacion
         private DataTable _ultimoResultado;
         private string _tituloActualReporte = "Reporte";
 
-        // IDs reales de roles (según tu script)
         private const int ROL_ADMIN = 1;
         private const int ROL_VENDEDOR = 2;
         private const int ROL_SUPERVISOR = 3;
@@ -21,7 +20,7 @@ namespace CapaPresentacion
         {
             _usuarioActual = usuario;
             InitializeComponent();
-            this.Load += frmReportes_Load; // los Clicks los maneja el Designer
+            this.Load += frmReportes_Load;
         }
 
         private void frmReportes_Load(object sender, EventArgs e)
@@ -43,7 +42,7 @@ namespace CapaPresentacion
 
             if (idRol == ROL_VENDEDOR)
             {
-                // Vendedor: combo fijo consigo mismo y Buscar deshabilitado
+                // Vendedor: combo fijo consigo mismo
                 comboBox1.Items.Clear();
                 comboBox1.Items.Add(new Utilidades.OpcionCombo
                 {
@@ -53,16 +52,14 @@ namespace CapaPresentacion
                 comboBox1.DisplayMember = "Texto";
                 comboBox1.ValueMember = "Valor";
                 comboBox1.SelectedIndex = 0;
-
                 comboBox1.Enabled = false;
-                bBuscar.Enabled = false;
+                
             }
             else
             {
-                // Admin / Supervisor: puede elegir
+                //Supervisor: puede elegir
                 CargarVendedores();
                 comboBox1.Enabled = true;
-                bBuscar.Enabled = true;
             }
         }
 
@@ -86,21 +83,19 @@ namespace CapaPresentacion
             comboBox1.SelectedIndex = 0;
         }
 
-        // ---------- Utilitario común ----------
         private int ObtenerIdVendedorSeleccionado()
         {
             int idRol = _usuarioActual.id_rol.id_rol;
 
             if (idRol == ROL_VENDEDOR)
-                return _usuarioActual.id_usuario; // siempre él
+                return _usuarioActual.id_usuario; 
 
             if (comboBox1.SelectedItem is Utilidades.OpcionCombo oc)
                 return Convert.ToInt32(oc.Valor);
 
-            return 0; // todos
+            return 0; 
         }
 
-        // ---------- Botones de reporte ----------
         private void BRecaudacion_Click(object sender, EventArgs e)
         {
             int idVend = ObtenerIdVendedorSeleccionado();
@@ -115,7 +110,9 @@ namespace CapaPresentacion
 
             _ultimoResultado = dt;
             _tituloActualReporte = "Recaudación";
-            MessageBox.Show("Recaudación generada. Ahora podés mostrarla.");
+
+            mostrarReporte(sender,e);
+
         }
 
         private void BProductosMasVendidos_Click(object sender, EventArgs e)
@@ -132,7 +129,8 @@ namespace CapaPresentacion
 
             _ultimoResultado = dt;
             _tituloActualReporte = "Productos más vendidos";
-            MessageBox.Show("Reporte de productos generado. Ahora podés mostrarlo.");
+
+            mostrarReporte(sender, e);
         }
 
         private void BTotalVentas_Click(object sender, EventArgs e)
@@ -149,10 +147,11 @@ namespace CapaPresentacion
 
             _ultimoResultado = dt;
             _tituloActualReporte = "Total de ventas";
-            MessageBox.Show("Reporte de total de ventas generado. Ahora podés mostrarlo.");
+
+            mostrarReporte(sender, e);
         }
 
-        private void BGenerarReporte_Click(object sender, EventArgs e)
+        private void mostrarReporte(object sender, EventArgs e)
         {
             if (_ultimoResultado == null)
             {
@@ -160,7 +159,6 @@ namespace CapaPresentacion
                 return;
             }
 
-            // Texto vendedor (si es "Todos", mostrémoslo claro)
             string textoVendedor;
             if (comboBox1.Enabled && comboBox1.SelectedItem is Utilidades.OpcionCombo oc)
                 textoVendedor = (Convert.ToInt32(oc.Valor) == 0) ? "Todos" : oc.Texto;
@@ -175,11 +173,5 @@ namespace CapaPresentacion
             f.ShowDialog(this);
         }
 
-        private void bBuscar_Click(object sender, EventArgs e)
-        {
-            // Refrescar lista de vendedores (solo útil para admin/supervisor)
-            if (comboBox1.Enabled)
-                CargarVendedores();
-        }
     }
 }
