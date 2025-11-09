@@ -28,8 +28,8 @@
         /// </summary>
         private void InitializeComponent()
         {
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle3 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle4 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle1 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle2 = new System.Windows.Forms.DataGridViewCellStyle();
             this.textBoxIndice = new System.Windows.Forms.TextBox();
             this.textBoxBusqueda = new System.Windows.Forms.TextBox();
             this.comboBoxBusqueda = new System.Windows.Forms.ComboBox();
@@ -75,6 +75,7 @@
             this.labelPeso = new System.Windows.Forms.Label();
             this.comboBoxTalles = new System.Windows.Forms.ComboBox();
             this.textBoxStock = new System.Windows.Forms.NumericUpDown();
+            this.btnReporteStock = new FontAwesome.Sharp.IconButton();
             ((System.ComponentModel.ISupportInitialize)(this.ProductosDGV)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.TallesDGV)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.PBFoto)).BeginInit();
@@ -140,15 +141,15 @@
             // ProductosDGV
             // 
             this.ProductosDGV.AllowUserToAddRows = false;
-            dataGridViewCellStyle3.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
-            dataGridViewCellStyle3.BackColor = System.Drawing.SystemColors.Control;
-            dataGridViewCellStyle3.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            dataGridViewCellStyle3.ForeColor = System.Drawing.SystemColors.WindowText;
-            dataGridViewCellStyle3.Padding = new System.Windows.Forms.Padding(2);
-            dataGridViewCellStyle3.SelectionBackColor = System.Drawing.SystemColors.Highlight;
-            dataGridViewCellStyle3.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
-            dataGridViewCellStyle3.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
-            this.ProductosDGV.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle3;
+            dataGridViewCellStyle1.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle1.BackColor = System.Drawing.SystemColors.Control;
+            dataGridViewCellStyle1.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle1.ForeColor = System.Drawing.SystemColors.WindowText;
+            dataGridViewCellStyle1.Padding = new System.Windows.Forms.Padding(2);
+            dataGridViewCellStyle1.SelectionBackColor = System.Drawing.SystemColors.Highlight;
+            dataGridViewCellStyle1.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
+            dataGridViewCellStyle1.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
+            this.ProductosDGV.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle1;
             this.ProductosDGV.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.ProductosDGV.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
             this.botonSeleccionar,
@@ -163,24 +164,25 @@
             this.activo,
             this.estado});
             this.ProductosDGV.Location = new System.Drawing.Point(292, 92);
-            this.ProductosDGV.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.ProductosDGV.Margin = new System.Windows.Forms.Padding(4);
             this.ProductosDGV.MultiSelect = false;
             this.ProductosDGV.Name = "ProductosDGV";
             this.ProductosDGV.ReadOnly = true;
-            dataGridViewCellStyle4.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
-            dataGridViewCellStyle4.BackColor = System.Drawing.SystemColors.Control;
-            dataGridViewCellStyle4.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            dataGridViewCellStyle4.ForeColor = System.Drawing.SystemColors.WindowText;
-            dataGridViewCellStyle4.SelectionBackColor = System.Drawing.Color.White;
-            dataGridViewCellStyle4.SelectionForeColor = System.Drawing.Color.Black;
-            dataGridViewCellStyle4.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
-            this.ProductosDGV.RowHeadersDefaultCellStyle = dataGridViewCellStyle4;
+            dataGridViewCellStyle2.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle2.BackColor = System.Drawing.SystemColors.Control;
+            dataGridViewCellStyle2.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle2.ForeColor = System.Drawing.SystemColors.WindowText;
+            dataGridViewCellStyle2.SelectionBackColor = System.Drawing.Color.White;
+            dataGridViewCellStyle2.SelectionForeColor = System.Drawing.Color.Black;
+            dataGridViewCellStyle2.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
+            this.ProductosDGV.RowHeadersDefaultCellStyle = dataGridViewCellStyle2;
             this.ProductosDGV.RowHeadersWidth = 51;
             this.ProductosDGV.RowTemplate.Height = 28;
             this.ProductosDGV.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
-            this.ProductosDGV.Size = new System.Drawing.Size(878, 434);
+            this.ProductosDGV.Size = new System.Drawing.Size(878, 423);
             this.ProductosDGV.TabIndex = 62;
             this.ProductosDGV.CellClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.ProductosDGV_CellClick);
+            this.ProductosDGV.CellFormatting += new System.Windows.Forms.DataGridViewCellFormattingEventHandler(this.ProductosDGV_CellFormatting);
             this.ProductosDGV.CellPainting += new System.Windows.Forms.DataGridViewCellPaintingEventHandler(this.ProductosDGV_CellPainting);
             // 
             // botonSeleccionar
@@ -433,7 +435,7 @@
             this.PBFoto.Image = global::CapaPresentacion.Properties.Resources.c865;
             this.PBFoto.Location = new System.Drawing.Point(169, 367);
             this.PBFoto.Name = "PBFoto";
-            this.PBFoto.Size = new System.Drawing.Size(64, 69);
+            this.PBFoto.Size = new System.Drawing.Size(65, 69);
             this.PBFoto.TabIndex = 77;
             this.PBFoto.TabStop = false;
             // 
@@ -624,7 +626,7 @@
             // 
             this.textBoxStock.Cursor = System.Windows.Forms.Cursors.Hand;
             this.textBoxStock.Location = new System.Drawing.Point(92, 228);
-            this.textBoxStock.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.textBoxStock.Margin = new System.Windows.Forms.Padding(2);
             this.textBoxStock.Name = "textBoxStock";
             this.textBoxStock.Size = new System.Drawing.Size(87, 20);
             this.textBoxStock.TabIndex = 89;
@@ -634,12 +636,34 @@
             0,
             0});
             // 
+            // btnReporteStock
+            // 
+            this.btnReporteStock.BackColor = System.Drawing.Color.SlateGray;
+            this.btnReporteStock.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.btnReporteStock.FlatAppearance.BorderColor = System.Drawing.Color.Black;
+            this.btnReporteStock.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnReporteStock.ForeColor = System.Drawing.Color.White;
+            this.btnReporteStock.IconChar = FontAwesome.Sharp.IconChar.Upload;
+            this.btnReporteStock.IconColor = System.Drawing.Color.White;
+            this.btnReporteStock.IconFont = FontAwesome.Sharp.IconFont.Auto;
+            this.btnReporteStock.IconSize = 16;
+            this.btnReporteStock.Location = new System.Drawing.Point(958, 532);
+            this.btnReporteStock.Name = "btnReporteStock";
+            this.btnReporteStock.Size = new System.Drawing.Size(212, 23);
+            this.btnReporteStock.TabIndex = 90;
+            this.btnReporteStock.Text = "Generar reporte Stock";
+            this.btnReporteStock.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
+            this.btnReporteStock.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
+            this.btnReporteStock.UseVisualStyleBackColor = false;
+            this.btnReporteStock.Click += new System.EventHandler(this.btnReporteStock_Click);
+            // 
             // frmProductos
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.DarkRed;
             this.ClientSize = new System.Drawing.Size(1189, 566);
+            this.Controls.Add(this.btnReporteStock);
             this.Controls.Add(this.textBoxStock);
             this.Controls.Add(this.comboBoxTalles);
             this.Controls.Add(this.labelPeso);
@@ -732,5 +756,6 @@
         private System.Windows.Forms.Label labelPeso;
         private System.Windows.Forms.ComboBox comboBoxTalles;
         private System.Windows.Forms.NumericUpDown textBoxStock;
+        private FontAwesome.Sharp.IconButton btnReporteStock;
     }
 }

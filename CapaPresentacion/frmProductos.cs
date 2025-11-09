@@ -1,6 +1,11 @@
-﻿using CapaEntidad;
+﻿using CapaDatos;
+using CapaEntidad;
 using CapaNegocio;
 using CapaPresentacion.Utilidades;
+using iTextSharp.text;
+using iTextSharp.text.pdf;
+using MigraDoc.DocumentObjectModel;
+using MigraDoc.DocumentObjectModel.IO;
 using System;
 using System.Collections.Generic;
 using System.ComponentModel;
@@ -15,6 +20,8 @@ using System.Text;
 using System.Text.RegularExpressions;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using Color = MigraDoc.DocumentObjectModel.Color;
+
 
 
 namespace CapaPresentacion
@@ -80,13 +87,13 @@ namespace CapaPresentacion
             // Carga productos en el DataGridView
             foreach (Productos item in listaProductos)
             {
-                Image imagenProducto = null;
+                System.Drawing.Image imagenProducto = null;
 
                 if (!string.IsNullOrEmpty(item.imagen_url))
                 {
                     string rutaImagen = Path.Combine(Application.StartupPath, "..\\..\\Fotos", item.imagen_url);
                     if (File.Exists(rutaImagen))
-                        imagenProducto = Image.FromFile(rutaImagen);
+                        imagenProducto = System.Drawing.Image.FromFile(rutaImagen);
                 }
 
                 ProductosDGV.Rows.Add(new object[]
@@ -122,7 +129,7 @@ namespace CapaPresentacion
             if (OFDFotos.ShowDialog() == DialogResult.OK)
             {
                 TBFotoPath.Text = OFDFotos.FileName;
-                PBFoto.Image = Image.FromFile(OFDFotos.FileName);
+                PBFoto.Image = System.Drawing.Image.FromFile(OFDFotos.FileName);
                 PBFoto.SizeMode = PictureBoxSizeMode.Zoom;
             }
         }
@@ -410,14 +417,14 @@ namespace CapaPresentacion
 
             foreach (Productos item in listaProductos)
             {
-                Image imagenProducto = null;
+                System.Drawing.Image imagenProducto = null;
 
                 if (!string.IsNullOrEmpty(item.imagen_url))
                 {
                     // ruta correcta de la carpeta Fotos
                     string rutaImagen = Path.Combine(Directory.GetParent(Application.StartupPath).Parent.FullName, "Fotos", item.imagen_url);
                     if (File.Exists(rutaImagen))
-                        imagenProducto = Image.FromFile(rutaImagen);
+                        imagenProducto = System.Drawing.Image.FromFile(rutaImagen);
                 }
 
                 ProductosDGV.Rows.Add(new object[]
@@ -457,7 +464,7 @@ namespace CapaPresentacion
                 var y = e.CellBounds.Top + (e.CellBounds.Height - h) / 2;
 
                 // Dibuja el ícono (usa el mismo "check" del proyecto)
-                e.Graphics.DrawImage(Properties.Resources.check, new Rectangle(x, y, w, h));
+                e.Graphics.DrawImage(Properties.Resources.check, new System.Drawing.Rectangle(x, y, w, h));
 
                 e.Handled = true; // Marcamos el evento como manejado
             }
@@ -485,7 +492,7 @@ namespace CapaPresentacion
             textBoxPrecio.Text = Convert.ToString(row.Cells["precio"].Value);
 
             // Muestra imagen del producto
-            PBFoto.Image = row.Cells["imagen_url"].Value as Image;
+            PBFoto.Image = row.Cells["imagen_url"].Value as System.Drawing.Image;
             PBFoto.SizeMode = PictureBoxSizeMode.Zoom;
             TBFotoPath.Clear();
 
@@ -708,5 +715,117 @@ namespace CapaPresentacion
             }
         }
 
+        private void btnReporteStock_Click(object sender, EventArgs e)
+        {
+            try
+            {
+                // Ruta a la carpeta Documentos\ReposicionStock
+                string carpeta = Path.Combine(Environment.GetFolderPath(Environment.SpecialFolder.MyDocuments), "ReposicionStock");
+
+                // Crear la carpeta si no existe
+                if (!Directory.Exists(carpeta))
+                {
+                    Directory.CreateDirectory(carpeta);
+                }
+
+                // Ruta completa del archivo PDF
+                string timestamp = DateTime.Now.ToString("yyyyMMdd_HHmmss");
+                string nombreArchivo = $"ReporteStock_{timestamp}.pdf";
+                string rutaPDF = Path.Combine(carpeta, nombreArchivo);
+
+                // Crear el documento PDF
+                var doc = new iTextSharp.text.Document();
+                PdfWriter.GetInstance(doc, new FileStream(rutaPDF, FileMode.Create));
+                doc.Open();
+
+                PdfPTable table = new PdfPTable(3);
+                table.AddCell("Producto");
+                table.AddCell("Talle");
+                table.AddCell("Stock");
+
+                var productos = new CN_Producto().ObtenerProductosStock(); // List<Talle_producto>
+
+                foreach (var item in productos)
+                {
+                    string nombreProducto = item.id_producto?.nombre ?? "Sin nombre";
+                    string talle = item.talla;
+                    int stock = item.stock;
+
+                    PdfPCell cellProducto = new PdfPCell(new Phrase(nombreProducto));
+                    PdfPCell cellTalle = new PdfPCell(new Phrase(talle));
+                    PdfPCell cellStock = new PdfPCell(new Phrase(stock.ToString()));
+
+                    if (stock == 0)
+                    {
+                        cellProducto.BackgroundColor = BaseColor.RED;
+                        cellTalle.BackgroundColor = BaseColor.RED;
+                        cellStock.BackgroundColor = BaseColor.RED;
+                    }
+                    else if (stock <= 10)
+                    {
+                        cellProducto.BackgroundColor = BaseColor.YELLOW;
+                        cellTalle.BackgroundColor = BaseColor.YELLOW;
+                        cellStock.BackgroundColor = BaseColor.YELLOW;
+                    }
+
+                    table.AddCell(cellProducto);
+                    table.AddCell(cellTalle);
+                    table.AddCell(cellStock);
+                }
+
+                doc.Add(table);
+                doc.Close();
+
+                // Abrir el PDF automáticamente
+                System.Diagnostics.Process.Start(rutaPDF);
+
+                MessageBox.Show("PDF generado correctamente en Documentos\\ReposicionStock.");
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show("Error al generar el PDF: " + ex.Message);
+            }
+        }
+
+
+        public bool ProductoSinStock(int idProducto)
+        {
+            bool sinStock = false;
+
+            string query = @"
+        SELECT SUM(stock) AS TotalStock
+        FROM talle_producto
+        WHERE id_producto = @idProducto;
+    ";
+
+            using (SqlConnection conn = new SqlConnection(Conexion.cadena))
+            {
+                SqlCommand cmd = new SqlCommand(query, conn);
+                cmd.Parameters.AddWithValue("@idProducto", idProducto);
+
+                conn.Open();
+                object result = cmd.ExecuteScalar();
+
+                if (result != DBNull.Value && Convert.ToInt32(result) == 0)
+                {
+                    sinStock = true;
+                }
+            }
+
+            return sinStock;
+        }
+
+        private void ProductosDGV_CellFormatting(object sender, DataGridViewCellFormattingEventArgs e)
+        {
+            foreach (DataGridViewRow row in ProductosDGV.Rows)
+            {
+                int idProducto = Convert.ToInt32(row.Cells["id_producto"].Value);
+                if (ProductoSinStock(idProducto)) // Método que verifica si el producto tiene stock
+                {
+                    row.DefaultCellStyle.BackColor = System.Drawing.Color.Red;
+                    row.DefaultCellStyle.ForeColor = System.Drawing.Color.White;
+                }
+            }
+        }
     }
 }

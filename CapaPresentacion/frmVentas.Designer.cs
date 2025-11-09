@@ -28,8 +28,8 @@
         /// </summary>
         private void InitializeComponent()
         {
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle5 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle6 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle1 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle2 = new System.Windows.Forms.DataGridViewCellStyle();
             this.labelListaUsuarios = new System.Windows.Forms.Label();
             this.label1 = new System.Windows.Forms.Label();
             this.groupBox1 = new System.Windows.Forms.GroupBox();
@@ -114,9 +114,9 @@
             this.groupBox1.Controls.Add(this.labelVendedor);
             this.groupBox1.Controls.Add(this.labelFecha);
             this.groupBox1.Location = new System.Drawing.Point(59, 72);
-            this.groupBox1.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.groupBox1.Margin = new System.Windows.Forms.Padding(2);
             this.groupBox1.Name = "groupBox1";
-            this.groupBox1.Padding = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.groupBox1.Padding = new System.Windows.Forms.Padding(2);
             this.groupBox1.Size = new System.Drawing.Size(390, 72);
             this.groupBox1.TabIndex = 28;
             this.groupBox1.TabStop = false;
@@ -188,9 +188,9 @@
             this.groupBox2.Controls.Add(this.label2);
             this.groupBox2.Controls.Add(this.label3);
             this.groupBox2.Location = new System.Drawing.Point(666, 72);
-            this.groupBox2.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.groupBox2.Margin = new System.Windows.Forms.Padding(2);
             this.groupBox2.Name = "groupBox2";
-            this.groupBox2.Padding = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.groupBox2.Padding = new System.Windows.Forms.Padding(2);
             this.groupBox2.Size = new System.Drawing.Size(371, 72);
             this.groupBox2.TabIndex = 29;
             this.groupBox2.TabStop = false;
@@ -258,9 +258,9 @@
             this.groupBox3.Controls.Add(this.label4);
             this.groupBox3.Controls.Add(this.label5);
             this.groupBox3.Location = new System.Drawing.Point(59, 164);
-            this.groupBox3.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.groupBox3.Margin = new System.Windows.Forms.Padding(2);
             this.groupBox3.Name = "groupBox3";
-            this.groupBox3.Padding = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.groupBox3.Padding = new System.Windows.Forms.Padding(2);
             this.groupBox3.Size = new System.Drawing.Size(756, 70);
             this.groupBox3.TabIndex = 30;
             this.groupBox3.TabStop = false;
@@ -304,8 +304,8 @@
             // 
             this.numericUpDownCantidad.Cursor = System.Windows.Forms.Cursors.Hand;
             this.numericUpDownCantidad.Enabled = false;
-            this.numericUpDownCantidad.Location = new System.Drawing.Point(626, 18);
-            this.numericUpDownCantidad.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.numericUpDownCantidad.Location = new System.Drawing.Point(627, 31);
+            this.numericUpDownCantidad.Margin = new System.Windows.Forms.Padding(2);
             this.numericUpDownCantidad.Minimum = new decimal(new int[] {
             1,
             0,
@@ -429,15 +429,15 @@
             // VentaProductosDGV
             // 
             this.VentaProductosDGV.AllowUserToAddRows = false;
-            dataGridViewCellStyle5.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
-            dataGridViewCellStyle5.BackColor = System.Drawing.SystemColors.Control;
-            dataGridViewCellStyle5.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            dataGridViewCellStyle5.ForeColor = System.Drawing.SystemColors.WindowText;
-            dataGridViewCellStyle5.Padding = new System.Windows.Forms.Padding(2);
-            dataGridViewCellStyle5.SelectionBackColor = System.Drawing.SystemColors.Highlight;
-            dataGridViewCellStyle5.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
-            dataGridViewCellStyle5.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
-            this.VentaProductosDGV.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle5;
+            dataGridViewCellStyle1.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle1.BackColor = System.Drawing.SystemColors.Control;
+            dataGridViewCellStyle1.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle1.ForeColor = System.Drawing.SystemColors.WindowText;
+            dataGridViewCellStyle1.Padding = new System.Windows.Forms.Padding(2);
+            dataGridViewCellStyle1.SelectionBackColor = System.Drawing.SystemColors.Highlight;
+            dataGridViewCellStyle1.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
+            dataGridViewCellStyle1.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
+            this.VentaProductosDGV.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle1;
             this.VentaProductosDGV.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.VentaProductosDGV.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
             this.id_producto,
@@ -449,18 +449,18 @@
             this.subtotal,
             this.btnEliminar});
             this.VentaProductosDGV.Location = new System.Drawing.Point(59, 241);
-            this.VentaProductosDGV.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.VentaProductosDGV.Margin = new System.Windows.Forms.Padding(4);
             this.VentaProductosDGV.MultiSelect = false;
             this.VentaProductosDGV.Name = "VentaProductosDGV";
             this.VentaProductosDGV.ReadOnly = true;
-            dataGridViewCellStyle6.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
-            dataGridViewCellStyle6.BackColor = System.Drawing.SystemColors.Control;
-            dataGridViewCellStyle6.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            dataGridViewCellStyle6.ForeColor = System.Drawing.SystemColors.WindowText;
-            dataGridViewCellStyle6.SelectionBackColor = System.Drawing.Color.White;
-            dataGridViewCellStyle6.SelectionForeColor = System.Drawing.Color.Black;
-            dataGridViewCellStyle6.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
-            this.VentaProductosDGV.RowHeadersDefaultCellStyle = dataGridViewCellStyle6;
+            dataGridViewCellStyle2.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle2.BackColor = System.Drawing.SystemColors.Control;
+            dataGridViewCellStyle2.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle2.ForeColor = System.Drawing.SystemColors.WindowText;
+            dataGridViewCellStyle2.SelectionBackColor = System.Drawing.Color.White;
+            dataGridViewCellStyle2.SelectionForeColor = System.Drawing.Color.Black;
+            dataGridViewCellStyle2.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
+            this.VentaProductosDGV.RowHeadersDefaultCellStyle = dataGridViewCellStyle2;
             this.VentaProductosDGV.RowHeadersWidth = 51;
             this.VentaProductosDGV.RowTemplate.Height = 28;
             this.VentaProductosDGV.Size = new System.Drawing.Size(756, 274);
@@ -572,7 +572,7 @@
             this.btnRegistrarVenta.IconColor = System.Drawing.Color.SteelBlue;
             this.btnRegistrarVenta.IconFont = FontAwesome.Sharp.IconFont.Auto;
             this.btnRegistrarVenta.Location = new System.Drawing.Point(849, 443);
-            this.btnRegistrarVenta.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.btnRegistrarVenta.Margin = new System.Windows.Forms.Padding(2);
             this.btnRegistrarVenta.Name = "btnRegistrarVenta";
             this.btnRegistrarVenta.Size = new System.Drawing.Size(187, 72);
             this.btnRegistrarVenta.TabIndex = 37;
@@ -589,7 +589,7 @@
             this.btnAgregar.IconColor = System.Drawing.Color.Green;
             this.btnAgregar.IconFont = FontAwesome.Sharp.IconFont.Auto;
             this.btnAgregar.Location = new System.Drawing.Point(849, 169);
-            this.btnAgregar.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.btnAgregar.Margin = new System.Windows.Forms.Padding(2);
             this.btnAgregar.Name = "btnAgregar";
             this.btnAgregar.Size = new System.Drawing.Size(188, 65);
             this.btnAgregar.TabIndex = 32;
@@ -603,7 +603,7 @@
             // 
             this.comboBoxPagaCon.FormattingEnabled = true;
             this.comboBoxPagaCon.Location = new System.Drawing.Point(849, 315);
-            this.comboBoxPagaCon.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.comboBoxPagaCon.Margin = new System.Windows.Forms.Padding(2);
             this.comboBoxPagaCon.Name = "comboBoxPagaCon";
             this.comboBoxPagaCon.Size = new System.Drawing.Size(188, 21);
             this.comboBoxPagaCon.TabIndex = 38;
@@ -624,7 +624,7 @@
             // 
             this.comboBoxCuotas.FormattingEnabled = true;
             this.comboBoxCuotas.Location = new System.Drawing.Point(849, 362);
-            this.comboBoxCuotas.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.comboBoxCuotas.Margin = new System.Windows.Forms.Padding(2);
             this.comboBoxCuotas.Name = "comboBoxCuotas";
             this.comboBoxCuotas.Size = new System.Drawing.Size(188, 21);
             this.comboBoxCuotas.TabIndex = 41;

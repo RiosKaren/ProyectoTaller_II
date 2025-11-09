@@ -232,5 +232,60 @@ namespace CapaDatos
             return Respuesta;
         }
 
+        public List<Talle_producto> ObtenerProductosStock()
+        {
+            List<Talle_producto> lista = new List<Talle_producto>();
+
+            string query = @"
+        SELECT 
+            tp.id_talle,
+            tp.talla,
+            tp.stock,
+            p.id_producto,
+            p.nombre,
+            p.codigo,
+            p.descripcion,
+            p.imagen_url,
+            p.activo
+        FROM talle_producto tp
+        INNER JOIN productos p ON tp.id_producto = p.id_producto
+        WHERE tp.stock <= 10
+        ORDER BY tp.stock ASC;
+    ";
+
+            using (SqlConnection conn = new SqlConnection(Conexion.cadena))
+            {
+                SqlCommand cmd = new SqlCommand(query, conn);
+                conn.Open();
+                SqlDataReader reader = cmd.ExecuteReader();
+
+                while (reader.Read())
+                {
+                    Talle_producto talleProd = new Talle_producto
+                    {
+                        id_talle = Convert.ToInt32(reader["id_talle"]),
+                        talla = reader["talla"].ToString(),
+                        stock = Convert.ToInt32(reader["stock"]),
+                        id_producto = new Productos
+                        {
+                            id_producto = Convert.ToInt32(reader["id_producto"]),
+                            nombre = reader["nombre"].ToString(),
+                            codigo = reader["codigo"].ToString(),
+                            descripcion = reader["descripcion"].ToString(),
+                            imagen_url = reader["imagen_url"].ToString(),
+                            activo = Convert.ToBoolean(reader["activo"])
+                        }
+                    };
+
+                    lista.Add(talleProd);
+                }
+
+                reader.Close();
+            }
+
+            return lista;
+        }
+
+
     }
 }

@@ -214,7 +214,7 @@
             this.contenedor.Dock = System.Windows.Forms.DockStyle.Fill;
             this.contenedor.Location = new System.Drawing.Point(0, 121);
             this.contenedor.Name = "contenedor";
-            this.contenedor.Size = new System.Drawing.Size(1183, 550);
+            this.contenedor.Size = new System.Drawing.Size(1183, 567);
             this.contenedor.TabIndex = 4;
             // 
             // label1
@@ -246,7 +246,7 @@
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.DarkRed;
-            this.ClientSize = new System.Drawing.Size(1183, 671);
+            this.ClientSize = new System.Drawing.Size(1183, 688);
             this.Controls.Add(this.lbusuario);
             this.Controls.Add(this.label1);
             this.Controls.Add(this.contenedor);

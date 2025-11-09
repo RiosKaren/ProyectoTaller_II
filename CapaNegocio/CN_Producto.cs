@@ -26,6 +26,12 @@ namespace CapaNegocio
                 .ToList(); // devuelve solo los productos activos con stock
         }
 
+        public List<Talle_producto> ObtenerProductosStock()
+        {
+            return objcd_producto.ObtenerProductosStock(); //devuelve la lista de Productos obtenida desde la capa de datos
+        }
+
+
         public List<Talle_producto> ObtenerTallesPorProducto(int idProducto)
         {
             return objcd_producto.ObtenerTallesPorProducto(idProducto);
