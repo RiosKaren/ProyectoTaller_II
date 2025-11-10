@@ -172,5 +172,10 @@ namespace CapaPresentacion
             f.CargarDatos(_ultimoResultado, _tituloActualReporte, subtitulo); 
             f.ShowDialog(this);
         }
+
+        private void comboBox1_SelectedIndexChanged(object sender, EventArgs e)
+        {
+
+        }
     }
 }
