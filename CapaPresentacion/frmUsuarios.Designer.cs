@@ -82,6 +82,7 @@
             this.textBoxIndice = new System.Windows.Forms.TextBox();
             this.iconButtonHabilitar = new FontAwesome.Sharp.IconButton();
             this.textBoxCPassword = new System.Windows.Forms.TextBox();
+            this.btnToggleActivos = new FontAwesome.Sharp.IconButton();
             ((System.ComponentModel.ISupportInitialize)(this.UsuariosDGV)).BeginInit();
             this.SuspendLayout();
             // 
@@ -363,7 +364,7 @@
             this.activo,
             this.estado});
             this.UsuariosDGV.Location = new System.Drawing.Point(278, 92);
-            this.UsuariosDGV.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.UsuariosDGV.Margin = new System.Windows.Forms.Padding(4);
             this.UsuariosDGV.MultiSelect = false;
             this.UsuariosDGV.Name = "UsuariosDGV";
             this.UsuariosDGV.ReadOnly = true;
@@ -377,6 +378,7 @@
             this.UsuariosDGV.RowHeadersDefaultCellStyle = dataGridViewCellStyle2;
             this.UsuariosDGV.RowHeadersWidth = 51;
             this.UsuariosDGV.RowTemplate.Height = 28;
+            this.UsuariosDGV.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
             this.UsuariosDGV.Size = new System.Drawing.Size(878, 434);
             this.UsuariosDGV.TabIndex = 24;
             this.UsuariosDGV.CellClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.UsuariosDGV_CellClick);
@@ -521,7 +523,7 @@
             // dateTimeNacimiento
             // 
             this.dateTimeNacimiento.Location = new System.Drawing.Point(16, 289);
-            this.dateTimeNacimiento.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.dateTimeNacimiento.Margin = new System.Windows.Forms.Padding(2);
             this.dateTimeNacimiento.MaxDate = new System.DateTime(2025, 9, 20, 0, 0, 0, 0);
             this.dateTimeNacimiento.MinDate = new System.DateTime(1900, 1, 1, 0, 0, 0, 0);
             this.dateTimeNacimiento.Name = "dateTimeNacimiento";
@@ -577,7 +579,7 @@
             // 
             this.labelBuscar.AutoSize = true;
             this.labelBuscar.BackColor = System.Drawing.Color.White;
-            this.labelBuscar.Location = new System.Drawing.Point(668, 40);
+            this.labelBuscar.Location = new System.Drawing.Point(654, 37);
             this.labelBuscar.Name = "labelBuscar";
             this.labelBuscar.Size = new System.Drawing.Size(62, 13);
             this.labelBuscar.TabIndex = 31;
@@ -589,14 +591,14 @@
             this.comboBoxBusqueda.Cursor = System.Windows.Forms.Cursors.Hand;
             this.comboBoxBusqueda.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.comboBoxBusqueda.FormattingEnabled = true;
-            this.comboBoxBusqueda.Location = new System.Drawing.Point(752, 37);
+            this.comboBoxBusqueda.Location = new System.Drawing.Point(738, 34);
             this.comboBoxBusqueda.Name = "comboBoxBusqueda";
             this.comboBoxBusqueda.Size = new System.Drawing.Size(125, 21);
             this.comboBoxBusqueda.TabIndex = 32;
             // 
             // textBoxBusqueda
             // 
-            this.textBoxBusqueda.Location = new System.Drawing.Point(882, 37);
+            this.textBoxBusqueda.Location = new System.Drawing.Point(868, 34);
             this.textBoxBusqueda.Name = "textBoxBusqueda";
             this.textBoxBusqueda.Size = new System.Drawing.Size(158, 20);
             this.textBoxBusqueda.TabIndex = 33;
@@ -611,8 +613,8 @@
             this.iconButtonLimpiar.IconChar = FontAwesome.Sharp.IconChar.Eraser;
             this.iconButtonLimpiar.IconColor = System.Drawing.Color.Black;
             this.iconButtonLimpiar.IconFont = FontAwesome.Sharp.IconFont.Auto;
-            this.iconButtonLimpiar.IconSize = 18;
-            this.iconButtonLimpiar.Location = new System.Drawing.Point(1086, 37);
+            this.iconButtonLimpiar.IconSize = 20;
+            this.iconButtonLimpiar.Location = new System.Drawing.Point(1072, 34);
             this.iconButtonLimpiar.Name = "iconButtonLimpiar";
             this.iconButtonLimpiar.Size = new System.Drawing.Size(34, 18);
             this.iconButtonLimpiar.TabIndex = 34;
@@ -630,8 +632,8 @@
             this.iconButtonBuscar.IconChar = FontAwesome.Sharp.IconChar.MagnifyingGlass;
             this.iconButtonBuscar.IconColor = System.Drawing.Color.Black;
             this.iconButtonBuscar.IconFont = FontAwesome.Sharp.IconFont.Auto;
-            this.iconButtonBuscar.IconSize = 16;
-            this.iconButtonBuscar.Location = new System.Drawing.Point(1046, 37);
+            this.iconButtonBuscar.IconSize = 20;
+            this.iconButtonBuscar.Location = new System.Drawing.Point(1032, 34);
             this.iconButtonBuscar.Name = "iconButtonBuscar";
             this.iconButtonBuscar.Size = new System.Drawing.Size(34, 18);
             this.iconButtonBuscar.TabIndex = 35;
@@ -676,6 +678,26 @@
             this.textBoxCPassword.Size = new System.Drawing.Size(100, 20);
             this.textBoxCPassword.TabIndex = 10;
             // 
+            // btnToggleActivos
+            // 
+            this.btnToggleActivos.BackColor = System.Drawing.Color.White;
+            this.btnToggleActivos.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.btnToggleActivos.FlatAppearance.BorderColor = System.Drawing.Color.Black;
+            this.btnToggleActivos.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnToggleActivos.ForeColor = System.Drawing.Color.White;
+            this.btnToggleActivos.IconChar = FontAwesome.Sharp.IconChar.UserCheck;
+            this.btnToggleActivos.IconColor = System.Drawing.Color.Black;
+            this.btnToggleActivos.IconFont = FontAwesome.Sharp.IconFont.Auto;
+            this.btnToggleActivos.IconSize = 24;
+            this.btnToggleActivos.Location = new System.Drawing.Point(1112, 34);
+            this.btnToggleActivos.Name = "btnToggleActivos";
+            this.btnToggleActivos.Size = new System.Drawing.Size(34, 18);
+            this.btnToggleActivos.TabIndex = 34;
+            this.btnToggleActivos.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
+            this.btnToggleActivos.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
+            this.btnToggleActivos.UseVisualStyleBackColor = false;
+            this.btnToggleActivos.Click += new System.EventHandler(this.btnToggleActivos_Click);
+            // 
             // frmUsuarios
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -684,6 +706,7 @@
             this.ClientSize = new System.Drawing.Size(1184, 544);
             this.Controls.Add(this.iconButtonHabilitar);
             this.Controls.Add(this.textBoxIndice);
+            this.Controls.Add(this.btnToggleActivos);
             this.Controls.Add(this.iconButtonLimpiar);
             this.Controls.Add(this.iconButtonBuscar);
             this.Controls.Add(this.textBoxBusqueda);
@@ -783,5 +806,6 @@
         private System.Windows.Forms.DataGridViewTextBoxColumn rol;
         private System.Windows.Forms.DataGridViewTextBoxColumn activo;
         private System.Windows.Forms.DataGridViewTextBoxColumn estado;
+        private FontAwesome.Sharp.IconButton btnToggleActivos;
     }
 }

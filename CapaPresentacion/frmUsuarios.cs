@@ -1,7 +1,4 @@
-﻿using CapaEntidad;
-using CapaNegocio;
-using CapaPresentacion.Utilidades;
-using System;
+﻿using System;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Configuration;
@@ -14,6 +11,10 @@ using System.Text;
 using System.Text.RegularExpressions;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using CapaEntidad;
+using CapaNegocio;
+using CapaPresentacion.Utilidades;
+using FontAwesome.Sharp;
 
 namespace CapaPresentacion
 {
@@ -619,5 +620,28 @@ namespace CapaPresentacion
             }
         }
 
+
+        private bool mostrandoActivos = true;
+
+        private void btnToggleActivos_Click(object sender, EventArgs e)
+        {
+            mostrandoActivos = !mostrandoActivos;
+
+            foreach (DataGridViewRow fila in UsuariosDGV.Rows)
+            {
+                bool activo = Convert.ToBoolean(fila.Cells["activo"].Value);
+                fila.Visible = mostrandoActivos ? activo : !activo;
+            }
+
+            btnToggleActivos.IconChar = mostrandoActivos ? IconChar.UserCheck : IconChar.UserTimes;
+            btnToggleActivos.IconFont = IconFont.Auto;
+            btnToggleActivos.IconColor = Color.Black; // o el que estés usando
+            btnToggleActivos.IconSize = 20;           // o el que tengas configurado
+            btnToggleActivos.Text = "";               // ← esto es clave
+            btnToggleActivos.Refresh();
+        }
+
+
     }
 }
+
