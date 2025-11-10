@@ -58,6 +58,14 @@ namespace CapaPresentacion.VentanasEmergentes
                     item.precio,
                     item.activo,
                 });
+
+                comboBoxBusqueda.Items.Clear();
+                comboBoxBusqueda.Items.Add(new OpcionCombo() { Valor = "codigo", Texto = "Código" });
+                comboBoxBusqueda.Items.Add(new OpcionCombo() { Valor = "nombre", Texto = "Nombre" });
+                comboBoxBusqueda.Items.Add(new OpcionCombo() { Valor = "descripcion", Texto = "Descripción" });
+                comboBoxBusqueda.DisplayMember = "Texto";
+                comboBoxBusqueda.ValueMember = "Valor";
+                comboBoxBusqueda.SelectedIndex = 0;
             }
         }
 
