@@ -30,6 +30,7 @@
         {
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle1 = new System.Windows.Forms.DataGridViewCellStyle();
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle2 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(frmProductos));
             this.textBoxIndice = new System.Windows.Forms.TextBox();
             this.textBoxBusqueda = new System.Windows.Forms.TextBox();
             this.comboBoxBusqueda = new System.Windows.Forms.ComboBox();
@@ -698,7 +699,9 @@
             this.Controls.Add(this.labelNombre);
             this.Controls.Add(this.label2);
             this.Controls.Add(this.label1);
+            this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.Name = "frmProductos";
+            this.Text = "Productos";
             this.Load += new System.EventHandler(this.frmProductos_Load);
             ((System.ComponentModel.ISupportInitialize)(this.ProductosDGV)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.TallesDGV)).EndInit();

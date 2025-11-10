@@ -28,6 +28,7 @@
         /// </summary>
         private void InitializeComponent()
         {
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(frmBackUp));
             this.LDetallesBackup = new System.Windows.Forms.Label();
             this.label1 = new System.Windows.Forms.Label();
             this.label2 = new System.Windows.Forms.Label();
@@ -109,7 +110,7 @@
             // tbRutaDeGuardado
             // 
             this.tbRutaDeGuardado.Location = new System.Drawing.Point(123, 100);
-            this.tbRutaDeGuardado.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.tbRutaDeGuardado.Margin = new System.Windows.Forms.Padding(2);
             this.tbRutaDeGuardado.Name = "tbRutaDeGuardado";
             this.tbRutaDeGuardado.Size = new System.Drawing.Size(184, 20);
             this.tbRutaDeGuardado.TabIndex = 7;
@@ -121,7 +122,9 @@
             this.BackColor = System.Drawing.Color.DarkRed;
             this.ClientSize = new System.Drawing.Size(1184, 544);
             this.Controls.Add(this.panel1);
+            this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.Name = "frmBackUp";
+            this.Text = "Backup";
             this.panel1.ResumeLayout(false);
             this.panel1.PerformLayout();
             this.ResumeLayout(false);

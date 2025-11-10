@@ -28,6 +28,7 @@
         /// </summary>
         private void InitializeComponent()
         {
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(veAgregarCliente));
             this.labelTitulo = new System.Windows.Forms.Label();
             this.btnGuardarCliente = new FontAwesome.Sharp.IconButton();
             this.textBoxEmail = new System.Windows.Forms.TextBox();
@@ -254,8 +255,10 @@
             this.Controls.Add(this.labelApellido);
             this.Controls.Add(this.labelNombre);
             this.Controls.Add(this.label2);
+            this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.Name = "veAgregarCliente";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
+            this.Text = "Shortcut - Agregar Cliente";
             this.ResumeLayout(false);
             this.PerformLayout();
 

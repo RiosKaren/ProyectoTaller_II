@@ -28,6 +28,7 @@
         /// </summary>
         private void InitializeComponent()
         {
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(frmReportes));
             this.PGenerar = new System.Windows.Forms.Panel();
             this.comboBox1 = new System.Windows.Forms.ComboBox();
             this.LVendedor = new System.Windows.Forms.Label();
@@ -208,7 +209,9 @@
             this.Controls.Add(this.label1);
             this.Controls.Add(this.LElegirFechas);
             this.Controls.Add(this.PGenerar);
+            this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.Name = "frmReportes";
+            this.Text = "Reportes";
             this.PGenerar.ResumeLayout(false);
             this.PGenerar.PerformLayout();
             this.panel2.ResumeLayout(false);
